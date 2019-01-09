@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Permutation Group</title>
+      <link href="/2019/01/05/Permutation-group/"/>
+      <url>/2019/01/05/Permutation-group/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>终于开了群论的大坑。</p><p><a href="https://en.wikipedia.org/wiki/Permutation_group" target="_blank" rel="noopener">Permutation group - Wikipedia</a></p><p><a href="https://en.wikipedia.org/wiki/Burnside%27s_lemma" target="_blank" rel="noopener">Burnside’s lemma - Wikipeia</a></p><p><a href="https://en.wikipedia.org/wiki/P%C3%B3lya_enumeration_theorem" target="_blank" rel="noopener">Pólya enumeration theorem - Wikipedia</a></p><p>发现 Burnside 引理与 Pólya 定理好像也不是那么玄学的东西，是计数的一种策略。</p><p>记录了一些细微的小技巧，感觉比较实用。计数还有很多细节需要注意。</p><h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><p><a href="https://sgcolin.github.io/PDFS/Notes/Permutationgroup.pdf">Permutation Group</a></p><p>基本上把比较经典的题目写进去了，以后再遇到相关的题还会补充，PDF会不定期更新。</p><p>有问题请联系我，万分感谢。</p><h2 id="Updata"><a href="#Updata" class="headerlink" title="Updata"></a>Updata</h2><p>2019.01.05 发布文章。</p><p>2019.01.06 更新了两道典型例题。</p><p>2019.01.08 更新了若干题目，重新进行了排版。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Notes </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Mathematics </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Goodbye 2018</title>
+      <link href="/2018/12/30/goodbye2018/"/>
+      <url>/2018/12/30/goodbye2018/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>2018 结束了，在高中完整生活的第一年。</p><p>经历了不少事情，有成长，有上下求索，渐渐学会从迷茫中回到自己。</p><p>想好的事情渐渐能果断选择，不再踌躇，接受自己选择的生活。</p><p>渐渐懂得有些事情得跳出来看，希望自己能守住理性，有拥抱生活的勇气。</p><p><a href="https://www.youtube.com/watch?v=6aFdEhEZQjE" target="_blank" rel="noopener">Google Year In Search 2018</a></p><p><a href="https://zhuanlan.zhihu.com/p/52747025" target="_blank" rel="noopener">知乎「年度大事记」2018 我们如何与世界相处？</a></p><iframe src="//player.bilibili.com/player.html?aid=39994996&cid=70246095&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe><h2 id="Memorabilia"><a href="#Memorabilia" class="headerlink" title="Memorabilia"></a>Memorabilia</h2><h3 id="Jan"><a href="#Jan" class="headerlink" title="Jan."></a>Jan.</h3><p>高中第一个期末，以及平凡的成绩。</p><p>寒假集训，初识OI，初识各位神仙。</p><h3 id="Feb"><a href="#Feb" class="headerlink" title="Feb."></a>Feb.</h3><p>回老家过春节，入了百词斩。</p><p>报道，七天集训，爆零，再别OI。</p><h3 id="Mar"><a href="#Mar" class="headerlink" title="Mar."></a>Mar.</h3><p>开学考RP爆发没有挂分。</p><p>意外得知可以转三三，交了申请。</p><p>值周，给十六留下了一个粗糙的PPT。</p><h3 id="Apr"><a href="#Apr" class="headerlink" title="Apr."></a>Apr.</h3><p>转班，喜欢上课的风格。</p><p>省选划水，入坑B站。</p><h3 id="May"><a href="#May" class="headerlink" title="May."></a>May.</h3><p>五一集训，见到两只猫。</p><p>弃坑 cnblogs , 入坑 Hexo，Next 大法好。</p><p>集体舞上演减数分裂大戏。</p><h3 id="Jun"><a href="#Jun" class="headerlink" title="Jun."></a>Jun.</h3><p>第一次过集体生日。</p><p>第一次放高考假，去了趟初中，学生不再，老师依然。</p><h3 id="Jul"><a href="#Jul" class="headerlink" title="Jul."></a>Jul.</h3><p>恍恍惚惚苟过期末。</p><p>水题大赛过审，正解被 AK 大爷爆踩。</p><p>NOI 同步赛 Spfa 被卡。</p><h3 id="Aug"><a href="#Aug" class="headerlink" title="Aug."></a>Aug.</h3><p>rm-rf Hexo，重回 cnblogs，有了新名字 SGColin(SGCollin) 。</p><p>终于弃掉了 Dev C++ ，入了 Atom 。</p><h3 id="Sept"><a href="#Sept" class="headerlink" title="Sept."></a>Sept.</h3><p>开始停课单修。</p><p>入坑小米OJ，小米全国高校编程大赛意外苟到了奖，之后又意外苟到了件衣服。</p><h3 id="Oct"><a href="#Oct" class="headerlink" title="Oct."></a>Oct.</h3><p>十一集训，见到了吉老师。</p><p>开始跑步，二南外圈 2km 。</p><h3 id="Nov"><a href="#Nov" class="headerlink" title="Nov."></a>Nov.</h3><p>NOIP 2018 差点被送退役。</p><p>一个星期的文化课生活，还是又申请了停课。</p><p>弃了 cnblogs ，重新入坑 Hexo ，换了简约的主题。</p><p>入坑 LaTeX ，再别 Markdown 。</p><h3 id="Dec"><a href="#Dec" class="headerlink" title="Dec."></a>Dec.</h3><p>苟过了会考。</p><p>CodeForces 第一次进前60。</p><p>小米OJ月赛 Rank6 ，加入志愿者团队。</p><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>嘴上常常挂着 “ 不忘初心，方得始终 “，渐渐明白初心易得，始终难守。</p><p>忘掉工作，忘掉竞争，和家人们在一起，感受到自己为之坚持的东西，记起不掺杂利益的那份热爱。</p><p>2019，我们还在路上，加油！</p><p>The road ahead will be long and my climb will be steep.</p><p>The end.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Life </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Others </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Educational CodeForces Round #55 (Div.2)</title>
+      <link href="/2018/12/24/Educational-Codeforces-Round-55-Div-2/"/>
+      <url>/2018/12/24/Educational-Codeforces-Round-55-Div-2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>题目感觉不是很有营养，主要是分情况讨论，比较考察细节的把控 (B,D) 。</p><p>E 题是比较有意思的思路题，<del>看起来最应该做的 F 还是没有啃下来……</del></p><p><strong>UPD(18.12.24) :</strong> 在大爷的帮助下终于读懂题把F过了，题解PDF已更新。</p><p>考察的知识点：分情况讨论 (A,B) 、前缀和 (C)、构造 (D) 、贪心 (E)、树形DP (F) 、最大权闭合子图 (G)。</p><p>AC 代码可以直接去 CodeForces 上找 。</p><h2 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h2><p>目前博客的 Mathjax 还是不支持的，还是看 <a href="https://sgcolin.github.io/PDFS/CodeForcesContests/EducationalCodeforcesRound55.pdf">用LaTeX写的题解</a> 吧。</p><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>B 题和 D 题都 WA 了两遍，都是因为漏细节，分情况讨论的能力有待提高。</p><p>E 题一开始的写法比较麻烦，后来在网上找到了比较厉害的解法，这个思想真的很妙。</p><p>F 题感觉是个 Trie 上 DP ，没玩出来转移策略，感觉很玄学。</p><p>在大爷的帮助下终于理解清楚题意啦，发现建完 Trie 之后模型和 [IOI2005]River 一模一样赶紧去写了……</p><p>G 题 SB 题。总的说体现的问题是分情况讨论的能力比较差，有待加强。</p><p>The end.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CodeForces </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Mathematics </tag>
+            
+            <tag> String </tag>
+            
+            <tag> DP </tag>
+            
+            <tag> Network Flow </tag>
+            
+            <tag> Greedy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CodeForces Round #525 (Div.2)</title>
+      <link href="/2018/12/09/CodeForcesRound-525-Div-2/"/>
+      <url>/2018/12/09/CodeForcesRound-525-Div-2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>题目难度适中，主要考察思路。题型为一道交互题，五道传统题。</p><p>题目比较新颖，有趣的是，五道传统题中有三道构造题，有四道是SPJ的题目。</p><p>考察的知识点：<del>找规律</del>构造 (A,C,F) 、差分(B)、位运算交互 (D) 、树形DP (E)。</p><p>AC 代码可以直接去 CodeForces 上找。</p><h2 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h2><p>目前博客的 Mathjax 还是不支持的，还是看 <a href="https://sgcolin.github.io/PDFS/CodeForcesContests/CodeForcesRound525.pdf">用LaTeX写的题解</a> 吧。</p><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>比赛体验较好 <del>(虽然是Virtual)</del> 。</p><p>前两题比较简单看题后直接水过。</p><p>第三题认真读题发现了 n+1 的奇怪限制之后就有思路了。</p><p>第四题因为是交互并没有写过就先跳了，赛后学了交互的写法补上了。</p><p>第五题比较显然的树形DP。最后一题太神了还是膜的官方题解。</p><p>比赛过程比较轻松，没有犯什么大错误 <del>(数据范围敲错)</del> ，没什么好总结的。</p><p>The end.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CodeForces </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Mathematics </tag>
+            
+            <tag> DP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CodeForces Round #524 (Div.2)</title>
+      <link href="/2018/11/30/CodeForcesRound-524-Div-2/"/>
+      <url>/2018/11/30/CodeForcesRound-524-Div-2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>题目质量不错，考察知识点比较简单，但需要仔细分析题目性质。</p><p>考察的知识点：模拟(A,B)、<del>找规律乱搞 (C,D)</del> 、Manacher (E) 、主席树 (F)。</p><p>AC 代码可以直接去 CodeForces 上找。</p><h2 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h2><p>目前博客的 Mathjax 还是不支持的，还是看 <a href="https://sgcolin.github.io/PDFS/CodeForcesContests/CodeForcesRound524.pdf">用LaTeX写的题解</a> 吧。</p><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>一次比较失败的比赛体验。</p><p>因为前两题过于简单导致急功近利，在第三题上调试低级错误用时过长。</p><p>第四题因为<del>英语不好</del>题目描述不清晰不会下手，理解了好久，最后剩下的两题也只剩下读题的时间了。</p><p>以后注意时间分配吧，考场上不冷静真的会使水平大打折扣。</p><p>The end.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CodeForces </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Mathematics </tag>
+            
+            <tag> Datastructure </tag>
+            
+            <tag> String </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>NOIP 2018</title>
+      <link href="/2018/11/29/NOIP2018/"/>
+      <url>/2018/11/29/NOIP2018/</url>
+      
+        <content type="html"><![CDATA[<p>按照惯例还是写一篇游记吧。</p><p><strong>谨以此文纪念我高中信息学竞赛的第一次正式考试。</strong></p><p>飞雪连天射白鹿，笑书神侠倚碧鸳。纪念伟大的金庸先生。</p><h2 id="Day-1"><a href="#Day-1" class="headerlink" title="Day -1"></a>Day -1</h2><p>越快考试自己越静不下来。</p><p>老 R​ 昨天说让食堂提前准备了饭。吃的没什么感觉，还是没心没肺吧。大家好像都很轻松的样子。</p><p>中午一点到了石家庄站，今年的比赛还是在燕大。拉着 Zh 去颓薯条 <del>KFC的小哥好帅</del> 回来不出意料的被一抢而空。等车的时候发现 Zh 在玩虚拟机，突然发现我不会在虚拟机里编译慌慌慌去问了一波。</p><p>去的火车是CRH-G1216，上来之后花式换座，莫名其妙被换到了1A。本来以为会被后排的爷们窥屏，后来发现 1​ 号竟然是最后一排？开心。颓的时候突然发现旁边两位爷开始离线切题太强了太强了。</p><h2 id="Day-0"><a href="#Day-0" class="headerlink" title="Day 0"></a>Day 0</h2><p>早上起来突然被通知，最后一天教练突然又要考一场模拟赛？？？</p><p>T1​ **题目。</p><p>T2 蜜汁降智 O(ans) 的对拍我竟然 Debug 了二十分钟的高精度……</p><p>T3​ 只会 60 暴力变成 NC 。事后诸葛……开始有点慌。 </p><p>下午试机。期间各种被老师催着溜，强行耍无赖苟在那里。最后用了半个多小时只是敲了一个链剖和一个倍增互拍。还拍挂了，还是是链剖的 LCA​ 挂了，慌慌慌。然后被监场老师催了无数次之后点名跑路。</p><p>晚上在宾馆学长考前说注意事项。感觉讲的啥也不知道…有点慌。回去之后和 Zh​ 一起梳理了一遍知识点，感觉不错。明天加油。</p><p>睡觉的时候外面突然出现跑步和喊叫的声音，以为是初中的 <del>后来得知是高一学长</del>。半夜突然午夜凶铃。响了两声就挂了，没有来得及接。大概不到一点才睡着的吧。</p><h2 id="Day-1-1"><a href="#Day-1-1" class="headerlink" title="Day 1"></a>Day 1</h2><p>起床后和 Zh​ 对视一脸懵逼。都表示昨晚睡了一个假的觉。</p><p>今天是在燕大 1 机房。不让碰机器，思考半小时人生。座位在前排角落，周围目测是友善的高一学长。</p><p>开题。密码大概是飞雪连天。两道图论？有点不妙。512M​ 相当资瓷啊。看到下面突然发现  <code>i7-8700K</code> 震惊！<del>咕咕F竟然收钱办事了</del> 麻麻我再也不怕人傻常数大了！</p><p>心情复杂地开了T1。30s 会做了。 传说中镇场的 Day1T1 搬原题可还行。又认真读了一遍题，这个首尾相接很迷啊。玩了玩样例发现解释不了环，就放心写了。</p><p>心情复杂地开了T2。读了两遍题，感觉有点难。在纸上玩了玩样例，发现样例解释都选的是原来就有的数，觉得有些蹊跷。冷静了一下，开始证明，大概考场思路是这样的：</p><ul><li>因为系数都是非负整数，所以小于最小值的一定不能选，否则不能表出，因此最小值必选。</li><li>原来数集中的数，若能被已选出的数表出则不选，否则选。因为能表出的话他的任意倍数都可以表出，而不能表出的话这个数又是原系统中可表出的数，所以选。</li><li>原来给出数集中未出现且大于最小值的数也一定不选：首先能被已选择的数表出的肯定没有意义，如果不能被已选择的数表出，证明原系统也不可表出，因为我选的数字都是原来系统中的，所以也不选。</li></ul><p>得到了排序之后用背包贪心的解法。又检查了一下发现证明貌似没有什么问题。一发过大样例。</p><p>心情复杂地开了T3。大概明白了问题是树上选 k​ 条链，使得最短链最长的模型。然后发现不会直接找树上一堆链，有点慌张开始看部分分。</p><p>发现一堆简单的部分分好像合起来就有 55 了，然后并不知道最后一个条件怎么搞。于是先写了前面的点，解法分别是树的直径，所有边长取最小值，正常的二分答案+验证，以及二分答案+双指针。</p><p>然后上个厕所冷静了一下。回来玩了一会发现，每个节点至多向父节点贡献一条链，也就是说，它到父节点的边至多和子树只能接成一条链。虽然是废话，但是有了一个树形DP的模型：考虑每个位置最多能向上连多长。然后贪心的证明了，当向上和子树内组成只能二选一时效果一样，证明比较简单。</p><p>然后按照菊花图那么写，把所有越过的较小边都和 DP​ 数组取 max ，DFS 解决。码到了160行码完了，测了一发附加大样例，然后 WA 了，于是疯狂找反例。画着画着画出了一个神奇的树：</p><p><img src="https://i.loli.net/2018/11/21/5bf53b05a5d0b.png" alt=""></p><p>如果是这样的话，按照我的贪心方案，子树里是 2+3=5​ 组合，然后向上贡献的值是 2 。如果我二分的值是 4，那么我的方法只能得到一条链，而显然答案是两条。</p><p>难道这就是传说中的 RP​ 爆发么！突然看到了我一开始写下的一句话：每个节点到父节点的边至多和子树只能接成一条链。于是想到一种暴力的方法：去掉最大的子树答案，然后检验子树内能组合出的链的个数是否和原来相同。想都没想开始一通乱码。</p><p>11:40 的时候终于码完了…. 或许是我人生中第一个考场 200+行吧，又改了二分的错误。心情激动，测了一发大样例……跑出来了，肉眼比对第一页没锅。颤抖的打开<code>cmd</code> ，输入<code>fc track.out track3.ans</code>。<code>FC: 找不到差异</code>。突然觉得全世界都清静了。</p><p>最后几分钟突然冷静，检查文件，加压，设密码，交卷。</p><p>下午回到宾馆，核对了文件夹和文件名没有敲错，就回去看板子了。</p><p>晚上十点多就睡了。初中的学生只闹了一阵就没什么动静了。意外的睡得不错。</p><h2 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h2><p>又一次死在心理战上。</p><p>今天是在燕大 4 机房。不让碰机器，思考半小时人生。</p><p>开题。密码大概是笑书神侠。又是图论？有点不妙。512M 相当资瓷啊。</p><p>心情复杂地开了 T1 。开始以为是堆 + 拓扑傻逼题，10min 写完发现过不了样例。仔细读题….发现不是拓扑序，而是DFS序。有点慌，并没有做过这一类的题目。突然想起来还没有看数据范围，发现是基环树。发现树的情况很好写。先把 60 码了。100 暂时没有什么思路。</p><p>心情复杂地开了 T3 。T2因为题面太长就先跳过。考前写过一道题，是 [SDOI2006]保安站岗 。然后我就把边覆盖的题目成功读成了点覆盖的题目，十分自信地码完了44pts的暴力，竟然过了样例。然后我就十分自信地溜去T2​了，但任何一个部分分在OI中都不是小数字。</p><p>心情复杂地开了 T2 。读完题，二进制压位码完了20pts暴力，开始找规律。发现和前不久的一道CF​的D题有着一样的思路，貌似每一条斜线上只要只是一段前缀 1 就合法了，因为每一条斜线上的点在字典序列位置相同。找到规律后开始爽快计数，推了个公式带进去，发现 n=2,m=2 的样例对了，带入 n=3,m=3 得到 144 ，而题面上写着 112。</p><p>开始找为什么….很久没有发现原因，只好把所有不合法情况都打出来，发现两条交错路径就凉了。开始思考状压斜线，发现并不会转移。上个厕所冷静一下。回来还是慌了，想了想，暴力把 n,m≤8 的表打出来算了。打着的时候突然发现好像对于 m&gt;n 的情况，(n,m) 的方案数等于 (n,m-1) 方案数的三倍。然后开开心心把前65分打完。发现规律对4并不适用，然后就放弃了剩下的35pts。</p><p>回去赶紧 Rush T1​ 。想到了一个平方复杂度断边的方法，开始码。思路混乱，原来因为便于确定字典序，所以用邻接矩阵存的边，现在还得改回邻接表。淦到11:45写完，发现跑不出来。慌了，求稳吧。把 T1 60 的代码和另外两道题加压。然后到最后都没有调出来，最后收卷的时候头脑一片空白。</p><p>下午去了秦皇岛某海边。照了合影，并不知道挂分了的我和大家谈笑风生。在海边的沙滩上留下了手划出来的字。Luan​ 写了<code>WE AK NOIP 2018</code>。我写了<code>NEXT YEAR GOTO NOI 2019</code>。</p><p>下午火车上老师把考场代码发下来了，交到洛谷上 60+65+0=125 有点蒙。感觉恍恍惚惚，有点失落。比预想的还要糟糕。没有再和教练说什么。晚上机房泡面，聊天时终于发现自己读错题的事实。</p><h2 id="考后的两个星期"><a href="#考后的两个星期" class="headerlink" title="考后的两个星期"></a>考后的两个星期</h2><p>几个晚上都在想自己如果 Day2T1​ 码出来，或者 Day2T3 没读错题就能加上四十多，煎熬。被教练通知在HE 大概 rank30+ ，意外的比原想的好。我还是想接着学的啊。</p><p>最后咕咕咕之后终于拿到了成绩单。跟洛谷上测出来成绩差不多。</p><p><img src="https://i.loli.net/2018/11/21/5bf551a844758.png" alt=""></p><p>也得到了 rank40+​ 的尴尬境地。 几经折腾还是统一了意见吧，可以留下来准备省选了。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后再稍微多说两句。</p><p>不要期望你超常发挥，正常发挥就是最大的幸运。Day1 考的还不错导致心态发生变化了吧。这是 OI​ 的第一次正式的考试，出了以前没有出过的低级错误，究其原因还是心态不对。考试就是考试，考场上不要想那么多，认真做题就是最大的成功。后面的学习该重视起来了，毕竟已经有赌的成分在里面了，稍加不小心就会被踢出这个圈子。</p><h2 id="Flags"><a href="#Flags" class="headerlink" title="Flags"></a>Flags</h2><p>当你想要颓废的那一刻，想一想当初为什么走到了这里。既然选择了远方，便只顾风雨兼程。</p><ul><li>不颓废了，少看别人游记。</li><li>省选前能熟练掌握尽可能多的知识点。</li><li>省选之前做掉所有能做的5年内的各地省选题。</li><li>省选之前做掉POI集合，尽量不看题解练思路。 </li><li>退役前把能打的 CodeForces 都打了，赛后尽量补DEFG题解。</li></ul><p>The end.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Life </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Others </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2018/11/29/HelloWorld/"/>
+      <url>/2018/11/29/HelloWorld/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h2 id="OPEN"><a href="#OPEN" class="headerlink" title="OPEN."></a>OPEN.</h2></blockquote><p>世界是开放的，开源应是主流。</p><p>分享得到的喜悦永远优于闷声发财的快感。</p><p>愿我能坚守初心。</p><p>The end.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Life </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Others </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
