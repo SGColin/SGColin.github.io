@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Fast Walsh-Hadamard Transform</title>
+      <link href="/2019/01/11/Fast-Walsh-Hadamard-Transform/"/>
+      <url>/2019/01/11/Fast-Walsh-Hadamard-Transform/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>不要问我为什么学的这么晚……</p><p><a href="https://en.wikipedia.org/wiki/Fast_Walsh%E2%80%93Hadamard_transform" target="_blank" rel="noopener">Fast Walsh–Hadamard transform - Wikipedia</a></p><p><a href="http://picks.logdown.com/posts/179290-fast-walsh-hadamard-transform" target="_blank" rel="noopener">Fast Walsh-Hadamard Transform - Pick’s Blog</a></p><h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><p><a href="https://sgcolin.github.io/PDFS/Notes/FastWalsh-HadamardTransform.pdf">Fast Walsh-Hadamard Transform</a></p><p>时间关系只写了比较经典的题目，以后再遇到相关的题还会补充，PDF会不定期更新。</p><p>有问题请联系我，万分感谢。</p><h2 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h2><p>2019.01.11 发布文章。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Notes </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Mathematics </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Permutation Group</title>
       <link href="/2019/01/05/Permutation-group/"/>
       <url>/2019/01/05/Permutation-group/</url>
@@ -70,15 +95,15 @@
       
         <tags>
             
-            <tag> Mathematics </tag>
-            
             <tag> String </tag>
             
-            <tag> DP </tag>
+            <tag> Mathematics </tag>
             
             <tag> Network Flow </tag>
             
             <tag> Greedy </tag>
+            
+            <tag> DP </tag>
             
         </tags>
       
@@ -130,11 +155,11 @@
       
         <tags>
             
-            <tag> Mathematics </tag>
-            
             <tag> Datastructure </tag>
             
             <tag> String </tag>
+            
+            <tag> Mathematics </tag>
             
         </tags>
       
