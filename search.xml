@@ -129,11 +129,11 @@
     
     
     <entry>
-      <title>Hello World</title>
+      <title>Hello World!</title>
       <link href="/2018/11/29/HelloWorld/"/>
       <url>/2018/11/29/HelloWorld/</url>
       
-        <content type="html"><![CDATA[<blockquote><h2 id="OPEN"><a href="#OPEN" class="headerlink" title="OPEN."></a>OPEN.</h2></blockquote><p>世界是开放的，开源应是主流。</p><p>分享得到的喜悦永远优于闷声发财的快感。</p><p>愿我能坚守初心。</p><p>The end.</p>]]></content>
+        <content type="html"><![CDATA[<blockquote><h2 id="OPEN"><a href="#OPEN" class="headerlink" title="OPEN."></a>OPEN.</h2></blockquote><p>世界是开放的，开源应是主流。</p><p>分享得到的喜悦永远优于闷声发财的快感。</p><p>愿我能坚守初心。</p><h2 id="Mathjax-测试"><a href="#Mathjax-测试" class="headerlink" title="Mathjax 测试"></a>Mathjax 测试</h2><script type="math/tex; mode=display">\int \frac{\sqrt{a+bx}}{x^n}dx=\frac{-1}{a(n-1)}\frac{(a+bx)^{\frac 32}}{x^{n-1}}-\frac{(2n-5)b}{2a(n - 1)}\int\frac{\sqrt{a+bx}}{x^{n-1}}dx,n\not=1</script><p>The end.</p>]]></content>
       
       
       <categories>
