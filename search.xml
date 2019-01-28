@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> ICPC/CCPC </category>
+          <category> OI/ICPC/CCPC </category>
           
       </categories>
       
@@ -40,7 +40,7 @@
       
       <categories>
           
-          <category> OI </category>
+          <category> OI/ICPC/CCPC </category>
           
       </categories>
       
@@ -60,7 +60,7 @@
       <link href="/2019/01/01/hello-world/"/>
       <url>/2019/01/01/hello-world/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>不忘初心，方得始终。初心易得，始终难守。</p></blockquote><p>希望自己能记住为之坚持的东西，记住不掺杂利益的热爱。</p><p>希望自己能学会果断选择，不再踌躇，有拥抱生活的勇气。</p><p>Never forget why you started. Hello, the lovely world.</p><script type="math/tex; mode=display">\sum_{i=1}^n\sum_{j=1}^n \mu(\gcd(i,j))=\sum_{d=1}^n\mu(d)\bigg(\sum_{i=1}^{\lfloor \frac nd\rfloor}\varphi(d)\times 2 -1\bigg)</script><a id="more"></a>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>不忘初心，方得始终。初心易得，始终难守。</p></blockquote><p>希望自己能记住为之坚持的东西，记住不掺杂利益的热爱。</p><p>希望自己能学会果断选择，不再踌躇，有拥抱生活的勇气。</p><p>Never forget why you started. Hello, the lovely world.</p><a id="more"></a>]]></content>
       
       
       <categories>
