@@ -8,7 +8,7 @@
       <link href="/2019/01/25/wannafly2018/"/>
       <url>/2019/01/25/wannafly2018/</url>
       
-        <content type="html"><![CDATA[<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>为什么会来 Camp 呢？因为被 NOIWC 卡线了…</p><p>三个被卡线的人组的 Team 就报了个 Div1，运气好就选上了。</p><p>可以说收获颇丰吧。很佩服 wls 能有坚持办 Camp 的勇气和毅力，希望 wls 能坚持下去。</p><a id="more"></a><h2 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h2><p>作为一个高中生队来参加 Camp 根本排不上名很让人自闭啊…</p><p><img src="https://raw.githubusercontent.com/SGColin/Image-Upload/master/Screenshots/Wannafly2018.png" alt=""></p><p>于是只好赛后补题了。现在还没有全部补完，以后会坚持更新的吧。（题解链接下次更新放</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>为什么会来 Camp 呢？因为被 NOIWC 卡线了…</p><p>三个被卡线的人组的 Team 报了 Div1，运气好就选上了。</p><p>可以说收获颇丰吧。很佩服 wls 能有坚持办 Camp 的勇气和毅力，希望 wls 能坚持下去。</p><a id="more"></a><h2 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h2><p>作为一个高中生队来参加 Camp 根本排不上名很让人自闭啊…</p><p><img src="https://raw.githubusercontent.com/SGColin/Image-Upload/master/Screenshots/Wannafly2018.png" alt=""></p><p>于是只好赛后补题了。现在还没有全部补完，以后会坚持更新的吧。（题解链接下次更新放</p>]]></content>
       
       
       <categories>
@@ -57,8 +57,8 @@
     
     <entry>
       <title>Permutation Group</title>
-      <link href="/2019/01/05/permutation-group/"/>
-      <url>/2019/01/05/permutation-group/</url>
+      <link href="/2019/01/05/pgroup/"/>
+      <url>/2019/01/05/pgroup/</url>
       
         <content type="html"><![CDATA[<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p><a href="https://en.wikipedia.org/wiki/Permutation_group" target="_blank" rel="noopener">Permutation group - Wikipedia</a></p><p><a href="https://en.wikipedia.org/wiki/Burnside%27s_lemma" target="_blank" rel="noopener">Burnside’s lemma - Wikipeia</a></p><p><a href="https://en.wikipedia.org/wiki/P%C3%B3lya_enumeration_theorem" target="_blank" rel="noopener">Pólya enumeration theorem - Wikipedia</a></p><p>做了几道题，发现置换群好像没那么玄学，但计数时有很多细节需要注意。</p><a id="more"></a><h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><p><a href="https://blog.gyx.me/papers/notes/permutation_group.pdf">Permutation Group</a></p><p>写了一些比较经典的题目题解，以后再遇到相关的题还会补充。</p><p>有问题请联系我，万分感谢。</p><h2 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h2><p>2019.01.05 发布文章。</p><p>2019.01.06 更新了两道典型例题。</p><p>2019.01.08 更新了若干题目，重新进行了排版。</p>]]></content>
       
