@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> OI/ICPC/CCPC </category>
+          <category> Programming </category>
           
       </categories>
       
@@ -40,7 +40,7 @@
       
       <categories>
           
-          <category> OI/ICPC/CCPC </category>
+          <category> Programming </category>
           
       </categories>
       
@@ -56,11 +56,36 @@
     
     
     <entry>
+      <title>Permutation Group</title>
+      <link href="/2019/01/05/permutation-group/"/>
+      <url>/2019/01/05/permutation-group/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p><a href="https://en.wikipedia.org/wiki/Permutation_group" target="_blank" rel="noopener">Permutation group - Wikipedia</a></p><p><a href="https://en.wikipedia.org/wiki/Burnside%27s_lemma" target="_blank" rel="noopener">Burnside’s lemma - Wikipeia</a></p><p><a href="https://en.wikipedia.org/wiki/P%C3%B3lya_enumeration_theorem" target="_blank" rel="noopener">Pólya enumeration theorem - Wikipedia</a></p><p>做了几道题，发现置换群好像没那么玄学，但计数时有很多细节需要注意。</p><a id="more"></a><h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><p><a href="https://blog.gyx.me/papers/notes/permutation_group.pdf">Permutation Group</a></p><p>写了一些比较经典的题目题解，以后再遇到相关的题还会补充。</p><p>有问题请联系我，万分感谢。</p><h2 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h2><p>2019.01.05 发布文章。</p><p>2019.01.06 更新了两道典型例题。</p><p>2019.01.08 更新了若干题目，重新进行了排版。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Notes </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2019/01/01/hello-world/"/>
       <url>/2019/01/01/hello-world/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>不忘初心，方得始终。初心易得，始终难守。</p></blockquote><p>希望自己能记住为之坚持的东西，记住不掺杂利益的热爱。</p><p>希望自己能学会果断选择，不再踌躇，有拥抱生活的勇气。</p><p>Never forget why you started. Hello, the lovely world.</p><a id="more"></a>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>不忘初心，方得始终。初心易得，始终难守。</p></blockquote><p>希望自己能记住为之坚持的东西，记住不掺杂利益的热爱。</p><p>希望自己能学会果断选择，不再踌躇，有拥抱生活的勇气。</p><p>Hello, the lovely world.</p><a id="more"></a><hr><p>优美胜于丑陋 明了胜于晦涩</p><p>简单胜于复杂 复杂胜于杂乱</p><p>扁平胜于嵌套 间隔胜于紧凑</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> this</span><br><span class="line">The Zen of Python, by Tim Peters</span><br><span class="line"></span><br><span class="line">Beautiful <span class="keyword">is</span> better than ugly.</span><br><span class="line">Explicit <span class="keyword">is</span> better than implicit.</span><br><span class="line">Simple <span class="keyword">is</span> better than complex.</span><br><span class="line">Complex <span class="keyword">is</span> better than complicated.</span><br><span class="line">Flat <span class="keyword">is</span> better than nested.</span><br><span class="line">Sparse <span class="keyword">is</span> better than dense.</span><br><span class="line">Readability counts.</span><br><span class="line">Special cases aren<span class="string">'t special enough to break the rules.</span></span><br><span class="line"><span class="string">Although practicality beats purity.</span></span><br><span class="line"><span class="string">Errors should never pass silently.</span></span><br><span class="line"><span class="string">Unless explicitly silenced.</span></span><br><span class="line"><span class="string">In the face of ambiguity, refuse the temptation to guess.</span></span><br><span class="line"><span class="string">There should be one-- and preferably only one --obvious way to do it.</span></span><br><span class="line"><span class="string">Although that way may not be obvious at first unless you'</span>re Dutch.</span><br><span class="line">Now <span class="keyword">is</span> better than never.</span><br><span class="line">Although never <span class="keyword">is</span> often better than *right* now.</span><br><span class="line">If the implementation <span class="keyword">is</span> hard to explain, it<span class="string">'s a bad idea.</span></span><br><span class="line"><span class="string">If the implementation is easy to explain, it may be a good idea.</span></span><br><span class="line"><span class="string">Namespaces are one honking great idea -- let'</span>s do more of those!</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -69,12 +94,6 @@
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> Others </tag>
-            
-        </tags>
       
     </entry>
     
