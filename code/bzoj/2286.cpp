@@ -25,21 +25,23 @@ inline int rd() {
   return f ? -x : x;
 }
 
-int n, m, k, tot, hd[N], s[N << 1];
+int n, m, k, tot, hd[N], s[N];
 
 struct edge{
   int to, nxt, w;
 } e[N << 1];
 
-inline void add(int u, int v, int w) {
-  e[++tot].to = v; e[tot].w = w;
+inline void add(int u, int v) {
+  e[++tot].to = v;
   e[tot].nxt = hd[u]; hd[u] = tot;
-  e[++tot].to = u; e[tot].w = w;
+  e[tot].w = e[tot + 1].w = rd();
+  e[++tot].to = u;
   e[tot].nxt = hd[v]; hd[v] = tot;
 }
 
 inline void addx(int u, int v) {
-  e[++tot].to = v; e[tot].nxt = hd[u]; hd[u] = tot;
+  e[++tot].to = v;
+  e[tot].nxt = hd[u]; hd[u] = tot;
 }
 
 ll mn[N];
@@ -57,7 +59,7 @@ void dfs1(int u, int fa) {
     }
 }
 
-int cnt, dfn[N], ed_dfn[N], topf[N];
+int cnt, dfn[N], topf[N];
 
 void dfs2(int u, int fa) {
   dfn[u] = ++cnt;
@@ -65,7 +67,6 @@ void dfs2(int u, int fa) {
   if (son[u]) topf[son[u]] = topf[u], dfs2(son[u], u);
   for (int i = hd[u], v; i; i = e[i].nxt)
     if ((v = e[i].to) != fa && v != son[u]) dfs2(v, u);
-  ed_dfn[u] = cnt;
 }
 
 inline int lca(int u, int v) {
@@ -76,45 +77,43 @@ inline int lca(int u, int v) {
   return d[u] < d[v] ? u : v;
 }
 
-bool fl[N];
-
 int stk[N], top;
 
 inline bool cmp(int x, int y) {return dfn[x] < dfn[y];}
 
-ll dfs(int u, int fa) {
+inline void insert(int u) {
+  if (top == 1) {stk[++top] = u; return;}
+  int l = lca(u, stk[top]);
+  if (l == stk[top]) return;
+  while (top > 1 && dfn[stk[top - 1]] >= dfn[l]) {
+    addx(stk[top - 1], stk[top]); --top;
+  }
+  if (l != stk[top]) addx(l, stk[top]), stk[top] = l;
+  stk[++top] = u;
+}
+
+ll dfs(int u) {
   if (!hd[u]) return mn[u];
   ll sum = 0;
-  for (int i = hd[u], v; i; i = e[i].nxt)
-    if ((v = e[i].to) != fa) sum += dfs(v, u);
+  for (int i = hd[u]; i; i = e[i].nxt) sum += dfs(e[i].to);
+  hd[u] = 0;
   return min(sum, mn[u]);
 }
 
 inline void work() {
-  k = rd(); tot = 0;
-  for (int i = 1; i <= k; ++i) fl[s[i] = rd()] = 1;
+  k = rd();
+  top = tot = 0;
+  for (int i = 1; i <= k; ++i) s[i] = rd();
   sort(s + 1, s + 1 + k, cmp);
-  for (int i = 1, lim = k; i < lim; ++i) s[++k] = lca(s[i], s[i + 1]);
-  sort(s + 1, s + 1 + k, cmp);
-  k = unique(s + 1, s + 1 + k) - s - 1;
-  for (int i = 1; i <= k; ++i) hd[s[i]] = 0;
-  top = 0;
-  for (int i = 1, u; i <= k; ++i) {
-    u = s[i];
-    while (top && ed_dfn[stk[top]] < dfn[u]) --top;
-    stk[++top] = u;
-    if (top >= 2) addx(stk[top - 1], stk[top]);
-    if (fl[u]) while (i < k && dfn[s[i + 1]] < ed_dfn[u]) ++i;
-  }
-  for (int i = 1; i <= k; ++i) fl[s[i]] = 0;
-  printf("%lld\n", dfs(s[1], 0));
+  stk[++top] = 1;
+  for (int i = 1; i <= k; ++i) insert(s[i]);
+  while(--top) addx(stk[top], stk[top + 1]);
+  printf("%lld\n", dfs(1));
 }
 
 int main() {
   n = rd();
-  for (int i = 1, u, v, w; i < n; ++i) {
-    u = rd(); v = rd(); w = rd(); add(u, v, w);
-  }
+  for (int i = 1; i < n; ++i) add(rd(), rd());
   d[1] = 1; mn[1] = 1ll << 60;
   dfs1(1, 0); dfs2(1, 0);
   for (int i = 1; i <= n; ++i) hd[i] = 0;
