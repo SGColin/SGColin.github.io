@@ -1,1 +1,3 @@
-# SGColin.github.io
+# SGColin's Space
+
+blog.gyx.me
