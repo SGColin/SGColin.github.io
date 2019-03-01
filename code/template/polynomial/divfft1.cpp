@@ -26,8 +26,8 @@ void print(int x, bool f) {
 inline int qpow(int x, int t) {
   int res = 1;
   while (t) {
-    if (t & 1) res = res * x % mod;
-    x = x * x % mod; t >>= 1;
+    if (t & 1) res = 1ll * res * x % mod;
+    x = 1ll * x * x % mod; t >>= 1;
   }
   return res;
 }
