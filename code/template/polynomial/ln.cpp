@@ -1,8 +1,8 @@
+// luogu-judger-enable-o2
 #include <bits/stdc++.h>
 #define N 262145
 #define gc getchar
 #define mod 998244353
-#define mid ((l + r) >> 1)
 #define mo(x) (x >= mod ? x - mod : x)
 using namespace std;
 
@@ -32,11 +32,13 @@ inline int qpow(int x, int t) {
   return res;
 }
 
-int n, rev[N], g[N], f[N], a[N], b[N];
+int a[N], b[N], tmp[N];
+
+int n, len, bit, rev[N];
 
 inline int Rev(int n) {
   int len = 1, bit = 0;
-  while (len <= n) ++bit, len <<= 1;
+  while (len < n) ++bit, len <<= 1;
   for (int i = 0; i < len; ++i)
     rev[i] = ((rev[i >> 1] >> 1) | ((i & 1) << (bit - 1)));
   return len;
@@ -62,25 +64,42 @@ inline void NTT(int *f, int len, int o) {
   }
 }
 
-void solve(int l, int r) {
-  if (l == r) return;
-  solve(l, mid);
-  int len = Rev((r - l + 1) << 1);
-  for(int i = 0 ; i < len; ++ i) a[i] = b[i] = 0;
-  for(int i = l ; i <= mid; ++ i) a[i - l] = f[i];
-  for(int i = 0 ; i <= r - l; ++ i) b[i] = g[i];
+inline void Inv(int *a, int *b, int n) {
+  if (n == 1) {b[0] = qpow(a[0], mod - 2); return;}
+  Inv(a, b, (n + 1) >> 1);
+  int len = Rev(n << 1);
+  for (int i = 0; i < n; ++i) tmp[i] = a[i];
+  for (int i = n; i < len; ++i) b[i] = tmp[i] = 0;
+  NTT(b, len, 1); NTT(tmp, len, 1);
+  for (int i = 0; i < len; ++i)
+    b[i] = (2ll - 1ll * tmp[i] * b[i] % mod + mod) * b[i] % mod;
+  NTT(b, len, -1);
+  for (int i = 0; i < len; ++i) tmp[i] = 0;
+  for (int i = n; i < len; ++i) b[i] = 0;
+}
+
+inline void Der(int *a, int n) {
+  for (int i = 1; i < n; ++i) a[i - 1] = 1ll * i * a[i] % mod;
+  a[n - 1] = 0;
+}
+
+inline void Int(int *a, int n) {
+  for (int i = n; i; --i) a[i] = 1ll * a[i - 1] * qpow(i, mod - 2) % mod;
+  a[0] = 0;
+}
+
+inline void Ln(int *a, int *b, int n) {
+  Inv(a, b, n); Der(a, n);
+  int len = Rev(n << 1);
   NTT(a, len, 1); NTT(b, len, 1);
   for (int i = 0; i < len; ++i) a[i] = 1ll * a[i] * b[i] % mod;
-  NTT(a, len, -1);
-  for(int i = mid + 1; i <= r; ++i) f[i] = mo(f[i] + a[i - l]);
-  solve(mid + 1, r);
+  NTT(a, len, -1); Int(a, n);
 }
 
 int main() {
   n = rd();
-  for (int i = 1; i < n; ++i) g[i] = rd();
-  f[0] = 1;
-  solve(0, n + 1);
-  for (int i = 0; i < n; ++i) print(f[i], 0);
+  for (int i = 0; i < n; ++i) a[i] = rd();
+  Ln(a, b, n);
+  for (int i = 0; i < n; ++i) print(a[i], 0);
   return 0;
 }
