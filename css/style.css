@@ -19,15 +19,15 @@ textarea,
 .MJXc-TeX-unknown-R,
 .pure-g [class*="pure-u"] {
   /* Set your content font stack here: */
-  font-family: "PingFangSC-Regular", Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif !important; }
+  font-family: "Bitter Pro", "PingFangSC-Regular", Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif !important; }
 
 body {
   background-color: #FFF;
   color: #444;
-  font-family: "TIBch", "Classic Grotesque W01", "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  font-family: "Bitter Pro", "TIBch", "Classic Grotesque W01", "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 14px; }
+  font-size: 15px; }
 
 .body_container {
   padding: 0 60px;
@@ -66,19 +66,19 @@ div {
   border-bottom: 1px solid #ddd;
   position: relative; }
   #header .site-name {
-    margin-bottom: 40px; }
+    margin-bottom: 30px; }
     #header .site-name h1 {
       padding: 0;
       margin: 0;
       height: 0;
       overflow: hidden; }
     #header .site-name #logo {
-      font: bold 38px/1.12 "Times New Roman", Georgia, Times, sans-serif;
+      font: bold 40px/0.12 "Bitter", "Times New Roman", Georgia, Times, sans-serif;
       color: #555; }
       #header .site-name #logo span, #header .site-name #logo:hover {
         color: #777; }
     #header .site-name .description {
-      margin: .2em 0 0;
+      margin: 1.2em 0 0;
       color: #999; }
   #header #nav-menu {
     margin: 10px 0 -1px;
@@ -91,7 +91,7 @@ div {
       padding: 3px 20px 3px;
       line-height: 30px;
       color: #444;
-      font-size: 13px;
+      font-size: 15px;
       border: 1px solid transparent; }
       #header #nav-menu a:hover {
         border-bottom-color: #444; }
@@ -108,18 +108,18 @@ div {
   #sidebar .widget {
     margin-bottom: 30px; }
     #sidebar .widget .widget-title {
-      color: #6E7173;
+      color: #555;
       line-height: 2.7;
       margin-top: 0;
-      font-size: 16px;
+      font-size: 17px;
       border-bottom: 1px solid #ddd;
       display: block;
       font-weight: normal; }
     #sidebar .widget .comments-title {
-      color: #6E7173;
+      color: #555;
       line-height: 2.7;
       margin-top: 0;
-      font-size: 16px;
+      font-size: 18px;
       border-bottom: 0px solid #ddd;
       display: block;
       font-weight: normal; }
@@ -172,9 +172,9 @@ div {
     margin: 0;
     color: #555;
     text-align: left;
-    font: bold 25px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; }
+    font: bold 25px/1.1 "ff-tisa-web-pro", Cambria, "Bitter", "Times New Roman", Georgia, Times, sans-serif; }
     .post .post-title a {
-      color: #555; }
+      color: #444; }
   .post .post-meta {
     padding: 0;
     margin: 15px 0 0;
@@ -222,9 +222,10 @@ div {
       color: #444; }
   .post .post-content {
     clear: left;
-    font-size: 15px;
-    line-height: 1.77;
-    color: #444;
+    font: "Bitter Pro";
+    font-size: 16px;
+    line-height: 1.57;
+    color: #111;
     padding-top: 15px;
     text-align: justify;
     text-justify: distribute;
@@ -246,7 +247,7 @@ div {
         margin: 0 5px;
         padding: 0 5px;
         background: #f7f8f8;
-        font-family: Menlo, Consolas, monospace !important; }
+        font-family: "Bitter Pro", Menlo, Consolas, monospace !important; }
       .post .post-content p a {
         color: #01579f;
         padding-bottom: 2px;
@@ -283,7 +284,7 @@ div {
         margin: 0 5px;
         padding: 0px 5px;
         background: #f7f8f8;
-        font-family: Menlo, Consolas, monospace !important; }
+        font-family: "Bitter Pro", Menlo, Consolas, monospace !important; }
       .post .post-content ul a,
       .post .post-content ol a {
         color: #01579f;
@@ -309,7 +310,7 @@ div {
       margin: 30px 0; }
       .post .post-content .one-tag-list .tag-name .tag-text {
         margin-left: 5px;
-        font-size: 16px;
+        font-size: 20px;
         font-weight: bold; }
   .post .tags a {
     margin-right: .5em; }
@@ -372,12 +373,12 @@ div {
 
 /* for archive page starts*/
 .post-archive {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 2;
   padding-bottom: .8em; }
   .post-archive h2 {
     margin: 0;
-    font: bold 25px / 1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; }
+    font: bold 25px / 1.1 "ff-tisa-web-pro", Cambria, "Bitter Pro", "Times New Roman", Georgia, Times, sans-serif; }
   .post-archive .date {
     padding-right: .7em; }
 
@@ -808,7 +809,7 @@ figure.highlight,
   .codeblock .code,
   .codeblock .tag {
     background-color: inherit;
-    font-family: Menlo, Consolas, monospace;
+    font-family: "Bitter Pro", Menlo, Consolas, monospace;
     border: none;
     padding: 0;
     margin: 0;
