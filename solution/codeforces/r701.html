@@ -36,7 +36,7 @@
 <h2 id="E-Move-and-Swap"><a href="#E-Move-and-Swap" class="headerlink" title="E. Move and Swap"></a>E. Move and Swap</h2><p>设 $f[u]$ 表示红点在 $u$ 时，$u$ 及其子树的最大得分。</p>
 <p>若红蓝不交换，假设红色在 $u$ ，则最优解本质上是 $u$ 儿子最大得分 + 同深度点与 $u$ 点权最大差值。</p>
 <p>若红蓝交换，则本质是任选同深度节点 $v$ 的最优儿子，及 $v$ 与 $u$ 点权差值。</p>
-<p>那么转移方程具体的（设 $d[u]$ 表示节点 $u$ 的深度）：<br>$$<br>f[u] = \max \bigg \{ \max_{s\in son[u]} f[s] + \max_{d[v] = d[u]} | a_u - a_v |\ ,\ \max_{d[v]=d[u]}\bigg(|a_u-a_v| + \max_{s\in son[v]} f[s]\bigg \}<br>$$<br>可以发现转移是<strong>从深到浅</strong>转移的。第一部分直接枚举儿子转移即可，第二部分维护：</p>
+<p>那么转移方程具体的（设 $d[u]$ 表示节点 $u$ 的深度）：<br>$$<br>f[u] = \max \bigg \{ \max_{s\in son[u]} f[s] + \max_{d[v] = d[u]} | a_u - a_v |\ ,\ \max_{d[v]=d[u]}\bigg(|a_u-a_v| + \max_{s\in son[v]} f[s]\bigg)\bigg \}<br>$$<br>可以发现转移是<strong>从深到浅</strong>转移的。第一部分直接枚举儿子转移即可，第二部分维护：</p>
 <p>$$<br>mxp[d] = \max_{d[v]=d}\bigg(a_v + \max_{s\in son[v]} f[s]\bigg)\ ,\ mxm[d] = \max_{d[v]=d}\bigg(-a_v + \max_{s\in son[v]} f[s]\bigg)<br>$$</p>
 <p>则第二部分的转移就可以表示为 $f[u] = \max\{mxp[d[u]] - a[u],mxm[d[u]]+a[u]\}$ 。</p>
 <h2 id="F-Copy-or-Prefix-Sum"><a href="#F-Copy-or-Prefix-Sum" class="headerlink" title="F. Copy or Prefix Sum"></a>F. Copy or Prefix Sum</h2><p>假设当前处理到第 $i$ 位，前 $i-1$ 位的和为 $S$ ，那么 $a_i=b_i$ 或者 $a_i=b_i-S$ 都是可以的。</p>
