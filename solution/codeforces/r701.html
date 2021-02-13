@@ -10,7 +10,7 @@
 <li><p>对于 $l&lt;i&lt;r$ 的情况， $a_{i-1}&lt;b_i&lt;a_{i+1}$ ，与 $a_i$ 不同的方案有 $a_{i+1}-a_{i-1}-2$ 个。</p>
 </li>
 </ul>
-<p>$i$ 不同的贡献是独立的，所以用前缀和优化一下第一部分的计算，然后各个位置的方案数求和即可。</p>
+<p>$i$ 不同的贡献是独立的，所以用前缀和优化一下第三部分的计算，各个位置的方案数求和即可。</p>
 <h2 id="C-Floor-and-Mod"><a href="#C-Floor-and-Mod" class="headerlink" title="C. Floor and Mod"></a>C. Floor and Mod</h2><p>设 $\lfloor a/b\rfloor=a\ \text{mod}\ b=k$ ，根据整除理论，有 $a=k *b+k$ ，且 $k &lt; b$ 。</p>
 <p>考虑枚举 $k$ ，去数可行的 $b$ ，那么限制条件有：$1\le b \le y\ ,\ 1\le k*b+b=a\le x$</p>
 <p>移项，得 $1\le b\le \min(y,\ x / k - 1)$ ，即 $k$ 的贡献为 $\min(y,\ x/k - 1)$ 。</p>
