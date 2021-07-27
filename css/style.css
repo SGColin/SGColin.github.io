@@ -303,6 +303,7 @@ a.tag.article-tag {
 
 code, pre {
   font-size: 0.85rem;
+  tab-size: 4;
   font-family: "Source Code Pro", monospace, "Microsoft YaHei"; }
 
 figure.highlight {
