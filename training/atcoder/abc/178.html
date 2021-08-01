@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>Atcode Regular Contest 124 - Colin&#39;s Space</title>
+<title>AtCoder Beginner Contest 178 - Colin&#39;s Space</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -14,20 +14,19 @@
 
 
 
-    <meta name="description" content="Contest Link: AtCoder Regular Contest 124 Official Editorial: Editorial - AtCoder Regular Contest 124">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Atcode Regular Contest 124">
-<meta property="og:url" content="http://blog.gyx.me/2021/07/26/arc124/index.html">
+    <meta name="description" content="官方题解链接： AtCoder Beginner Contest 178 Editorial">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AtCoder Beginner Contest 178">
+<meta property="og:url" content="http://blog.gyx.me/training/atcoder/abc/178.html">
 <meta property="og:site_name" content="Colin&#39;s Space">
-<meta property="og:description" content="Contest Link: AtCoder Regular Contest 124 Official Editorial: Editorial - AtCoder Regular Contest 124">
+<meta property="og:description" content="官方题解链接： AtCoder Beginner Contest 178 Editorial">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-07-26T14:53:11.000Z">
-<meta property="article:modified_time" content="2021-07-27T16:49:36.433Z">
+<meta property="article:published_time" content="2020-09-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-08-01T09:31:53.785Z">
 <meta property="article:author" content="Colin">
-<meta property="article:tag" content="Atcoder">
-<meta property="article:tag" content="Counting">
-<meta property="article:tag" content="Permutation">
-<meta property="article:tag" content="Number Theory">
+<meta property="article:tag" content="计数">
+<meta property="article:tag" content="构造">
+<meta property="article:tag" content="递推">
 <meta name="twitter:card" content="summary">
 
 
@@ -97,7 +96,7 @@
                href="/about">About</a>
             
             <a class="navbar-item "
-               href="/todo">Todo</a>
+               href="/training">Training</a>
             
         </div>
         
@@ -117,37 +116,41 @@
                     
                     
                     
-                    <a class="navbar-item" href="#A-LR-Constraints">1&nbsp;&nbsp;<b>A. LR Constraints</b></a>
+                    <a class="navbar-item" href="#C-Ubiquity">1&nbsp;&nbsp;<b>C - Ubiquity</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Solution">1.1&nbsp;&nbsp;Solution</a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#B-XOR-Matching-2">2&nbsp;&nbsp;<b>B. XOR Matching 2</b></a>
+                    <a class="navbar-item" href="#D-Redistribution">2&nbsp;&nbsp;<b>D - Redistribution</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Solution-1">2.1&nbsp;&nbsp;Solution</a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#C-LCM-of-GCDs">3&nbsp;&nbsp;<b>C. LCM of GCDs</b></a>
+                    <a class="navbar-item" href="#E-Dist-Max">3&nbsp;&nbsp;<b>E - Dist Max</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Solution-2">3.1&nbsp;&nbsp;Solution</a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#D-Yet-Another-Sorting-Problem">4&nbsp;&nbsp;<b>D. Yet Another Sorting Problem</b></a>
+                    <a class="navbar-item" href="#F-Contrast">4&nbsp;&nbsp;<b>F - Contrast</b></a>
                     
                     
-                    <hr class="navbar-divider">
                     
-                    
-                    <a class="navbar-item" href="#E-Pass-to-Next">5&nbsp;&nbsp;<b>E. Pass to Next</b></a>
-                    
-                    
-                    <hr class="navbar-divider">
-                    
-                    
-                    <a class="navbar-item" href="#F-Chance-Meeting">6&nbsp;&nbsp;<b>F. Chance Meeting</b></a>
+                    <a class="navbar-item" href="#Solution-3">4.1&nbsp;&nbsp;Solution</a>
                     
                 </div>
             </div>
@@ -169,99 +172,86 @@
     <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            Atcode Regular Contest 124
+            AtCoder Beginner Contest 178
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
             
-                <span>Jul 26 2021</span>
-                <span class="second-date-block"> (<time datetime="2021-07-26T14:53:11.000Z" itemprop="datePublished">Jul 26 2021</time>)</span>
+                <span>Sep 14 2020</span>
+                <span class="second-date-block"> (<time datetime="2020-09-13T16:00:00.000Z" itemprop="datePublished">Sep 14 2020</time>)</span>
             
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/solution/">solution</a>
         </span>
         
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>Contest Link: <a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc124">AtCoder Regular Contest 124</a></p>
-<p>Official Editorial: <a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc124/editorial">Editorial - AtCoder Regular Contest 124</a></p>
+        <html><head></head><body><p>官方题解链接： <a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc178/editorial">AtCoder Beginner Contest 178 Editorial</a></p>
 <a id="more"></a>
 
-<p>overview：不太会用很强的约束条件</p>
-<h2 id="A-LR-Constraints"><a href="#A-LR-Constraints" class="headerlink" title="A. LR Constraints"></a>A. LR Constraints</h2><blockquote>
-<p>给一个数列赋值，值域 $[1,k]$​​ ，对于每个 $k$​​​​​ ，约束第一次出现的位置或最后一次出现的位置，求方案数</p>
-</blockquote>
-<p>维护一下对于每个位置，当前有多少种方案，复杂度 $O(n)$​ </p>
-<h2 id="B-XOR-Matching-2"><a href="#B-XOR-Matching-2" class="headerlink" title="B. XOR Matching 2"></a>B. XOR Matching 2</h2><blockquote>
-<p>给定两个长度相同的数列 $A,B$​​ ，求有哪些 $x$​​ ，使得将 $B$​​ 重排后，任意位置 $A_i\ \text{xor}\ B_i = x$​​​ </p>
-</blockquote>
-<p>重排后有 $\forall 1\le i,j\le n,\ A_i\ \text{xor}\ B_i=A_j\ \text{xor}\ B_j\Rightarrow A_i\ \text{xor}\ A_j=B_i\ \text{xor}\ B_j$​​​​ </p>
-<p>也就是说，要满足重排后, （$A_i$​​ 与所有其他 $A$​​ 的异或值）与（$B_i$​​ 与所有其他 $B$​​​​ 的异或值）<strong>一一对应</strong></p>
-<p>约束条件很强，我们只需要处理 $A_1$​ 与其他 $A$ 的异或值，然后找可能对应的 $B$ 即可，复杂度 $O(n^2\log n)$​​ </p>
-<h2 id="C-LCM-of-GCDs"><a href="#C-LCM-of-GCDs" class="headerlink" title="C. LCM of GCDs"></a>C. LCM of GCDs</h2><blockquote>
-<p>给定 $n$ 个 pair，每个 pair 中的数一个放入 $A$ 集，另一个放入 $B$​ 集，最大化 $lcm[\ gcd(A),\ gcd(B)\ ]$​</p>
-</blockquote>
-<p>集合的最大公约数一定是每个数的因子，将第一个 pair 里的两个数求出所有的约数，枚举答案。</p>
-<p>如果存在一种方案使得答案为 $[x,y]$​​ 的倍数，那么对于每个 pair $(a,b)$​​ ，有 $x|a,\ y|b$​ 或者 $x|b,\ y|a$​ ​​</p>
-<p>暴力检验即可，复杂度 $O\big(div(A_{1a})div(A_{1b})n\big)$​</p>
-<h2 id="D-Yet-Another-Sorting-Problem"><a href="#D-Yet-Another-Sorting-Problem" class="headerlink" title="D. Yet Another Sorting Problem"></a>D. Yet Another Sorting Problem</h2><blockquote>
-<p>一个 $n+m$​ 的排列，每次选择前 $n$​ 个中一个和后 $m$​ 个中一个交换，问交换成单位置换所需最少次数</p>
-</blockquote>
-<p>首先，如果没有位置选择的限制，还原一个 $n$​​ 的排列所需最少交换次数为 $n\ -$ 排列所对应的环数。</p>
-<p>将排列 $p$​​ 视作置换，将位置视为点，每个数由当前位置指向目标位置，即建边 $i\to p_i$​​ 得到若干个环。</p>
-<p>我们的目标是让所有的 $i$​ 满足 $i \to i$​ ，即 $\forall i, p_i = i$​ ​变为单位置换。</p>
-<p>因此对于某次交换，操作都会形如将 $p_i$​ 和 $p_{p_i}$​​ 进行交换，也就是将第 $i$ 位的数和第 $p_i$ 位的数交换。</p>
-<p>那么对于原来所在环中的结构 $i\to p_i\to p_{p_i}$​ ，变换后第 $i$​ 个位置上变为 $p_{p_i}$​ ，而第 $p_i$ 位上的数变为 $p_i$​​​ </p>
-<p>也就是说，对于每个环，每次交换相当于将环上的一个 $a\to b\to c$ 结构变为 $a\to c，b\to b$​​​​​ </p>
-<p>目标是形成 $n$​ 个自环，因此每个环需要环长 $-\ 1$​ 次移动才能将环内归位，而不同的环之间还原过程无关。</p>
-<hr>
-<p>考虑位置选择的限制条件，我们将前 $n$ 个点染成黑色，后 $m$ 个点染成白色。</p>
-<p>可以发现，每次可以操作的约束条件等价于<strong>每次删掉的边要满足连接的两个点颜色不同</strong>。</p>
-<ol>
-<li>对于一个由若干段白黑交替连接的环，我们一定可以通过白点吃指向的黑色的点，将整个环变成只剩下一个黑色，然后用这个黑色删掉所有其他白色，总次数为<strong>环长</strong> $-1$​ </li>
-<li>对于一个只有某一种颜色的环，我们需要考虑“引入”另一种颜色，需要花费一步的代价进行一次交换引入，然后分析如上，此时环长因为引入 $+1$​​ ，因此总次数为<strong>原来环长</strong> $+1$​​</li>
-<li>考虑都有“引入”需求，但颜色不同的两个单色环，此时某一个环引入对方的某个元素，相当于帮助了对方引入，因此两个环之需要一次“引入” ，并且两个环共享的引入的长度 ，总次数为<strong>第一个环长+第二个环长</strong></li>
-</ol>
-<p>综上，对于双色环，我们所需次数为环长 $-1$ ，单色环先默认代价为环长 $+1$ ，每匹配上一对总代价 $-2$ 。</p>
-<p>此外本题无需考虑太过复杂，首先同色单色环之间融合没有意义（可比较前后代价），其次不需要考虑单色环和双色环的融合，这种情况可以看作先将双色环归位，再取某一个长度为 $1$​​​​​​ 的自环与单色环进行融合。</p>
-<p>处理过程中只涉及 dfs 找环，总复杂度 $O(n)$</p>
-<figure class="highlight c++ hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> cntl = <span class="hljs-number">0</span>, cntr = <span class="hljs-number">0</span>;</span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n + m; ++i)</span><br><span class="line">	<span class="hljs-keyword">if</span> (!bl[i] &amp;&amp; i != p[i]) {</span><br><span class="line">		++tot; dfs(i);</span><br><span class="line">		ans += len[tot];</span><br><span class="line">		<span class="hljs-keyword">if</span> (l[tot] &amp;&amp; r[tot]) --ans;</span><br><span class="line">		<span class="hljs-keyword">else</span> {l[tot] ? ++cntl : ++cntr; ++ans;}</span><br><span class="line">	}</span><br><span class="line"><span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, ans - min(cntl, cntr) * <span class="hljs-number">2</span>);</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="E-Pass-to-Next"><a href="#E-Pass-to-Next" class="headerlink" title="E. Pass to Next"></a>E. Pass to Next</h2><p>比赛没来得及看的题，回头做。</p>
-<h2 id="F-Chance-Meeting"><a href="#F-Chance-Meeting" class="headerlink" title="F. Chance Meeting"></a>F. Chance Meeting</h2><p>比赛没来得及看的题，回头做。</p>
+
+<h2 id="C-Ubiquity"><a href="#C-Ubiquity" class="headerlink" title="C - Ubiquity"></a>C - Ubiquity</h2><p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc178/tasks/abc178_c">ABC 178 C</a></p>
+<p>计数长度为 $n$ 的整数数列 $A$ 的个数，满足：</p>
+<ul>
+<li>$0\le A_i\le 9$</li>
+<li>保证数列中至少存在一个 $0$ 和一个 $9$ </li>
+</ul>
+<p>满足 $n\le 10^{6}$ ，答案对 $10^9 + 7$ 取模。</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>容斥，不考虑条件 $2$ 的方案数有 $10^n$ ，不满足条件 $2$ 的方案数为 $2\times 9^n - 8^n$ ，相减。</p>
+<h2 id="D-Redistribution"><a href="#D-Redistribution" class="headerlink" title="D - Redistribution"></a>D - Redistribution</h2><p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc178/tasks/abc178_d">ABC 178 D</a></p>
+<p>将整数 $S$ 划分成数列 $A$ ，长度不限，每项最少为 $3$，求方案数。</p>
+<p>满足 $S\le 2000$</p>
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><p>开始想着整数拆分的递推式，但是很难解决多重集的排列问题。</p>
+<p>换个思路，设 $f[i]$ 表示当前已经划分走 $i$ 的方案数，则 $f[i]=\sum_{j=3}^if[i - j]$ 。</p>
+<figure class="highlight c++ hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;</span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">3</span>; i &lt;= n; ++i)</span><br><span class="line">  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">3</span>; j &lt;= i; ++j) f[i] = (f[i] + f[i - j]) % mod;</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="E-Dist-Max"><a href="#E-Dist-Max" class="headerlink" title="E - Dist Max"></a>E - Dist Max</h2><p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc178/tasks/abc178_e">ABC 178 E</a></p>
+<p>求 $n$ 个点两两曼哈顿距离的最大值。</p>
+<p>满足 $2\le n \le 2\times 10^5$ ， $1\le x_i,y_i\le 10^9$</p>
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><p>分讨。</p>
+<ol>
+<li><p>$x_1−x_2\ge 0,y_1−y_2\ge 0$</p>
+<p>$|x_1−x_2|+|y_1−y_2|=x_1−x_2+y_1−y_2=(x_1+y_1)−(x_2+y_2)$ </p>
+</li>
+<li><p>$x_1−x_2&lt;0,y_1−y_2\ge 0$</p>
+<p>$|x_1−x_2|+|y_1−y_2|=x_2−x_1+y_1−y_2=(x_2−y_2)−(x_1−y_1)$</p>
+</li>
+<li><p>$x_1−x_2\ge 0,y_1−y_2&lt;0$</p>
+<p>$|x_1−x_2|+|y_1−y_2|=x_1−x_2+y_2−y_1=(x_1−y_1)−(x_2−y_2)$</p>
+</li>
+<li><p>$x_1−x_2&lt;0,y_1−y_2&lt;0$</p>
+<p>$|x_1−x_2|+|y_1−y_2|=x_2−x_1+y_2−y_1=(x_2+y_2)−(x_1+y_1)$</p>
+</li>
+</ol>
+<p>所以答案 $\max \big{ \max {x_i+y_i }− \min {x_i+y_i }, \max {x_i−y_i } − \min {x_i −y_i} \big}$ ，注意初始化。</p>
+<h2 id="F-Contrast"><a href="#F-Contrast" class="headerlink" title="F - Contrast"></a>F - Contrast</h2><p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc178/tasks/abc178_f">ABC 178 F</a></p>
+<p>给定两个长度为 $n$ 的数列 $A,B$ ，保证两数列都是升序。</p>
+<p>问是否能通过重排 $B$ ，使得不存在 $i\in [1,n]$ ，有 $A_i = B_i$ ，输出方案。</p>
+<p>满足 $2\le n \le 2\times 10^5$ ， $1\le A_i,B_i\le n$</p>
+<h3 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h3><p>At 的构造还是很有意思。</p>
+<p>考虑把 $B$ 翻转，则 $A$ 升序， $B$ 降序 ，若有不合法位置，则相同的数字一定只有一个。</p>
+<p>记相同的数字为 $x$ ，相同数字的区间为 $[l, r]$ 。</p>
+<p>考虑 $B$ 中某一个换过来的位置 $i$ ，那么需要保证 $a[i] \ne x$ 且 $b[i] \ne x$ ，否则换后依然不合法。</p>
+<p>记录 $A$ 和 $B$ (翻转后)  出现 $x$ 最靠左的位置 $L$ ，出现 $x$ 最靠右的位置 $R$ 。</p>
+<p>则可以交换的位置 $i\in [L,R]$ ，有 $L - 1 + n - R$ 个，若这个数 $&gt;r-l+1$ 则有解。</p>
+<p>然后就和两侧交换就好了。</p>
+<figure class="highlight c++ hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">reverse(b + <span class="hljs-number">1</span>, b + <span class="hljs-number">1</span> + n);</span><br><span class="line"><span class="hljs-keyword">int</span> x, l = <span class="hljs-number">0</span>, r, L, R;</span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i)</span><br><span class="line">  <span class="hljs-keyword">if</span> (a[i] == b[i]) l ? ++r : l = r = i;</span><br><span class="line">x = a[l];</span><br><span class="line"><span class="hljs-keyword">if</span> (!l) {print(); <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;}</span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i)</span><br><span class="line">  <span class="hljs-keyword">if</span> (a[i] == x || b[i] == x) {L = i; <span class="hljs-keyword">break</span>;}</span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = n; i; --i)</span><br><span class="line">  <span class="hljs-keyword">if</span> (a[i] == x || b[i] == x) {R = i; <span class="hljs-keyword">break</span>;}</span><br><span class="line"><span class="hljs-keyword">if</span> (L - <span class="hljs-number">1</span> + n - R &lt; (r - l + <span class="hljs-number">1</span>)) {<span class="hljs-built_in">puts</span>(<span class="hljs-string">"No"</span>); <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;}</span><br><span class="line"><span class="hljs-keyword">int</span> lim = min(L - <span class="hljs-number">1</span>, r - l + <span class="hljs-number">1</span>);</span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= lim; ++i) swap(b[i], b[l + i - <span class="hljs-number">1</span>]);</span><br><span class="line">lim = r - l + <span class="hljs-number">1</span> - lim;</span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= lim; ++i) swap(b[n - i + <span class="hljs-number">1</span>], b[r - i + <span class="hljs-number">1</span>]);</span><br></pre></td></tr></tbody></table></figure>
 </body></html>
     
     </div>
     
     <div class="columns is-variable is-1 is-multiline is-mobile">
     
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Atcoder/">#Atcoder</a></span>
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/">#</a></span>
     
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Counting/">#Counting</a></span>
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/">#</a></span>
     
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Permutation/">#Permutation</a></span>
-    
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Number-Theory/">#Number Theory</a></span>
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/">#</a></span>
     
     </div>
     
-    
-    <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
-            
-        </span>
-        <span class="column is-12-mobile is-half-desktop  article-nav-next">
-            
-            <a href="/2021/07/08/freshman/">热爱生活</a>
-            
-        </span>
-    </div>
     
 </article>
 

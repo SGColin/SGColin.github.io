@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>Codeforces Round 699 (Div. 2) - Colin&#39;s Space</title>
+<title>AtCoder Beginner Contest 175 - Colin&#39;s Space</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -14,16 +14,18 @@
 
 
 
-    <meta name="description" content="A. Space Navigation统计四个方向的移动分别有多少，只保留走向目标向量对应方向的移动，判断是否可达。 B. New Colony观察数据范围 $n,h_i\le 100$ 最多扔 $10^4$ 个石头就结束了，模拟 $\text O(n^2h)$ 即可。 C. Fence Painting首先如果最后一次涂色不在 $b_i$ 里，肯定无解。 然后如果所有涂色不能满足将所有 $a_i">
+    <meta name="description" content="官方题解链接： AtCoder Beginner Contest 175 Editorial">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Codeforces Round 699 (Div. 2)">
-<meta property="og:url" content="http://blog.gyx.me/solution/codeforces/r699.html">
+<meta property="og:title" content="AtCoder Beginner Contest 175">
+<meta property="og:url" content="http://blog.gyx.me/training/atcoder/abc/175.html">
 <meta property="og:site_name" content="Colin&#39;s Space">
-<meta property="og:description" content="A. Space Navigation统计四个方向的移动分别有多少，只保留走向目标向量对应方向的移动，判断是否可达。 B. New Colony观察数据范围 $n,h_i\le 100$ 最多扔 $10^4$ 个石头就结束了，模拟 $\text O(n^2h)$ 即可。 C. Fence Painting首先如果最后一次涂色不在 $b_i$ 里，肯定无解。 然后如果所有涂色不能满足将所有 $a_i">
+<meta property="og:description" content="官方题解链接： AtCoder Beginner Contest 175 Editorial">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-02-05T23:00:00.000Z">
-<meta property="article:modified_time" content="2021-02-06T03:50:51.367Z">
+<meta property="article:published_time" content="2020-08-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-08-01T09:31:44.209Z">
 <meta property="article:author" content="Colin">
+<meta property="article:tag" content="构造">
+<meta property="article:tag" content="动态规划">
 <meta name="twitter:card" content="summary">
 
 
@@ -93,7 +95,7 @@
                href="/about">About</a>
             
             <a class="navbar-item "
-               href="/todo">Todo</a>
+               href="/training">Training</a>
             
         </div>
         
@@ -113,31 +115,51 @@
                     
                     
                     
-                    <a class="navbar-item" href="#A-Space-Navigation">1&nbsp;&nbsp;<b>A. Space Navigation</b></a>
+                    <a class="navbar-item" href="#A-Rainy-Season">1&nbsp;&nbsp;<b>A - Rainy Season</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Solution">1.1&nbsp;&nbsp;Solution</a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#B-New-Colony">2&nbsp;&nbsp;<b>B. New Colony</b></a>
+                    <a class="navbar-item" href="#B-Making-Triangle">2&nbsp;&nbsp;<b>B - Making Triangle</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Solution-1">2.1&nbsp;&nbsp;Solution</a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#C-Fence-Painting">3&nbsp;&nbsp;<b>C. Fence Painting</b></a>
+                    <a class="navbar-item" href="#C-Walking-Takahashi">3&nbsp;&nbsp;<b>C - Walking Takahashi</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Solution-2">3.1&nbsp;&nbsp;Solution</a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#D-AB-Graph">4&nbsp;&nbsp;<b>D. AB Graph</b></a>
+                    <a class="navbar-item" href="#D-Moving-Piece">4&nbsp;&nbsp;<b>D - Moving Piece</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Solution-3">4.1&nbsp;&nbsp;Solution</a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#E-Sorting-Books">5&nbsp;&nbsp;<b>E. Sorting Books</b></a>
+                    <a class="navbar-item" href="#E-Picking-Goods">5&nbsp;&nbsp;<b>E - Picking Goods</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Solution-4">5.1&nbsp;&nbsp;Solution</a>
                     
                 </div>
             </div>
@@ -159,14 +181,14 @@
     <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            Codeforces Round 699 (Div. 2)
+            AtCoder Beginner Contest 175
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
             
-                <span>Feb 6 2021</span>
-                <span class="second-date-block"> (<time datetime="2021-02-05T23:00:00.000Z" itemprop="datePublished">Feb 6 2021</time>)</span>
+                <span>Aug 16 2020</span>
+                <span class="second-date-block"> (<time datetime="2020-08-15T16:00:00.000Z" itemprop="datePublished">Aug 16 2020</time>)</span>
             
         </span>
         
@@ -174,35 +196,48 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><h2 id="A-Space-Navigation"><a href="#A-Space-Navigation" class="headerlink" title="A. Space Navigation"></a>A. Space Navigation</h2><p>统计四个方向的移动分别有多少，只保留走向目标向量对应方向的移动，判断是否可达。</p>
-<h2 id="B-New-Colony"><a href="#B-New-Colony" class="headerlink" title="B. New Colony"></a>B. New Colony</h2><p>观察数据范围 $n,h_i\le 100$ 最多扔 $10^4$ 个石头就结束了，模拟 $\text O(n^2h)$ 即可。</p>
-<h2 id="C-Fence-Painting"><a href="#C-Fence-Painting" class="headerlink" title="C. Fence Painting"></a>C. Fence Painting</h2><p>首先如果最后一次涂色不在 $b_i$ 里，肯定无解。</p>
-<p>然后如果所有涂色不能满足将所有 $a_i$ 和 $b_i$ 不一样的位置覆盖为 $b_i$ ，则无解。</p>
-<p>剩下的情况必定有解，一种构造方法：</p>
-<p>对每种颜色 $c$ 预处理出来所有 $a_i$ 和 $b_i$ 不同且 $b_i=c$ 的位置集合 $S_c$ 。</p>
-<p>首先确定最后一次涂色的位置 $pos_m$ ：</p>
-<p>若 $S_{c_m}$ 为空，则令 $pos_m$ 为任意一个 $b_i=c_m$ 的位置。</p>
-<p>若 $S_{c_m}$ 不为空，则让 $pos_m$ 为 $S_{c_m}$ 中的任意一个，并将该位置移出 $S_{c_m}$ 。</p>
-<p>然后时间倒序考虑，对于当前颜色 $c_j$ ：</p>
-<p>若 $S_{c_j}$ 为空，那么让 $pos_j=pos_m$ ，因为第 $m$ 次操作是最后一次，所以肯定会覆盖。</p>
-<p>若 $S_{c_j}$ 不为空，则让 $pos_j$ 为 $S_{c_j}$ 中任意一个位置，然后将该位置移除 $S_{c_j}$ 即可。</p>
-<h2 id="D-AB-Graph"><a href="#D-AB-Graph" class="headerlink" title="D. AB Graph"></a>D. AB Graph</h2><p>首先奇数长度一定有解，在两个点之间来回跑就可以了。</p>
-<p>考虑偶数长度，如果存在连接两个点的一组边类型相同，那么就一直在这两个点之间来回跑就可以了。</p>
-<p> 剩余的情况就是每一组边都是一条 $A$ 一条 $B$ ，那么对于 $n\ge 3$ 时很容易证明：</p>
-<p><strong>存在一个点 $x$ ，满足存在另两个点 $y,z$ ，边 $x\to y$ 和 $x\to z$ 的类型不同。</strong> </p>
-<br>
+        <html><head></head><body><p>官方题解链接： <a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc175/editorial">AtCoder Beginner Contest 175 Editorial</a></p>
+<a id="more"></a>
 
-<p>反证法：假设对于任意的点，所有的出边类型相同，入边类型相同，且两种边类型不同。</p>
-<p>不妨设点 $x$ 的所有出边类型均为 $A$ ，也就是说对于其他任意的点的入边类型均为 $A$ （由假设性质）</p>
-<p>那么对于任意另外两个点 $y,z$ 之间的边的类型，存在矛盾：</p>
-<p>$z$ 的入边由上知类型为 $A$ ，则 $y\to z$ 是 $z$ 的入边，类型必须为 $A$。</p>
-<p>$y$ 的出边与入边类型相反，则 $y\to z$ 是 $y$ 的出边，类型必须为 $B$ 。</p>
-<br>
+<h2 id="A-Rainy-Season"><a href="#A-Rainy-Season" class="headerlink" title="A - Rainy Season"></a>A - Rainy Season</h2><p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc175/tasks/abc175_a">ABC 175 A</a></p>
+<p>求一个字符串中最长连续字符 <code>'R'</code> 的长度， $|S| = 3$ 。</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>暴力扫描。</p>
+<h2 id="B-Making-Triangle"><a href="#B-Making-Triangle" class="headerlink" title="B - Making Triangle"></a>B - Making Triangle</h2><p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc175/tasks/abc175_b">ABC 175 B</a></p>
+<p>给定 $n$ 个数的数组 $L$ , 求三元组 $(i,j,k)$ 的个数 $(1\le i&lt;j&lt;k\le n)$ ，满足：</p>
+<ul>
+<li>$L_i,L_j,L_k$ 各不相同</li>
+<li>$L_i,L_j,L_k$ 可构成三角形</li>
+</ul>
+<p>满足 $n\le 100$ ，$L_i \le 10^9$ </p>
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><p>$\mathcal O(n^3)$ 暴力扫描统计。</p>
+<h2 id="C-Walking-Takahashi"><a href="#C-Walking-Takahashi" class="headerlink" title="C - Walking Takahashi"></a>C - Walking Takahashi</h2><p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc175/tasks/abc175_c">ABC 175 C</a></p>
+<p>一个人在整数轴坐标 $x$ 处，进行 $k$ 次移动。</p>
+<p>每次可以向左或向右移动 $d$ 个单位，求最后坐标 <strong>绝对值最小值</strong> 。</p>
+<p>满足 $-10^{15}\le x\le 10^{15}$ ， $1\le k,d\le 10^{15}$</p>
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><p>如果回不到零点附近就朝着零点方向一直走。</p>
+<p>如果回到零点附近就在零点两侧来回走。</p>
+<figure class="highlight c++ hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ll cnt = (x + d - <span class="hljs-number">1</span>) / d;</span><br><span class="line"><span class="hljs-keyword">if</span> (cnt &gt; k) <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%lld\n"</span>, x - k * d);</span><br><span class="line"><span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%lld\n"</span>, <span class="hljs-built_in">abs</span>(x - cnt * d + ((k - cnt) &amp; <span class="hljs-number">1</span>) * d));</span><br></pre></td></tr></tbody></table></figure>
 
-<p>因此只需要 $\text O(n)$ 枚举 $x$ ，$\text O(n)$ 扫描其他点，判断是否存在 $y,z$ 即可。</p>
-<p>对于 $m = 4k$ 的情况，构造解形如 $x\ y\ x\ y\cdots x\ y\ x\ z\ x\ \cdots z\ x\ z\ x$ 即可。</p>
-<p>对于 $m = 4k+2$ 的情况，构造解形如 $y\ x\ y\ x\ y\cdots x\ y\ x\ z\ x\ \cdots z\ x\ z\ x\ z$ 即可。</p>
-<h2 id="E-Sorting-Books"><a href="#E-Sorting-Books" class="headerlink" title="E. Sorting Books"></a>E. Sorting Books</h2></body></html>
+<h2 id="D-Moving-Piece"><a href="#D-Moving-Piece" class="headerlink" title="D - Moving Piece"></a>D - Moving Piece</h2><p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc175/tasks/abc175_d">ABC 175 D</a></p>
+<p>（留坑）</p>
+<h3 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight c++ hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="E-Picking-Goods"><a href="#E-Picking-Goods" class="headerlink" title="E - Picking Goods"></a>E - Picking Goods</h2><p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc175/tasks/abc175_e">ABC 175 E</a></p>
+<p>在一个 $r$ 行 $c$ 列的矩阵上，有 $k$ 个 <strong>坐标互不相同</strong> 的宝物，在 $(r_i,c_i)$ 上的宝物价值 $v_i$。</p>
+<p>开始在 $(1,1)$ 处，可以向右或向下走，即从 $(i,j)$ 移动到 $(i+1,j)$ 或 $(i,j+1)$ 。</p>
+<p>到某个位置 <strong>可以不取</strong> 对应位置的宝物，每行最多取三个，问最后总价值最多多少。</p>
+<p>满足 $1\le r,c\le 3000$ ， $1\le v_i\le 10^9$</p>
+<h3 id="Solution-4"><a href="#Solution-4" class="headerlink" title="Solution"></a>Solution</h3><p>$f[i][j][0/1/2/3]$ 代表当前位置 $(i,j)$ ，当前行已经拿了 $0/1/2/3$ 个东西，$\mathcal O(n^2)$ DP。</p>
+<p>（F 留坑）</p>
+</body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/">#</a></span>
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/">#</a></span>
     
     </div>
     
