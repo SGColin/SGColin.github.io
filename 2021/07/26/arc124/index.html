@@ -30,7 +30,7 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/monokai-sublime.min.css" />
     
   
 
@@ -194,37 +194,40 @@
           </div>
 
 <p>维护一下对于每个位置，当前有多少种方案，复杂度 $O(n)$</p>
-<h2 id="B-XOR-Matching-2"><a href="#B-XOR-Matching-2" class="headerlink" title="B. XOR Matching 2"></a>B. XOR Matching 2</h2><div class="note note-success">
+<h2 id="B-XOR-Matching-2"><a href="#B-XOR-Matching-2" class="headerlink" title="B. XOR Matching 2"></a>B. XOR Matching 2</h2><div class="note note-warning">
             <p>给定两个长度相同的数列 $A,B$ ，求有哪些 $x$ ，使得将 $B$ 重排后，任意位置 $A_i\ \text{xor}\ B_i = x$ </p>
           </div>
 
 <p>重排后有 $\forall 1\le i,j\le n,\ A_i\ \text{xor}\ B_i=A_j\ \text{xor}\ B_j\Rightarrow A_i\ \text{xor}\ A_j=B_i\ \text{xor}\ B_j$​​​​ </p>
 <p>也就是说，要满足重排后, （$A_i$​​ 与所有其他 $A$​​ 的异或值）与（$B_i$​​ 与所有其他 $B$​​​​ 的异或值）<strong>一一对应</strong></p>
 <p>约束条件很强，我们只需要处理 $A_1$​ 与其他 $A$ 的异或值，然后找可能对应的 $B$ 即可，复杂度 $O(n^2\log n)$​​ </p>
-<h2 id="C-LCM-of-GCDs"><a href="#C-LCM-of-GCDs" class="headerlink" title="C. LCM of GCDs"></a>C. LCM of GCDs</h2><div class="note note-info">
+<h2 id="C-LCM-of-GCDs"><a href="#C-LCM-of-GCDs" class="headerlink" title="C. LCM of GCDs"></a>C. LCM of GCDs</h2><div class="note note-warning">
             <p>给定 $n$ 个 pair，每个 pair 中的数一个放入 $A$ 集，另一个放入 $B$​ 集，最大化 $lcm[\ gcd(A),\ gcd(B)\ ]$</p>
           </div>
 
 <p>集合的最大公约数一定是每个数的因子，将第一个 pair 里的两个数求出所有的约数，枚举答案。</p>
 <p>如果存在一种方案使得答案为 $[x,y]$​​ 的倍数，那么对于每个 pair $(a,b)$​​ ，有 $x|a,\ y|b$​ 或者 $x|b,\ y|a$​ ​​</p>
 <p>暴力检验即可，复杂度 $O\big(div(A_{1a})div(A_{1b})n\big)$​</p>
-<h2 id="D-Yet-Another-Sorting-Problem"><a href="#D-Yet-Another-Sorting-Problem" class="headerlink" title="D. Yet Another Sorting Problem"></a>D. Yet Another Sorting Problem</h2><blockquote>
-<p>一个 $n+m$​ 的排列，每次选择前 $n$​ 个中一个和后 $m$​ 个中一个交换，问交换成单位置换所需最少次数</p>
-</blockquote>
-<p>首先，如果没有位置选择的限制，还原一个 $n$​​ 的排列所需最少交换次数为 $n\ -$ 排列所对应的环数。</p>
-<p>将排列 $p$​​ 视作置换，将位置视为点，每个数由当前位置指向目标位置，即建边 $i\to p_i$​​ 得到若干个环。</p>
-<p>我们的目标是让所有的 $i$​ 满足 $i \to i$​ ，即 $\forall i, p_i = i$​ ​变为单位置换。</p>
-<p>因此对于某次交换，操作都会形如将 $p_i$​ 和 $p_{p_i}$​​ 进行交换，也就是将第 $i$ 位的数和第 $p_i$ 位的数交换。</p>
-<p>那么对于原来所在环中的结构 $i\to p_i\to p_{p_i}$​ ，变换后第 $i$​ 个位置上变为 $p_{p_i}$​ ，而第 $p_i$ 位上的数变为 $p_i$​​​ </p>
-<p>也就是说，对于每个环，每次交换相当于将环上的一个 $a\to b\to c$ 结构变为 $a\to c，b\to b$​​​​​ </p>
-<p>目标是形成 $n$​ 个自环，因此每个环需要环长 $-\ 1$​ 次移动才能将环内归位，而不同的环之间还原过程无关。</p>
-<hr>
+<h2 id="D-Yet-Another-Sorting-Problem"><a href="#D-Yet-Another-Sorting-Problem" class="headerlink" title="D. Yet Another Sorting Problem"></a>D. Yet Another Sorting Problem</h2><div class="note note-warning">
+            <p>一个 $n+m$​ 的排列，每次选择前 $n$​ 个中一个和后 $m$​ 个中一个交换，问交换成单位置换所需最少次数</p>
+          </div>
+
+
+<p>如果没有位置选择的限制，还原一个 $n$​​ 的排列所需最少交换次数为 $n\ -$ 排列所对应的环数。</p>
+<div class="note note-success">
+            <p>将排列 $p$​​ 视作置换，将位置视为点，每个数由当前位置指向目标位置，即建边 $i\to p_i$​​ 得到若干个环。</p><p>我们的目标是让所有的 $i$​ 满足 $i \to i$​ ，即 $\forall i, p_i = i$​ ​变为单位置换。</p><p>因此对于某次交换，操作都会形如将 $p_i$​ 和 $p_{p_i}$​​ 进行交换，也就是将第 $i$ 位的数和第 $p_i$ 位的数交换。</p><p>那么对于原来所在环中的结构 $i\to p_i\to p_{p_i}$​ ，变换后第 $i$​ 个位置上变为 $p_{p_i}$​ ，而第 $p_i$ 位上的数变为 $p_i$​​​ </p><p>也就是说，对于每个环，每次交换相当于将环上的一个 $a\to b\to c$ 结构变为 $a\to c，b\to b$​​​​​ </p><p>目标是形成 $n$​ 个自环，因此每个环需要环长 $-\ 1$​ 次移动才能将环内归位，而不同的环之间还原过程无关。</p>
+          </div>
+
+
 <p>考虑位置选择的限制条件，我们将前 $n$ 个点染成黑色，后 $m$ 个点染成白色。</p>
 <p>可以发现，每次可以操作的约束条件等价于<strong>每次删掉的边要满足连接的两个点颜色不同</strong>。</p>
 <ol>
-<li>对于一个由若干段白黑交替连接的环，我们一定可以通过白点吃指向的黑色的点，将整个环变成只剩下一个黑色，然后用这个黑色删掉所有其他白色，总次数为<strong>环长</strong> $-1$​ </li>
-<li>对于一个只有某一种颜色的环，我们需要考虑“引入”另一种颜色，需要花费一步的代价进行一次交换引入，然后分析如上，此时环长因为引入 $+1$​​ ，因此总次数为<strong>原来环长</strong> $+1$​​</li>
-<li>考虑都有“引入”需求，但颜色不同的两个单色环，此时某一个环引入对方的某个元素，相当于帮助了对方引入，因此两个环之需要一次“引入” ，并且两个环共享的引入的长度 ，总次数为<strong>第一个环长+第二个环长</strong></li>
+<li><p>对于一个由若干段白黑交替连接的环，我们一定可以通过白点吃指向的黑色的点，将整个环变成只剩下一个黑色，然后用这个黑色删掉所有其他白色，总次数为<strong>环长</strong> $-1$​ </p>
+</li>
+<li><p>对于一个只有某一种颜色的环，我们需要考虑“引入”另一种颜色，需要花费一步的代价进行一次交换引入，然后分析如上，此时环长因为引入 $+1$​​ ，因此总次数为<strong>原来环长</strong> $+1$​​</p>
+</li>
+<li><p>考虑都有“引入”需求，但颜色不同的两个单色环，此时某一个环引入对方的某个元素，相当于帮助了对方引入，因此两个环之需要一次“引入” ，并且两个环共享的引入的长度 ，总次数为<strong>第一个环长+第二个环长</strong></p>
+</li>
 </ol>
 <p>综上，对于双色环，我们所需次数为环长 $-1$ ，单色环先默认代价为环长 $+1$ ，每匹配上一对总代价 $-2$ 。</p>
 <p>此外本题无需考虑太过复杂，首先同色单色环之间融合没有意义（可比较前后代价），其次不需要考虑单色环和双色环的融合，这种情况可以看作先将双色环归位，再取某一个长度为 $1$​​​​​​ 的自环与单色环进行融合。</p>

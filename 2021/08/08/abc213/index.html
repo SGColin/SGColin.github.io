@@ -30,7 +30,7 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/monokai-sublime.min.css" />
     
   
 
@@ -189,7 +189,8 @@
             <h1 style="display: none">AtCoder Beginner Contest 213</h1>
             
             <div class="markdown-body">
-              <h2 id="E-Stronger-Takahashi"><a href="#E-Stronger-Takahashi" class="headerlink" title="E. Stronger Takahashi"></a>E. Stronger Takahashi</h2><div class="note note-warning">
+              <p>Unsolved: 7 / 8 </p>
+<h2 id="E-Stronger-Takahashi"><a href="#E-Stronger-Takahashi" class="headerlink" title="E. Stronger Takahashi"></a>E. Stronger Takahashi</h2><div class="note note-warning">
             <p>给定一张 $n\times m$ 的地图，有砖块和空地，要从 $(1,1)$ 到 $(n,m)$ ，可以向四个方向非砖块处走。</p><p>可以使用魔法，将某个 $2\times 2$ 的区域内砖块变为空地，问最小使用次数，数据范围 $2\le n, m\le 500$ 。</p>
           </div>
 
@@ -204,18 +205,15 @@
 <p>然后每个区域出点向自己包含的 $4$ 个点和周围直接可达的 $8$ 个点连 $0$ 边，代表使用后可达的范围。</p>
 <p>点的级别是 $10^6$ ，边的级别是 $10^7$ ，图比较稀疏 Dijkstra 最短路可以跑过。</p>
 <hr>
-<p>正解是 $0/1$ BFS（之前学的都是假的 $0/1$ BFS ），详细点记录下：</p>
 <div class="note note-success">
-            <p>这类 BFS 处理的问题是：花费的代价为 $0/1$ 去走下一步，即边权只有 $0/1$ 两类求最短路。</p><p>具体的做法是采用 <strong>双端队列</strong> <code>deque</code> ，每次取队头是当前最短距离：</p><ul><li><p>每次 $0$ 边扩展的点，最短路距离与当前点相同，放到队头</p></li><li><p>每次 $1$ 边扩展的点，最段路距离不会队尾小，放到队尾</p></li></ul><p>具体的，可以发现<strong>任意时刻队中最多只会有两个不同的距离，且相差为 $1$ ，因此可得最短路的正确性 。</strong></p><p>巧妙的是此时双端队列维护得到的序列，与 Dijkstra 优先队列的效果相同，而维护堆的 $\log$​ 省掉了。</p><p><strong>注意 <code>vis</code> 标记不是入队时打而是出队时打，因为当前点此前可能走 $1$​ 边被入队过</strong>。</p><p>类似的题目： <a class="btn" href="https://atcoder.jp/contests/abc176/tasks/abc176_d"  title="AtCoder" target="_blank">ABC 176D</a> <a class="btn" href="https://atcoder.jp/contests/arc084/tasks/arc084_b"  title="AtCoder" target="_blank">ARC 084D</a> <a class="btn" href="https://codeforces.com/problemset/problem/1064/D"  title="CodeForces" target="_blank">CF 1064D</a> <a class="btn" href="https://codeforces.com/gym/100625/problem/J"  title="CodeForces" target="_blank">GYM 100625 J</a>  <a class="btn" href="https://codeforces.com/blog/entry/22276"  title="CodeForces" target="_blank">Toturial on CodeForces</a></p>
+            <p>使用 $0/1$  BFS 处理：花费的代价为 $0/1$ 去走下一步，即边权只有 $0/1$ 两类求最短路。</p><p>采用 <strong>双端队列</strong> <code>deque</code> ，每次取队头是当前最短距离：</p><ul><li><p>每次 $0$ 边扩展的点，最短路距离与当前点相同，放到队头</p></li><li><p>每次 $1$ 边扩展的点，最段路距离不会队尾小，放到队尾</p></li></ul><p>具体的，可以发现<strong>任意时刻队中最多只会有两个不同的距离，且相差为 $1$ ，因此可得最短路的正确性 。</strong></p><p>巧妙的是此时双端队列维护得到的序列，与 Dijkstra 优先队列的效果相同，而维护堆的 $\log$​ 省掉了。</p><p><strong>注意 <code>vis</code> 标记不是入队时打而是出队时打，因为当前点此前可能走 $1$​ 边被入队过</strong>。</p><p>类似的题目： <a class="btn" href="https://atcoder.jp/contests/abc176/tasks/abc176_d"  title="AtCoder" target="_blank">ABC 176D</a> <a class="btn" href="https://atcoder.jp/contests/arc084/tasks/arc084_b"  title="AtCoder" target="_blank">ARC 084D</a> <a class="btn" href="https://codeforces.com/problemset/problem/1064/D"  title="CodeForces" target="_blank">CF 1064D</a> <a class="btn" href="https://codeforces.com/gym/100625/problem/J"  title="CodeForces" target="_blank">GYM 100625 J</a>  <a class="btn" href="https://codeforces.com/blog/entry/22276"  title="CodeForces" target="_blank">Toturial on CodeForces</a></p>
           </div>
 
 <p>在本题中考虑把砖块不可行的约束放到进入该点上，建图就比较显然了：</p>
 <ul>
 <li><p>$0$ 边即为向上下左右移动，<strong>目的地是空地</strong>即可</p>
 </li>
-<li><p>$1$ 边即使用魔法，从某个点使用魔法可达的范围如下（设当前点为 <code>T</code> , <code>*</code> 标记点为可达点）：</p>
-  <figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">. <span class="hljs-emphasis">* *</span> <span class="hljs-emphasis">* .</span><br><span class="hljs-emphasis">*</span> <span class="hljs-emphasis">* *</span> <span class="hljs-emphasis">* *</span><br><span class="hljs-bullet">*</span> <span class="hljs-emphasis">* T *</span> <span class="hljs-emphasis">*</span><br><span class="hljs-emphasis">*</span> <span class="hljs-emphasis">* *</span> <span class="hljs-emphasis">* *</span><br>. <span class="hljs-emphasis">* *</span> <span class="hljs-emphasis">* .</span><br></code></pre></div></td></tr></table></figure>
-
+<li><p>$1$ 边即使用魔法，从某个点使用魔法可达的范围为：以当前点为中心的 $5\times 5$ 的区域抠掉四个角</p>
 </li>
 </ul>
 <p>不需要担心同一个 $2\times 2$​​ 的区域使用魔法超过一次，不会访问同一区域两个点，因为开始可以直接走后一次的点。</p>
@@ -235,6 +233,15 @@
                     
                   </div>
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/0-1-BFS/">0/1 BFS</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Suffix-Array/">Suffix Array</a>
+                    
+                  </div>
                 
               </div>
               
