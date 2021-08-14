@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>AtCoder Beginner Contest 214</title>
+    <link href="/2021/08/14/abc214/"/>
+    <url>/2021/08/14/abc214/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><table><thead><tr><th align="center">ID</th><th align="center">A</th><th align="center">B</th><th align="center">C</th><th align="center">D</th><th align="center">E</th><th align="center">F</th><th align="center">G</th><th align="center">H</th></tr></thead><tbody><tr><td align="center">Status</td><td align="center">Done</td><td align="center">Done</td><td align="center">Done</td><td align="center">Done</td><td align="center">Done</td><td align="center">Accepted</td><td align="center">Wating</td><td align="center">Wating</td></tr></tbody></table><h2 id="D-Sum-of-Maximum-Weights"><a href="#D-Sum-of-Maximum-Weights" class="headerlink" title="D. Sum of Maximum Weights"></a>D. Sum of Maximum Weights</h2><div class="note note-warning">            <p>给定一棵树，边有边权。计算所有点对路径上最大边权的权值和，范围 $n\le 10^5$</p>          </div><p>考虑类似 Kruskal 的过程添加树边，则每一条边加入时，对于连通的两个集合间的点对，最大边即为当前边。</p><p>因此在维护并查集的同时维护集合大小即可，贡献为 w $\times$ Size(u) $\times$ Size(v) ，复杂度 $O(n\log n)$ </p><h2 id="E-Packing-Under-Range-Regulations"><a href="#E-Packing-Under-Range-Regulations" class="headerlink" title="E. Packing Under Range Regulations"></a>E. Packing Under Range Regulations</h2><div class="note note-warning">            <p>有 $10^9$ 个盒子，每个盒子只能放一个球。有 $n$ 个球，第 $i$ 个要放在 $[l_i,r_i]$ 的某一个盒子中，问是否有解，范围 $n\le 2\times 10^5$</p>          </div><p>比较经典的贪心，考虑从左往右放，最紧急的需求肯定是右端点最小的。</p><p>按照右端点排序，依次考虑每个需求，尽量往左放，相当于区间查询最靠左的未覆盖位置，然后修改这个位置的覆盖状态。</p><p>实现可以选择动态开点线段树+线段树上区间内二分，我是用的是<strong>并查集维护下一个未覆盖的位置（疯狂的馒头）。</strong></p><p>因为序列有 $10^9$ 长，使用 <code>unordered_map</code> 维护并查集数组，具体实现见代码，复杂度 $O(n\log n)$ 。</p><figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> &#123;</span><span class="hljs-keyword">int</span> l, r;&#125; c[N];<br><br><span class="hljs-keyword">inline</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &lt; (<span class="hljs-keyword">const</span> node &amp;a, <span class="hljs-keyword">const</span> node &amp;b) &#123;<br>    <span class="hljs-keyword">return</span> a.r == b.r ? a.l &lt; b.l : a.r &lt; b.r;<br>&#125;<br><br><span class="hljs-built_in">unordered_map</span>&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; nxt;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> nxt[x] ? nxt[x] = find(nxt[x]) : x;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;c[i].l = rd(); c[i].r = rd();&#125;<br>    sort(c + <span class="hljs-number">1</span>, c + <span class="hljs-number">1</span> + n);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>, pos; i &lt;= n; ++i) &#123;<br>        <span class="hljs-keyword">if</span> (!nxt[c[i].l]) &#123;<br>            nxt[c[i].l] = c[i].l + <span class="hljs-number">1</span>; <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        pos = find(c[i].l);<br>        <span class="hljs-keyword">if</span> (pos &gt; c[i].r) &#123;<span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;No&quot;</span>); <span class="hljs-keyword">return</span>;&#125;<br>        nxt[pos] = pos + <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Yes&quot;</span>);<br>&#125;<br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>AtCoder</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Union-Find Set</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>AtCoder Beginner Contest 213</title>
     <link href="/2021/08/08/abc213/"/>
     <url>/2021/08/08/abc213/</url>
