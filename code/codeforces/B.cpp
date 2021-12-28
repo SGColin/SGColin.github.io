@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define N 100007
+#define N 107
 #define pii pair<int, int>
 #define fr first
 #define sc second
@@ -17,43 +17,19 @@ inline ll rd() {
 	return f ? -x : x;
 }
 
-int n, a[N], ans[N];
+ll f[41], sum[41];
 
-inline int query(int a, int b, int c) {
-	printf("? %d %d %d\n", a + 1, b + 1, c + 1);
-	fflush(stdout);
-	return rd();
-}
-
-inline void work() {
-	int n = rd();
-	for (int i = 0; i < n; ++i) a[i] = -1;
-	for (int i = 0; i < n; ++i)
-		ans[i] = query(i, (i + 1) % n, (i + 2) % n);
-	int pos0, pos1, cnt = 0;
-	for (int i = 0; i < n; ++i)
-		if (ans[i] != ans[(i + 1) % n]) {
-			if (ans[i] == 1) {
-				a[i] = 1; a[(i + 3) % n] = 0;
-			} else {
-				a[i] = 0; a[(i + 3) % n] = 1;
-			}
-			if (a[i] != -1) {
-				a[i] == 0 ? pos0 = i : pos1 = i;
-			}
-		}
-	for (int i = 0; i < n; ++i) {
-		if (a[i] == -1) a[i] = query(i, pos0, pos1);
-		cnt += (a[i] == 0);
-	}
-	printf("! %d", cnt);
-	for (int i = 0; i < n; ++i) 
-		if (a[i] == 0) printf(" %d", i + 1);
-	puts("");
-	fflush(stdout);
+inline void init() {
+	f[0] = f[2] = 0; f[1] = 1; f[3] = f[4] = 4;
+	for (int i = 5; i <= 40; ++i) 
+		f[i] = 4ll * (f[i - 2] + f[i - 3] + f[i - 4]);
+	for (int i = 1; i <= 40; ++i)
+		sum[i] = sum[i - 1] + f[i];
 }
 
 int main() {
-	for (int t = rd(); t; --t) work();
+	//while (scanf("%d", &n) != EOF) work();
+	init();
+	for (int t = rd(); t; --t) printf("%lld\n", sum[rd()]);
 	return 0;
 }

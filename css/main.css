@@ -357,8 +357,8 @@ img[lazyload] {
   --post-link-color: #0366d6;
   --link-hover-color: #30a9de;
   --link-hover-bg-color: #f8f9fa;
-  --navbar-bg-color: transparent;
-  --navbar-text-color: #fff;
+  --navbar-bg-color: #000;
+  --navbar-text-color: #eee;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -374,8 +374,8 @@ img[lazyload] {
     --post-link-color: #1589e9;
     --link-hover-color: #30a9de;
     --link-hover-bg-color: #364151;
-    --navbar-bg-color: transparent;
-    --navbar-text-color: #fff;
+    --navbar-bg-color: #202534;
+    --navbar-text-color: #ccc;
   }
   :root:not([data-user-color-scheme]) img,
   :root:not([data-user-color-scheme]) .note,
@@ -438,7 +438,7 @@ img[lazyload] {
     :root:not([data-user-color-scheme]) .navbar .dropdown-collapse,
     :root:not([data-user-color-scheme]) .top-nav-collapse,
     :root:not([data-user-color-scheme]) .navbar-col-show {
-      background: rgba(0,0,0,0.7);
+      background: rgba(32,37,52,0.7);
       -webkit-backdrop-filter: blur(3px);
       backdrop-filter: blur(3px);
     }
@@ -447,7 +447,7 @@ img[lazyload] {
     :root:not([data-user-color-scheme]) .navbar .dropdown-collapse,
     :root:not([data-user-color-scheme]) .top-nav-collapse,
     :root:not([data-user-color-scheme]) .navbar-col-show {
-      background: #000;
+      background: #202534;
     }
   }
   :root:not([data-user-color-scheme]) .note :not(pre) > code {
@@ -472,8 +472,8 @@ img[lazyload] {
   --post-link-color: #1589e9;
   --link-hover-color: #30a9de;
   --link-hover-bg-color: #364151;
-  --navbar-bg-color: transparent;
-  --navbar-text-color: #fff;
+  --navbar-bg-color: #202534;
+  --navbar-text-color: #ccc;
 }
 [data-user-color-scheme='dark'] img,
 [data-user-color-scheme='dark'] .note,
@@ -536,7 +536,7 @@ img[lazyload] {
   [data-user-color-scheme='dark'] .navbar .dropdown-collapse,
   [data-user-color-scheme='dark'] .top-nav-collapse,
   [data-user-color-scheme='dark'] .navbar-col-show {
-    background: rgba(0,0,0,0.7);
+    background: rgba(32,37,52,0.7);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
   }
@@ -545,7 +545,7 @@ img[lazyload] {
   [data-user-color-scheme='dark'] .navbar .dropdown-collapse,
   [data-user-color-scheme='dark'] .top-nav-collapse,
   [data-user-color-scheme='dark'] .navbar-col-show {
-    background: #000;
+    background: #202534;
   }
 }
 [data-user-color-scheme='dark'] .note :not(pre) > code {
@@ -2013,4 +2013,8 @@ note-default {
   .link-text:only-child {
     margin-left: 1rem;
   }
+}
+.navbar.scrolling-navbar.top-nav-collapse {
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
