@@ -236,7 +236,7 @@ class="math inline">\(B\)</span> ，后面参考 <span
 class="math inline">\(cnt=0\)</span> 操作即可。</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-keyword">char</span> a[<span class="hljs-number">3</span>], b[<span class="hljs-number">3</span>];<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">char</span> <span class="hljs-title">gc</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">while</span> (!<span class="hljs-built_in">isalpha</span>(c)) c = getchar();<br>    <span class="hljs-keyword">return</span> c;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; ++i) a[i] = gc();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; ++i) b[i] = gc();<br>    <span class="hljs-keyword">int</span> cnt = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; ++i) cnt += (a[i] != b[i]);<br>    <span class="hljs-built_in">puts</span>((cnt == <span class="hljs-number">0</span> || cnt == <span class="hljs-number">3</span>) ? <span class="hljs-string">&quot;Yes&quot;</span> : <span class="hljs-string">&quot;No&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h3 id="e---king-bombee">E - King Bombee</h3>
+<h3 id="e.-king-bombee">E. King Bombee</h3>
 <blockquote>
 <p>定义无向图 <span class="math inline">\(G=(V,E)\)</span> 的一个长度为
 <span class="math inline">\(K\)</span> 的路径序列 <span
@@ -408,9 +408,9 @@ y)\)</span></p></li>
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Constructive-Algorithm/">Constructive Algorithm</a>
-                    
                       <a class="hover-with-bg" href="/tags/Dynamic-Programming/">Dynamic Programming</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Constructive-Algorithm/">Constructive Algorithm</a>
                     
                       <a class="hover-with-bg" href="/tags/Bitmask/">Bitmask</a>
                     

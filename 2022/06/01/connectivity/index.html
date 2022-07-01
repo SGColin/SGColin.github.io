@@ -18,7 +18,7 @@
   <meta name="author" content="Colin Gao">
   <meta name="keywords" content="">
   
-  <title>A Little Charity Guarantees Almost Envy-Freeness - Colin&#39;s Space</title>
+  <title>Connectivity : From DFS to Dominator Tree - Colin&#39;s Space</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -146,9 +146,9 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="A Little Charity Guarantees Almost Envy-Freeness">
+            <span class="h2" id="subtitle" title="Connectivity : From DFS to Dominator Tree">
               
-                A Little Charity Guarantees Almost Envy-Freeness
+                Connectivity : From DFS to Dominator Tree
               
             </span>
 
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      265 words
+      26 words
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      1
        mins to read
     </span>
   
@@ -203,45 +203,10 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">A Little Charity Guarantees Almost Envy-Freeness</h1>
+            <h1 style="display: none">Connectivity : From DFS to Dominator Tree</h1>
             
             <div class="markdown-body">
-              <p>原文地址：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1907.04596">arXiv :
-[1907.04596]</a></p>
-<p>收录于 SODA 2020 的一篇论文，关于不可分割物体的公平分配。</p>
-<h2 id="问题模型">问题模型</h2>
-<p><span class="math inline">\(m\)</span> 个商品（全集 <span
-class="math inline">\(\mathbf{M}\)</span> ）分配给 <span
-class="math inline">\(n\)</span> 个竞争者，也就是求集合 <span
-class="math inline">\(\mathbf M\)</span> 的一个划分 <span
-class="math inline">\(\\{ \mathbf{X_1},\mathbf{X_2},\dots \mathbf{X_n}
-\\}\)</span> ，尽可能公平。</p>
-<p>最一般的问题模型，每个人 <span class="math inline">\(i\)</span>
-对于每个物品集合 <span class="math inline">\(S\subseteq T\)</span>
-都有一个价值函数 <span class="math inline">\(v_i(S):2^{\mathbf{M}}\to
-\mathbb{R}_{\ge 0}\)</span></p>
-<ul>
-<li><em>Envy - Free</em>
-：没有人嫉妒他人，即在任何人眼中，别人获得的商品价值都不比自己高，即
-<span class="math inline">\(\forall j\ne i, v_i(\mathbf{X_i})\ge
-v_i(\mathbf{X_j})\)</span></li>
-</ul>
-<p>然而很容易证明 <em>Envy - Free</em>
-的分配不一定存在，比如考虑两个人分一个物品，且两人都认为物品有价值。</p>
-<ul>
-<li><em>EF1 (envy - free up to one good)</em> ：如果 <span
-class="math inline">\(i\)</span> 嫉妒 <span
-class="math inline">\(j\)</span> ，即 <span
-class="math inline">\(v_i(\mathbf{X_i})&lt;v_i(\mathbf{X_j})\)</span>
-，存在 <span class="math inline">\(g\in \mathbf{X_j}\)</span> ，使 <span
-class="math inline">\(v_i(\mathbf{X_i})\ge v_i(\mathbf{X_j}\setminus
-g)\)</span></li>
-</ul>
-<p>前人的工作已经证明 <em>EF1</em>
-的分配一定存在，并且有快速计算的算法<a href="">[1]</a>。</p>
-<ul>
-<li></li>
-</ul>
+              <p>「 连通性：从深度优先搜索到支配树 」探讨一些关于连通性的算法。</p>
 
             </div>
             <hr>
@@ -253,7 +218,7 @@ g)\)</span></li>
                     
                       <a class="hover-with-bg" href="/categories/Summary/">Summary</a>
                     
-                      <a class="hover-with-bg" href="/categories/Summary/Paper-Notes/">Paper Notes</a>
+                      <a class="hover-with-bg" href="/categories/Summary/Algorithms/">Algorithms</a>
                     
                   </div>
                 
@@ -261,7 +226,9 @@ g)\)</span></li>
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Game-Theory/">Game Theory</a>
+                      <a class="hover-with-bg" href="/tags/DFS-and-Similar/">DFS and Similar</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Graphs/">Graphs</a>
                     
                   </div>
                 
@@ -278,9 +245,9 @@ g)\)</span></li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/18/fft/">
+                      <a href="/2022/06/24/Almost-EFX/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Fast Fourier Transform</span>
+                        <span class="hidden-mobile">A Little Charity Guarantees Almost Envy-Freeness</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -288,8 +255,8 @@ g)\)</span></li>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/06/cf787/">
-                        <span class="hidden-mobile">Codeforces Round #787 (Div. 3)</span>
+                      <a href="/2022/05/29/abc253/">
+                        <span class="hidden-mobile">AtCoder Beginner Contest 253</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

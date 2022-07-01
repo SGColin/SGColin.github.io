@@ -309,7 +309,7 @@ class="math display">\[
 10^5,1\le a_i,b_i\le 2000\)</span></p>
 </blockquote>
 <div class="note note-success">
-            <p>只能往右和往上走，计数从 <spanclass="math inline">\((x_0,y_0)\)</span> 到 <spanclass="math inline">\((x_1,y_1)\)</span>的路径方案数，考虑哪些步是横向走，是 <spanclass="math inline">\(\displaystyle{x_1-x_0+y_1-y_0\choosex_1-x_0}\)</span> 。</p><p>当然也可以用一个二维递推，令 <code>f[x0][y0]=1</code> ，每次<code>f[i][j] = f[i - 1][j] + f[i][j - 1]</code> ，答案<code>f[x1][y1]</code> 。</p>
+            <p>只能往右和往上走，计数从 <spanclass="math inline">\((x_0,y_0)\)</span> 到 <spanclass="math inline">\((x_1,y_1)\)</span>的路径方案数，考虑哪些步是横向走，是 <spanclass="math inline">\(\displaystyle{ {x_1-x_0+y_1-y_0} \choose {x_1-x_0}}\)</span> 。</p><p>当然也可以用一个二维递推，令 <code>f[x0][y0]=1</code> ，每次<code>f[i][j] = f[i - 1][j] + f[i][j - 1]</code> ，答案<code>f[x1][y1]</code> 。</p>
           </div>
 <p>把式中 <span
 class="math inline">\(\displaystyle{A_i+A_j+B_i+B_j\choose
