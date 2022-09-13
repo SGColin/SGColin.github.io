@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 words
+      1.1k words
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      18
        mins to read
     </span>
   
@@ -206,13 +206,222 @@
             <h1 style="display: none">Matrix Multiplication</h1>
             
             <div class="markdown-body">
-              
+              <h2 id="递推数列">递推数列</h2>
+<h2 id="路径计数">路径计数</h2>
+<h2 id="广义矩阵乘法">广义矩阵乘法</h2>
+<p>使用矩阵乘法来维护的要求有两个：</p>
+<ol type="1">
+<li>运算结果满足对应代数表达式；</li>
+<li>满足结合律（用于快速幂加速）。</li>
+</ol>
+<p>比较严谨的结论是：矩阵乘法可以处理的代数结构为半环 <span
+class="math inline">\((A,+,\cdot)\)</span> ，即满足：</p>
+<ul>
+<li><span class="math inline">\((A,+)\)</span> 为带有单位元 <span
+class="math inline">\(0\)</span>
+的交换幺半群（单位元，结合律，交换律）；</li>
+<li><span class="math inline">\((A,\cdot\ )\)</span> 为带有单位元 <span
+class="math inline">\(1\)</span> 的幺半群（单位元，结合律）；</li>
+<li>乘法对加法同时有左、右分配律；</li>
+<li>加法单位元 <span class="math inline">\(0\)</span> 抵消乘法。</li>
+</ul>
+<blockquote>
+<p>In general, if the addition and multiplication satisfies the axioms
+of <strong>semi-ring</strong>, then the associativity of multiplication
+of matrices holds, enabling us to optimize DP with the matrix
+exponentiation like described above.</p>
+<p>A semi-ring is a set <span class="math inline">\(A\)</span> equipped
+with two binary operations, addition <span
+class="math inline">\(+\)</span> and multiplication <span
+class="math inline">\(\cdot\)</span> , such that all the following
+properties is satisfied:</p>
+<ul>
+<li><p><span class="math inline">\((A,+)\)</span> is an commutative
+monoid; i.e. it satisfies the following three conditions:</p>
+<ul>
+<li>The associativity of <span class="math inline">\(+\)</span> holds.
+That is, for any <span class="math inline">\(a, b, c \in A\)</span>, it
+holds that <span class="math inline">\((a+b)+c=a+(b+c)\)</span>.</li>
+<li>There exists an identity 0 of <span
+class="math inline">\(+\)</span>. That is, there exists <span
+class="math inline">\(0 \in A\)</span> such that <span
+class="math inline">\(a+0=0+a=a\)</span>.</li>
+<li>The commutativity of <span class="math inline">\(+\)</span> holds.
+That is, for any <span class="math inline">\(a, b \in A\)</span>, it
+holds that <span class="math inline">\(a+b=b+a\)</span>.</li>
+</ul></li>
+<li><p><span class="math inline">\((A, \cdot)\)</span> is a monoid; i.e.
+it satisfies the following two conditions:</p>
+<ul>
+<li><p>The associativity of <span class="math inline">\(\cdot\)</span>
+holds. That is, for any <span class="math inline">\(a,b,c\in A\)</span>,
+it holds that <span class="math inline">\((a \cdot b) \cdot c=a \cdot(b
+\cdot c)\)</span> .</p></li>
+<li><p>There exists an identity 1 of <span
+class="math inline">\(\cdot\)</span>. That is, there exists <span
+class="math inline">\(1 \in A\)</span> such that <span
+class="math inline">\(a \cdot 1=1 \cdot a=a\)</span>.</p></li>
+</ul></li>
+<li><p><span class="math inline">\(+\)</span> and <span
+class="math inline">\(\cdot\)</span> satisfies the following
+distributive property holds:</p>
+<ul>
+<li><p>For any <span class="math inline">\(a, b, c \in A\)</span>, it
+holds that <span class="math inline">\(a \cdot(b+c)=a \cdot b+a \cdot
+c\)</span> .</p></li>
+<li><p>For any <span class="math inline">\(a, b, c \in A\)</span>, it
+holds that <span class="math inline">\((a+b) \cdot c=a \cdot c+b \cdot
+c\)</span> .</p></li>
+</ul></li>
+<li><p>For all <span class="math inline">\(a \in A\)</span>, it holds
+that <span class="math inline">\(0 \cdot a=a \cdot
+0=0\)</span>.</p></li>
+</ul>
+</blockquote>
+<h3 id="一些例子">一些例子</h3>
+<p>注意，使用广义矩阵乘法时，初始矩阵和单位矩阵对应的 <span
+class="math inline">\(0\)</span> 和 <span
+class="math inline">\(1\)</span> 自然的应当使用广义的 <span
+class="math inline">\(0\)</span> 和 <span
+class="math inline">\(1\)</span> 。</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 2%" />
+<col style="width: 37%" />
+<col style="width: 25%" />
+<col style="width: 6%" />
+<col style="width: 21%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">ID</th>
+<th style="text-align: center;"><span
+class="math inline">\(A\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(+\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(0\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(\cdot\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span
+class="math inline">\(\mathbb{R}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\min\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(+\infty\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\max\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(-\infty\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span
+class="math inline">\(\mathbb{R}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\max\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(-\infty\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\min\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(+\infty\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">\(\forall n\in
+\mathbb{N^+},\ [0,2^n)\cap \mathbb{N}\)</span></td>
+<td style="text-align: center;">bitwise logical sum (OR)</td>
+<td style="text-align: center;"><span
+class="math inline">\(0\)</span></td>
+<td style="text-align: center;">bitwise logical product (AND)</td>
+<td style="text-align: center;"><span
+class="math inline">\(2^n-1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="math inline">\(\forall n\in
+\mathbb{N^+},\ [0,2^n)\cap \mathbb{N}\)</span></td>
+<td style="text-align: center;">bitwise exclusive logical sum (XOR)</td>
+<td style="text-align: center;"><span
+class="math inline">\(0\)</span></td>
+<td style="text-align: center;">bitwise logical product (AND)</td>
+<td style="text-align: center;"><span
+class="math inline">\(2^n-1\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="abc-236-g---good-vertices">ABC 236 G - Good Vertices</h3>
+<blockquote>
+<p>有一张无向图，开始没有边，第 <span class="math inline">\(1\sim
+m\)</span> 秒每秒加一条边 <span class="math inline">\(u_i,v_i\)</span>
+。</p>
+<p>询问每个点 <span class="math inline">\(u\)</span>
+，询问最早的时刻，图中存在一条长度恰好为 <span
+class="math inline">\(l\)</span> 的从 <span
+class="math inline">\(1\)</span> 到 <span
+class="math inline">\(u\)</span> 的路径。</p>
+</blockquote>
+<p>将边加入的时间设为边权，即 <span
+class="math inline">\(e[u_i][v_i]=i\)</span> ，问题改为长度为 <span
+class="math inline">\(l\)</span> 的路径上最大边权最小是多少。</p>
+<p>设 <span class="math inline">\(f[u][v][k]\)</span> 表示恰好经过 <span
+class="math inline">\(k\)</span> 条边从 <span
+class="math inline">\(u\)</span> 到 <span
+class="math inline">\(v\)</span> ，路径上的最大边权最小值。</p>
+<p>枚举第 <span class="math inline">\(k-1\)</span> 步（即 <span
+class="math inline">\(v\)</span> 前一个）走到的点 <span
+class="math inline">\(w\)</span> ，转移方程为：<span
+class="math inline">\(f[u][v][k] = \min_{1\le w\le n} \big\{ \max
+(f[u][w][k-1], e[w][v])\big\}\)</span></p>
+<p>只看一步转移，发现这是一个加法为 <span
+class="math inline">\(\min\)</span> ，乘法为 <span
+class="math inline">\(\max\)</span> 的矩阵乘法，检验：</p>
+<ul>
+<li>加法 <span class="math inline">\(\min\)</span> 的单位元为 <span
+class="math inline">\(+\infty\)</span> ，满足结合律交换律；</li>
+<li>乘法 <span class="math inline">\(\max\)</span> 的单位元为 <span
+class="math inline">\(-\infty\)</span> ，满足结合律；</li>
+<li>左分配律：<span class="math inline">\(\max(a,\min(b,c)) =
+\min(\max(a,b),\max(a,c))\)</span> ，由于 <span
+class="math inline">\(\max\)</span> 有交换律所以右分配律自然成立；</li>
+<li>加法单位元抵消乘法： <span class="math inline">\(\max(+\infty, x) =
++\infty\)</span></li>
+</ul>
+<p>所以可以用矩阵维护，对邻接矩阵做此时的矩阵快速幂即可，当然这个问题可以询问有向图以及任意点对。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 101</span><br><br><span class="hljs-keyword">int</span> n, m, l;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">min</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;a, <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;b)</span> </span>&#123;<span class="hljs-keyword">return</span> a &lt; b ? a : b;&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;a, <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;b)</span> </span>&#123;<span class="hljs-keyword">return</span> a &lt; b ? b : a;&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">matrix</span> &#123;</span><br>    <span class="hljs-keyword">int</span> a[N][N];<br>    matrix(<span class="hljs-keyword">bool</span> id = <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-built_in">memset</span>(a, <span class="hljs-number">0x3f</span>, <span class="hljs-keyword">sizeof</span>(a));<br>        <span class="hljs-keyword">if</span> (id) <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; ++i) a[i][i] = <span class="hljs-number">-1e9</span>;<br>    &#125;<br>    <span class="hljs-keyword">inline</span> matrix <span class="hljs-keyword">operator</span> * (<span class="hljs-keyword">const</span> matrix &amp;obj) <span class="hljs-keyword">const</span> &#123;<br>        matrix res;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">1</span>; k &lt;= n; ++k)<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i)<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= n; ++j)<br>                    res.a[i][j] = min(res.a[i][j], max(a[i][k], obj.a[k][j]));<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">inline</span> matrix <span class="hljs-title">fpow</span><span class="hljs-params">(<span class="hljs-keyword">int</span> t)</span> <span class="hljs-keyword">const</span> </span>&#123;<br>        matrix res(1), x = *this;<br>        <span class="hljs-keyword">for</span> (; t; t &gt;&gt;= <span class="hljs-number">1</span>, x = x * x)<br>            <span class="hljs-keyword">if</span> (t &amp; <span class="hljs-number">1</span>) res = res * x;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125; A, res;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    n = rd(); m = rd(); l = rd();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; ++i) &#123;<br>        <span class="hljs-keyword">int</span> u = rd(), v = rd();<br>        A.a[u][v] = min(A.a[u][v], i);<br>    &#125;<br>    res = A.fpow(l);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i)<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, res.a[<span class="hljs-number">1</span>][i] &gt; m ? <span class="hljs-number">-1</span> : res.a[<span class="hljs-number">1</span>][i]);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Summary/">Summary</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Summary/Algorithms/">Algorithms</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Matrix-Theory/">Matrix Theory</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Algebra/">Algebra</a>
+                    
+                  </div>
                 
               </div>
               
