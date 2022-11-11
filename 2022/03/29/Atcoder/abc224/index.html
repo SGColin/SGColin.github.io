@@ -1,0 +1,652 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#fff">
+  <meta name="description" content="">
+  <meta name="author" content="Colin Gao">
+  <meta name="keywords" content="">
+  
+  <title>AtCoder Beginner Contest 244 - Colin&#39;s Space</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/monokai-sublime.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.gyx.me","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":90,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#34495e","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body>
+  <header style="height: 30vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href=/>&nbsp;<strong>Colin's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags">
+                
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                
+                Friends
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="AtCoder Beginner Contest 244">
+              
+                AtCoder Beginner Contest 244
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.2k words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      33
+       mins to read
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">AtCoder Beginner Contest 244</h1>
+            
+            <div class="markdown-body">
+              <p>A, B, C 比较简单就不写了。</p>
+<p>我的代码 : <a
+target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc244/submissions?f.Task=&amp;f.LanguageName=&amp;f.Status=AC&amp;f.User=SGColin">All
+Submissions - SGColin</a></p>
+<h3 id="d.-swap-hats">D. Swap Hats</h3>
+<blockquote>
+<p>给定两个 <code>"RGB"</code> 这个字符串的排列 <span
+class="math inline">\(A,B\)</span> ，每次操作可以交换两个位置。</p>
+<p>问能否正好操作 <span class="math inline">\(10^{18}\)</span> 把 <span
+class="math inline">\(A\)</span> 变成 <span
+class="math inline">\(B\)</span> 。</p>
+</blockquote>
+<p>假设 <code>R=1,G=2,B=3</code>
+，我们可以通过逆序数奇/偶把所有排列分两类。</p>
+<p>因为只有三个位置，可以发现转换关系的连边是个完全二分图。</p>
+<p>所以根据 <span class="math inline">\(A\)</span> 和 <span
+class="math inline">\(B\)</span> 不同的位数 <span
+class="math inline">\(cnt\)</span> 即可判定是哪种情况。</p>
+<ul>
+<li><span class="math inline">\(cnt=0\)</span>
+完全相同，一直交换某两位即可。</li>
+<li><span class="math inline">\(cnt=2\)</span>
+逆序数相同，但排列不同，不可能通过偶数次交换得到。</li>
+<li><span class="math inline">\(cnt=3\)</span>
+逆序数不同，因为是完全二分图，一定可以通过两次操作把 <span
+class="math inline">\(A\)</span> 变成 <span
+class="math inline">\(B\)</span> ，后面参考 <span
+class="math inline">\(cnt=0\)</span> 操作即可。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-keyword">char</span> a[<span class="hljs-number">3</span>], b[<span class="hljs-number">3</span>];<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">char</span> <span class="hljs-title">gc</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">while</span> (!<span class="hljs-built_in">isalpha</span>(c)) c = getchar();<br>    <span class="hljs-keyword">return</span> c;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; ++i) a[i] = gc();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; ++i) b[i] = gc();<br>    <span class="hljs-keyword">int</span> cnt = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; ++i) cnt += (a[i] != b[i]);<br>    <span class="hljs-built_in">puts</span>((cnt == <span class="hljs-number">0</span> || cnt == <span class="hljs-number">3</span>) ? <span class="hljs-string">&quot;Yes&quot;</span> : <span class="hljs-string">&quot;No&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h3 id="e.-king-bombee">E. King Bombee</h3>
+<blockquote>
+<p>定义无向图 <span class="math inline">\(G=(V,E)\)</span> 的一个长度为
+<span class="math inline">\(K\)</span> 的路径序列 <span
+class="math inline">\(\{A\}\)</span> ：</p>
+<p>由 <span class="math inline">\(K+1\)</span> 个点编号 <span
+class="math inline">\(A_0,\dots,A_K\in V\)</span> 构成，<span
+class="math inline">\(A_0\)</span> 是起点，<span
+class="math inline">\(A_K\)</span> 是终点，且 <span
+class="math inline">\(\forall 0\le i &lt; K, (A_i, A_{i+1})\in
+E\)</span></p>
+<p>给定无向图 <span class="math inline">\(G\ (|V|\le 2000,|E|\le
+2000)\)</span> 求有多少个长度为 <span class="math inline">\(K\ (K\le
+2000)\)</span> 的路径序列，满足：</p>
+<p>起点为 <span class="math inline">\(S\)</span> ，终点为 <span
+class="math inline">\(T\)</span> ，且点 <span
+class="math inline">\(X\)</span> 在序列中出现偶数次（可以为 <span
+class="math inline">\(0\)</span> ) 。</p>
+</blockquote>
+<p>感觉最近 ABC 每场都会有一道比较暴力的 DP，就看敢不敢写（</p>
+<p>设 <code>f[i][u][0/1]</code> 表示当前考虑长度为 <span
+class="math inline">\(i\)</span> 的路径，起点是 <span
+class="math inline">\(S\)</span> ，终点是 <span
+class="math inline">\(u\)</span> ，当前节点 <span
+class="math inline">\(X\)</span> 在其中出现偶数/奇数次的方案数。</p>
+<p>初始状态 <code>f[0][S][S==X] = 1</code> ，答案
+<code>f[K][T][0]</code> 。</p>
+<p>转移暴力做就可以了，枚举下一步走哪里（ <span
+class="math inline">\(u\to v\)</span> ）
+：<code>f[i+1][v][k^(v == X)] += f[i][u][k]</code> 。</p>
+<p>这个题的核心在复杂度计算，外层枚举 <span
+class="math inline">\(i\)</span> 是 <span class="math inline">\(\mathcal
+O(n)\)</span> 的，内层枚举 <span class="math inline">\(u\)</span> 是
+<span class="math inline">\(\mathcal O(n)\)</span> 的，枚举 <span
+class="math inline">\(v\)</span> 复杂度怎么算？</p>
+<p>把后两个的复杂度放到一起考虑，就是 <span
+class="math inline">\(\sum_{u=1}^n deg(u) = \mathcal O(m)\)</span></p>
+<p>所以总复杂度是 <span class="math inline">\(\mathcal O(nm)\)</span>
+的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 2007</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mod 998244353</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> add(a, b) (a) = ((a) + (b)) % mod</span><br><br><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; e[N];<br><br><span class="hljs-keyword">int</span> f[N][N][<span class="hljs-number">2</span>];<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd(), m = rd();<br>    <span class="hljs-keyword">int</span> k = rd(), s = rd(), t = rd(), x = rd();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; ++i) &#123;<br>        <span class="hljs-keyword">int</span> u = rd(), v = rd();<br>        e[u].push_back(v); e[v].push_back(u);<br>    &#125;<br>    f[<span class="hljs-number">0</span>][s][x == s] = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; k; ++i)<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> u = <span class="hljs-number">1</span>; u &lt;= n; ++u)<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>; k &lt;= <span class="hljs-number">1</span>; ++k) &#123;<br>                <span class="hljs-keyword">if</span> (!f[i][u][k]) <span class="hljs-keyword">continue</span>;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> v : e[u]) &#123;<br>                    <span class="hljs-keyword">int</span> tar = (k ^ (v == x));<br>                    add(f[i + <span class="hljs-number">1</span>][v][tar], f[i][u][k]);<br>                &#125;<br>            &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, f[k][t][<span class="hljs-number">0</span>]);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h3 id="f.-shortest-good-path">F. Shortest Good Path</h3>
+<blockquote>
+<p>题意比较复杂，我简单描述一下。</p>
+<p>定义无向图 <span class="math inline">\(G=(V,E)\)</span> 的一个长度为
+<span class="math inline">\(K+1\)</span> 的路径序列 <span
+class="math inline">\(\{A\}\)</span> ：</p>
+<p>由 <span class="math inline">\(K+1\)</span> 个点编号 <span
+class="math inline">\(A_0,\dots,A_K\in V\)</span> 构成，<span
+class="math inline">\(A_0\)</span> 是起点，<span
+class="math inline">\(A_K\)</span> 是终点，且 <span
+class="math inline">\(\forall 0\le i &lt; K, (A_i, A_{i+1})\in
+E\)</span></p>
+<p>定义路径序列 <span class="math inline">\(\{A\}\)</span> 符合要求序列
+<span class="math inline">\(S\ (|S| = n, S_i = 0/1)\)</span>
+，当且仅当：</p>
+<p>若 <span class="math inline">\(S_u = 0\)</span> ，则 <span
+class="math inline">\(u\)</span> 在 <span
+class="math inline">\(\{A\}\)</span> 中出现了偶数次（可以为 <span
+class="math inline">\(0\)</span> ）</p>
+<p>若 <span class="math inline">\(S_u = 1\)</span> ，则 <span
+class="math inline">\(u\)</span> 在 <span
+class="math inline">\(\{A\}\)</span> 中出现了奇数次</p>
+<p>那么对于所有的 <span class="math inline">\(S=0,\cdots,2^n-1\)</span>
+，都会存在一个路径序列满足 <span class="math inline">\(S\)</span>
+的要求。</p>
+<p>记满足 <span class="math inline">\(S\)</span> 要求的路径序列最短为
+<span class="math inline">\(f(S)\)</span> ，求 <span
+class="math inline">\(\sum_{S=0}^{2^n-1}f(S)\)</span></p>
+</blockquote>
+<p>看到 ABC 出 <span class="math inline">\(n\le 17\)</span>
+就是状压或者超级暴力了。</p>
+<p>考虑路径之间互相更新转移，那么状态之间需要区分的，除了当前每个点出现奇数/偶数次以外，还有最后一个点的编号。</p>
+<p>定义符合序列 <span class="math inline">\(S\)</span> 且最后一个点是
+<span class="math inline">\(u\)</span> 的状态集编号为
+<code>sta[S][u]</code> 。</p>
+<p>那么对于每一个 <span class="math inline">\(u\to v\)</span> ，对所有的
+<span class="math inline">\(S\)</span> 连边
+<code>sta[S][u] -&gt; sta[S ^ (1 &lt;&lt; v)][v]</code></p>
+<p>最后补上初始状态的连边
+<code>source -&gt; sta[1 &lt;&lt; u][u]</code></p>
+<p>那么跑 BFS 就可以求出来每个状态所需的最小长度了（从
+<code>source</code> 出发的距离）</p>
+<p>那么 <span class="math inline">\(f(S) = \min_{u}
+dis[sta[S][u]]\)</span> 即可，复杂度即状态数乘转移数 <span
+class="math inline">\(\mathcal O(n^2\ast 2^n)\)</span></p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 17</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> M 5000007</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pb push_back</span><br><br><span class="hljs-keyword">int</span> id[<span class="hljs-number">1</span> &lt;&lt; N][N], cnt, dis[M];<br><br><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; e[M];<br><br><span class="hljs-built_in">queue</span>&lt;<span class="hljs-keyword">int</span>&gt; q;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd(), m = rd();<br>    <span class="hljs-keyword">int</span> S = (<span class="hljs-number">1</span> &lt;&lt; n) - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> s = <span class="hljs-number">0</span>; s &lt;= S; ++s) <br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> u = <span class="hljs-number">0</span>; u &lt; n; ++u)<br>            id[s][u] = ++cnt;<br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; ++i) &#123;<br>        <span class="hljs-keyword">int</span> u = rd() - <span class="hljs-number">1</span>, v = rd() - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> s = <span class="hljs-number">0</span>; s &lt;= S; ++s) &#123;<br>            e[id[s][u]].pb(id[s ^ (<span class="hljs-number">1</span> &lt;&lt; v)][v]);<br>            e[id[s][v]].pb(id[s ^ (<span class="hljs-number">1</span> &lt;&lt; u)][u]);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) e[<span class="hljs-number">0</span>].pb(id[<span class="hljs-number">1</span> &lt;&lt; i][i]);<br>  <br>    <span class="hljs-built_in">memset</span>(dis, <span class="hljs-number">0x3f</span>, <span class="hljs-keyword">sizeof</span>(dis));<br>    dis[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>; q.push(<span class="hljs-number">0</span>);<br>    <span class="hljs-keyword">while</span> (!q.empty()) &#123;<br>        <span class="hljs-keyword">int</span> u = q.front(); q.pop();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> v : e[u]) <br>            <span class="hljs-keyword">if</span> (dis[v] &gt; dis[u] + <span class="hljs-number">1</span>) &#123;dis[v] = dis[u] + <span class="hljs-number">1</span>; q.push(v);&#125;<br>    &#125;<br>    ll ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> s = <span class="hljs-number">1</span>, tmp; s &lt;= S; ++s) &#123;<br>        tmp = <span class="hljs-number">1e9</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> u = <span class="hljs-number">0</span>; u &lt; n; ++u) &#123;<br>            tmp = min(tmp, dis[id[s][u]]);<br>        &#125;<br>        ans += tmp;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld\n&quot;</span>, ans);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h3 id="g.-construct-good-path">G. Construct Good Path</h3>
+<blockquote>
+<p>定义无向图 <span class="math inline">\(G=(V,E)\)</span> 的一个长度为
+<span class="math inline">\(K+1\)</span> 的路径序列 <span
+class="math inline">\(\{A\}\)</span> ：</p>
+<p>由 <span class="math inline">\(K+1\)</span> 个点编号 <span
+class="math inline">\(A_0,\dots,A_K\in V\)</span> 构成，<span
+class="math inline">\(A_0\)</span> 是起点，<span
+class="math inline">\(A_K\)</span> 是终点，且 <span
+class="math inline">\(\forall 0\le i &lt; K, (A_i, A_{i+1})\in
+E\)</span></p>
+<p>定义路径序列 <span class="math inline">\(\{A\}\)</span> 符合要求序列
+<span class="math inline">\(S\ (|S| = n, S_i = 0/1)\)</span>
+，当且仅当：</p>
+<p>若 <span class="math inline">\(S_u = 0\)</span> ，则 <span
+class="math inline">\(u\)</span> 在 <span
+class="math inline">\(\{A\}\)</span> 中出现了偶数次（可以为 <span
+class="math inline">\(0\)</span> ）</p>
+<p>若 <span class="math inline">\(S_u = 1\)</span> ，则 <span
+class="math inline">\(u\)</span> 在 <span
+class="math inline">\(\{A\}\)</span> 中出现了奇数次</p>
+<p>给定连通无向图 <span class="math inline">\(G\)</span> 和要求序列
+<span class="math inline">\(S\)</span> ，构造一个长度不超过 <span
+class="math inline">\(4\ast |V|\)</span> 的序列符合 <span
+class="math inline">\(S\)</span></p>
+</blockquote>
+<p>图只有连通的性质，那么可以考虑树怎么解决，其他情况找一棵生成树就可以了。</p>
+<p>设 <span class="math inline">\(A_u\)</span> 为 <span
+class="math inline">\(u\)</span> 子树的合法序列：满足 <span
+class="math inline">\(u\)</span> 子树内，除了 <span
+class="math inline">\(u\)</span> 以外其他点都符合要求的一个序列。</p>
+<ul>
+<li><p>强制叶子 <span class="math inline">\(v\)</span> 对应的 <span
+class="math inline">\(A_v=(v)\)</span> 。</p></li>
+<li><p>其他情况如果令 <span
+class="math inline">\(A_u=(u)+A_{son1}+(u)+A_{son2}+\cdots+(u)\)</span>
+，那么只有 <span class="math inline">\(son\)</span>
+这些节点会不合法。</p>
+<p>那么对于每个导致不合法的 <span class="math inline">\(son\)</span>
+，给序列最后接上一个 <span class="math inline">\((son,u)\)</span>
+就可以保证 <span class="math inline">\(son\)</span> 合法。</p></li>
+</ul>
+<div class="note note-success">
+            <p>用数学归纳法做正确性证明：<span class="math inline">\(|A_u|\le 4 \astsize_u-3\)</span> ，其中 <span class="math inline">\(size_u\)</span> 为<span class="math inline">\(u\)</span> 子树大小。</p><ul><li><p>对于叶子，<span class="math inline">\(|A_u|=1=4\ast1-3\)</span></p></li><li><p>假设对于一个点 <span class="math inline">\(u\)</span>，所有儿子节点 <span class="math inline">\(son\)</span>都符合，那么这个点的序列：</p><p>必须添加 <span class="math inline">\(cntson + 1\)</span> 个 <spanclass="math inline">\((u)\)</span> ，还有所有的 <spanclass="math inline">\(A_{son}\)</span>，其余的每个补充会增加两个点。</p><p><span class="math display">\[\begin{array}{ll}|A_u| &amp; \le \sum_{son} A_{son} + cntson + 1 + 2 \ast cntson\\\\\       &amp; \le  \sum_{son} (4 \ast size_{son} - 3) + 3\ast cntson +1\\\\\     &amp; = 4 \ast \sum_{son} size_{son} - 3\ast cntson + 3\ast cntson+ 1\\\\\     &amp; = 4 \ast (size_u - 1) + 1\\\\\     &amp; = 4 \ast size_u - 3\end{array}\]</span></p></li></ul>
+          </div>
+<p>这样就证明了，最后根的序列大小不超过 <span class="math inline">\(4N -
+3\)</span> 。</p>
+<p>最后序列中如果根节点奇偶性不对，那么随便找一个根节点的儿子 <span
+class="math inline">\(son\)</span> ，补一个 <span
+class="math inline">\((son,u,son)\)</span> 即可修正。</p>
+<p>这样子序列长度的上限刚好是 <span class="math inline">\(4N\)</span>
+，复杂度 <span class="math inline">\(\mathcal{O}(n)\)</span>。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">gn</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar());<br>    <span class="hljs-keyword">return</span> c - <span class="hljs-string">&#x27;0&#x27;</span>;<br>&#125;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 100007</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pb push_back</span><br><br><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; e[N], res;<br><br><span class="hljs-keyword">bool</span> vis[N], s[N];<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>    s[x] ^= <span class="hljs-number">1</span>; res.pb(x);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u)</span> </span>&#123;<br>    vis[u] = <span class="hljs-number">1</span>; add(u);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> v : e[u])<br>        <span class="hljs-keyword">if</span> (!vis[v]) &#123; <span class="hljs-comment">//当前点没在树里出现过</span><br>            dfs(v); add(u);<br>            <span class="hljs-keyword">if</span> (s[v]) &#123;add(v); add(u);&#125;<br>        &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd(), m = rd();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; ++i) &#123;<br>        <span class="hljs-keyword">int</span> u = rd(), v = rd();<br>        e[u].pb(v); e[v].pb(u);<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) s[i] = gn();<br>  <br>    dfs(<span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">if</span> (s[<span class="hljs-number">1</span>]) &#123;<br>        <span class="hljs-keyword">int</span> son = e[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>];<br>        add(son); add(<span class="hljs-number">1</span>); add(son);<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, (<span class="hljs-keyword">int</span>)res.size());<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> x : res) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, x);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h3 id="ex.-linear-maximization">Ex. Linear Maximization</h3>
+<blockquote>
+<p>维护一个二维向量集，支持：</p>
+<ol type="1">
+<li><p>插入一个二维向量 <span class="math inline">\((x,
+y)\)</span></p></li>
+<li><p>查询集合中和给定向量 <span class="math inline">\((u, v)\)</span>
+点积的最大值</p></li>
+</ol>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3309">[SDOI2014]向量集</a>
+弱化版，线段树维护凸包即可。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Solution/">Solution</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Solution/AtCoder/">AtCoder</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Solution/AtCoder/AtCoder-Beginner-Contest/">AtCoder Beginner Contest</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Dynamic-Programming/">Dynamic Programming</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Constructive-Algorithm/">Constructive Algorithm</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Bitmask/">Bitmask</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/04/12/Atcoder/agc001/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">AtCoder Grand Contest 001</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/03/28/Google/codejamio2022/">
+                        <span class="hidden-mobile">Google Code Jam to I/O for Women 2022</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"xG2rrgKMbyj4g3i1oO6vNAqH-gzGzoHsz","appKey":"dzMAbhtChev9VMBGRYG9PvAv","placeholder":"What you wanna say...","path":"window.location.pathname","avatar":"robohash","meta":["nick","mail","link"],"pageSize":10,"math":true,"md":true,"lang":"en","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+&copy; 2018 - 2022 &nbsp;<a href="http://blog.gyx.me">Colin Gao</a>
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

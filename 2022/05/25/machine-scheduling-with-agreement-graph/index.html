@@ -1,0 +1,664 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#fff">
+  <meta name="description" content="">
+  <meta name="author" content="Colin Gao">
+  <meta name="keywords" content="">
+  
+  <title>Two Identical Machines Scheduling with Agreement Graphs - Colin&#39;s Space</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/monokai-sublime.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.gyx.me","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":90,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#34495e","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body>
+  <header style="height: 30vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href=/>&nbsp;<strong>Colin's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags">
+                
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                
+                Friends
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Two Identical Machines Scheduling with Agreement Graphs">
+              
+                Two Identical Machines Scheduling with Agreement Graphs
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      16
+       mins to read
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Two Identical Machines Scheduling with Agreement Graphs</h1>
+            
+            <div class="markdown-body">
+              <p><a
+href="/material/TCS19_New%20results_in_two%20identical_machines_scheduling_with_agreement_graphs.pdf">New
+results in two identical machines scheduling with agreement
+graphs</a></p>
+<p>收录于 TCS 2019
+的一篇文章，基于许可图的独立双机流水安排问题的一些新进展。</p>
+<h2 id="问题模型">问题模型</h2>
+<p>有 <span class="math inline">\(n\)</span> 个任务，第 <span
+class="math inline">\(i\)</span> 个任务需要的时间是 <span
+class="math inline">\(p_i\)</span> 。</p>
+<p>一共有两台机器，每个任务都需要被连续地安排到某一个机器上完成。</p>
+<p>将任务抽象成点，给定一个许可图，两个任务有边则可以分别在两个机器上同时执行。</p>
+<p>求一个安排方案，最小化最后一个被做完的任务完成时间。</p>
+<p><strong>现有结论：</strong></p>
+<ul>
+<li>许可图是树的情况下，此问题是 NP-Hard 的</li>
+<li>许可图是毛毛虫的情况下，存在 <span
+class="math inline">\(\mathcal{O}(n)\)</span> 求最优解的方法</li>
+</ul>
+<h2 id="毛毛虫">毛毛虫</h2>
+<p>毛毛虫是一种特殊的树，由一个核心路径和若干到路径距离为 <span
+class="math inline">\(1\)</span> 的点构成。</p>
+<h3 id="notation">Notation</h3>
+<table>
+<colgroup>
+<col style="width: 58%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Meaning</th>
+<th style="text-align: center;">Notation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Processing time</td>
+<td style="text-align: center;"><span
+class="math inline">\(p\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Maximum weighted independent set of the
+agreement graph <span class="math inline">\(G\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(I_p(G)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Weight of <span
+class="math inline">\(I_p(G)\)</span> (<strong>a lower bound on the
+optimal makespan</strong>)</td>
+<td style="text-align: center;"><span
+class="math inline">\(\overline{I_p}(G) =\sum_{j\in I_p(G)}
+p_j\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Set of neighbors of a job <span
+class="math inline">\(j\)</span> (generalized for a subset <span
+class="math inline">\(J&#39;\)</span>)</td>
+<td style="text-align: center;"><span
+class="math inline">\(N(j)/N(J&#39;)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Set of leaves connected to job <span
+class="math inline">\(j\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(Lv(j)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Starting time of a job <span
+class="math inline">\(j\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(t_j\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Minimum starting time of a subset <span
+class="math inline">\(J&#39;\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(t_j(J&#39;)=\min_{k\in
+J&#39;}\{t_k\}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="algorithm">Algorithm</h3>
+<p>见原文 [4.2] Caterpillar scheduling algorithm。</p>
+<h3 id="polynomiality-and-optimality-proof">Polynomiality and Optimality
+Proof</h3>
+<p>为了简单描述，我们称在 MWIS 里的点为黑点，其余点为白点。</p>
+<p>可以发现断掉白点之间的所有边后，这个新的图的性质是所有的边都是黑-白边。</p>
+<blockquote>
+<p><strong>Claim 1.</strong> 对于每个新的连通块 <span
+class="math inline">\(CAT_i\)</span> ，其内的黑点集 <span
+class="math inline">\(S_i^*\)</span> 仍然是 <span
+class="math inline">\(CAT_i\)</span> 的 MWIS</p>
+</blockquote>
+<p>假设存在其他的 MWIS <span class="math inline">\(I_p(CAT_i)\)</span>
+使得 <span class="math inline">\(\overline{I_p}(CAT_i) &gt; \sum_{j\in
+S_i^*} p_j\)</span> ，那么我们考虑将 <span
+class="math inline">\(CAT_i\)</span> 这一部分的 MWIS
+换成这个新的集合，其他部分的 MWIS 不变，那么还原回仍是原图的一个
+IS，而这个新的 IS 比原来的 MWIS 权值还大，所以矛盾了。 <span
+class="math display">\[
+\sum_{j \in S^{\prime}} p_{j}=\overline{I_{p}}(C A T)-\sum_{j \in
+S_{i}^{*}} p_{j}+\overline{I_{p}}\left(C A
+T_{i}\right)&gt;\overline{I_{p}}(C A T)
+\]</span></p>
+<blockquote>
+<p><strong>Claim 2.</strong> 对于每个新的连通块 <span
+class="math inline">\(CAT_i\)</span> 的点集 <span
+class="math inline">\(J_i\)</span>
+，其内任何一个白点子集的点权和不会超过其邻居黑点的点权和</p>
+</blockquote>
+<p>假设存在这样的一个白点集 <span class="math inline">\(W\)</span> 满足
+<span class="math inline">\(\sum_{j \in W} p_{j} &gt; \sum_{j \in N(W)}
+p_{j}\)</span> ，那么考虑将 <span class="math inline">\(S_i^*\)</span>
+换成 <span class="math inline">\(S&#39;= (S_i^*\setminus N(W))\cup
+W\)</span> ，易证<span class="math inline">\(S&#39;\)</span>
+也是一个独立集，且比 <span class="math inline">\(S_i^*\)</span>
+权值和还要大，矛盾。 <span class="math display">\[
+\sum_{j \in S^{\prime}} p_{j}=\sum_{j \in S_{i}^{*}} p_{j}-\sum_{j \in
+N(W)} p_{j}+\sum_{j \in W} p_{j}&gt;\sum_{j \in S_{i}^{*}} p_{j}
+\]</span></p>
+<blockquote>
+<p><strong>Claim 3.</strong> 对于任意白点 <span
+class="math inline">\(\beta\)</span>
+，其邻居黑点都会被连续地安排在第一个机器上</p>
+</blockquote>
+<p>分类讨论一下，如果是叶子显然；如果不是叶子，假设链上的顺序是 <span
+class="math inline">\(\alpha-\beta-\gamma\)</span> ，那么黑点顺序显然是
+<span class="math inline">\(\alpha-(\beta\)</span> 的叶子 <span
+class="math inline">\()-\gamma\)</span></p>
+<blockquote>
+<p><strong>Claim 4.</strong> 对于任意两个白点 <span
+class="math inline">\(\alpha,\beta\)</span>
+，如果他们被连续地安排在了某一个机器上，那么他们一定有公共邻居。</p>
+</blockquote>
+<p>同样分类讨论 <span class="math inline">\(\alpha\)</span> 和 <span
+class="math inline">\(\beta\)</span>
+的位置关系（分别是主干/叶子）即可。</p>
+<blockquote>
+<p><strong>Claim 5.</strong>
+对于任意连续安排的白点集，其邻居一定是被连续安排在一个区间内的</p>
+</blockquote>
+<p>前两条的自然结果，当然也需要第二条辅助理解一下，证明黑色一定是连续的。</p>
+<hr />
+<blockquote>
+<p><strong>Lemma 1.</strong> 每一个白点都会被安排在邻居对应的区间里</p>
+</blockquote>
+<p>反证法，不符合的就两种情况：</p>
+<ol type="1">
+<li><span class="math inline">\(t_\beta &lt; t(N(\beta ))\)</span>
+：这种情况不存在，因为算法中每个黑点是连续安排的，如果出现该情况，这个白点会与非邻接的黑点重合，与许可图的要求相冲突。</li>
+<li><span class="math inline">\(t_\beta+p_\beta &gt; t(N(\beta )) +
+\sum_{j\in N(\beta)} p_j\)</span> ：这种情况不存在，考虑从 <span
+class="math inline">\(\beta\)</span> 往前的第一个满足 <span
+class="math inline">\(t_\alpha=t_{N(\alpha)}\)</span> 的任务 <span
+class="math inline">\(\alpha\)</span> ，那么从 <span
+class="math inline">\(\alpha\)</span> 到 <span
+class="math inline">\(\beta\)</span> 这一段是连续安排的，由事实 <span
+class="math inline">\(5\)</span>
+，连续安排的白点集，其邻居一定是被连续安排在一个区间内的，因此白点的区间就是
+<span class="math inline">\([t_\alpha,t_\alpha+\sum_{j\in[\alpha,\beta]}
+p_j]\)</span> ，黑点的区间就是 <span
+class="math inline">\([t(N([\alpha,\beta])),t(N([\alpha,\beta])) +
+\sum_{j\in N([\alpha,\beta])} p_j]\)</span> ; 又由事实 <span
+class="math inline">\(2\)</span> ，对于 <span
+class="math inline">\(J_i\)</span>
+内任何一个白点子集，其点权和不会超过其邻居黑点的点权和，因此有 <span
+class="math inline">\(t_\alpha+\sum_{j\in[\alpha,\beta]} p_j \le
+\sum_{j\in N([\alpha,\beta])} p_j\)</span> ，因此 <span
+class="math inline">\([\alpha, \beta]\)</span>
+这一段的白点终止时间不超过黑点，因此作为最后一个完成的白点 <span
+class="math inline">\(\beta\)</span> ，有 <span
+class="math inline">\(t_\beta+p_\beta \le t(N(\beta )) + \sum_{j\in
+N(\beta)} p_j\)</span></li>
+</ol>
+<blockquote>
+<p><strong>Theorithm 2</strong>. 本算法求出的安排方案为最优解。</p>
+</blockquote>
+<p>由引理 <span class="math inline">\(1\)</span> ，每个 <span
+class="math inline">\(\sigma_i\)</span>
+所需要的时间就是其中黑点所需的时间，即 <span
+class="math inline">\(\overline{I_p}(CAT_i)\)</span> ，因此总方案 <span
+class="math inline">\(\sigma\)</span> 所需的时间 <span
+class="math inline">\(\sum_{i} \overline{I_p}(CAT_i) =
+\overline{I_p}(CAT)\)</span> ，即答案下界。</p>
+<h2 id="总结">总结</h2>
+<p>最后放一个 pdf 版的总结：</p>
+
+
+	<div class="row">
+    <embed src="/material/notes_SWA.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Summary/">Summary</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Summary/Paper-Notes/">Paper Notes</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Scheduling/">Scheduling</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Greedy/">Greedy</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Graphs/">Graphs</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/05/29/Atcoder/abc253/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">AtCoder Beginner Contest 253</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/06/Codeforces/cf787/">
+                        <span class="hidden-mobile">Codeforces Round #787 (Div. 3)</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"xG2rrgKMbyj4g3i1oO6vNAqH-gzGzoHsz","appKey":"dzMAbhtChev9VMBGRYG9PvAv","placeholder":"What you wanna say...","path":"window.location.pathname","avatar":"robohash","meta":["nick","mail","link"],"pageSize":10,"math":true,"md":true,"lang":"en","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+&copy; 2018 - 2022 &nbsp;<a href="http://blog.gyx.me">Colin Gao</a>
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
