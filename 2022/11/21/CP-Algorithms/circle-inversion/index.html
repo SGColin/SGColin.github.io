@@ -1,0 +1,601 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#fff">
+  <meta name="description" content="">
+  <meta name="author" content="Colin Gao">
+  <meta name="keywords" content="">
+  
+  <title>Circle Inversion - Colin&#39;s Space</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/monokai-sublime.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.gyx.me","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":90,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#34495e","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body>
+  <header style="height: 30vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href=/>&nbsp;<strong>Colin's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags">
+                
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                
+                Friends
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Circle Inversion">
+              
+                Circle Inversion
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.3k words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      34
+       mins to read
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Circle Inversion</h1>
+            
+            <div class="markdown-body">
+              <h2 id="analysis">Analysis</h2>
+<p>二维平面上，给定反演中心 <span class="math inline">\(O\)</span>
+和半径 <span class="math inline">\(r\)</span> ，定义点 <span
+class="math inline">\(P\)</span> 基于圆 <span
+class="math inline">\((O,r)\)</span> 的反演变换：<span
+class="math inline">\(P\mapsto P&#39; : |OP||OP&#39;|=r^2\)</span>
+。</p>
+<ul>
+<li>圆内点反演完在圆外，圆外点反演完在圆内，圆上点是反演变换的不动点。</li>
+</ul>
+<p>进一步的我们可以定义图形基于圆 <span class="math inline">\(O\)</span>
+的反演（即变换后的点集），容易发现一些结论：</p>
+<ol type="1">
+<li>不过 <span class="math inline">\(O\)</span> 的圆 <span
+class="math inline">\(\Leftrightarrow\)</span> 不过 <span
+class="math inline">\(O\)</span> 的圆（先求出在 <span
+class="math inline">\(O\)</span>
+与圆心连线上直径两个端点的反演点再恢复，<strong>注意圆心反演后不是圆心！！</strong>）</li>
+<li>过 <span class="math inline">\(O\)</span> 的直线 <span
+class="math inline">\(\Leftrightarrow\)</span> 过 <span
+class="math inline">\(O\)</span>
+的直线（且是同一条直线，不会有变化）</li>
+<li>过 <span class="math inline">\(O\)</span> 的圆 <span
+class="math inline">\(\Leftrightarrow\)</span> 不过 <span
+class="math inline">\(O\)</span> 的直线（先求出 <span
+class="math inline">\(O\)</span>
+对应直径的另一个端点的反演点，再求垂直于 <span
+class="math inline">\(O\)</span> 与反演点连线的直线）
+<ul>
+<li>圆内区域反演完之后是反演直线的不包含 <span
+class="math inline">\(O\)</span> 的半平面</li>
+</ul></li>
+<li>反演前两图形的相对关系，反演后不变（反演前相切，反演后也相切；相交等以此类推）
+<ul>
+<li>特殊的，两切于 <span class="math inline">\(O\)</span>
+的圆反演后是两平行直线（切点 <span class="math inline">\(O\)</span>
+反演后在无穷远处，即两平行直线交于无穷远处）</li>
+</ul></li>
+</ol>
+<p>反演半径一般选取点到中心距离的几何平均。<a
+href="">完整计算几何模版见这里。</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">C</span> &#123;</span><br>    P c; <span class="hljs-keyword">double</span> r;<br>    C(letp &amp;c = zero, <span class="hljs-keyword">double</span> r = <span class="hljs-number">0.0</span>) : c(c), r(r) &#123;&#125;<br><br>    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> == (letc &amp;a) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> c == a.c &amp;&amp; z(r - a.r);&#125;<br>    <br>    <span class="hljs-comment">// 点与圆的关系 : -1 圆上 | 0 圆外 | 1 圆内</span><br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">is_in</span><span class="hljs-params">(letp &amp;p)</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">double</span> d = p.dis(c); <span class="hljs-keyword">return</span> z(d - r) ? <span class="hljs-number">-1</span> : d &lt; r - eps;&#125;<br>    <br>    <span class="hljs-function">P <span class="hljs-title">inverse</span><span class="hljs-params">(letp &amp;p)</span> <span class="hljs-keyword">const</span> </span>&#123;<br>        assert(p != c);<br>        <span class="hljs-keyword">const</span> P dlt = p - c;<br>        <span class="hljs-keyword">return</span> c + dlt * (r * r / dlt.norm());<br>    &#125;<br> <br>    tuple&lt;int, C, L&gt; inverse(letl &amp;l) const &#123;<br>        letc null_c = C(zero, <span class="hljs-number">0.0</span>);<br>        letl null_l = L(zero, zero);<br>        <span class="hljs-keyword">if</span> (l.ori(c) == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> mt(<span class="hljs-number">2</span>, null_c, l);<br>        letp v = (l.ori(c) == <span class="hljs-number">1</span> ? P&#123;l.v.y, -l.v.x&#125; : P&#123;-l.v.y, l.v.x&#125;);<br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> d = r * r / l.dis(c);<br>        letp p = c + unit(v) * d;<br>        <span class="hljs-keyword">return</span> mt(<span class="hljs-number">1</span>, C&#123;(c + p) / <span class="hljs-number">2</span>, d / <span class="hljs-number">2</span>&#125;, null_l);<br>    &#125;<br>         <br>    tuple&lt;int, C, L&gt; inverse(letc &amp;a) const &#123;<br>        letc null_c = C(zero, <span class="hljs-number">0.0</span>);<br>        letl null_l = L(zero, zero);<br>        letp v = a.c - c;<br>        <span class="hljs-keyword">if</span> (a.is_in(c) == <span class="hljs-number">-1</span>) &#123;<br>            <span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> d = r * r / (a.r + a.r);<br>            <span class="hljs-keyword">return</span> mt(<span class="hljs-number">2</span>, null_c, L&#123;c + unit(v) * d, &#123;-v.y, v.x&#125;&#125;);<br>        &#125;<br>        <span class="hljs-keyword">if</span> (c == a.c) <span class="hljs-keyword">return</span> mt(<span class="hljs-number">1</span>, C&#123;c, r * r / a.r&#125;, null_l);<br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> dis = <span class="hljs-built_in">abs</span>(v);<br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> k1 = r * r / (dis - a.r), k2 = r * r / (dis + a.r);<br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> d = (k1 + k2) / <span class="hljs-number">2</span>, rad = (k1 - k2) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">return</span> mt(<span class="hljs-number">1</span>, C&#123;c + v * (d / dis), rad&#125;, null_l);<br>    &#125;<br>&#125;;<br></code></pre></div></td></tr></table></figure>
+<h2 id="cf-77-e---martian-food">CF 77 E - Martian Food</h2>
+<blockquote>
+<p>给定两个内切的圆，第三个圆位于两圆心连线且与两圆相切，第四个圆开始和前三个圆相切，以此类推。</p>
+<p>求第 <span class="math inline">\(k\)</span> 个圆的半径。多组 <span
+class="math inline">\(t\le 10^4,r,R\le 10^4,k\le 10^4\)</span> 。</p>
+</blockquote>
+<p>以两圆切点反演，前两个圆变成平行直线，后面的圆都与两平行线相切，第三个圆心反演后位于前两圆心连线。</p>
+<p>然后朝一侧找到第 <span class="math inline">\(k\)</span>
+个圆，再反演回来即得到了答案。<strong>注意不能反演圆心，圆心反演完不是圆心！</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">static</span> C O = C(zero, <span class="hljs-number">20000</span>);<br>    <span class="hljs-keyword">double</span> r1 = rd(), r2 = rd();<br>    L l1 = get&lt;<span class="hljs-number">2</span>&gt;(O.inverse(C(P(r1, <span class="hljs-number">0</span>), r1)));<br>    L l2 = get&lt;<span class="hljs-number">2</span>&gt;(O.inverse(C(P(r2, <span class="hljs-number">0</span>), r2)));<br>    C res = C(P((l1.p.x + l2.p.x) / <span class="hljs-number">2</span>, l1.dis(l2) * rd()), l1.dis(l2) / <span class="hljs-number">2</span>);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.10lf\n&quot;</span>, get&lt;<span class="hljs-number">1</span>&gt;(O.inverse(res)).r);<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="hdu-6158---the-designer">HDU 6158 - The Designer</h2>
+<blockquote>
+<p>求类似上一题图的前 <span class="math inline">\(n\ (n\le
+10^7)\)</span> 个圆的面积和，多组 <span class="math inline">\((t\le
+10^3)\)</span> 。</p>
+</blockquote>
+<p>判一下如果剩下的圆<strong>面积和</strong>足够小就不用做了，注意不是面积足够小，而是面积和。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">static</span> C O = C(zero, <span class="hljs-number">200</span>);<br>    <span class="hljs-keyword">double</span> r1 = rd(), r2 = rd();<br>    L l1 = get&lt;<span class="hljs-number">2</span>&gt;(O.inverse(C(P(r1, <span class="hljs-number">0</span>), r1)));<br>    L l2 = get&lt;<span class="hljs-number">2</span>&gt;(O.inverse(C(P(r2, <span class="hljs-number">0</span>), r2)));<br>    <span class="hljs-keyword">double</span> dlt = l1.dis(l2);<br>    C res = C((l1.p + l2.p) / <span class="hljs-number">2</span>, dlt / <span class="hljs-number">2</span>);<br>    <span class="hljs-keyword">double</span> ans = get&lt;<span class="hljs-number">1</span>&gt;(O.inverse(res)).area();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>, t = <span class="hljs-number">0</span>, n = rd(); i &lt; n; ++i) &#123;<br>        (i &amp; <span class="hljs-number">1</span>) ? ++t, res.c.y = t * dlt : res.c.y = -t * dlt; <br>        <span class="hljs-keyword">double</span> add = get&lt;<span class="hljs-number">1</span>&gt;(O.inverse(res)).area();<br>        <span class="hljs-keyword">if</span> (add * (n - i) &lt; <span class="hljs-number">1e-7</span>) <span class="hljs-keyword">break</span>; ans += add;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.5lf\n&quot;</span>, ans);<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2
+id="icpc-nanning-online---finding-the-radius-for-an-inserted-circle">2017
+ICPC Nanning Online - Finding the Radius for an Inserted Circle</h2>
+<blockquote>
+<p>三个半径为 <span class="math inline">\(R\)</span>
+的圆互相切，在中间的弧形边三角形中塞小圆，然后朝着一个角塞，问第 <span
+class="math inline">\(k\)</span> 个的半径。</p>
+</blockquote>
+<p>反演点就是会往那个角里塞小圆的两个圆的切点。</p>
+<p>三个圆变成一对平行直线+一个夹中间的圆，然后朝反方向找第 <span
+class="math inline">\(k\)</span> 个圆即可。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-keyword">int</span> ans[<span class="hljs-number">11</span>];<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> t; <span class="hljs-keyword">double</span> r;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d%lf&quot;</span>, &amp;t, &amp;r);<br>    C O = C(zero, r * <span class="hljs-number">2</span>);<br>    C c = get&lt;<span class="hljs-number">1</span>&gt;(O.inverse(C(P(<span class="hljs-number">0</span>, -<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">3</span>) * r), r)));<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; ++i) &#123;c.c.y -= r * <span class="hljs-number">4</span>; ans[i] = <span class="hljs-built_in">floor</span>(get&lt;<span class="hljs-number">1</span>&gt;(O.inverse(c)).r + <span class="hljs-number">1e-8</span>);&#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>, n; i &lt;= t; ++i) &#123;<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;n); <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d %d\n&quot;</span>, n, ans[n]);&#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="icpc-hangzhou---problem-of-apollonius">2013 ICPC Hangzhou -
+Problem of Apollonius</h2>
+<blockquote>
+<p>求过指定点且与给定两个圆相外切的所有的圆。</p>
+</blockquote>
+<p>关于指定点反演，所求答案就是两个圆的公切线。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;<br>    C c1; c1.c.x = rd(); c1.c.y = rd(); c1.r = rd();<br>    C c2; c2.c.x = rd(); c2.c.y = rd(); c2.r = rd();<br>    C O; O.c.x = rd(); O.c.y = rd(); O.r = <span class="hljs-number">100</span>;<br>    <span class="hljs-built_in">vector</span>&lt;L&gt; s = get&lt;<span class="hljs-number">1</span>&gt;(O.inverse(c1)).tangent(get&lt;<span class="hljs-number">1</span>&gt;(O.inverse(c2)));<br>    <span class="hljs-built_in">vector</span>&lt;C&gt; ans;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> x : s) &#123;<br>        C inv = get&lt;<span class="hljs-number">1</span>&gt;(O.inverse(x));<br>        <span class="hljs-keyword">if</span> (inv.relation(c1) == <span class="hljs-number">1</span> &amp;&amp; inv.relation(c2) == <span class="hljs-number">1</span>) ans.push_back(inv);<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, (<span class="hljs-keyword">int</span>)ans.size());<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> x : ans) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.10lf %.10lf %.10lf\n&quot;</span>, x.c.x, x.c.y, x.r);<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="cf-372-e---drawing-circles-is-fun">CF 372 E - Drawing Circles is
+Fun</h2>
+<blockquote>
+<p>给定二维平面内 <span class="math inline">\(n\)</span> 个点,
+其中任意两点所在的直线上都不包含原点 <span
+class="math inline">\(O\)</span> 。</p>
+<p>求集合 <span class="math inline">\(\{\left(P_1, P_2\right)\left(P_3,
+P_4\right) \ldots\left(P_{2 k-1}, P_{2 k}\right)\}\)</span>
+的个数（<span class="math inline">\(P_i\)</span> 取自给定的 <span
+class="math inline">\(n\)</span> 个点），满足:</p>
+<ol type="1">
+<li><p>不存在 <span class="math inline">\(i \neq j,
+P_i=P_j\)</span>.</p></li>
+<li><p>对于任意 <span class="math inline">\(i \neq j,\left(P_{2 i-1},
+P_{2 i}\right)\left(P_{2 j-1}, P_{2 j}\right)\)</span> 满足：</p>
+<p>圆 <span class="math inline">\(O P_{2 i-1} P_{2 j-1}\)</span> 和圆
+<span class="math inline">\(O P_{2 i} P_{2 j}\)</span> 只有一个交点, 圆
+<span class="math inline">\(O P_{2 i-1} P_{2 j}\)</span> 和圆 <span
+class="math inline">\(O P_{2 i} P_{2 j-1}\)</span>
+只有一个交点。</p></li>
+</ol>
+</blockquote>
+<p>所有圆都过 <span class="math inline">\(O\)</span>
+且只有一个交点，所以都相切在 <span class="math inline">\(O\)</span>
+。</p>
+<p>反演之后就是平行直线，即要求 <span class="math inline">\(P_{2 i-1}
+P_{2 j-1}\parallel P_{2 i} P_{2 j},\ P_{2 i-1} P_{2 j}\parallel P_{2 i}
+P_{2 j-1}\)</span> ，即 <span class="math inline">\(P_{2 i-1} P_{2
+j-1}P_{2 i} P_{2 j}\)</span> 是平行四边形。</p>
+<p>平行四边形的等价条件是对角中点重合且边不重合，换言之，计数选出若干点对，反演后中点重合在同一个点，且不能重合。</p>
+<p>处理出来 <span class="math inline">\(n^2\)</span>
+个线段的中点。对每个中点，处理出来同角度的每个方向有多少个（即重合）。</p>
+<p>相当于 <span class="math inline">\(n\)</span>
+个集合里挑若干个（多于一个），每个集合里只能拿至多一个的方案数，即 <span
+class="math inline">\(\prod (size_i+1) - \sum size_i - 1\)</span> 。</p>
+<ul>
+<li><p><strong>坑1：</strong> 实现用
+pair(中点，方向向量）保存信息，为了保证排序正确（中点相同的挨在一起，相同中点按照方向极角序），不能出现反向的方向向量（共线的必须同一方向），所以
+<span class="math inline">\(x\)</span> 为负的时候取反，<strong><span
+class="math inline">\(x=0\)</span> 且 <span
+class="math inline">\(y&lt;0\)</span> 的时候取反</strong> 。</p></li>
+<li><p><strong>坑2：</strong> 精度要求高，坐标范围 <span
+class="math inline">\([\frac{1}{50},50]\)</span>
+，反演半径最好取几何平均 <span class="math inline">\(1\)</span>
+。</p></li>
+<li><p><strong>坑3：</strong> 最后对集合还要 <code>count</code>
+一次。</p></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mod 1000000007</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ppp pair<span class="hljs-meta-string">&lt;P, P&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd(); <br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;P&gt; <span class="hljs-title">p</span><span class="hljs-params">(n)</span></span>;<br>    <span class="hljs-built_in">vector</span>&lt;ppp&gt; s;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>        <span class="hljs-keyword">double</span> a = rd(), b = rd(), c = rd(), d = rd();<br>        p[i].x = a / b; p[i].y = c / d; <br>        p[i] = p[i] / p[i].norm();<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span> ; i &lt; n; ++i)<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; n; ++j) &#123;<br>            P u = p[i], v = p[j];<br>            P mid = (u + v) / <span class="hljs-number">2</span>, dir = u - v; <br>            <span class="hljs-keyword">if</span> (z(dir.x)) &#123;<span class="hljs-keyword">if</span> (dir.y &lt; <span class="hljs-number">0</span>) dir = -dir;&#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (dir.x &lt; -eps) dir = -dir; <br>            s.push_back(mp(mid, dir));<br>        &#125;<br>    sort(s.begin(), s.end(), [&amp;](ppp &amp;a, ppp &amp;b) &#123;<br>      <span class="hljs-keyword">return</span> (a.fr != b.fr) ? a.fr &lt; b.fr : argcmp()(a.sc, b.sc);<br>    &#125;);<br>    <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; cnt;<br>    <span class="hljs-keyword">auto</span> count = [&amp;]() &#123;<br>        <span class="hljs-keyword">int</span> prod = <span class="hljs-number">1</span>, sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> x : cnt) &#123;<br>            prod = <span class="hljs-number">1l</span>l * prod * (x + <span class="hljs-number">1</span>) % mod;<br>            sum = (sum + x) % mod;<br>        &#125;<br>        <span class="hljs-keyword">int</span> res = (prod + mod - sum - <span class="hljs-number">1</span>) % mod;<br>        ans = (ans + res) % mod;<br>        cnt.clear();<br>    &#125;;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">size_t</span> i = <span class="hljs-number">0</span>; i &lt; s.size(); ++i) <br>        <span class="hljs-keyword">if</span> (i &gt; <span class="hljs-number">0</span> &amp;&amp; s[i].fr == s[i - <span class="hljs-number">1</span>].fr) &#123;<br>            <span class="hljs-keyword">if</span> (para(s[i].sc, s[i - <span class="hljs-number">1</span>].sc)) ++cnt.back();<br>            <span class="hljs-keyword">else</span> cnt.push_back(<span class="hljs-number">1</span>);<br>        &#125; <span class="hljs-keyword">else</span> &#123;count(); cnt.push_back(<span class="hljs-number">1</span>);&#125;<br>    count();<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ans);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="icpc-hefei-f---rescue">2022 ICPC Hefei F - Rescue</h2>
+<blockquote>
+<p>给定 <span class="math inline">\(n\le 10^6\)</span>
+个圆，保证所有圆都经过原点。</p>
+<p>问 <span class="math inline">\(n\)</span>
+个圆的交是否为空，若不为空，则求出交区域内的点离原点最远的距离。</p>
+</blockquote>
+<p>关于原点反演，每个圆就变成了一个半平面，求出来半平面交，问题变成了点到凸包的最近距离。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Summary/">Summary</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Summary/Algorithms/">Algorithms</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Geometry/">Geometry</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/01/01/webarebears/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[Top] We Bare Bears!</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/11/17/Codeforces/gym101986/">
+                        <span class="hidden-mobile">Gym 101986 : 2017-2018 ICPC Asia Tsukuba Regional</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"xG2rrgKMbyj4g3i1oO6vNAqH-gzGzoHsz","appKey":"dzMAbhtChev9VMBGRYG9PvAv","placeholder":"What you wanna say...","path":"window.location.pathname","avatar":"robohash","meta":["nick","mail","link"],"pageSize":10,"math":true,"md":true,"lang":"en","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+&copy; 2018 - 2022 &nbsp;<a href="http://blog.gyx.me">Colin Gao</a>
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
