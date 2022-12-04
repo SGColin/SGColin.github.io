@@ -1,0 +1,514 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#fff">
+  <meta name="description" content="">
+  <meta name="author" content="Colin Gao">
+  <meta name="keywords" content="">
+  
+  <title>AtCoder Beginner Contest 216 - Colin&#39;s Space</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/monokai-sublime.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.gyx.me","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":90,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#34495e","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body>
+  <header style="height: 30vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href=/>&nbsp;<strong>Colin's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags">
+                
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                
+                Friends
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="AtCoder Beginner Contest 216">
+              
+                AtCoder Beginner Contest 216
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      988 words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      16
+       mins to read
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">AtCoder Beginner Contest 216</h1>
+            
+            <div class="markdown-body">
+              <h2 id="e.-amusement-park">E. Amusement Park</h2>
+<div class="note note-warning">
+            <p>给定 <span class="math inline">\(n\)</span> 个数，最多 <spanclass="math inline">\(k\)</span> 次操作，每次可以拿走某个数 <spanclass="math inline">\(a_i\)</span> 加入得分，然后把 <spanclass="math inline">\(a_i-1\)</span> 放回，问得分最大值，<spanclass="math inline">\(k,a_i\le 2\times 10^9\)</span></p>
+          </div>
+<p>二分最后剩下的所有数里的最大值为 <span
+class="math inline">\(x\)</span> ，答案是把所有数都拿到 <span
+class="math inline">\(x\)</span> 的得分，然后加上剩下次数个 <span
+class="math inline">\(x\)</span> 的得分。</p>
+<p>需要注意二分上界 <span class="math inline">\(r = 2\times
+10^9\)</span> ，所以二分 <code>mid = (l + r) / 2</code> 的时候可能会爆
+<code>int</code> 。<del>坑死我了</del></p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 200007</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    ll x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span>(; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span>(; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br>ll n, k, a[N];<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">valid</span><span class="hljs-params">(ll x)</span> </span>&#123;<br>    ll cnt = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) <br>        <span class="hljs-keyword">if</span> (a[i] &gt; x) cnt += a[i] - x;<br>    <span class="hljs-keyword">return</span> cnt &lt;= k;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">sum</span><span class="hljs-params">(ll l, ll r)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> (l + r)  * (r - l + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    n = rd(); k = rd();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) a[i] = rd();<br>    ll l = <span class="hljs-number">0</span>, r = <span class="hljs-number">2e9</span>;<br>    <span class="hljs-keyword">while</span> (l &lt; r) &#123;<br>        ll mid = (l + r) / <span class="hljs-number">2</span>;<br>        valid(mid) ? r = mid : l = mid + <span class="hljs-number">1</span>;<br>    &#125;<br>    ll ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) <br>        <span class="hljs-keyword">if</span> (a[i] &gt; l) &#123;<br>            ans += sum(l + <span class="hljs-number">1</span>, a[i]);<br>            k -= a[i] - l;<br>        &#125;<br>    ans += k * l;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld\n&quot;</span>, ans);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="f.-max-sum-counting">F. Max Sum Counting</h2>
+<div class="note note-warning">
+            <p>有 <span class="math inline">\(n\)</span> 个数对 <spanclass="math inline">\((A_i, B_i)\)</span>构成一个集合，问有多少个子集，满足子集内 <spanclass="math inline">\(A\)</span> 的最大值大于 <spanclass="math inline">\(B\)</span> 的和。</p>
+          </div>
+<p>考虑枚举最大的 <span class="math inline">\(A\)</span>
+是谁，将所有数对按照 <span class="math inline">\(A\)</span>
+从小到大排序，问题转化为选哪些 <span class="math inline">\(B\)</span>
+。</p>
+<p>假设现在考虑排序后第 <span class="math inline">\(i\)</span>
+个数对，则 <span class="math inline">\(B_i\)</span> 必选，相当于计数
+<span class="math inline">\(B_1,\cdots,B_{i-1}\)</span>
+中选出若干，且总和不超过 <span class="math inline">\(A_i-B_i\)</span>
+的方案数。</p>
+<p>因为 <span class="math inline">\(A\)</span> 的值域很小，搞一个 01
+背包计数即可，复杂度 <span class="math inline">\(O(n\times \max
+A_i)\)</span> 。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 5007</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mod 998244353</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><br><span class="hljs-keyword">int</span> n, f[N] = &#123;<span class="hljs-number">1</span>&#125;;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> &#123;</span><span class="hljs-keyword">int</span> a, b;&#125; c[N];<br><br><span class="hljs-keyword">inline</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &lt; (<span class="hljs-keyword">const</span> node &amp;a, <span class="hljs-keyword">const</span> node &amp;b) &#123;<br>    <span class="hljs-keyword">return</span> a.a == b.a ? a.b &lt; b.b : a.a &lt; b.a;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;n);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;c[i].a);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;c[i].b);<br>    sort(c + <span class="hljs-number">1</span>, c + <span class="hljs-number">1</span> + n);<br>    <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> v = <span class="hljs-number">0</span>; v &lt;= c[i].a - c[i].b; ++v) <br>            ans = (ans + f[v]) % mod;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> v = N - <span class="hljs-number">1</span>; v &gt;= c[i].b; --v) <br>            f[v] = (f[v] + f[v - c[i].b]) % mod;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ans);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="g.-01sequence">G. 01Sequence</h2>
+<div class="note note-warning">
+            <p>构造长度为 <span class="math inline">\(n\)</span> 的 <spanclass="math inline">\(01\)</span> 序列，满足 <spanclass="math inline">\(k\)</span> 个形如 “ <spanclass="math inline">\([l_i,r_i]\)</span> 内至少有 <spanclass="math inline">\(x_i\)</span> 个 <spanclass="math inline">\(1\)</span> ” 的条件，且 <spanclass="math inline">\(1\)</span> 的个数最少。</p>
+          </div>
+<p>将约束条件按照右端点从小到大排序，考虑每个条件当前还未满足的个数。</p>
+<p>则对于每个 <span class="math inline">\(1\)</span>
+，在可行的范围内往右放的贡献不低于往左放，因此从右边界依次放过来即可。</p>
+<p>查询未满足的个数需要维护一个树状数组，复杂度 <span
+class="math inline">\(O(n\log n)\)</span> 。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 200007</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    ll x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span>(; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span>(; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-keyword">int</span> cur[N], vis[N];<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> lowbit(x) (x &amp; -x)</span><br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (; x &lt; N; x += lowbit(x)) ++cur[x];<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">calc</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (; x; x -= lowbit(x)) res += cur[x];<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> &#123;</span><span class="hljs-keyword">int</span> l, r, k;&#125; c[N];<br><br><span class="hljs-keyword">inline</span> <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &lt; (<span class="hljs-keyword">const</span> node &amp;a, <span class="hljs-keyword">const</span> node &amp;b) &#123;<span class="hljs-keyword">return</span> a.r &lt; b.r;&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd();<br>    <span class="hljs-keyword">int</span> m = rd();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; ++i) &#123;<br>        c[i].l = rd(); c[i].r = rd(); c[i].k = rd();<br>    &#125;<br>    sort(c + <span class="hljs-number">1</span>, c + <span class="hljs-number">1</span> + m);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; ++i) &#123;<br>        <span class="hljs-keyword">int</span> nw = calc(c[i].r) - calc(c[i].l - <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> ptr = c[i].r; nw &lt; c[i].k; --ptr) <br>            <span class="hljs-keyword">if</span> (!vis[ptr]) &#123;<br>                add(ptr); ++nw; vis[ptr] = <span class="hljs-number">1</span>;<br>            &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>, vis[i]);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="h.-random-robots">H. Random Robots</h2>
+<div class="note note-warning">
+            
+          </div>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Solution/">Solution</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Solution/AtCoder/">AtCoder</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Solution/AtCoder/AtCoder-Beginner-Contest/">AtCoder Beginner Contest</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Binary-Search/">Binary Search</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Knapsack-Problem/">Knapsack Problem</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Greedy/">Greedy</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/misc/pat2021/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Programming Ability Test Autumn 2021</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/google/kickstart2021e/">
+                        <span class="hidden-mobile">Google Kick Start 2021 Round E</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"xG2rrgKMbyj4g3i1oO6vNAqH-gzGzoHsz","appKey":"dzMAbhtChev9VMBGRYG9PvAv","placeholder":"What you wanna say...","path":"window.location.pathname","avatar":"robohash","meta":["nick","mail","link"],"pageSize":10,"math":true,"md":true,"lang":"en","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":{"1":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0000.png","2":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0010.png","3":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0020.png","4":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0030.png","5":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0040.png","6":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0050.png","7":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0060.png","8":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0070.png","9":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0080.png","10":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0090.png","11":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0100.png","12":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0110.png","13":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0120.png","14":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0130.png","15":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0140.png","16":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0150.png","17":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0160.png","18":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0170.png","19":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0171.png","20":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0180.png","21":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0181.png","22":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0190.png","23":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0200.png","24":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0210.png","25":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0220.png","26":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0230.png","27":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0240.png","28":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0241.png","29":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0250.png","30":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0260.png","31":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0270.png","32":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0280.png","33":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0290.png","34":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0300.png","35":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0310.png","36":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0320.png","37":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0330.png","38":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0331.png","39":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0340.png","40":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0350.png","41":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0360.png","42":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0370.png","43":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0380.png","44":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0390.png","45":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0391.png","46":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0400.png","47":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0410.png","48":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0420.png","49":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0430.png","50":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0431.png","51":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0440.png","52":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0450.png","53":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0451.png","54":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0460.png","55":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0461.png","56":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0462.png","57":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0470.png","58":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0480.png","59":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0490.png","60":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0500.png","61":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0510.png","62":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0520.png","63":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0530.png","64":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0540.png","65":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0550.png","66":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0560.png","67":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0570.png","68":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0580.png","69":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0590.png","70":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0600.png","71":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0610.png","72":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0620.png","73":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1010.png","74":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1011.png","75":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1020.png","76":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1030.png","77":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1040.png","78":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1050.png","79":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1060.png","80":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1070.png","81":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1080.png","82":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2010.png","83":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2020.png","84":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2030.png","85":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2040.png","86":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2050.png","87":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2060.png","88":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2070.png","89":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2080.png","90":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2090.png","91":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2100.png","92":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2101.png","93":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2110.png","94":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2120.png","95":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2130.png","96":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2140.png","97":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2141.png","98":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2145.png","99":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2150.png","100":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2151.png","101":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2152.png","102":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2160.png","103":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2161.png","104":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2165.png","105":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2170.png","106":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2171.png","107":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3010.png","108":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3011.png","109":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3020.png","110":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3030.png","111":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3040.png","112":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3050.png","113":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3060.png","114":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3061.png","115":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4010.png","116":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4020.png","117":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4021.png","118":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4022.png","119":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4023.png","120":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4024.png","121":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4025.png","122":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4030.png","123":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4031.png","124":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4040.png","125":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4041.png","126":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4042.png","127":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4100.png","128":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4110.png","129":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4111.png","130":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4112.png","131":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4113.png","132":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4114.png","133":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4115.png","134":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4120.png","135":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4121.png","136":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4130.png","137":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4140.png","138":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4200.png","139":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4201.png","140":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4210.png","141":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4211.png","142":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4212.png","143":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4213.png","144":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4220.png","145":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4300.png","146":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4301.png","147":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4302.png","148":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4303.png","149":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4304.png","150":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4310.png","151":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5000.png","152":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5001.png","153":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5002.png","154":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5003.png","155":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5010.png","156":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5020.png","157":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5030.png","158":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5040.png","159":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5050.png","160":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5060.png","161":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5069.png","162":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5070.png","163":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5080.png","164":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5090.png","165":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5091.png","166":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5100.png","167":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5110.png","168":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5120.png","169":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5130.png","170":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5131.png","171":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5140.png","172":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5141.png","173":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5150.png","174":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5151.png","175":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5160.png","176":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5161.png","177":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5170.png","178":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5180.png","179":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5190.png","180":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5200.png","181":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5210.png","182":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5220.png","183":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5230.png","184":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6000.png","185":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6001.png","186":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6010.png","187":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6020.png","188":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6030.png","189":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6040.png","190":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6050.png","191":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6051.png","192":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6060.png","193":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6061.png","194":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6070.png","195":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6080.png","196":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6090.png","197":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6091.png","198":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6092.png","199":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6100.png","200":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6110.png","201":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6120.png","202":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6121.png","203":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6130.png","204":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6131.png","205":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6132.png","206":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6140.png","207":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6150.png","208":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6151.png","209":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6160.png","210":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6500.png","211":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6510.png","212":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6520.png","213":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6530.png","214":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7000.png","215":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7010.png","216":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7011.png","217":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7012.png","218":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7020.png","219":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7021.png","220":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7030.png","221":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7040.png","222":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7045.png","223":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7046.png","224":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7050.png","225":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7051.png","226":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7052.png","227":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7053.png","228":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7054.png","229":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7060.png","230":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7061.png","231":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7062.png","232":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7070.png","233":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7071.png","234":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7080.png","235":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7081.png","236":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7090.png","237":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7100.png","238":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7110.png","239":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7111.png","240":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7112.png","241":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7113.png","242":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7200.png","243":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7201.png","244":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7210.png","245":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7220.png","246":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7230.png","247":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8000.png","248":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8001.png","249":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8010.png","250":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8020.png","251":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8021.png","252":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8030.png","253":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8040.png","254":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8041.png","255":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8042.png","256":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8050.png","257":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8051.png","258":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8060.png","259":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8062.png","260":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8070.png","261":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8071.png","262":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8072.png","263":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8080.png","264":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8081.png","265":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8082.png","266":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8083.png","267":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8084.png","268":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8085.png","269":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8090.png","270":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8091.png","271":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8092.png","272":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8100.png","273":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8101.png","274":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8102.png","275":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8103.png","276":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8110.png","277":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8111.png","278":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x010.png","279":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x011.png","280":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x012.png","281":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x013.png","282":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x014.png","283":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x021.png","284":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x022.png","285":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x031.png","286":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x032.png","287":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x041.png","288":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x042.png","289":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x050.png","290":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x060.png","291":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x061.png","292":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x062.png","293":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x063.png","294":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x069.png","295":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x070.png","296":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x071.png","297":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x080.png","298":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x081.png","299":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x082.png","300":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x083.png","301":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x090.png","302":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x091.png","303":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x092.png","304":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x093.png","305":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x094.png","306":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x099.png"},"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+&copy; 2018 - 2022 &nbsp;<a href="http://blog.gyx.me">Colin Gao</a>
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
