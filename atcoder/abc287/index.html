@@ -18,7 +18,7 @@
   <meta name="author" content="Colin Gao">
   <meta name="keywords" content="">
   
-  <title>Combinatorial Tricks - Colin&#39;s Space</title>
+  <title>AtCoder Beginner Contest 287 - Colin&#39;s Space</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -146,9 +146,9 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Combinatorial Tricks">
+            <span class="h2" id="subtitle" title="AtCoder Beginner Contest 287">
               
-                Combinatorial Tricks
+                AtCoder Beginner Contest 287
               
             </span>
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      19
+      22
        mins to read
     </span>
   
@@ -203,106 +203,72 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Combinatorial Tricks</h1>
+            <h1 style="display: none">AtCoder Beginner Contest 287</h1>
             
             <div class="markdown-body">
-              <h2 id="整除分块与调和级数">整除分块与调和级数</h2>
-<p>求 <span class="math inline">\(N\)</span> 为被除数，除数在 <span
-class="math inline">\([0,N]\)</span>
-的范围内，整除商相同的所有除数区间。</p>
-<p>当所选除数<span class="math inline">\(\le \sqrt N\)</span>
-时，显然这一部分的除数区间不会超过<span class="math inline">\(\sqrt
-N\)</span> 个。</p>
-<p>当所选除数<span class="math inline">\(\ge \sqrt
-N\)</span>时，得到的商<span class="math inline">\(\le \sqrt
-N\)</span>，商不超过<span class="math inline">\(\sqrt
-N\)</span>种，所以除数区间也不会超过<span class="math inline">\(\sqrt
-N\)</span>个。</p>
-<p>于是总时间复杂度<span class="math inline">\(\text O(\sqrt
-N)\)</span>。</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> l = <span class="hljs-number">1</span>, t, r; l &lt;= n; l = r + <span class="hljs-number">1</span>) &#123;<br>	t = n / l; r = n / t; calc(l, r, t);<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<p>不太复杂的整除分块题目有时可以转化为调和级数。</p>
-<p>按照因子的视角去看问题，枚举倍数统计，复杂度 <span
-class="math inline">\(\sum_{i=1}^n \lfloor \frac{n}{i} \rfloor = O(n \ln
-n)\)</span> 。</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> d = <span class="hljs-number">1</span>; d &lt;= n; ++d)<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> m = d; m &lt;= n; m += d) calc(m, d);<br></code></pre></div></td></tr></table></figure>
-<h2 id="cf-1706-d.-chopping-carrots">CF 1706 D. Chopping Carrots</h2>
+              <p>ABCD 比较简单就不写了。</p>
+<h2 id="e---karuta">E - Karuta</h2>
 <blockquote>
-<p>给定 <span class="math inline">\(n\ (n\le 10^5)\)</span> 个数 <span
-class="math inline">\(a_1,\dots,a_n\ (a_i\le 10^5)\)</span>，构造 <span
-class="math inline">\(p_1,\dots,p_n\)</span> ，最小化 <span
-class="math display">\[
-\max _{1 \leq i \leq
-n}\left(\left\lfloor\frac{a_{i}}{p_{i}}\right\rfloor\right)-\min _{1
-\leq i \leq n}\left(\left\lfloor\frac{a_{i}}{p_{i}}\right\rfloor\right)
-\]</span></p>
+<p>给 <span class="math inline">\(n\)</span> 个字符串 <span
+class="math inline">\(S_i\ (\sum |S_i|\le 10^5)\)</span>
+，问每个串和其他所有串的 LCP 的最大值。</p>
 </blockquote>
-<p>首先枚举下界或上界然后直接除法分块每次调整的做法不行：如果想要 <span
-class="math inline">\(\mathcal O(n\sqrt n)\)</span> 复杂度就需要<span
-class="math inline">\(\mathcal O(n\sqrt n)\)</span> 的空间会
-MLE；否则需要一个优先队列或者 <code>set</code> 来辅助，<span
-class="math inline">\(\mathcal O(n\sqrt n\log n)\)</span>
-的复杂度过不了。</p>
-<hr />
-<p><span class="math inline">\(\mathcal O(n\sqrt n)\)</span>
-做法：数论分块，固定最小值，最小化最大值。</p>
-<p>设最小值为 <span class="math inline">\(i\)</span> 时最大值至少要为
-<span class="math inline">\(f_i\)</span> ，考虑每个 <span
-class="math inline">\(a_i\)</span> 对 <span
-class="math inline">\(f\)</span> 数组的影响。</p>
-<p>对于考虑对于两个相邻的除法分块的区间 <span
-class="math inline">\([l_1,r_1,t_1][r_1 + 1,r_2,t_2]\)</span>（其中
-<span class="math inline">\(t\)</span> 为区间内共同的商）：</p>
-<p>对于 <span class="math inline">\(t_1&lt;i\le t_2\)</span> ，<span
-class="math inline">\(a_i\)</span> 为了最终结果不小于 <span
-class="math inline">\(t_1\)</span> ，最小只能取到 <span
-class="math inline">\(t_2\)</span> ，所以 <span
-class="math inline">\(f_{t_1+1},\dots,f_{t_2}\)</span> 都要和 <span
-class="math inline">\(t_2\)</span> 取 <span
-class="math inline">\(\max\)</span> 。</p>
-<p>由定义又有 <span class="math inline">\(f_i\)</span>
-必然单调不降，所以区间取 <span class="math inline">\(\max\)</span>
-可以先对 <span class="math inline">\(f_{t_1+1}\)</span>
-取，最后做一遍前缀 <span class="math inline">\(\max\)</span> 。</p>
-<p>这样复杂度只有除法分快，总复杂度就是 <span
-class="math inline">\(\mathcal O(n\sqrt{n})\)</span> 的了。</p>
-<p>细节：（1）<span class="math inline">\(f_0=\max \lfloor
-\frac{a_i}{k}\rfloor\)</span> 记得考虑（2）最小值上界是 <span
-class="math inline">\(\min a_i\)</span> 。</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 100007</span><br><br><span class="hljs-keyword">int</span> a[N], mx[N];<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd(), k = rd();<br>    <span class="hljs-built_in">memset</span>(mx, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(mx));<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;<br>        a[i] = rd(); <br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> l = <span class="hljs-number">1</span>, r, t; l &lt;= min(k, a[i]); l = r + <span class="hljs-number">1</span>) &#123;<br>            t = a[i] / l; r = a[i] / t; <br>            <span class="hljs-keyword">if</span> (l != <span class="hljs-number">1</span>) mx[t + <span class="hljs-number">1</span>] = max(mx[t + <span class="hljs-number">1</span>], a[i] / (l - <span class="hljs-number">1</span>));<br>        &#125;<br>        mx[<span class="hljs-number">0</span>] = max(mx[<span class="hljs-number">0</span>], a[i] / k);<br>    &#125;<br>    <span class="hljs-keyword">if</span> (a[n] &lt;= k) &#123;<span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;0&quot;</span>); <span class="hljs-keyword">return</span>;&#125;<br>    <span class="hljs-keyword">int</span> ans = <span class="hljs-number">1e9</span>; <br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, tmp = <span class="hljs-number">0</span>; i &lt;= a[<span class="hljs-number">1</span>]; ++i) &#123;<br>        tmp = max(tmp, mx[i]);<br>        ans = min(ans, tmp - i);<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ans);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> t = rd(); t; --t) work();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<hr />
-<p><span class="math inline">\(\mathcal O(n\log n)\)</span>
-做法：调和级数，固定最大值，最大化最小值。</p>
-<p>考虑固定最大值为 <span class="math inline">\(mx\)</span> ，那么对于
-<span class="math inline">\(a_i \in \big[(mx + 1) \times d, (mx + 1)
-\times (d + 1)\big)\)</span> ，可以发现对于 <span
-class="math inline">\(a_i\)</span> 选择的最优的 <span
-class="math inline">\(p_i=d+1\)</span> : 如果 <span
-class="math inline">\(p_i&lt; d+1\)</span> ，造成 <span
-class="math inline">\(\lfloor\frac{a_i}{p_i}\rfloor \ge
-\lfloor\frac{(mx+1)\times d}{d}\rfloor=mx+1&gt;mx\)</span>
-不符合定义；否则会使商变小，不符合最大化的目标。</p>
-<p>接下来考虑所有的 $a_i[(mx + 1) d, (mx + 1) (d + 1)) $ ，最小的 <span
-class="math inline">\(\lfloor\frac{a_i}{d+1}\rfloor\)</span>
-来自哪里呢？这个值肯定是随着 <span class="math inline">\(a_i\)</span>
-变大而不减的，所以最小值肯定是来自最小的符合该区间的 <span
-class="math inline">\(a_i\)</span> 。</p>
-<p>考虑记录：<span class="math inline">\(nxt_w\)</span> 表示 <span
-class="math inline">\(\min_{a_i\ge w} a_i\)</span> ，这个排序之后可以
-<span class="math inline">\(\mathcal O(\max a_i)\)</span> 处理出来。</p>
-<p>然后枚举 <span class="math inline">\(mx\)</span>
-，对于每个倍数的区间，如果 <span class="math inline">\(nxt_{(mx+1)\times
-d} &lt;(mx+1)\times (d+1)\)</span> 成立，那么最小值就要考虑 <span
-class="math inline">\(\lfloor\frac{nxt_{(mx+1)\times d}}{d +
-1}\rfloor\)</span> ，换句话说： <span class="math display">\[
-ans = \min_{mx} \bigg(mx - \min_{nxt_{(mx+1)\times d} &lt;(mx+1)\times
-(d+1)}\left\lfloor\frac{nxt_{(mx+1)\times d}}{d + 1}\right\rfloor\bigg)
-\]</span> 当然，为了保证我们想要的 <span
-class="math inline">\(p_i\)</span> 都能取到，需要保证 <span
-class="math inline">\(d+1\le k\)</span> ，所以 <span
-class="math inline">\(a_i&lt;(d+1)k\Rightarrow d\ge \lfloor
-\frac{a_i}{k}\rfloor\)</span></p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 100007</span><br><br><span class="hljs-keyword">int</span> a[N] = &#123;<span class="hljs-number">-1</span>&#125;, nxt[N];<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd(), k = rd();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;<br>        a[i] = rd();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = a[i - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>; j &lt;= a[i]; ++j) nxt[j] = a[i];<br>    &#125;  <br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = a[n] + <span class="hljs-number">1</span>; j &lt; N; ++j) nxt[j] = <span class="hljs-number">1e9</span>;<br>    <span class="hljs-keyword">if</span> (a[n] &lt;= k) &#123;<span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;0&quot;</span>); <span class="hljs-keyword">return</span>;&#125;<br>    <span class="hljs-keyword">int</span> ans = <span class="hljs-number">1e9</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> mx = a[n] / k; mx &lt;= a[n]; ++mx) &#123;<br>        <span class="hljs-keyword">int</span> mn = mx;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> d = <span class="hljs-number">0</span>; d * (mx + <span class="hljs-number">1</span>) &lt;= a[n]; ++d) <br>            <span class="hljs-keyword">if</span> (nxt[d * (mx + <span class="hljs-number">1</span>)] &lt; (d + <span class="hljs-number">1</span>) * (mx + <span class="hljs-number">1</span>)) <br>                mn = min(mn, nxt[d * (mx + <span class="hljs-number">1</span>)] / (d + <span class="hljs-number">1</span>));<br>        ans = min(ans, mx - mn);<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ans);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> t = rd(); t; --t) work();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>先把所有串建 Trie ，再查一遍，走到计数器只有 <span
+class="math inline">\(1\)</span> 的时候就停。复杂度 <span
+class="math inline">\(O(n+\sum |S_i|)\)</span> 。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-keyword">int</span> tot;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> &#123;</span><span class="hljs-keyword">int</span> cnt, son[<span class="hljs-number">26</span>];&#125; c[<span class="hljs-number">500007</span>];<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-built_in">string</span> &amp;s)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> rt = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> x : s) &#123;<br>        x -= <span class="hljs-string">&#x27;a&#x27;</span>;<br>        <span class="hljs-keyword">if</span> (!c[rt].son[x]) c[rt].son[x] = ++tot;<br>        rt = c[rt].son[x];<br>        ++c[rt].cnt;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">calc</span><span class="hljs-params">(<span class="hljs-built_in">string</span> &amp;s)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>, rt = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> x : s) &#123;<br>        x -= <span class="hljs-string">&#x27;a&#x27;</span>;<br>        rt = c[rt].son[x];<br>        <span class="hljs-keyword">if</span> (c[rt].cnt == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> ans;<br>        ++ans;<br>    &#125;<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br><br><span class="hljs-built_in">string</span> str;<br><br><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">string</span>&gt; s;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n; <span class="hljs-built_in">cin</span> &gt;&gt; n;<br>   	rep(i, <span class="hljs-number">1</span>, n) &#123;<span class="hljs-built_in">cin</span> &gt;&gt; str; s.pb(str); insert(str);&#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;st : s) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, calc(st));<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="f---components">F - Components</h2>
+<blockquote>
+<p>给一棵树 <span class="math inline">\((n\le 5000)\)</span>
+，问有多少个点集的导出子图恰好有 <span
+class="math inline">\(x=0,1,\dots,n\)</span>
+个联通分量（定义含极大性）。</p>
+</blockquote>
+<p>树形背包计数，加一维 <span class="math inline">\(0/1\)</span>
+表示当前点选/不选，如果父子两个都上选会合并一个联通块。复杂度 <span
+class="math inline">\(O(n^2)\)</span> 。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 5007</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mod 998244353</span><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>&#123;<span class="hljs-keyword">return</span> (x + y &gt;= mod ? x + y - mod : x + y);&#125;<br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">mul</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-number">1l</span>l * x * y % mod;&#125;<br><br><span class="hljs-keyword">int</span> f[N][N][<span class="hljs-number">2</span>], sz[N], n, g[N][<span class="hljs-number">2</span>];<br><br><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; e[N];<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> fa)</span> </span>&#123;<br>    sz[u] = <span class="hljs-number">1</span>;<br>    f[u][<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = f[u][<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>; <br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> v : e[u])<br>        <span class="hljs-keyword">if</span> (v != fa) &#123;<br>            dfs(v, u);<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt;= sz[u] + sz[v]; ++j) &#123;<br>                g[j][<span class="hljs-number">0</span>] = f[u][j][<span class="hljs-number">0</span>]; <br>                g[j][<span class="hljs-number">1</span>] = f[u][j][<span class="hljs-number">1</span>];<br>                f[u][j][<span class="hljs-number">0</span>] = f[u][j][<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;<br>            &#125;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = sz[u] + sz[v]; j &gt;= <span class="hljs-number">0</span>; --j) <br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = max(<span class="hljs-number">0</span>, j - sz[u]); k &lt;= min(j, sz[v]); ++k) &#123;<br>                    f[u][j][<span class="hljs-number">0</span>] = add(f[u][j][<span class="hljs-number">0</span>], mul(g[j - k][<span class="hljs-number">0</span>], add(f[v][k][<span class="hljs-number">0</span>], f[v][k][<span class="hljs-number">1</span>])));<br>                    f[u][j][<span class="hljs-number">1</span>] = add(f[u][j][<span class="hljs-number">1</span>], add(mul(g[j - k][<span class="hljs-number">1</span>], f[v][k][<span class="hljs-number">0</span>]), mul(g[j - k][<span class="hljs-number">1</span>], f[v][k + <span class="hljs-number">1</span>][<span class="hljs-number">1</span>])));<br>                &#125;<br>            sz[u] += sz[v];<br>        &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    n = rd();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; n; ++i) &#123;<br>        <span class="hljs-keyword">int</span> u = rd(), v = rd(); <br>      	e[u].pb(v); e[v].pb(u);<br>    &#125;<br>    dfs(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, add(f[<span class="hljs-number">1</span>][i][<span class="hljs-number">0</span>], f[<span class="hljs-number">1</span>][i][<span class="hljs-number">1</span>]));<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="g---balance-update-query">G - Balance Update Query</h2>
+<blockquote>
+<p>有 <span class="math inline">\(n\ (n\le 2\times 10^5)\)</span>
+组数，开始第 <span class="math inline">\(i\)</span> 组有 <span
+class="math inline">\(b_i\ (b_i\le 10^4)\)</span> 个 <span
+class="math inline">\(a_i\ (a_i\le 10^9)\)</span> ，接下来 <span
+class="math inline">\(q\)</span> 次操作：</p>
+<ul>
+<li><code>1 x y</code> 把 <span class="math inline">\(a_x\)</span>
+修改为 <span class="math inline">\(y\ (y\le 10^9)\)</span></li>
+<li><code>2 x y</code> 把 <span class="math inline">\(b_x\)</span>
+修改为 <span class="math inline">\(y\ (y\le 10^4)\)</span></li>
+<li><code>3 x</code> 查询所有数字的前 <span class="math inline">\(x\
+(x\le 10^9)\)</span> 大和。</li>
+</ul>
+</blockquote>
+<p>离线，离散化全部做过 <span class="math inline">\(a_i\)</span>
+的值，以此为下标建立线段树。</p>
+<p>节点维护价值区间内数字个数和 <span
+class="math inline">\(\sum\)</span> 个数 <span
+class="math inline">\(\times\)</span> 价值
+，查询在线段树上二分即可。复杂度 <span class="math inline">\(O(n\log
+n)\)</span> 。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 300007</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ls (rt &lt;&lt; 1)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> rs (rt &lt;&lt; 1 | 1)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mid ((l + r) &gt;&gt; 1)</span><br><br><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; w;<br><br><span class="hljs-keyword">int</span> a[N], b[N];<br><br><span class="hljs-built_in">vector</span>&lt;tii&gt; work;<br><br><span class="hljs-keyword">int</span> cnt[N &lt;&lt; <span class="hljs-number">2</span>];<br><br>ll sum[N &lt;&lt; <span class="hljs-number">2</span>];<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">pushup</span><span class="hljs-params">(<span class="hljs-keyword">int</span> rt)</span> </span>&#123;<br>    cnt[rt] = cnt[ls] + cnt[rs];<br>    sum[rt] = sum[ls] + sum[rs]; <br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">upd</span><span class="hljs-params">(<span class="hljs-keyword">int</span> rt, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r, <span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> dlt)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (l == r) &#123;<br>        cnt[rt] += dlt;<br>        sum[rt] += <span class="hljs-number">1l</span>l * dlt * w[l];<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    p &lt;= mid ? upd(ls, l, mid, p, dlt) : upd(rs, mid + <span class="hljs-number">1</span>, r, p, dlt);<br>    pushup(rt);<br>&#125;<br><br><span class="hljs-function">ll <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> rt, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r, <span class="hljs-keyword">int</span> tot)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (cnt[rt] &lt; tot) <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">if</span> (l == r) <span class="hljs-keyword">return</span> <span class="hljs-number">1l</span>l * tot * w[l];<br>    <span class="hljs-keyword">if</span> (cnt[rs] &gt;= tot) <span class="hljs-keyword">return</span> query(rs, mid + <span class="hljs-number">1</span>, r, tot);<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> query(ls, l, mid, tot - cnt[rs]) + sum[rs];<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd(); <br>    rep(i, <span class="hljs-number">1</span>, n) &#123;a[i] = rd(); b[i] = rd(); w.pb(a[i]);&#125;<br>    <span class="hljs-keyword">int</span> q = rd();<br>    rep(i, <span class="hljs-number">1</span>, q) &#123;<br>        <span class="hljs-keyword">int</span> op = rd(), x = rd();<br>        <span class="hljs-keyword">if</span> (op == <span class="hljs-number">1</span>) &#123;<span class="hljs-keyword">int</span> y = rd(); w.pb(y); work.eb(op, x, y);&#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (op == <span class="hljs-number">2</span>) work.eb(op, x, rd());<br>        <span class="hljs-keyword">else</span> work.eb(op, x, <span class="hljs-number">0</span>);<br>    &#125;<br>    <br>    w.pb(<span class="hljs-number">-1</span>); sort(all(w)); w.erase(unique(all(w)), w.end());<br>    <span class="hljs-keyword">auto</span> getw = [&amp;](<span class="hljs-keyword">int</span> x) &#123;<span class="hljs-keyword">return</span> lower_bound(all(w), x) - w.begin();&#125;;<br>    <br>    <span class="hljs-keyword">int</span> m = w.size();<br>    rep(i, <span class="hljs-number">1</span>, n) &#123;a[i] = getw(a[i]); upd(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, m, a[i], b[i]);&#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> [op, x, y] : work) <br>        <span class="hljs-keyword">if</span> (op == <span class="hljs-number">3</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld\n&quot;</span>, query(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, m, x));<br>        <span class="hljs-keyword">else</span> &#123;<br>            upd(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, m, a[x], -b[x]);<br>            op == <span class="hljs-number">1</span> ? a[x] = getw(y) : b[x] = y;<br>            upd(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, m, a[x], b[x]);<br>        &#125; <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="ex---directed-graph-and-query">Ex - Directed Graph and
+Query</h2>
+<blockquote>
+<p>给定一个 <span class="math inline">\(n\ (n\le 2000)\)</span>
+个点的有向图，<span class="math inline">\(q\ (q\le 10^4)\)</span>
+次询问从 <span class="math inline">\(s_i\)</span> 到 <span
+class="math inline">\(t_i\)</span> 经过的节点编号最大值的最小值。</p>
+</blockquote>
+<p>Floyd 最外层枚举到 <span class="math inline">\(k\)</span>
+的含义就是只经过编号为 <span class="math inline">\(1\dots k\)</span>
+的节点的最短路。</p>
+<p>因此 <code>bitset</code> 维护传递闭包，每次更新完一个 <span
+class="math inline">\(k\)</span>
+就扫描全部询问，看看有没有已满足的即可。</p>
+<p>复杂度 <span class="math inline">\(O(\frac{n^3}{64} + nq)\)</span>
+。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 2007</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> M 10007</span><br><br><span class="hljs-keyword">int</span> ans[M], s[M], t[M];<br><br><span class="hljs-built_in">bitset</span>&lt;N&gt; adj[N];<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd(), m = rd();<br>    rep(u, <span class="hljs-number">1</span>, n) adj[u][u] = <span class="hljs-literal">true</span>;<br>    rep(i, <span class="hljs-number">1</span>, m) &#123;<span class="hljs-keyword">int</span> u = rd(), v = rd(); adj[u][v] = <span class="hljs-literal">true</span>;&#125;<br>    <span class="hljs-keyword">int</span> q = rd();<br>    rep(i, <span class="hljs-number">1</span>, q) &#123;s[i] = rd(); t[i] = rd(); ans[i] = <span class="hljs-number">-1</span>;&#125;<br>    rep(v, <span class="hljs-number">1</span>, n) &#123;<br>        rep(u, <span class="hljs-number">1</span>, n) <span class="hljs-keyword">if</span> (adj[u][v]) adj[u] |= adj[v]; <br>        rep(i, <span class="hljs-number">1</span>, q) <span class="hljs-keyword">if</span> (ans[i] == <span class="hljs-number">-1</span> &amp;&amp; adj[s[i]][t[i]]) ans[i] = v;<br>    &#125;<br>    rep(i, <span class="hljs-number">1</span>, q) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ans[i] == <span class="hljs-number">-1</span> ? <span class="hljs-number">-1</span> : max(&#123;ans[i], s[i], t[i]&#125;));<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>
@@ -312,9 +278,11 @@ class="math inline">\(a_i&lt;(d+1)k\Rightarrow d\ge \lfloor
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Summary/">Summary</a>
+                      <a class="hover-with-bg" href="/categories/Solution/">Solution</a>
                     
-                      <a class="hover-with-bg" href="/categories/Summary/Algorithms/">Algorithms</a>
+                      <a class="hover-with-bg" href="/categories/Solution/AtCoder/">AtCoder</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Solution/AtCoder/AtCoder-Beginner-Contest/">AtCoder Beginner Contest</a>
                     
                   </div>
                 
@@ -322,9 +290,15 @@ class="math inline">\(a_i&lt;(d+1)k\Rightarrow d\ge \lfloor
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Combinatorics/">Combinatorics</a>
+                      <a class="hover-with-bg" href="/tags/Dynamic-Programming/">Dynamic Programming</a>
                     
-                      <a class="hover-with-bg" href="/tags/Number-Theory/">Number Theory</a>
+                      <a class="hover-with-bg" href="/tags/Counting/">Counting</a>
+                    
+                      <a class="hover-with-bg" href="/tags/STL/">STL</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Shortest-Path/">Shortest Path</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Segment-Tree/">Segment Tree</a>
                     
                   </div>
                 
@@ -341,9 +315,9 @@ class="math inline">\(a_i&lt;(d+1)k\Rightarrow d\ge \lfloor
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/atcoder/arc153/">
+                      <a href="/abstract-algebra/concepts-from-set-theory/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">AtCoder Regular Contest 153</span>
+                        <span class="hidden-mobile">Basic Algebra I : Concepts from Set Theory</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -351,8 +325,8 @@ class="math inline">\(a_i&lt;(d+1)k\Rightarrow d\ge \lfloor
                   <article class="post-next col-6">
                     
                     
-                      <a href="/algorithms/tournament/">
-                        <span class="hidden-mobile">Tournament Graph</span>
+                      <a href="/algorithms/line-graph/">
+                        <span class="hidden-mobile">Line Graph</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

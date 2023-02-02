@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.2k words
+      1.9k words
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      21
+      30
        mins to read
     </span>
   
@@ -266,6 +266,52 @@ class="math inline">\(mx[x/p_i] * p_i\)</span> ）</p>
 <span class="math inline">\(x\)</span> 的质因子个数，因此不会超过 <span
 class="math inline">\(15\times 10^6\)</span> 可以接受。</p>
 <figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> T int </span><br><span class="hljs-keyword">typedef</span> <span class="hljs-built_in">pair</span>&lt;T, T&gt; pii;<br><span class="hljs-keyword">typedef</span> tuple&lt;T, T, T&gt; tii;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> fr     first</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> sc     second</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mp     make_pair</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mt     make_tuple</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pb     push_back</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> eb     emplace_back</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> all(x) (x).begin(), (x).end()</span><br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> T <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    T x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 5007</span><br><br><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; d, fac; <span class="hljs-comment">// fac : prime factors of nw</span><br><br><span class="hljs-built_in">vector</span>&lt;pii&gt; s; <span class="hljs-comment">// prime factors of m1m2</span><br><br><span class="hljs-built_in">unordered_map</span>&lt;ll, ll&gt; mx; <span class="hljs-comment">// maximum divisor &lt;= n</span><br><br><span class="hljs-keyword">int</span> n, tot, ans;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(ll nw, <span class="hljs-keyword">int</span> step)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (step == s.size()) <span class="hljs-keyword">return</span>;<br>    dfs(nw, step + <span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">auto</span> [p, t] = s[step];<br>    fac.push_back(p);<br>    <span class="hljs-keyword">for</span> (; t; --t) &#123;<br>        nw *= p;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> x : fac) &#123;<br>            ll y = mx[nw / x];<br>            mx[nw] = max(mx[nw], (y * x &lt;= n ? y * x : y));<br>        &#125;<br>        <span class="hljs-keyword">if</span> (nw / mx[nw] &lt;= n) &#123;++tot; ans ^= nw / mx[nw];&#125;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>        dfs(nw, step + <span class="hljs-number">1</span>);<br>    &#125;<br>    fac.pop_back();<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;<br>    n = rd(); <br>    mx.clear(); d.clear(); s.clear(); <br>    mx[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>; tot = ans = <span class="hljs-number">1</span>; <br><br>    <span class="hljs-keyword">auto</span> getd = [&amp;](<span class="hljs-keyword">int</span> x) &#123;<br>        <span class="hljs-keyword">int</span> lim = <span class="hljs-built_in">sqrt</span>(x);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt;= lim &amp;&amp; i &lt;= x; ++i) <br>            <span class="hljs-keyword">while</span> (x % i == <span class="hljs-number">0</span>) &#123;d.pb(i); x /= i;&#125;<br>        <span class="hljs-keyword">if</span> (x &gt; <span class="hljs-number">1</span>) d.pb(x);<br>    &#125;;<br>    getd(rd()); getd(rd()); sort(all(d));<br><br>    <span class="hljs-keyword">int</span> lst = <span class="hljs-number">0</span>, cnt = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> x : d)<br>        <span class="hljs-keyword">if</span> (x != lst) &#123;<br>            <span class="hljs-keyword">if</span> (lst) s.eb(lst, cnt);<br>            lst = x; cnt = <span class="hljs-number">1</span>;<br>        &#125; <span class="hljs-keyword">else</span> ++cnt;<br>    s.eb(lst, cnt);<br><br>    dfs(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d %d\n&quot;</span>, tot, ans);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> t = rd(); t; --t) work();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="f.-graph-coloring">F. Graph Coloring</h2>
+<blockquote>
+<p>给 <span class="math inline">\(n\)</span>
+个点的完全图的边红蓝染色，求染色方案数模 <span
+class="math inline">\(998244353\)</span> ，满足：</p>
+<ul>
+<li>至少有一条红边，至少有一条蓝边</li>
+<li>对于任何一个大于 <span class="math inline">\(2\)</span>
+的点集，其导出子图是红连通或蓝连通的，但不同时成立。</li>
+</ul>
+</blockquote>
+<p><strong>结论：若一幅图不连通，则其补图连通。</strong></p>
+<p>归纳证明，首先 <span class="math inline">\(1\)</span>
+个点的时候成立。假设 <span class="math inline">\(k\)</span>
+个点成立，那么对于新增的一个点：</p>
+<ul>
+<li>与 <span class="math inline">\(k\)</span>
+个点都连通，那么图中该点连通了所有点。</li>
+<li>与 <span class="math inline">\(k\)</span>
+个点都不连通，那么补图中该点连通了所有点。</li>
+<li>与一些点有边一些点无边，则原图连通即可连上该点，原图不连通则补图即可连上该点。</li>
+</ul>
+<p>所以计数时只需要保证红蓝不同时连通即可。</p>
+<p>假设 <span class="math inline">\(n\)</span> 个点的答案为 <span
+class="math inline">\(A_n\)</span>
+，对于任意一个解边颜色取反仍然是一个解。</p>
+<p>因此我们计数 <span class="math inline">\(n\)</span>
+个点，全集只被蓝色连通的方案数 <span class="math inline">\(B_n\)</span>
+，有 <span class="math inline">\(A_n=2\times B_n\)</span> （特殊 <span
+class="math inline">\(A_1=B_1=1\)</span> ）。</p>
+<p>递推考虑 <span class="math inline">\(1\)</span>
+号点被加入的情况。</p>
+<p>对于 <span class="math inline">\(1\)</span>
+号点所在的<strong>红色连通分量（极大）</strong>，由定义每个点和分量外的点的边都是蓝色。</p>
+<p>这时想要把 <span class="math inline">\(1\)</span>
+号点蓝连通加入，则必定要选分量内的点和分量外的点的边。</p>
+<p>无论分量外的点之间的边如何染色，这幅图的生成树必定包含蓝色的边，由开始的结论这幅图只能是蓝连通。</p>
+<p>因此递推枚举红色连通分量的大小 <span class="math inline">\(k\)</span>
+，则分量内方案数 <span class="math inline">\(B_k\)</span> ，分量外方案数
+<span class="math inline">\(A_{n-k}\)</span> ，有： <span
+class="math display">\[
+B_n =\sum_{k=1}^{n-1} {n - 1\choose k - 1} B_k A_{n-k},\ n&gt;1
+\]</span> 递推复杂度 <span class="math inline">\(O(n^2)\)</span> 。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 5007</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mod 998244353</span><br><br><span class="hljs-keyword">int</span> fac[N], ifac[N];<br> <br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">fpow</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> t = mod - <span class="hljs-number">2</span>)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> res = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (; t; t &gt;&gt;= <span class="hljs-number">1</span>, x = <span class="hljs-number">1l</span>l * x * x % mod)<br>        <span class="hljs-keyword">if</span> (t &amp; <span class="hljs-number">1</span>) res = <span class="hljs-number">1l</span>l * res * x % mod;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br> <br><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">C</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> m)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (n &lt; m) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">1l</span>l * fac[n] * ifac[m] % mod * ifac[n - m] % mod;<br>&#125;<br><br><span class="hljs-keyword">int</span> b[N] = &#123;<span class="hljs-number">0</span>, <span class="hljs-number">1</span>&#125;, a[N] = &#123;<span class="hljs-number">0</span>, <span class="hljs-number">1</span>&#125;;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd();<br>    fac[<span class="hljs-number">0</span>] = ifac[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>    rep(i, <span class="hljs-number">1</span>, n) fac[i] = <span class="hljs-number">1l</span>l * fac[i - <span class="hljs-number">1</span>] * i % mod;<br>    ifac[n] = fpow(fac[n]);<br>    per(i, n - <span class="hljs-number">1</span>, <span class="hljs-number">1</span>) ifac[i] = <span class="hljs-number">1l</span>l * ifac[i + <span class="hljs-number">1</span>] * (i + <span class="hljs-number">1</span>) % mod;<br>    rep(i, <span class="hljs-number">2</span>, n) &#123;<br>        rep(j, <span class="hljs-number">1</span>, i - <span class="hljs-number">1</span>) b[i] = (b[i] + C(i - <span class="hljs-number">1</span>, j - <span class="hljs-number">1</span>) * b[j] % mod * a[i - j]) % mod;<br>        a[i] = <span class="hljs-number">2</span> * b[i] % mod;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, (a[n] + mod - <span class="hljs-number">2</span>) % mod); <span class="hljs-comment">// 去掉全红/蓝的情况</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<p>整理系数之后就可以分治 NTT 计算了。复杂度 <span
+class="math inline">\(O(n\log ^2 n)\)</span> 。</p>
 
             </div>
             <hr>
@@ -287,7 +333,11 @@ class="math inline">\(15\times 10^6\)</span> 可以接受。</p>
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
+                      <a class="hover-with-bg" href="/tags/Graphs/">Graphs</a>
+                    
                       <a class="hover-with-bg" href="/tags/Number-Theory/">Number Theory</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Counting/">Counting</a>
                     
                   </div>
                 
