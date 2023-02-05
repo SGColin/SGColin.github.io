@@ -18,7 +18,7 @@
   <meta name="author" content="Colin Gao">
   <meta name="keywords" content="">
   
-  <title>Basic Algebra I : Monoids and Groups - Colin&#39;s Space</title>
+  <title>Basic Algebra I : Monoids and Groups (I) - Colin&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -146,9 +146,9 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Basic Algebra I : Monoids and Groups">
+            <span class="h2" id="subtitle" title="Basic Algebra I : Monoids and Groups (I)">
               
-                Basic Algebra I : Monoids and Groups
+                Basic Algebra I : Monoids and Groups (I)
               
             </span>
 
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      274 words
+      1.3k words
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      17
        mins to read
     </span>
   
@@ -203,7 +203,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Basic Algebra I : Monoids and Groups</h1>
+            <h1 style="display: none">Basic Algebra I : Monoids and Groups (I)</h1>
             
             <div class="markdown-body">
               <p>研究角度：1. 本身性质；2. 子结构（子群、正规子群）；3.
@@ -243,6 +243,141 @@ class="math inline">\(\{1,2,\dots n\}\)</span> 的全体排列构成的群，<sp
 class="math inline">\(|S_n|=n!\)</span> 。</p>
 <p><em>permutation group.</em> 置换群：有限元对称群 <span
 class="math inline">\(S_n\)</span> 的子群。</p>
+<h2 id="isomorphism.-cayleys-theorem">Isomorphism. Cayley's theorem</h2>
+<p><em>isomorphic.</em> 幺半群/群同构：存在双射 <span
+class="math inline">\(\eta:M\to M&#39;\)</span> ，保运算 <span
+class="math inline">\(\eta(xy)=\eta(x)\eta(y)\)</span> ，且 <span
+class="math inline">\(\eta(1)=1&#39;\)</span> （可由保运算推出）。</p>
+<p><em>isomorphism.</em> 同构函数 <span
+class="math inline">\(\eta\)</span> ，可能不止一个，例如 <span
+class="math inline">\((\mathbb{R},+,0)\)</span> 和 <span
+class="math inline">\((\mathbb{R}^+,\cdot\ ,1)\)</span> 的同构函数可以取
+<span class="math inline">\(\eta(x)=a^x\ (a&gt;0,a\not= 1)\)</span>
+。</p>
+<p>同构是一个等价关系，可以通过单位映射实现自反性，同构函数的求逆和复合实现对称性和传递性。</p>
+<p><strong>Cayley 定理：</strong> (1) 任意幺半群 <span
+class="math inline">\(M\)</span> 同构于一个交换幺半群；(2) 任意群 <span
+class="math inline">\(G\)</span> 同构于一个交换群。</p>
+<p>（1）对 <span class="math inline">\(M\)</span> 中的每个元素 <span
+class="math inline">\(a\)</span> 定义<strong>左平移变换</strong> <span
+class="math inline">\(a_L:M\to M, a_L(x)=ax\)</span> ，则 <span
+class="math inline">\(M\)</span> 同构于变换幺半群 <span
+class="math inline">\(M_L=\{a_L|a\in M\}\)</span> 。</p>
+<p>（2）同理构造，额外验证对求逆元封闭：<span
+class="math inline">\(1_L=(a^{-1}a)_L=(a^{-1})_La_L\)</span> ，即 <span
+class="math inline">\(a_L\)</span> 的逆是 <span
+class="math inline">\((a^{-1})_L\)</span> 。</p>
+<p>推论：任意 <span class="math inline">\(n\)</span> 阶有限群同构于一个
+<span class="math inline">\(n\)</span> 元置换群。</p>
+<h2 id="generalized-associativity.-commutativity">Generalized
+Associativity. Commutativity</h2>
+<p><strong>广义结合律：</strong> 由结合律可导出 <span
+class="math inline">\((\prod_{i=1}^na_i)(\prod_{j=1}^m
+a_{j+n})=\prod_{i=1}^{n+m} a_k\)</span> ，进一步可定义整数次幂运算 <span
+class="math inline">\(a^n\)</span> 和 <span
+class="math inline">\(a^{-n}=(a^{-1})^n\)</span></p>
+<p><em>commute.</em> 称 <span class="math inline">\(a,b\in M\)</span>
+是可交换的，当且仅当 <span class="math inline">\(ab=ba\)</span>
+。对于一组可交换的元素连乘，运算的顺序并不重要。</p>
+<p><em>commutative monoid.</em> 交换幺半群：幺半群 <span
+class="math inline">\(M\)</span> ，任意两元素 <span
+class="math inline">\(a,b\)</span> 均可交换。</p>
+<p><em>abelian groups (commutative groups).</em> 阿贝尔群（交换群）：群
+<span class="math inline">\(G\)</span> ，任意两元素 <span
+class="math inline">\(a,b\)</span> 均可交换。</p>
+<p><em>centralizer of a.</em> <span class="math inline">\(a\)</span>
+的中心化子 <span class="math inline">\(C(a)\)</span> ： <span
+class="math inline">\(M\)</span> 中与 <span
+class="math inline">\(a\)</span> 可交换的元素集。易证 <span
+class="math inline">\(C(a)\)</span> 是 <span
+class="math inline">\(M\)</span> 的子幺半群，定义同样适用于群。</p>
+<blockquote>
+<p>引理：幺半群 <span class="math inline">\(M\)</span>
+的若干个子幺半群的交仍然是幺半群，群 <span
+class="math inline">\(G\)</span> 的若干个子群的交仍然是群。</p>
+</blockquote>
+<p>将中心化子的定义扩展到集合，定义集合 <span
+class="math inline">\(A\)</span> 的中心化子 <span
+class="math inline">\(C(A) = \cap_{a\in A} C(a)\)</span> ，由引理 <span
+class="math inline">\(C(A)\)</span> 是子幺半群（子群）。</p>
+<p><em>the center of M.</em> <span class="math inline">\(M\)</span>
+的中心 <span class="math inline">\(C(M)\)</span> ：含义是 <span
+class="math inline">\(M\)</span> 中可以与所有元素交换的元素集，显然包含
+<span class="math inline">\(1\)</span> 。</p>
+<p>在交换幺半群/交换群中我们常用加号来代替乘号来表示对应运算，用 <span
+class="math inline">\(0\)</span> 代替 <span
+class="math inline">\(1\)</span> 来表示单位元。</p>
+<h2
+id="submonoids-and-subgroups-generated-by-a-subset.-cyclic-groups">Submonoids
+and Subgroups Generated by a Subset. Cyclic Groups</h2>
+<p><em>the submonoid generated by S.</em> 由 <span
+class="math inline">\(S\)</span> 生成的子幺半群 <span
+class="math inline">\(\langle S\rangle\)</span> ：对于 <span
+class="math inline">\(S\subseteq M\)</span> ， <span
+class="math inline">\(M\)</span> 中包含 <span
+class="math inline">\(S\)</span> 的最小的子幺半群。</p>
+<ul>
+<li><p>抽象刻画（存在性）：取所有包含 <span
+class="math inline">\(S\)</span> 的子群求交即为 <span
+class="math inline">\(\langle S\rangle\)</span> ，且 <span
+class="math inline">\(\langle S\rangle\)</span> 是任意包含 <span
+class="math inline">\(S\)</span> 的子群的子群；</p></li>
+<li><p>构造性证明：<span class="math inline">\(\langle
+S\rangle=\{1,s_1s_2\cdots s_r|s_i\in S, r \text{为有穷正整数}\}\)</span>
+，首先右侧是个幺半群，然后证互相包含：</p>
+<ol type="1">
+<li><p>由幺半群的运算封闭性， <span class="math inline">\(\langle
+S\rangle\)</span> 包含右侧构成的幺半群；</p></li>
+<li><p>右侧的集合包含 <span class="math inline">\(S\)</span> （取 <span
+class="math inline">\(r=1\)</span> )
+，由存在性引理，进一步的右侧的幺半群包含 <span
+class="math inline">\(\langle S\rangle\)</span> 。</p></li>
+</ol></li>
+</ul>
+<p><em>the subgroup generated by S.</em> 由 <span
+class="math inline">\(S\)</span> 生成的子群 <span
+class="math inline">\(\langle S \rangle\)</span> ：定义同上述，<span
+class="math inline">\(\langle S\rangle=\{1,s_1s_2\cdots s_r|s_i\
+\text{or}\ s_i^{-1}\in S, r \text{为有穷正整数}\}\)</span></p>
+<p><em>cyclic group.</em> 循环群：由一个元素的集合生成的群 <span
+class="math inline">\(G=\langle a\rangle=\{a^k|k\in
+\mathbb{Z}\}\)</span> ，显然是一个阿贝尔群（可交换）。</p>
+<ul>
+<li>任意无限循环群都与 <span
+class="math inline">\((\mathbb{Z},+,0)=\langle1\rangle\)</span>
+同构，通过映射 <span class="math inline">\(n\to a^n\)</span> 。</li>
+<li>任意有限阶（<span class="math inline">\(n\)</span> 阶）循环群都与
+<span class="math inline">\(n\)</span> 次单位根生成的循环群 <span
+class="math inline">\(U_n=\{x|x^n=1\}\)</span> 同构。</li>
+</ul>
+<ol type="1">
+<li><p>循环群的子群是循环群；</p></li>
+<li><p>无限循环群 <span class="math inline">\(\langle a\rangle\)</span>
+的子群都是无限的，且 <span class="math inline">\(s\to \langle
+a^s\rangle\)</span> 是 <span class="math inline">\(\mathbb{N}\)</span>
+到 <span class="math inline">\(\langle a\rangle\)</span>
+的全体子群的双射（ <span class="math inline">\(a\)</span>
+任意次幂生成的群两两不同）；</p></li>
+<li><p><span class="math inline">\(n\)</span> 阶循环群 <span
+class="math inline">\(\langle a\rangle\)</span> 的子群的阶都是 <span
+class="math inline">\(n\)</span> 的因数，且对于 <span
+class="math inline">\(n\)</span> 的每个因数 <span
+class="math inline">\(q\)</span> ，有且仅有一个 <span
+class="math inline">\(\langle a\rangle\)</span> 的子群阶为 <span
+class="math inline">\(q\)</span> 。</p>
+<ul>
+<li>这个 <span class="math inline">\(q\)</span>
+阶子群可以被构造性的刻画：<span class="math inline">\(H=\{b|b\in \langle
+a\rangle,b^q=1\}\)</span> 。</li>
+</ul></li>
+</ol>
+<p><em>exponent of a finite group G.</em> 有限群 <span
+class="math inline">\(G\)</span> 的方次数 <span
+class="math inline">\(\text{exp}\ G=\)</span> 最小的正整数 <span
+class="math inline">\(e\)</span> ，满足 <span
+class="math inline">\(\forall x \in G,\ x^e=1\)</span> 。</p>
+<p><strong>有限交换群是循环群的充要条件为方次数等于阶数（ <span
+class="math inline">\(\text{exp}\ G = |G|\)</span> ）。</strong></p>
 
             </div>
             <hr>
