@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.3k words
+      1.7k words
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      17
+      24
        mins to read
     </span>
   
@@ -371,13 +371,80 @@ class="math inline">\(q\)</span> 。</p>
 a\rangle,b^q=1\}\)</span> 。</li>
 </ul></li>
 </ol>
+<p><em>the order of a</em> 元素 <span class="math inline">\(a\)</span>
+的阶 <span class="math inline">\(o(a)\)</span> ：若 <span
+class="math inline">\(\langle a \rangle\)</span> 是无限群 <span
+class="math inline">\(\langle a \rangle=+\infty\)</span> ；否则 <span
+class="math inline">\(o(a)=|\langle a\rangle|=r\)</span> ，其中 <span
+class="math inline">\(r\)</span> 是满足 <span
+class="math inline">\(a^r=1\)</span> 的最小正整数。</p>
+<ul>
+<li>若 <span class="math inline">\(a^m=1\)</span> ，则 <span
+class="math inline">\(o(a) | m\)</span> 。</li>
+<li>若 <span class="math inline">\(o(a)=r&lt;+\infty\)</span> ，则 <span
+class="math inline">\(o(a^k)=[r,k]/k=r/(r,k)\)</span> ，因此 <span
+class="math inline">\(o(a^k)|r\)</span> 。</li>
+</ul>
+<p><br></p>
 <p><em>exponent of a finite group G.</em> 有限群 <span
 class="math inline">\(G\)</span> 的方次数 <span
 class="math inline">\(\text{exp}\ G=\)</span> 最小的正整数 <span
 class="math inline">\(e\)</span> ，满足 <span
 class="math inline">\(\forall x \in G,\ x^e=1\)</span> 。</p>
-<p><strong>有限交换群是循环群的充要条件为方次数等于阶数（ <span
+<p><strong>定理：有限交换群是循环群的充要条件为方次数等于阶数（ <span
 class="math inline">\(\text{exp}\ G = |G|\)</span> ）。</strong></p>
+<ul>
+<li><p>引理 1. 设 <span class="math inline">\(G\)</span>
+为有限交换群，设 <span class="math inline">\(g,h\in G\)</span> 且 <span
+class="math inline">\(o(g)=m,o(h)=n,(m,n)=1\)</span> ，则 <span
+class="math inline">\(o(gh)=mn\)</span> 。</p>
+<ul>
+<li><p><span
+class="math inline">\((gh)^{mn}=g^{mn}h^{mn}=(g^m)^n(h^n)^m=1\)</span>
+。</p></li>
+<li><p>假设 <span class="math inline">\((gh)^r=1\)</span> ，设 <span
+class="math inline">\(k=g^r=h^{-r}\in\langle g\rangle \cap \langle
+h\rangle\)</span> ，有 <span
+class="math inline">\(o(k)|m,o(k)|n\Rightarrow o(k)|(m,n)\Rightarrow
+o(k)=1\)</span></p>
+<p>因此 <span class="math inline">\(g^r=k=1\Rightarrow
+(gh)^r=g^rh^r=h^r=1\)</span> 因此 <span
+class="math inline">\(m|r,n|r\Rightarrow [m,n]|r\)</span> 又 <span
+class="math inline">\((m,n)=1\)</span> 有 <span
+class="math inline">\(mn|r\)</span> 。</p></li>
+</ul></li>
+<li><p>引理 2. 设 <span class="math inline">\(G\)</span>
+为有限交换群，设 <span class="math inline">\(g=\arg\max_{g\in G}
+o(g)\)</span> ，则 <span class="math inline">\(\text{exp}\
+G=o(g)\)</span> 。</p>
+<ul>
+<li><p>标准分解 <span class="math inline">\(o(g)=p_1^{e_1}p_2^{e_2}\dots
+p_s^{e_s},o(h)=p_1^{f_1}p_2^{f_2}\dots p_s^{f_s}\ (e_i,f_i\ge
+0)\)</span></p></li>
+<li><p>反证：若 <span class="math inline">\(h\in G, h^{o(g)}\not
+=1\)</span> ，则一定存在某个 <span class="math inline">\(f_i&gt;
+e_i\)</span> ，不妨设 <span class="math inline">\(f_1&gt;e_1\)</span>
+。</p>
+<p>接下来我们构造一个与 <span class="math inline">\(\arg\max\)</span>
+冲突的元素：设 <span
+class="math inline">\(g&#39;=g^{p_1^{e_1}},h&#39;=h^{p_2^{f_2}\dots
+p_s^{f_s}}\)</span> ，</p>
+<p>于是有 <span class="math inline">\(o(g&#39;)=p_2^{e_2}\dots
+p_s^{e_s},o(h&#39;)=p_1^{f_1}\)</span> ，那么由引理 1， <span
+class="math inline">\(o(g&#39;h&#39;)=p_1^{f_1}p_2^{e_2}\dots
+p_s^{e_s}&gt;o(g)\)</span> 矛盾。</p></li>
+</ul></li>
+<li><p>" <span class="math inline">\(\Rightarrow\)</span> "
+证明：由于是循环群 <span class="math inline">\(G=\langle
+g\rangle\)</span> ，<span class="math inline">\(|G|=|\langle
+g\rangle|=o(g)=\text{exp}\ G\)</span> 。</p></li>
+<li><p>" <span class="math inline">\(\Leftarrow\)</span> " 证明：由引理
+2，存在 <span class="math inline">\(g\)</span> 使得 <span
+class="math inline">\(\text{exp}\ G=o(g)\)</span> ，又由于交换群 <span
+class="math inline">\(G\)</span> 满足 <span
+class="math inline">\(\text{exp}\  G=|G|\)</span> ，因此 <span
+class="math inline">\(|G|=o(g)=|\langle g\rangle|\)</span> 。</p></li>
+</ul>
 
             </div>
             <hr>
@@ -414,9 +481,9 @@ class="math inline">\(\text{exp}\ G = |G|\)</span> ）。</strong></p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/webarebears/">
+                      <a href="/nonlinear-optimization/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">[Top] We Bare Bears!</span>
+                        <span class="hidden-mobile">Introduction to Nonlinear Optimization</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     

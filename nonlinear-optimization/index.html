@@ -18,7 +18,7 @@
   <meta name="author" content="Colin Gao">
   <meta name="keywords" content="">
   
-  <title>Codeforces Round #723 (Div. 2) - Colin&#39;s Blog</title>
+  <title>Introduction to Nonlinear Optimization - Colin&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -146,9 +146,9 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Codeforces Round #723 (Div. 2)">
+            <span class="h2" id="subtitle" title="Introduction to Nonlinear Optimization">
               
-                Codeforces Round #723 (Div. 2)
+                Introduction to Nonlinear Optimization
               
             </span>
 
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.5k words
+      1.7k words
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      23
+      33
        mins to read
     </span>
   
@@ -203,88 +203,290 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Codeforces Round #723 (Div. 2)</h1>
+            <h1 style="display: none">Introduction to Nonlinear Optimization</h1>
             
             <div class="markdown-body">
-              <h2 id="a.-mean-inequality">A. Mean Inequality</h2>
-<blockquote>
-<p>将 <span class="math inline">\(2n\)</span>
-个<strong>不同的</strong>数字排成一个循环，使得任意位置的数不是相邻两个数的平均值。</p>
-</blockquote>
-<p>从小到大排序之后，前 <span class="math inline">\(n\)</span> 个和后
-<span class="math inline">\(n\)</span> 个交替放。</p>
-<p>因为数字两两不同，大的数字不可能是两个小的数字的平均数，小的同理。</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">char</span> c = getchar();<br>	<span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>	<span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>	<span class="hljs-keyword">return</span> f ? -x : x;<br>&#125; <br><br><span class="hljs-keyword">int</span> a[<span class="hljs-number">51</span>];<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> n = rd();<br>	<span class="hljs-keyword">int</span> m = <span class="hljs-number">2</span> * n;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; ++i) a[i] = rd();<br>	sort(a + <span class="hljs-number">1</span>, a + <span class="hljs-number">1</span> + m);<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d %d &quot;</span>, a[i], a[i + n]);<br>	<span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;&quot;</span>);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> t = rd(); t; --t) work();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h2 id="b.-i-hate-1111">B. I Hate 1111</h2>
-<blockquote>
-<p>询问一个正整数 <span class="math inline">\(x\)</span>
-是否可以拆分成若干个 <span
-class="math inline">\(11,111,1111,\dots\)</span> 的和</p>
-</blockquote>
-<p>根据 <a
-target="_blank" rel="noopener" href="https://artofproblemsolving.com/wiki/index.php/Chicken_McNugget_Theorem">麦乐鸡定理</a>
-，<span class="math inline">\(11\)</span> 和 <span
-class="math inline">\(111\)</span> 可以组成大于 <span
-class="math inline">\(11*111-111-11=1099\)</span> 的任何数。</p>
-<p>所以后面的数字都没用了， <span class="math inline">\(x\le
-1099\)</span> 的部分做一下 <span class="math inline">\(11\)</span> 和
-<span class="math inline">\(111\)</span> 的完全背包，其他情况都是
-<code>YES</code> 。</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">char</span> c = getchar();<br>	<span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>	<span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>	<span class="hljs-keyword">return</span> f ? -x : x;<br>&#125; <br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 1100</span><br><br><span class="hljs-keyword">bool</span> f[N];<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> x = rd(); <br>	<span class="hljs-built_in">puts</span>(x &gt;= N ? <span class="hljs-string">&quot;YES&quot;</span> : (f[x] ? <span class="hljs-string">&quot;YES&quot;</span> : <span class="hljs-string">&quot;NO&quot;</span>));<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	f[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">11</span>; i &lt; N; ++i) f[i] |= f[i - <span class="hljs-number">11</span>];<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">111</span>; i &lt; N; ++i) f[i] |= f[i - <span class="hljs-number">111</span>];<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> t = rd(); t; --t) work();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h2 id="c.-potions">C. Potions</h2>
-<blockquote>
-<p>给一个数列，求一个最长的子序列，使得子序列任意前缀和都 <span
-class="math inline">\(\ge 0\)</span></p>
-</blockquote>
-<p>经典的带反悔贪心，用一个小根堆维护拿了的数字。</p>
-<p>每次先把当前的拿了，如果当前的和是负的，就一直去掉堆顶直到合法即可。</p>
-<p>这样子在每次结束的时候都是正的，并且去掉了最少的数。</p>
-<p>等效的贪心是每次放进来如果变成负数就看一下能不能替换堆顶。</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">char</span> c = getchar();<br>	<span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>	<span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>	<span class="hljs-keyword">return</span> f ? -x : x;<br>&#125; <br><br><span class="hljs-built_in">priority_queue</span>&lt;<span class="hljs-keyword">int</span>&gt; q;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> n = rd();<br>	<span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>	ll nw = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>, a; i &lt;= n; ++i) &#123;<br>		a = rd(); <br>		++ans; nw += a; q.push(-a);<br>		<span class="hljs-keyword">while</span> (nw &lt; <span class="hljs-number">0</span>) &#123;<br>			nw += q.top(); q.pop(); --ans;<br>		&#125;<br>	&#125;<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ans);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h2 id="d.-kill-anton">D. Kill Anton</h2>
-<blockquote>
-<p>给定一个字符集只有 <code>'A','D','O','T'</code>
-的串，将其重排使得恢复成原来的所需操作次数最大。</p>
-<p>操作一次可以交换两个字符的位置。</p>
-</blockquote>
-<p>猜一下操作次数只和逆序数相关（我一直不太会这种的证明），所以一定可以把同一类字符放到一起。</p>
-<p>记 <code>inv[i][j]</code> 表示字符 <code>i</code>
-前字符<code>j</code> 的顺序对数，即如果结果串中字符 <code>i</code>
-在字符 <code>j</code> 前，增加的逆序数。</p>
-<p>因此枚举 <span class="math inline">\(4!\)</span>
-种排列，计算一下哪一种逆序数最大即可。</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> tc[<span class="hljs-number">4</span>] = &#123;<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;N&#x27;</span>, <span class="hljs-string">&#x27;O&#x27;</span>, <span class="hljs-string">&#x27;T&#x27;</span>&#125;;<br><br>ll cnt[<span class="hljs-number">4</span>], inv[<span class="hljs-number">4</span>][<span class="hljs-number">4</span>];<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">tr</span><span class="hljs-params">(<span class="hljs-keyword">char</span> c)</span> </span>&#123;<br>	<span class="hljs-keyword">if</span> (c == <span class="hljs-string">&#x27;A&#x27;</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">if</span> (c == <span class="hljs-string">&#x27;N&#x27;</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">return</span> (c == <span class="hljs-string">&#x27;O&#x27;</span> ? <span class="hljs-number">2</span> : <span class="hljs-number">3</span>);<br>&#125;<br><br><span class="hljs-built_in">string</span> s;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-built_in">cin</span> &gt;&gt; s;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; ++i) &#123;<br>		cnt[i] = <span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">4</span>; ++j) inv[i][j] = <span class="hljs-number">0</span>;<br>	&#125;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> c : s) &#123;<br>		<span class="hljs-keyword">int</span> i = tr(c);<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">4</span>; ++j)<br>			<span class="hljs-keyword">if</span> (j != i) inv[i][j] += cnt[j];<br>		++cnt[i];<br>	&#125;<br>	ll ans = <span class="hljs-number">-1</span>;<br>	<span class="hljs-keyword">int</span> p[<span class="hljs-number">4</span>] = &#123;<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;, res[<span class="hljs-number">4</span>];<br>	<span class="hljs-keyword">do</span> &#123;<br>		ll tmpans = <span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; ++i)<br>			<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; <span class="hljs-number">4</span>; ++j) tmpans += inv[p[i]][p[j]];<br>		<span class="hljs-keyword">if</span> (tmpans &gt; ans) &#123;<br>			ans = tmpans;<br>			<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; ++i) res[i] = p[i];<br>		&#125;<br>	&#125; <span class="hljs-keyword">while</span>(next_permutation(p, p + <span class="hljs-number">4</span>));<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; ++i)<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= cnt[res[i]]; ++j) <span class="hljs-built_in">putchar</span>(tc[res[i]]);<br>	<span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;&quot;</span>);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> t;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-built_in">cin</span> &gt;&gt; t; t; --t) work();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h2 id="e.-oolimry-and-suffix-array">E. Oolimry and Suffix Array</h2>
-<blockquote>
-<p>给定后缀数组，求有多少个串长为 <span class="math inline">\(n\)</span>
-，字符集大小为 <span class="math inline">\(k\)</span> 的字符串 <span
-class="math inline">\(S\)</span> 符合这个后缀数组</p>
-</blockquote>
-<p>后缀数组 <span class="math inline">\(sa_i\)</span> 记录的是排名第
-<span class="math inline">\(i\)</span> 位的后缀的开始下标。</p>
-<p>根据字典序要求，<span class="math inline">\(S_{sa_i}\)</span> 和
-<span class="math inline">\(S_{sa_{i+1}}\)</span> 只有两种关系：<span
-class="math inline">\(S_{sa_i}&lt;S_{sa_{i+1}}\)</span> 或 <span
-class="math inline">\(S_{sa_i}=S_{sa_{i+1}}\)</span></p>
-<p>小于一定是可以的，等于的充要条件是 <span
-class="math inline">\(rank_{sa_i+1}&lt;rank_{sa_{i+1}+1}\)</span>
-，即去掉第一个字符字典序不变。</p>
-<p>因此我们得到了含有 <span class="math inline">\(n-1\)</span>
-个不等号的不等式链，假设其中有 <span class="math inline">\(a\)</span>
-个是 <span class="math inline">\(\le\)</span> 。</p>
-<p>我们枚举有 <span class="math inline">\(i\)</span> 个 <span
-class="math inline">\(\le\)</span> 实际上是 <span
-class="math inline">\(&lt;\)</span> ，那么实际字符集大小是 <span
-class="math inline">\(n-i\)</span> ，方案数就是</p>
+              <p>一份面向考试的学习笔记（</p>
+<h2 id="mathematical-preliminaries">Mathematical Preliminaries</h2>
+<p><span class="math inline">\(\mathbb{R}^n\)</span> - the set of
+n-dimensional column vectors, with addition and scalar-vector product
+operators.</p>
+<p><span class="math inline">\(\mathbf{e}_1, \mathbf{e}_2, \ldots,
+\mathbf{e}_n\)</span> - standard/canonical basis.</p>
+<p><span class="math inline">\(\mathbf{e}\)</span> and <span
+class="math inline">\(\mathbf{0}\)</span> - all ones and all zeros
+column vectors.</p>
+<p>nonnegative orthant: <span
+class="math inline">\(\mathbb{R}_{+}^n=\left\{\left(x_1, x_2, \ldots,
+x_n\right)^T: x_1, x_2, \ldots, x_n \geq 0\right\}\)</span></p>
+<p>positive orthant: <span
+class="math inline">\(\mathbb{R}_{++}^n=\left\{\left(x_1, x_2, \ldots,
+x_n\right)^T: x_1, x_2, \ldots, x_n&gt;0\right\}\)</span></p>
+<p>Vector Norms:</p>
+<ul>
+<li><span class="math inline">\(l_p\text{-norm}\ (p ≥ 1):
+\|\mathbf{x}\|_p \equiv \sqrt[p]{\sum_{i=1}^n\left|x_i\right|^p},
+\|\mathbf{x}\|_{\infty} \equiv \max _{i=1,2, \ldots,
+n}\left|x_i\right|\)</span></li>
+</ul>
+<p>Matrix Norms:</p>
+<ul>
+<li>Induced Norms: <span class="math inline">\(\|\mathbf{A}\|_{a,
+b}=\max _{\mathbf{x}}\left\{\|\mathbf{A} \mathbf{x}\|_b:\|\mathbf{x}\|_a
+\leq 1\right\}\)</span>
+<ul>
+<li><span
+class="math inline">\(\|\mathbf{A}\|_2=\|\mathbf{A}\|_{2,2}=\sqrt{\lambda_{\max
+}\left(\mathbf{A}^T \mathbf{A}\right)} \equiv \sigma_{\max
+}(\mathbf{A})\)</span></li>
+<li><span class="math inline">\(\|\mathbf{A}\|_1=\max _{j=1,2, \ldots,
+n} \sum_{i=1}^m\left|A_{i, j}\right|\)</span>.</li>
+<li><span class="math inline">\(\|\mathbf{A}\|_{\infty}=\max _{i=1,2,
+\ldots, m} \sum_{j=1}^n\left|A_{i, j}\right|\)</span></li>
+</ul></li>
+<li>The Frobenius norm: <span
+class="math inline">\(\|\mathbf{A}\|_F=\sqrt{\sum_{i=1}^m \sum_{j=1}^n
+A_{i j}^2}, \quad \mathbf{A} \in \mathbb{R}^{m \times n}\)</span></li>
+</ul>
+<p>Eigenvalues and Eigenvectors: <span
+class="math inline">\(\mathbf{A}v=\lambda v\)</span> ，<span
+class="math inline">\(\lambda_{\text{max}}(\mathbf{A})=\lambda_1(\mathbf{A})
+\geq \lambda_2(\mathbf{A}) \geq \ldots \geq
+\lambda_n(\mathbf{A})=\lambda_{\text{min}}(\mathbf{A})\)</span></p>
+<p>The Spectral Factorization Theorem.</p>
+<ul>
+<li><p>Let <span class="math inline">\(\mathbf{A} \in \mathbb{R}^{n
+\times n}\)</span> be an <span class="math inline">\(n \times n\)</span>
+symmetric matrix. Then there exists an orthogonal matrix <span
+class="math inline">\(\mathbf{U} \in \mathbb{R}^{n \times
+n}\left(\mathbf{U}^T \mathbf{U}=\mathbf{U}
+\mathbf{U}^T=\mathbf{I}\right)\)</span> and a diagonal matrix <span
+class="math inline">\(\mathbf{D}=\operatorname{diag}\left(d_1, d_2,
+\ldots, d_n\right)\)</span> for which <span
+class="math inline">\(\mathbf{U}^T \mathbf{A U}=\mathbf{D}\)</span>
+.</p></li>
+<li><p>The columns of the matrix <span
+class="math inline">\(\mathbf{U}\)</span> constitute an
+<strong>orthogonal basis</strong> comprising eigenvectors of <span
+class="math inline">\(\mathbf{A}\)</span> .</p></li>
+<li><p>The diagonal elements of <span
+class="math inline">\(\mathbf{D}\)</span> are the corresponding
+eigenvalues.</p></li>
+<li><p>A direct result is that <span
+class="math inline">\(\operatorname{Tr}(\mathbf{A})=\sum_{i=1}^n
+\lambda_i(\mathbf{A})\)</span> and <span
+class="math inline">\(\operatorname{det}(\mathbf{A})=\Pi_{i=1}^n
+\lambda_i(\mathbf{A})\)</span>.</p></li>
+</ul>
+<p>Interior: <span
+class="math inline">\(\operatorname{int}(U)=\{\mathbf{x} \in U:
+B(\mathbf{x}, r) \subseteq U\)</span> for some <span
+class="math inline">\(r&gt;0\}\)</span> , e.g. <span
+class="math inline">\(\operatorname{int}\left(\mathbb{R}_{+}^n\right)=\mathbb{R}_{++}^n\)</span></p>
+<p>Open Set: <span
+class="math inline">\(U=\operatorname{int}(U)\)</span> , e.g. <span
+class="math inline">\(\mathbb{R}_{++}^n\)</span></p>
+<hr />
+<p>Gradients: <span class="math inline">\(\nabla
+f(\mathbf{x})=\left(\begin{array}{c}\frac{\partial f}{\partial
+x_1}(\mathbf{x}) \\ \frac{\partial f}{\partial x_2}(\mathbf{x}) \\
+\vdots \\ \frac{\partial f}{\partial
+x_n}(\mathbf{x})\end{array}\right)\)</span></p>
+<p>Twice Differentiability: <span
+class="math inline">\(\displaystyle\frac{\partial^2 f}{\partial x_i
+\partial x_j}(\mathbf{x})=\frac{\partial\left(\frac{\partial f}{\partial
+x_j}\right)}{\partial x_i}(\mathbf{x}), \frac{\partial^2 f}{\partial x_i
+\partial x_j}(\mathbf{x})=\frac{\partial^2 f}{\partial x_j \partial
+x_i}(\mathbf{x})\)</span></p>
+<p>The Hessian of <span class="math inline">\(f\)</span> (symmetric)
+:</p>
 <p><span class="math display">\[
-\sum_{i=0}^a{a\choose i}{k\choose n-i}={a+k\choose n}
+\nabla^2 f(\mathbf{x})=\left(\begin{array}{cccc}\frac{\partial^2
+f}{\partial x_1^2} &amp; \frac{\partial^2 f}{\partial x_1 \partial x_2}
+&amp; \cdots &amp; \frac{\partial^2 f}{\partial x_1 \partial x_n} \\
+\frac{\partial^2 f}{\partial x_2 \partial x_1} &amp; \frac{\partial^2
+f}{\partial x_2^2} &amp; &amp; \vdots \\ \vdots &amp; \vdots &amp; &amp;
+\vdots \\ \frac{\partial^2 f}{\partial x_n \partial x_1} &amp;
+\frac{\partial^2 f}{\partial x_n \partial x_2} &amp; \cdots &amp;
+\frac{\partial^2 f}{\partial x_n^2}\end{array}\right)
 \]</span></p>
-<p>等式从组合含义理解，从 <span class="math inline">\(a+k\)</span>
-个里选 <span class="math inline">\(n\)</span> 个，定价于枚举从前 <span
-class="math inline">\(a\)</span> 个里选 <span
-class="math inline">\(i\)</span> 个，剩余的从后 <span
-class="math inline">\(k\)</span> 个里选。</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">char</span> c = getchar();<br>	<span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>	<span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>	<span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 200007</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mod 998244353</span><br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">fpow</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> t = mod - <span class="hljs-number">2</span>)</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> res = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span> (; t; t &gt;&gt;= <span class="hljs-number">1</span>, x = <span class="hljs-number">1l</span>l * x * x % mod)<br>		<span class="hljs-keyword">if</span> (t &amp; <span class="hljs-number">1</span>) res = <span class="hljs-number">1l</span>l * res * x % mod;<br>	<span class="hljs-keyword">return</span> res;<br>&#125;<br><br><span class="hljs-keyword">int</span> rk[N], pos[N], fac[N &lt;&lt; <span class="hljs-number">1</span>] = &#123;<span class="hljs-number">1</span>&#125;;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	<span class="hljs-keyword">int</span> n = rd(), k = rd();<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) rk[pos[i] = rd()] = i;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; n; ++i) <br>		k += (rk[pos[i] + <span class="hljs-number">1</span>] &lt; rk[pos[i + <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>]);<br>	<span class="hljs-keyword">if</span> (k &lt; n) &#123;<span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;0&quot;</span>); <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= k; ++i) fac[i] = <span class="hljs-number">1l</span>l * fac[i - <span class="hljs-number">1</span>] * i % mod;<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld\n&quot;</span>, <span class="hljs-number">1l</span>l * fac[k] * fpow(fac[n]) % mod * fpow(fac[k - n]) % mod);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<blockquote>
+<p>Linear Approximation Theorem.</p>
+<p>Let <span class="math inline">\(f: U \rightarrow \mathbb{R}\)</span>
+be defined on an open set <span class="math inline">\(U \subseteq
+\mathbb{R}^n\)</span>. Suppose that <span
+class="math inline">\(f\)</span> is twice continuously differentiable
+over <span class="math inline">\(U\)</span>. Let <span
+class="math inline">\(x \in U\)</span> and <span
+class="math inline">\(r&gt;0\)</span> satisfy <span
+class="math inline">\(B(\mathbf{x}, r) \subseteq U\)</span>. Then for
+any <span class="math inline">\(\mathbf{y} \in B(\mathbf{x}, r)\)</span>
+there exists <span class="math inline">\(\xi \in[\mathbf{x},
+\mathbf{y}]\)</span> such that: <span class="math display">\[
+f(\mathbf{y})=f(\mathbf{x})+\nabla
+f(\mathbf{x})^T(\mathbf{y}-\mathbf{x})+\frac{1}{2}(\mathbf{y}-\mathbf{x})^T
+\nabla^2 f(\xi)(\mathbf{y}-\mathbf{x}) .
+\]</span></p>
+</blockquote>
+<blockquote>
+<p>Quadratic Approximation Theorem.</p>
+<p>Theorem. Let <span class="math inline">\(f: U \rightarrow
+\mathbb{R}\)</span> be defined on an open set <span
+class="math inline">\(U \subseteq \mathbb{R}^n\)</span>. Suppose that
+<span class="math inline">\(f\)</span> is twice continuously
+differentiable over <span class="math inline">\(U\)</span>. Let <span
+class="math inline">\(x \in U\)</span> and <span
+class="math inline">\(r&gt;0\)</span> satisfy <span
+class="math inline">\(B(\mathbf{x}, r) \subseteq U\)</span>. Then for
+any <span class="math inline">\(\mathbf{y} \in B(\mathbf{x}, r)\)</span>
+<span class="math display">\[
+f(\mathbf{y})=f(\mathbf{x})+\nabla
+f(\mathbf{x})^T(\mathbf{y}-\mathbf{x})+\frac{1}{2}(\mathbf{y}-\mathbf{x})^T
+\nabla^2
+f(\mathbf{x})(\mathbf{y}-\mathbf{x})+o\left(\|\mathbf{y}-\mathbf{x}\|^2\right)
+\]</span></p>
+</blockquote>
+<h2 id="unconstrained-optimization">Unconstrained Optimization</h2>
+<p>A symmetric matrix <span class="math inline">\(\mathbf{A} \in
+\mathbb{R}^{n \times n}\)</span> is called positive semidefinite,
+denoted by <span class="math inline">\(\mathbf{A} \succeq
+\mathbf{0}\)</span>, iff:</p>
+<ul>
+<li><span class="math inline">\(\mathbf{x}^T \mathbf{A x} \geq
+0\)</span> for every <span class="math inline">\(\mathbf{x} \in
+\mathbb{R}^n\)</span>.</li>
+<li>all its eigenvalues are nonnegative.</li>
+<li><span class="math inline">\(D_1(\mathbf{A})\ge 0, D_2(\mathbf{A})\ge
+0, \ldots, D_n(\mathbf{A})\ge 0\)</span></li>
+</ul>
+<h3 id="stationary-point">Stationary point</h3>
+<p>Stationary point (local minimum, local maximum, saddle points) :
+<span class="math inline">\(\nabla f(\mathbf{x}^*)=0\)</span></p>
+<p>local minimum: <span class="math inline">\(\nabla^2
+f\left(\mathbf{x}^*\right) \succeq \mathbf{0}\)</span> (Necessary),
+<span class="math inline">\(\nabla^2 f\left(\mathbf{x}^*\right) \succ
+\mathbf{0}\)</span> (Sufficient)</p>
+<p>local maximum: <span class="math inline">\(\nabla^2
+f\left(\mathbf{x}^*\right) \preceq \mathbf{0}\)</span> (Necessary),
+<span class="math inline">\(\nabla^2 f\left(\mathbf{x}^*\right) \prec
+\mathbf{0}\)</span> (Sufficient)</p>
+<p>Saddle Points: <span class="math inline">\(\nabla^2
+f\left(\mathbf{x}^*\right)\)</span> is an indefinite matrix
+(Sufficient)</p>
+<h3 id="global-optimality-conditions.">Global Optimality
+Conditions.</h3>
+<p><span class="math inline">\(\nabla^2 f(\mathbf{x}) \succeq
+\mathbf{0}\)</span> for any <span class="math inline">\(\mathbf{x} \in
+\mathbb{R}^n\)</span>. Let <span class="math inline">\(\mathbf{x}^* \in
+\mathbb{R}^n\)</span> be a stationary point of <span
+class="math inline">\(f\)</span>. Then <span
+class="math inline">\(\mathbf{x}^*\)</span> is a global minimum point of
+<span class="math inline">\(f\)</span>.</p>
+<h3 id="quadratic-functions.">Quadratic Functions.</h3>
+<p><span class="math inline">\(f(\mathbf{x})=\mathbf{x}^{\top}
+\mathbf{A} \mathbf{x}+2 \mathbf{b}^{\top} \mathbf{x}+c\)</span> , where
+<span class="math inline">\(\mathbf{A} \in \mathbb{R}^{n \times
+n}\)</span> is symmetric, <span class="math inline">\(\mathbf{b} \in
+\mathbb{R}^n\)</span> and <span class="math inline">\(c \in
+\mathbb{R}\)</span>.</p>
+<ul>
+<li><p><span class="math inline">\(\nabla f(\mathbf{x}) =2 \mathbf{A}
+\mathbf{x}+2 \mathbf{b}\)</span> , then <span
+class="math inline">\(\mathbf{x}\)</span> is a stationary point iff
+<span class="math inline">\(\mathbf{A}
+\mathbf{x}=-\mathbf{b}\)</span></p></li>
+<li><p><span class="math inline">\(\nabla^2 f(\mathbf{x}) =2
+\mathbf{A}\)</span> , if <span class="math inline">\(\mathbf{A}\succeq
+\mathbf{0}\)</span> then <span class="math inline">\(\mathbf{x}\)</span>
+is a global minimum point of <span class="math inline">\(f\)</span> iff
+<span class="math inline">\(\mathbf{A x}=-\mathbf{b}\)</span>.</p></li>
+</ul>
+<h2 id="least-squares">Least Squares</h2>
+<h3 id="least-squares-ls">Least Squares (LS)</h3>
+<p>Target: <span class="math inline">\(\min \|\mathbf{A
+x}-\mathbf{b}\|^2\)</span> , the same as <span
+class="math inline">\(\min _{\mathbf{x} \in
+\mathbb{R}^n}\left\{f(\mathbf{x}) \equiv \mathbf{x}^T \mathbf{A}^T
+\mathbf{A} \mathbf{x}-2 \mathbf{b}^T \mathbf{A}
+\mathbf{x}+\|\mathbf{b}\|^2\right\}\)</span></p>
+<ul>
+<li><p><span class="math inline">\(\nabla^2 f(\mathbf{x})=2 \mathbf{A}^T
+\mathbf{A} \succ \mathbf{0}\)</span> , with Global Optimality
+Conditions.</p></li>
+<li><p>Normal Equations. <span class="math inline">\(\left(\mathbf{A}^T
+\mathbf{A}\right) \mathbf{x}_{\mathrm{LS}}=\mathbf{A}^T
+\mathbf{b}\)</span> , <span
+class="math inline">\(\mathbf{x}_{\mathrm{LS}}=\left(\mathbf{A}^T
+\mathbf{A}\right)^{-1} \mathbf{A}^T \mathbf{b}\)</span></p></li>
+<li><p>Data Fitting <span class="math inline">\((\mathbb{R}^n\to
+\mathbb{R})\)</span> , Polynomial Fitting <span
+class="math inline">\((\mathbb{R}\to \mathbb{R})\)</span></p></li>
+</ul>
+<h3 id="regularized-least-squares-rls">Regularized Least Squares
+(RLS)</h3>
+<p>Target: <span class="math inline">\(\min _{\mathbf{x}}\|\mathbf{A}
+\mathbf{x}-\mathbf{b}\|^2+\lambda R(\mathbf{x})\)</span>.</p>
+<p>Specific choice: quadratic regularization, <span
+class="math inline">\(\min \|\mathbf{A
+x}-\mathbf{b}\|^2+\lambda\|\mathbf{D x}\|^2\)</span>, <span
+class="math inline">\(\mathbf{x}_{\mathrm{RLS}}=\left(\mathbf{A}^T
+\mathbf{A}+\lambda \mathbf{D}^T \mathbf{D}\right)^{-1} \mathbf{A}^T
+\mathbf{b}\)</span></p>
+<p>Denoising for smooth signal : <span class="math inline">\(\min
+_{\mathbf{x}}\| \mathbf{x}-\mathbf{b}\|^2+\lambda R(\mathbf{x}), \
+R(\mathbf{x})=\sum_{i=1}^{n-1}\left(x_i-x_{i+1}\right)^2\)</span></p>
+<ul>
+<li><p><span class="math inline">\(R(\cdot)\)</span> can also be written
+as <span class="math inline">\(R(\mathbf{x})=\|\mathbf{L x}\|^2\)</span>
+where <span class="math inline">\(\mathbf{L} \in \mathbb{R}^{(n-1)
+\times n}\)</span> is given by <span class="math display">\[
+\mathbf{L}=\left(\begin{array}{ccccccc}
+1 &amp; -1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; -1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; -1 &amp; \cdots &amp; 0 &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots &amp;
+\vdots \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 &amp; -1
+\end{array}\right)
+\]</span></p></li>
+<li><p>Hence <span
+class="math inline">\(\mathbf{x}_{\mathrm{RLS}}(\lambda)=\left(\mathbf{I}+\lambda
+\mathbf{L}^T \mathbf{L}\right)^{-1} \mathbf{b}\)</span></p></li>
+</ul>
+<h3 id="circle-fitting-cf">Circle Fitting (CF)</h3>
+<p>Find a central point <span class="math inline">\(\textbf{x}\)</span>
+and radius <span class="math inline">\(r\)</span> : <span
+class="math display">\[
+\min _{\mathbf{x} \in \mathbb{R}^n, r \in \mathbb{R}_{+}}
+\sum_{i=1}^m\left(\left\|\mathbf{x}-\mathbf{a}_i\right\|^2-r^2\right)^2
+\]</span></p>
+<p><span class="math display">\[
+\min _{\mathbf{x}, r}\left\{\sum_{i=1}^m\left(-2 \mathbf{a}_i^T
+\mathbf{x}+\|\mathbf{x}\|^2-r^2+\left\|\mathbf{a}_i\right\|^2\right)^2:
+\mathbf{x} \in \mathbb{R}^n, r \in \mathbb{R}\right\}
+\]</span></p>
+<p>Making the change of variables <span
+class="math inline">\(R=\|\mathbf{x}\|^2-r^2\)</span> , then the problem
+is equivalent to the LS problem: <span class="math display">\[
+\text{(CF-LS)}\ \min _{\mathbf{x}, R}\left\{\sum_{i=1}^m\left(2
+\mathbf{a}_i^T \mathbf{x}-(R+\left\|\mathbf{a}_i\right\|^2)\right)^2:
+\mathbf{x} \in \mathbb{R}^n, R \in \mathbb{R}\right\}.
+\]</span></p>
+<p><span class="math display">\[
+\mathbf{A}=2 \left(\begin{array}{c}-\mathbf{a}_1^T- \\ -\mathbf{a}_2^T-
+\\ \vdots \\ -\mathbf{a}_m^T-\end{array}\right),
+\mathbf{b}=\left(\begin{array}{c}R+\left\|\mathbf{a}_1\right\|^2 \\
+R+\left\|\mathbf{a}_2\right\|^2 \\ \vdots \\
+R+\left\|\mathbf{a}_m\right\|^2\end{array}\right)
+\]</span></p>
+<p>It can be proved that any optimal solution <span
+class="math inline">\((\hat{\mathbf{x}}, \hat{R})\)</span> of (CF-LS)
+automatically satisfies <span
+class="math inline">\(\|\hat{\mathbf{x}}\|^2 \geq \hat{R}\)</span>.</p>
+<h2 id="the-gradient-method">The Gradient method</h2>
+<h2 id="newtons-method">Newton’s Method</h2>
+<h2 id="the-karush-kuhn-tucker-conditions">The Karush-Kuhn-Tucker
+Conditions</h2>
 
             </div>
             <hr>
@@ -294,11 +496,9 @@ class="math inline">\(k\)</span> 个里选。</p>
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Solution/">Solution</a>
+                      <a class="hover-with-bg" href="/categories/Summary/">Summary</a>
                     
-                      <a class="hover-with-bg" href="/categories/Solution/Codeforces/">Codeforces</a>
-                    
-                      <a class="hover-with-bg" href="/categories/Solution/Codeforces/Codeforces-Round/">Codeforces Round</a>
+                      <a class="hover-with-bg" href="/categories/Summary/Class-Notes/">Class Notes</a>
                     
                   </div>
                 
@@ -306,13 +506,7 @@ class="math inline">\(k\)</span> 个里选。</p>
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Greedy/">Greedy</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Constructive-Algorithm/">Constructive Algorithm</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Counting/">Counting</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Number-Theory/">Number Theory</a>
+                      <a class="hover-with-bg" href="/tags/Algebra/">Algebra</a>
                     
                   </div>
                 
@@ -329,9 +523,9 @@ class="math inline">\(k\)</span> 个里选。</p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/freshman/">
+                      <a href="/webarebears/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Freshman Year</span>
+                        <span class="hidden-mobile">[Top] We Bare Bears!</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -339,8 +533,8 @@ class="math inline">\(k\)</span> 个里选。</p>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/mathjax/">
-                        <span class="hidden-mobile">Render Math Equations in Hexo</span>
+                      <a href="/abstract-algebra/monoids-and-groups/">
+                        <span class="hidden-mobile">Basic Algebra I : Monoids and Groups (I)</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
