@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.7k words
+      2.2k words
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      24
+      30
        mins to read
     </span>
   
@@ -227,6 +227,9 @@ class="math inline">\((M(S), \text{映射复合}, 1_S)\)</span> 的子群</p>
 Transformations and Abstract Groups</h2>
 <p><em>group.</em> 群 <span class="math inline">\((G,p,1)\)</span>
 ：封闭性，结合律，单位元，所有元素可逆。</p>
+<p><em>subgroup.</em> 子群 <span class="math inline">\((H,p,1)\)</span>
+：集合包含 <span class="math inline">\(H\subseteq G\)</span>
+，是群。记作 <span class="math inline">\(H\le G\)</span> 。</p>
 <p><em>the group of invertible elements of M.</em> 幺半群 <span
 class="math inline">\(M\)</span> 中可逆元组成的群 <span
 class="math inline">\(U(M)\)</span> ：容易验证是一个群。</p>
@@ -445,6 +448,53 @@ class="math inline">\(G\)</span> 满足 <span
 class="math inline">\(\text{exp}\  G=|G|\)</span> ，因此 <span
 class="math inline">\(|G|=o(g)=|\langle g\rangle|\)</span> 。</p></li>
 </ul>
+<h2 id="cycle-decomposition-of-permutations">Cycle Decomposition of
+Permutations</h2>
+<p><em>r-cycle</em> <span class="math inline">\(r\)</span> -
+循环：若置换 <span class="math inline">\(\gamma\)</span>
+满足去掉稳定点后，满足置换效果是循环，即对于所有不是稳定点的下标 <span
+class="math inline">\(i_1,i_2,\dots,i_r, (r&gt;1)\)</span> ： <span
+class="math display">\[
+\gamma(i_1)=i_2,\gamma(i_2)=i_3,\dots,\gamma(i_{r-1})=i_r,\gamma(i_r)=i_1
+\]</span> 此时我们称这组数是一个 <span class="math inline">\(r\)</span>
+- 循环，记作 <span class="math inline">\(\gamma=(i_1i_2\dots
+i_r)\)</span> ，即每个点都会换成右侧的，同理可以记作 <span
+class="math inline">\(\gamma=(i_2i_3\dots i_ri_1)\)</span> 等等。</p>
+<p>用排列的复合可得 <span
+class="math inline">\(\gamma^k(i_j)=i_{j+k}\)</span> (下标每 <span
+class="math inline">\(r\)</span> 循环)。明显 <span
+class="math inline">\(\gamma^r=1\)</span> 且 <span
+class="math inline">\(\gamma^k \not = 1,1\le k&lt;r\)</span> ，所以
+<span class="math inline">\(\gamma\)</span> 的阶（order）为 <span
+class="math inline">\(r\)</span> 。</p>
+<p><em>disjoint</em>
+若两个循环包含的元素无交，则称两个循环<strong>不相交</strong>，对应的排列复合等同于分别运算，此时排列复合是可交换的。</p>
+<p>考虑一组循环（对应置换）的连乘积 <span
+class="math inline">\(\alpha=(i_1i_2\dots i_{n_1})(j_1j_2\dots
+j_{n_2})\dots(l_1l_2\dots l_{n_k})\)</span> ，那么 <span
+class="math inline">\(o(\alpha)=[n_1,n_2,\dots,n_m]\)</span> 。</p>
+<p>若我们引入 <span class="math inline">\(1\)</span> -
+循环，则很容易得到置换<strong>唯一</strong>分解为不相交的循环的方法，每次从最小未使用的元素找到一个循环。</p>
+<p><br></p>
+<p><em>transposition</em> 对换：一个 <span
+class="math inline">\(2\)</span> - 循环，即 <span
+class="math inline">\((ab)\)</span> 的形式。任何一个 <span
+class="math inline">\(r\)</span> - 循环都可以拆成 <span
+class="math inline">\(r-1\)</span> 个对换的乘积，即： <span
+class="math display">\[
+(i_1i_2\dots i_r)=(i_1i_r)\dots (i_1i_3)(i_1i_2)
+\]</span> 因此一个置换 <span class="math inline">\(\alpha\)</span>
+可以拆成 <span class="math inline">\(N(\alpha)=\sum (n_i-1)\)</span>
+个对换的乘积。</p>
+<p>一个置换的对换分解不是唯一的（在最简单的对换分解基础上可以引入很多额外的对换），但共性是对换个数的奇偶性相同。</p>
+<p>对换诱导分裂公式：<span class="math inline">\((ab)(ac_1\dots
+c_hbd_1\dots d_k)=(bd_1\dots d_k)(ac_1\dots c_h)\)</span> 。</p>
+<p>对换诱导合并公式：<span class="math inline">\((ab)(bd_1\dots
+d_k)(ac_1\dots c_h)=(ac_1\dots c_hbd_1\dots d_k)\)</span></p>
+<p>若 <span class="math inline">\(N(\alpha)\)</span>
+为奇数（偶数）则称之为奇（偶）排列，则奇偶排列分别构成了 <span
+class="math inline">\(S_n\)</span> 的一个子群，且大小相同均为 <span
+class="math inline">\(n!/2\)</span> 。</p>
 
             </div>
             <hr>

@@ -54,7 +54,7 @@
       <link href="/abstract-algebra/monoids-and-groups/"/>
       <url>/abstract-algebra/monoids-and-groups/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>研究角度：1. 本身性质；2. 子结构（子群、正规子群）；3.映射关系（群同构，群同态）</p><h2 id="monoids-of-transformations-and-abstract-monoids">Monoids ofTransformations and Abstract Monoids</h2><p><em>semi-group.</em> 半群：封闭性，结合律。</p><p><em>monoid.</em> 幺半群 <span class="math inline">\((M,p,1)\)</span>：封闭性，结合律，单位元。</p><p><em>submonoid.</em> 子幺半群 <spanclass="math inline">\((N,p,1)\)</span> ：集合包含 <spanclass="math inline">\(N\subseteq M\)</span> ，是幺半群。</p><p><em>set of transformations of S.</em> 在 <spanclass="math inline">\(S\)</span> 上的变换集 <spanclass="math inline">\(M(S)\)</span> ：包含所有 <spanclass="math inline">\(S\to S\)</span> 的函数的集合，<spanclass="math inline">\(|M(S)|=|S|^{|S|}\)</span> 。</p><p><em>monoid of transformations.</em> 变换幺半群：<spanclass="math inline">\((M(S), \text{映射复合}, 1_S)\)</span> 的子群</p><h2 id="groups-of-transformations-and-abstract-groups">Groups ofTransformations and Abstract Groups</h2><p><em>group.</em> 群 <span class="math inline">\((G,p,1)\)</span>：封闭性，结合律，单位元，所有元素可逆。</p><p><em>the group of invertible elements of M.</em> 幺半群 <spanclass="math inline">\(M\)</span> 中可逆元组成的群 <spanclass="math inline">\(U(M)\)</span> ：容易验证是一个群。</p><p><em>symmetric group of the set S.</em> <spanclass="math inline">\(S\)</span> 的对称群 <spanclass="math inline">\(\text{Sym}\ S=U(M(S))\)</span> : <spanclass="math inline">\(S\)</span> 上的可逆变换构成的群（全体双射）。</p><p><em>group of transformations.</em> 变换群：对称群 <spanclass="math inline">\(\text{Sym}\ S\)</span> 的子群。</p><p><em>symmetric group on n letters.</em> <spanclass="math inline">\(n\)</span> 元对称群 <spanclass="math inline">\(S_n\)</span> ：<spanclass="math inline">\(\{1,2,\dots n\}\)</span> 的全体排列构成的群，<spanclass="math inline">\(|S_n|=n!\)</span> 。</p><p><em>permutation group.</em> 置换群：有限元对称群 <spanclass="math inline">\(S_n\)</span> 的子群。</p><h2 id="isomorphism.-cayleys-theorem">Isomorphism. Cayley's theorem</h2><p><em>isomorphic.</em> 幺半群/群同构：存在双射 <spanclass="math inline">\(\eta:M\to M&#39;\)</span> ，保运算 <spanclass="math inline">\(\eta(xy)=\eta(x)\eta(y)\)</span> ，且 <spanclass="math inline">\(\eta(1)=1&#39;\)</span> （可由保运算推出）。</p><p><em>isomorphism.</em> 同构函数 <spanclass="math inline">\(\eta\)</span> ，可能不止一个，例如 <spanclass="math inline">\((\mathbb{R},+,0)\)</span> 和 <spanclass="math inline">\((\mathbb{R}^+,\cdot\ ,1)\)</span> 的同构函数可以取<span class="math inline">\(\eta(x)=a^x\ (a&gt;0,a\not= 1)\)</span>。</p><p>同构是一个等价关系，可以通过单位映射实现自反性，同构函数的求逆和复合实现对称性和传递性。</p><p><strong>Cayley 定理：</strong> (1) 任意幺半群 <spanclass="math inline">\(M\)</span> 同构于一个交换幺半群；(2) 任意群 <spanclass="math inline">\(G\)</span> 同构于一个交换群。</p><p>（1）对 <span class="math inline">\(M\)</span> 中的每个元素 <spanclass="math inline">\(a\)</span> 定义<strong>左平移变换</strong> <spanclass="math inline">\(a_L:M\to M, a_L(x)=ax\)</span> ，则 <spanclass="math inline">\(M\)</span> 同构于变换幺半群 <spanclass="math inline">\(M_L=\{a_L|a\in M\}\)</span> 。</p><p>（2）同理构造，额外验证对求逆元封闭：<spanclass="math inline">\(1_L=(a^{-1}a)_L=(a^{-1})_La_L\)</span> ，即 <spanclass="math inline">\(a_L\)</span> 的逆是 <spanclass="math inline">\((a^{-1})_L\)</span> 。</p><p>推论：任意 <span class="math inline">\(n\)</span> 阶有限群同构于一个<span class="math inline">\(n\)</span> 元置换群。</p><h2 id="generalized-associativity.-commutativity">GeneralizedAssociativity. Commutativity</h2><p><strong>广义结合律：</strong> 由结合律可导出 <spanclass="math inline">\((\prod_{i=1}^na_i)(\prod_{j=1}^ma_{j+n})=\prod_{i=1}^{n+m} a_k\)</span> ，进一步可定义整数次幂运算 <spanclass="math inline">\(a^n\)</span> 和 <spanclass="math inline">\(a^{-n}=(a^{-1})^n\)</span></p><p><em>commute.</em> 称 <span class="math inline">\(a,b\in M\)</span>是可交换的，当且仅当 <span class="math inline">\(ab=ba\)</span>。对于一组可交换的元素连乘，运算的顺序并不重要。</p><p><em>commutative monoid.</em> 交换幺半群：幺半群 <spanclass="math inline">\(M\)</span> ，任意两元素 <spanclass="math inline">\(a,b\)</span> 均可交换。</p><p><em>abelian groups (commutative groups).</em> 阿贝尔群（交换群）：群<span class="math inline">\(G\)</span> ，任意两元素 <spanclass="math inline">\(a,b\)</span> 均可交换。</p><p><em>centralizer of a.</em> <span class="math inline">\(a\)</span>的中心化子 <span class="math inline">\(C(a)\)</span> ： <spanclass="math inline">\(M\)</span> 中与 <spanclass="math inline">\(a\)</span> 可交换的元素集。易证 <spanclass="math inline">\(C(a)\)</span> 是 <spanclass="math inline">\(M\)</span> 的子幺半群，定义同样适用于群。</p><blockquote><p>引理：幺半群 <span class="math inline">\(M\)</span>的若干个子幺半群的交仍然是幺半群，群 <spanclass="math inline">\(G\)</span> 的若干个子群的交仍然是群。</p></blockquote><p>将中心化子的定义扩展到集合，定义集合 <spanclass="math inline">\(A\)</span> 的中心化子 <spanclass="math inline">\(C(A) = \cap_{a\in A} C(a)\)</span> ，由引理 <spanclass="math inline">\(C(A)\)</span> 是子幺半群（子群）。</p><p><em>the center of M.</em> <span class="math inline">\(M\)</span>的中心 <span class="math inline">\(C(M)\)</span> ：含义是 <spanclass="math inline">\(M\)</span> 中可以与所有元素交换的元素集，显然包含<span class="math inline">\(1\)</span> 。</p><p>在交换幺半群/交换群中我们常用加号来代替乘号来表示对应运算，用 <spanclass="math inline">\(0\)</span> 代替 <spanclass="math inline">\(1\)</span> 来表示单位元。</p><h2id="submonoids-and-subgroups-generated-by-a-subset.-cyclic-groups">Submonoidsand Subgroups Generated by a Subset. Cyclic Groups</h2><p><em>the submonoid generated by S.</em> 由 <spanclass="math inline">\(S\)</span> 生成的子幺半群 <spanclass="math inline">\(\langle S\rangle\)</span> ：对于 <spanclass="math inline">\(S\subseteq M\)</span> ， <spanclass="math inline">\(M\)</span> 中包含 <spanclass="math inline">\(S\)</span> 的最小的子幺半群。</p><ul><li><p>抽象刻画（存在性）：取所有包含 <spanclass="math inline">\(S\)</span> 的子群求交即为 <spanclass="math inline">\(\langle S\rangle\)</span> ，且 <spanclass="math inline">\(\langle S\rangle\)</span> 是任意包含 <spanclass="math inline">\(S\)</span> 的子群的子群；</p></li><li><p>构造性证明：<span class="math inline">\(\langleS\rangle=\{1,s_1s_2\cdots s_r|s_i\in S, r \text{为有穷正整数}\}\)</span>，首先右侧是个幺半群，然后证互相包含：</p><ol type="1"><li><p>由幺半群的运算封闭性， <span class="math inline">\(\langleS\rangle\)</span> 包含右侧构成的幺半群；</p></li><li><p>右侧的集合包含 <span class="math inline">\(S\)</span> （取 <spanclass="math inline">\(r=1\)</span> )，由存在性引理，进一步的右侧的幺半群包含 <spanclass="math inline">\(\langle S\rangle\)</span> 。</p></li></ol></li></ul><p><em>the subgroup generated by S.</em> 由 <spanclass="math inline">\(S\)</span> 生成的子群 <spanclass="math inline">\(\langle S \rangle\)</span> ：定义同上述，<spanclass="math inline">\(\langle S\rangle=\{1,s_1s_2\cdots s_r|s_i\\text{or}\ s_i^{-1}\in S, r \text{为有穷正整数}\}\)</span></p><p><em>cyclic group.</em> 循环群：由一个元素的集合生成的群 <spanclass="math inline">\(G=\langle a\rangle=\{a^k|k\in\mathbb{Z}\}\)</span> ，显然是一个阿贝尔群（可交换）。</p><ul><li>任意无限循环群都与 <spanclass="math inline">\((\mathbb{Z},+,0)=\langle1\rangle\)</span>同构，通过映射 <span class="math inline">\(n\to a^n\)</span> 。</li><li>任意有限阶（<span class="math inline">\(n\)</span> 阶）循环群都与<span class="math inline">\(n\)</span> 次单位根生成的循环群 <spanclass="math inline">\(U_n=\{x|x^n=1\}\)</span> 同构。</li></ul><ol type="1"><li><p>循环群的子群是循环群；</p></li><li><p>无限循环群 <span class="math inline">\(\langle a\rangle\)</span>的子群都是无限的，且 <span class="math inline">\(s\to \langlea^s\rangle\)</span> 是 <span class="math inline">\(\mathbb{N}\)</span>到 <span class="math inline">\(\langle a\rangle\)</span>的全体子群的双射（ <span class="math inline">\(a\)</span>任意次幂生成的群两两不同）；</p></li><li><p><span class="math inline">\(n\)</span> 阶循环群 <spanclass="math inline">\(\langle a\rangle\)</span> 的子群的阶都是 <spanclass="math inline">\(n\)</span> 的因数，且对于 <spanclass="math inline">\(n\)</span> 的每个因数 <spanclass="math inline">\(q\)</span> ，有且仅有一个 <spanclass="math inline">\(\langle a\rangle\)</span> 的子群阶为 <spanclass="math inline">\(q\)</span> 。</p><ul><li>这个 <span class="math inline">\(q\)</span>阶子群可以被构造性的刻画：<span class="math inline">\(H=\{b|b\in \langlea\rangle,b^q=1\}\)</span> 。</li></ul></li></ol><p><em>the order of a</em> 元素 <span class="math inline">\(a\)</span>的阶 <span class="math inline">\(o(a)\)</span> ：若 <spanclass="math inline">\(\langle a \rangle\)</span> 是无限群 <spanclass="math inline">\(\langle a \rangle=+\infty\)</span> ；否则 <spanclass="math inline">\(o(a)=|\langle a\rangle|=r\)</span> ，其中 <spanclass="math inline">\(r\)</span> 是满足 <spanclass="math inline">\(a^r=1\)</span> 的最小正整数。</p><ul><li>若 <span class="math inline">\(a^m=1\)</span> ，则 <spanclass="math inline">\(o(a) | m\)</span> 。</li><li>若 <span class="math inline">\(o(a)=r&lt;+\infty\)</span> ，则 <spanclass="math inline">\(o(a^k)=[r,k]/k=r/(r,k)\)</span> ，因此 <spanclass="math inline">\(o(a^k)|r\)</span> 。</li></ul><p><br></p><p><em>exponent of a finite group G.</em> 有限群 <spanclass="math inline">\(G\)</span> 的方次数 <spanclass="math inline">\(\text{exp}\ G=\)</span> 最小的正整数 <spanclass="math inline">\(e\)</span> ，满足 <spanclass="math inline">\(\forall x \in G,\ x^e=1\)</span> 。</p><p><strong>定理：有限交换群是循环群的充要条件为方次数等于阶数（ <spanclass="math inline">\(\text{exp}\ G = |G|\)</span> ）。</strong></p><ul><li><p>引理 1. 设 <span class="math inline">\(G\)</span>为有限交换群，设 <span class="math inline">\(g,h\in G\)</span> 且 <spanclass="math inline">\(o(g)=m,o(h)=n,(m,n)=1\)</span> ，则 <spanclass="math inline">\(o(gh)=mn\)</span> 。</p><ul><li><p><spanclass="math inline">\((gh)^{mn}=g^{mn}h^{mn}=(g^m)^n(h^n)^m=1\)</span>。</p></li><li><p>假设 <span class="math inline">\((gh)^r=1\)</span> ，设 <spanclass="math inline">\(k=g^r=h^{-r}\in\langle g\rangle \cap \langleh\rangle\)</span> ，有 <spanclass="math inline">\(o(k)|m,o(k)|n\Rightarrow o(k)|(m,n)\Rightarrowo(k)=1\)</span></p><p>因此 <span class="math inline">\(g^r=k=1\Rightarrow(gh)^r=g^rh^r=h^r=1\)</span> 因此 <spanclass="math inline">\(m|r,n|r\Rightarrow [m,n]|r\)</span> 又 <spanclass="math inline">\((m,n)=1\)</span> 有 <spanclass="math inline">\(mn|r\)</span> 。</p></li></ul></li><li><p>引理 2. 设 <span class="math inline">\(G\)</span>为有限交换群，设 <span class="math inline">\(g=\arg\max_{g\in G}o(g)\)</span> ，则 <span class="math inline">\(\text{exp}\G=o(g)\)</span> 。</p><ul><li><p>标准分解 <span class="math inline">\(o(g)=p_1^{e_1}p_2^{e_2}\dotsp_s^{e_s},o(h)=p_1^{f_1}p_2^{f_2}\dots p_s^{f_s}\ (e_i,f_i\ge0)\)</span></p></li><li><p>反证：若 <span class="math inline">\(h\in G, h^{o(g)}\not=1\)</span> ，则一定存在某个 <span class="math inline">\(f_i&gt;e_i\)</span> ，不妨设 <span class="math inline">\(f_1&gt;e_1\)</span>。</p><p>接下来我们构造一个与 <span class="math inline">\(\arg\max\)</span>冲突的元素：设 <spanclass="math inline">\(g&#39;=g^{p_1^{e_1}},h&#39;=h^{p_2^{f_2}\dotsp_s^{f_s}}\)</span> ，</p><p>于是有 <span class="math inline">\(o(g&#39;)=p_2^{e_2}\dotsp_s^{e_s},o(h&#39;)=p_1^{f_1}\)</span> ，那么由引理 1， <spanclass="math inline">\(o(g&#39;h&#39;)=p_1^{f_1}p_2^{e_2}\dotsp_s^{e_s}&gt;o(g)\)</span> 矛盾。</p></li></ul></li><li><p>" <span class="math inline">\(\Rightarrow\)</span> "证明：由于是循环群 <span class="math inline">\(G=\langleg\rangle\)</span> ，<span class="math inline">\(|G|=|\langleg\rangle|=o(g)=\text{exp}\ G\)</span> 。</p></li><li><p>" <span class="math inline">\(\Leftarrow\)</span> " 证明：由引理2，存在 <span class="math inline">\(g\)</span> 使得 <spanclass="math inline">\(\text{exp}\ G=o(g)\)</span> ，又由于交换群 <spanclass="math inline">\(G\)</span> 满足 <spanclass="math inline">\(\text{exp}\  G=|G|\)</span> ，因此 <spanclass="math inline">\(|G|=o(g)=|\langle g\rangle|\)</span> 。</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>研究角度：1. 本身性质；2. 子结构（子群、正规子群）；3.映射关系（群同构，群同态）</p><h2 id="monoids-of-transformations-and-abstract-monoids">Monoids ofTransformations and Abstract Monoids</h2><p><em>semi-group.</em> 半群：封闭性，结合律。</p><p><em>monoid.</em> 幺半群 <span class="math inline">\((M,p,1)\)</span>：封闭性，结合律，单位元。</p><p><em>submonoid.</em> 子幺半群 <spanclass="math inline">\((N,p,1)\)</span> ：集合包含 <spanclass="math inline">\(N\subseteq M\)</span> ，是幺半群。</p><p><em>set of transformations of S.</em> 在 <spanclass="math inline">\(S\)</span> 上的变换集 <spanclass="math inline">\(M(S)\)</span> ：包含所有 <spanclass="math inline">\(S\to S\)</span> 的函数的集合，<spanclass="math inline">\(|M(S)|=|S|^{|S|}\)</span> 。</p><p><em>monoid of transformations.</em> 变换幺半群：<spanclass="math inline">\((M(S), \text{映射复合}, 1_S)\)</span> 的子群</p><h2 id="groups-of-transformations-and-abstract-groups">Groups ofTransformations and Abstract Groups</h2><p><em>group.</em> 群 <span class="math inline">\((G,p,1)\)</span>：封闭性，结合律，单位元，所有元素可逆。</p><p><em>subgroup.</em> 子群 <span class="math inline">\((H,p,1)\)</span>：集合包含 <span class="math inline">\(H\subseteq G\)</span>，是群。记作 <span class="math inline">\(H\le G\)</span> 。</p><p><em>the group of invertible elements of M.</em> 幺半群 <spanclass="math inline">\(M\)</span> 中可逆元组成的群 <spanclass="math inline">\(U(M)\)</span> ：容易验证是一个群。</p><p><em>symmetric group of the set S.</em> <spanclass="math inline">\(S\)</span> 的对称群 <spanclass="math inline">\(\text{Sym}\ S=U(M(S))\)</span> : <spanclass="math inline">\(S\)</span> 上的可逆变换构成的群（全体双射）。</p><p><em>group of transformations.</em> 变换群：对称群 <spanclass="math inline">\(\text{Sym}\ S\)</span> 的子群。</p><p><em>symmetric group on n letters.</em> <spanclass="math inline">\(n\)</span> 元对称群 <spanclass="math inline">\(S_n\)</span> ：<spanclass="math inline">\(\{1,2,\dots n\}\)</span> 的全体排列构成的群，<spanclass="math inline">\(|S_n|=n!\)</span> 。</p><p><em>permutation group.</em> 置换群：有限元对称群 <spanclass="math inline">\(S_n\)</span> 的子群。</p><h2 id="isomorphism.-cayleys-theorem">Isomorphism. Cayley's theorem</h2><p><em>isomorphic.</em> 幺半群/群同构：存在双射 <spanclass="math inline">\(\eta:M\to M&#39;\)</span> ，保运算 <spanclass="math inline">\(\eta(xy)=\eta(x)\eta(y)\)</span> ，且 <spanclass="math inline">\(\eta(1)=1&#39;\)</span> （可由保运算推出）。</p><p><em>isomorphism.</em> 同构函数 <spanclass="math inline">\(\eta\)</span> ，可能不止一个，例如 <spanclass="math inline">\((\mathbb{R},+,0)\)</span> 和 <spanclass="math inline">\((\mathbb{R}^+,\cdot\ ,1)\)</span> 的同构函数可以取<span class="math inline">\(\eta(x)=a^x\ (a&gt;0,a\not= 1)\)</span>。</p><p>同构是一个等价关系，可以通过单位映射实现自反性，同构函数的求逆和复合实现对称性和传递性。</p><p><strong>Cayley 定理：</strong> (1) 任意幺半群 <spanclass="math inline">\(M\)</span> 同构于一个交换幺半群；(2) 任意群 <spanclass="math inline">\(G\)</span> 同构于一个交换群。</p><p>（1）对 <span class="math inline">\(M\)</span> 中的每个元素 <spanclass="math inline">\(a\)</span> 定义<strong>左平移变换</strong> <spanclass="math inline">\(a_L:M\to M, a_L(x)=ax\)</span> ，则 <spanclass="math inline">\(M\)</span> 同构于变换幺半群 <spanclass="math inline">\(M_L=\{a_L|a\in M\}\)</span> 。</p><p>（2）同理构造，额外验证对求逆元封闭：<spanclass="math inline">\(1_L=(a^{-1}a)_L=(a^{-1})_La_L\)</span> ，即 <spanclass="math inline">\(a_L\)</span> 的逆是 <spanclass="math inline">\((a^{-1})_L\)</span> 。</p><p>推论：任意 <span class="math inline">\(n\)</span> 阶有限群同构于一个<span class="math inline">\(n\)</span> 元置换群。</p><h2 id="generalized-associativity.-commutativity">GeneralizedAssociativity. Commutativity</h2><p><strong>广义结合律：</strong> 由结合律可导出 <spanclass="math inline">\((\prod_{i=1}^na_i)(\prod_{j=1}^ma_{j+n})=\prod_{i=1}^{n+m} a_k\)</span> ，进一步可定义整数次幂运算 <spanclass="math inline">\(a^n\)</span> 和 <spanclass="math inline">\(a^{-n}=(a^{-1})^n\)</span></p><p><em>commute.</em> 称 <span class="math inline">\(a,b\in M\)</span>是可交换的，当且仅当 <span class="math inline">\(ab=ba\)</span>。对于一组可交换的元素连乘，运算的顺序并不重要。</p><p><em>commutative monoid.</em> 交换幺半群：幺半群 <spanclass="math inline">\(M\)</span> ，任意两元素 <spanclass="math inline">\(a,b\)</span> 均可交换。</p><p><em>abelian groups (commutative groups).</em> 阿贝尔群（交换群）：群<span class="math inline">\(G\)</span> ，任意两元素 <spanclass="math inline">\(a,b\)</span> 均可交换。</p><p><em>centralizer of a.</em> <span class="math inline">\(a\)</span>的中心化子 <span class="math inline">\(C(a)\)</span> ： <spanclass="math inline">\(M\)</span> 中与 <spanclass="math inline">\(a\)</span> 可交换的元素集。易证 <spanclass="math inline">\(C(a)\)</span> 是 <spanclass="math inline">\(M\)</span> 的子幺半群，定义同样适用于群。</p><blockquote><p>引理：幺半群 <span class="math inline">\(M\)</span>的若干个子幺半群的交仍然是幺半群，群 <spanclass="math inline">\(G\)</span> 的若干个子群的交仍然是群。</p></blockquote><p>将中心化子的定义扩展到集合，定义集合 <spanclass="math inline">\(A\)</span> 的中心化子 <spanclass="math inline">\(C(A) = \cap_{a\in A} C(a)\)</span> ，由引理 <spanclass="math inline">\(C(A)\)</span> 是子幺半群（子群）。</p><p><em>the center of M.</em> <span class="math inline">\(M\)</span>的中心 <span class="math inline">\(C(M)\)</span> ：含义是 <spanclass="math inline">\(M\)</span> 中可以与所有元素交换的元素集，显然包含<span class="math inline">\(1\)</span> 。</p><p>在交换幺半群/交换群中我们常用加号来代替乘号来表示对应运算，用 <spanclass="math inline">\(0\)</span> 代替 <spanclass="math inline">\(1\)</span> 来表示单位元。</p><h2id="submonoids-and-subgroups-generated-by-a-subset.-cyclic-groups">Submonoidsand Subgroups Generated by a Subset. Cyclic Groups</h2><p><em>the submonoid generated by S.</em> 由 <spanclass="math inline">\(S\)</span> 生成的子幺半群 <spanclass="math inline">\(\langle S\rangle\)</span> ：对于 <spanclass="math inline">\(S\subseteq M\)</span> ， <spanclass="math inline">\(M\)</span> 中包含 <spanclass="math inline">\(S\)</span> 的最小的子幺半群。</p><ul><li><p>抽象刻画（存在性）：取所有包含 <spanclass="math inline">\(S\)</span> 的子群求交即为 <spanclass="math inline">\(\langle S\rangle\)</span> ，且 <spanclass="math inline">\(\langle S\rangle\)</span> 是任意包含 <spanclass="math inline">\(S\)</span> 的子群的子群；</p></li><li><p>构造性证明：<span class="math inline">\(\langleS\rangle=\{1,s_1s_2\cdots s_r|s_i\in S, r \text{为有穷正整数}\}\)</span>，首先右侧是个幺半群，然后证互相包含：</p><ol type="1"><li><p>由幺半群的运算封闭性， <span class="math inline">\(\langleS\rangle\)</span> 包含右侧构成的幺半群；</p></li><li><p>右侧的集合包含 <span class="math inline">\(S\)</span> （取 <spanclass="math inline">\(r=1\)</span> )，由存在性引理，进一步的右侧的幺半群包含 <spanclass="math inline">\(\langle S\rangle\)</span> 。</p></li></ol></li></ul><p><em>the subgroup generated by S.</em> 由 <spanclass="math inline">\(S\)</span> 生成的子群 <spanclass="math inline">\(\langle S \rangle\)</span> ：定义同上述，<spanclass="math inline">\(\langle S\rangle=\{1,s_1s_2\cdots s_r|s_i\\text{or}\ s_i^{-1}\in S, r \text{为有穷正整数}\}\)</span></p><p><em>cyclic group.</em> 循环群：由一个元素的集合生成的群 <spanclass="math inline">\(G=\langle a\rangle=\{a^k|k\in\mathbb{Z}\}\)</span> ，显然是一个阿贝尔群（可交换）。</p><ul><li>任意无限循环群都与 <spanclass="math inline">\((\mathbb{Z},+,0)=\langle1\rangle\)</span>同构，通过映射 <span class="math inline">\(n\to a^n\)</span> 。</li><li>任意有限阶（<span class="math inline">\(n\)</span> 阶）循环群都与<span class="math inline">\(n\)</span> 次单位根生成的循环群 <spanclass="math inline">\(U_n=\{x|x^n=1\}\)</span> 同构。</li></ul><ol type="1"><li><p>循环群的子群是循环群；</p></li><li><p>无限循环群 <span class="math inline">\(\langle a\rangle\)</span>的子群都是无限的，且 <span class="math inline">\(s\to \langlea^s\rangle\)</span> 是 <span class="math inline">\(\mathbb{N}\)</span>到 <span class="math inline">\(\langle a\rangle\)</span>的全体子群的双射（ <span class="math inline">\(a\)</span>任意次幂生成的群两两不同）；</p></li><li><p><span class="math inline">\(n\)</span> 阶循环群 <spanclass="math inline">\(\langle a\rangle\)</span> 的子群的阶都是 <spanclass="math inline">\(n\)</span> 的因数，且对于 <spanclass="math inline">\(n\)</span> 的每个因数 <spanclass="math inline">\(q\)</span> ，有且仅有一个 <spanclass="math inline">\(\langle a\rangle\)</span> 的子群阶为 <spanclass="math inline">\(q\)</span> 。</p><ul><li>这个 <span class="math inline">\(q\)</span>阶子群可以被构造性的刻画：<span class="math inline">\(H=\{b|b\in \langlea\rangle,b^q=1\}\)</span> 。</li></ul></li></ol><p><em>the order of a</em> 元素 <span class="math inline">\(a\)</span>的阶 <span class="math inline">\(o(a)\)</span> ：若 <spanclass="math inline">\(\langle a \rangle\)</span> 是无限群 <spanclass="math inline">\(\langle a \rangle=+\infty\)</span> ；否则 <spanclass="math inline">\(o(a)=|\langle a\rangle|=r\)</span> ，其中 <spanclass="math inline">\(r\)</span> 是满足 <spanclass="math inline">\(a^r=1\)</span> 的最小正整数。</p><ul><li>若 <span class="math inline">\(a^m=1\)</span> ，则 <spanclass="math inline">\(o(a) | m\)</span> 。</li><li>若 <span class="math inline">\(o(a)=r&lt;+\infty\)</span> ，则 <spanclass="math inline">\(o(a^k)=[r,k]/k=r/(r,k)\)</span> ，因此 <spanclass="math inline">\(o(a^k)|r\)</span> 。</li></ul><p><br></p><p><em>exponent of a finite group G.</em> 有限群 <spanclass="math inline">\(G\)</span> 的方次数 <spanclass="math inline">\(\text{exp}\ G=\)</span> 最小的正整数 <spanclass="math inline">\(e\)</span> ，满足 <spanclass="math inline">\(\forall x \in G,\ x^e=1\)</span> 。</p><p><strong>定理：有限交换群是循环群的充要条件为方次数等于阶数（ <spanclass="math inline">\(\text{exp}\ G = |G|\)</span> ）。</strong></p><ul><li><p>引理 1. 设 <span class="math inline">\(G\)</span>为有限交换群，设 <span class="math inline">\(g,h\in G\)</span> 且 <spanclass="math inline">\(o(g)=m,o(h)=n,(m,n)=1\)</span> ，则 <spanclass="math inline">\(o(gh)=mn\)</span> 。</p><ul><li><p><spanclass="math inline">\((gh)^{mn}=g^{mn}h^{mn}=(g^m)^n(h^n)^m=1\)</span>。</p></li><li><p>假设 <span class="math inline">\((gh)^r=1\)</span> ，设 <spanclass="math inline">\(k=g^r=h^{-r}\in\langle g\rangle \cap \langleh\rangle\)</span> ，有 <spanclass="math inline">\(o(k)|m,o(k)|n\Rightarrow o(k)|(m,n)\Rightarrowo(k)=1\)</span></p><p>因此 <span class="math inline">\(g^r=k=1\Rightarrow(gh)^r=g^rh^r=h^r=1\)</span> 因此 <spanclass="math inline">\(m|r,n|r\Rightarrow [m,n]|r\)</span> 又 <spanclass="math inline">\((m,n)=1\)</span> 有 <spanclass="math inline">\(mn|r\)</span> 。</p></li></ul></li><li><p>引理 2. 设 <span class="math inline">\(G\)</span>为有限交换群，设 <span class="math inline">\(g=\arg\max_{g\in G}o(g)\)</span> ，则 <span class="math inline">\(\text{exp}\G=o(g)\)</span> 。</p><ul><li><p>标准分解 <span class="math inline">\(o(g)=p_1^{e_1}p_2^{e_2}\dotsp_s^{e_s},o(h)=p_1^{f_1}p_2^{f_2}\dots p_s^{f_s}\ (e_i,f_i\ge0)\)</span></p></li><li><p>反证：若 <span class="math inline">\(h\in G, h^{o(g)}\not=1\)</span> ，则一定存在某个 <span class="math inline">\(f_i&gt;e_i\)</span> ，不妨设 <span class="math inline">\(f_1&gt;e_1\)</span>。</p><p>接下来我们构造一个与 <span class="math inline">\(\arg\max\)</span>冲突的元素：设 <spanclass="math inline">\(g&#39;=g^{p_1^{e_1}},h&#39;=h^{p_2^{f_2}\dotsp_s^{f_s}}\)</span> ，</p><p>于是有 <span class="math inline">\(o(g&#39;)=p_2^{e_2}\dotsp_s^{e_s},o(h&#39;)=p_1^{f_1}\)</span> ，那么由引理 1， <spanclass="math inline">\(o(g&#39;h&#39;)=p_1^{f_1}p_2^{e_2}\dotsp_s^{e_s}&gt;o(g)\)</span> 矛盾。</p></li></ul></li><li><p>" <span class="math inline">\(\Rightarrow\)</span> "证明：由于是循环群 <span class="math inline">\(G=\langleg\rangle\)</span> ，<span class="math inline">\(|G|=|\langleg\rangle|=o(g)=\text{exp}\ G\)</span> 。</p></li><li><p>" <span class="math inline">\(\Leftarrow\)</span> " 证明：由引理2，存在 <span class="math inline">\(g\)</span> 使得 <spanclass="math inline">\(\text{exp}\ G=o(g)\)</span> ，又由于交换群 <spanclass="math inline">\(G\)</span> 满足 <spanclass="math inline">\(\text{exp}\  G=|G|\)</span> ，因此 <spanclass="math inline">\(|G|=o(g)=|\langle g\rangle|\)</span> 。</p></li></ul><h2 id="cycle-decomposition-of-permutations">Cycle Decomposition ofPermutations</h2><p><em>r-cycle</em> <span class="math inline">\(r\)</span> -循环：若置换 <span class="math inline">\(\gamma\)</span>满足去掉稳定点后，满足置换效果是循环，即对于所有不是稳定点的下标 <spanclass="math inline">\(i_1,i_2,\dots,i_r, (r&gt;1)\)</span> ： <spanclass="math display">\[\gamma(i_1)=i_2,\gamma(i_2)=i_3,\dots,\gamma(i_{r-1})=i_r,\gamma(i_r)=i_1\]</span> 此时我们称这组数是一个 <span class="math inline">\(r\)</span>- 循环，记作 <span class="math inline">\(\gamma=(i_1i_2\dotsi_r)\)</span> ，即每个点都会换成右侧的，同理可以记作 <spanclass="math inline">\(\gamma=(i_2i_3\dots i_ri_1)\)</span> 等等。</p><p>用排列的复合可得 <spanclass="math inline">\(\gamma^k(i_j)=i_{j+k}\)</span> (下标每 <spanclass="math inline">\(r\)</span> 循环)。明显 <spanclass="math inline">\(\gamma^r=1\)</span> 且 <spanclass="math inline">\(\gamma^k \not = 1,1\le k&lt;r\)</span> ，所以<span class="math inline">\(\gamma\)</span> 的阶（order）为 <spanclass="math inline">\(r\)</span> 。</p><p><em>disjoint</em>若两个循环包含的元素无交，则称两个循环<strong>不相交</strong>，对应的排列复合等同于分别运算，此时排列复合是可交换的。</p><p>考虑一组循环（对应置换）的连乘积 <spanclass="math inline">\(\alpha=(i_1i_2\dots i_{n_1})(j_1j_2\dotsj_{n_2})\dots(l_1l_2\dots l_{n_k})\)</span> ，那么 <spanclass="math inline">\(o(\alpha)=[n_1,n_2,\dots,n_m]\)</span> 。</p><p>若我们引入 <span class="math inline">\(1\)</span> -循环，则很容易得到置换<strong>唯一</strong>分解为不相交的循环的方法，每次从最小未使用的元素找到一个循环。</p><p><br></p><p><em>transposition</em> 对换：一个 <spanclass="math inline">\(2\)</span> - 循环，即 <spanclass="math inline">\((ab)\)</span> 的形式。任何一个 <spanclass="math inline">\(r\)</span> - 循环都可以拆成 <spanclass="math inline">\(r-1\)</span> 个对换的乘积，即： <spanclass="math display">\[(i_1i_2\dots i_r)=(i_1i_r)\dots (i_1i_3)(i_1i_2)\]</span> 因此一个置换 <span class="math inline">\(\alpha\)</span>可以拆成 <span class="math inline">\(N(\alpha)=\sum (n_i-1)\)</span>个对换的乘积。</p><p>一个置换的对换分解不是唯一的（在最简单的对换分解基础上可以引入很多额外的对换），但共性是对换个数的奇偶性相同。</p><p>对换诱导分裂公式：<span class="math inline">\((ab)(ac_1\dotsc_hbd_1\dots d_k)=(bd_1\dots d_k)(ac_1\dots c_h)\)</span> 。</p><p>对换诱导合并公式：<span class="math inline">\((ab)(bd_1\dotsd_k)(ac_1\dots c_h)=(ac_1\dots c_hbd_1\dots d_k)\)</span></p><p>若 <span class="math inline">\(N(\alpha)\)</span>为奇数（偶数）则称之为奇（偶）排列，则奇偶排列分别构成了 <spanclass="math inline">\(S_n\)</span> 的一个子群，且大小相同均为 <spanclass="math inline">\(n!/2\)</span> 。</p>]]></content>
       
       
       <categories>
@@ -159,13 +159,13 @@
       
         <tags>
             
+            <tag> Counting </tag>
+            
             <tag> Dynamic Programming </tag>
             
             <tag> STL </tag>
             
             <tag> Shortest Path </tag>
-            
-            <tag> Counting </tag>
             
             <tag> Segment Tree </tag>
             
@@ -223,9 +223,9 @@
       
         <tags>
             
-            <tag> Geometry </tag>
-            
             <tag> Graphs </tag>
+            
+            <tag> Geometry </tag>
             
         </tags>
       
@@ -254,11 +254,11 @@
       
         <tags>
             
-            <tag> Graphs </tag>
+            <tag> Number Theory </tag>
             
             <tag> Counting </tag>
             
-            <tag> Number Theory </tag>
+            <tag> Graphs </tag>
             
         </tags>
       
@@ -339,13 +339,13 @@
       
         <tags>
             
-            <tag> Graphs </tag>
+            <tag> Constructive Algorithm </tag>
             
             <tag> DFS and Similar </tag>
             
-            <tag> Knapsack Problem </tag>
+            <tag> Graphs </tag>
             
-            <tag> Constructive Algorithm </tag>
+            <tag> Knapsack Problem </tag>
             
             <tag> String Suffix Structures </tag>
             
@@ -376,15 +376,15 @@
       
         <tags>
             
-            <tag> Geometry </tag>
-            
-            <tag> Graphs </tag>
+            <tag> Greedy </tag>
             
             <tag> Dynamic Programming </tag>
             
-            <tag> Greedy </tag>
+            <tag> Graphs </tag>
             
             <tag> STL </tag>
+            
+            <tag> Geometry </tag>
             
         </tags>
       
@@ -440,9 +440,9 @@
       
         <tags>
             
-            <tag> Geometry </tag>
-            
             <tag> Shortest Path </tag>
+            
+            <tag> Geometry </tag>
             
             <tag> Flows </tag>
             
@@ -475,13 +475,13 @@
       
         <tags>
             
-            <tag> Geometry </tag>
-            
             <tag> STL </tag>
             
             <tag> Segment Tree </tag>
             
             <tag> Probabilities </tag>
+            
+            <tag> Geometry </tag>
             
             <tag> Tricks </tag>
             
@@ -512,13 +512,13 @@
       
         <tags>
             
-            <tag> Geometry </tag>
+            <tag> Constructive Algorithm </tag>
             
             <tag> Graphs </tag>
             
-            <tag> Constructive Algorithm </tag>
-            
             <tag> Probabilities </tag>
+            
+            <tag> Geometry </tag>
             
         </tags>
       
@@ -547,9 +547,9 @@
       
         <tags>
             
-            <tag> Graphs </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Graphs </tag>
             
             <tag> Minkowski Sum </tag>
             
@@ -584,11 +584,11 @@
       
         <tags>
             
-            <tag> Graphs </tag>
-            
             <tag> Constructive Algorithm </tag>
             
             <tag> Counting </tag>
+            
+            <tag> Graphs </tag>
             
         </tags>
       
@@ -617,9 +617,9 @@
       
         <tags>
             
-            <tag> String </tag>
-            
             <tag> Number Theory </tag>
+            
+            <tag> String </tag>
             
             <tag> Divide and Conquer </tag>
             
@@ -650,11 +650,11 @@
       
         <tags>
             
-            <tag> Geometry </tag>
-            
             <tag> Greedy </tag>
             
             <tag> Segment Tree </tag>
+            
+            <tag> Geometry </tag>
             
             <tag> Flows </tag>
             
@@ -689,17 +689,17 @@
       
         <tags>
             
-            <tag> Geometry </tag>
-            
-            <tag> Graphs </tag>
+            <tag> Greedy </tag>
             
             <tag> Dynamic Programming </tag>
             
-            <tag> Greedy </tag>
+            <tag> Graphs </tag>
+            
+            <tag> String Suffix Structures </tag>
             
             <tag> Segment Tree </tag>
             
-            <tag> String Suffix Structures </tag>
+            <tag> Geometry </tag>
             
             <tag> Difference and Prefix Sum </tag>
             
@@ -730,11 +730,11 @@
       
         <tags>
             
-            <tag> Graphs </tag>
+            <tag> Number Theory </tag>
             
             <tag> Counting </tag>
             
-            <tag> Number Theory </tag>
+            <tag> Graphs </tag>
             
         </tags>
       
@@ -767,9 +767,9 @@
             
             <tag> Binary Search </tag>
             
-            <tag> Binary Lifting </tag>
-            
             <tag> Segment Tree </tag>
+            
+            <tag> Binary Lifting </tag>
             
             <tag> Sparse Table </tag>
             
@@ -939,11 +939,11 @@
       
         <tags>
             
+            <tag> Counting </tag>
+            
             <tag> Dynamic Programming </tag>
             
             <tag> Fenwick Tree </tag>
-            
-            <tag> Counting </tag>
             
         </tags>
       
@@ -1028,11 +1028,11 @@
       
         <tags>
             
-            <tag> Geometry </tag>
-            
             <tag> Constructive Algorithm </tag>
             
             <tag> Game Theory </tag>
+            
+            <tag> Geometry </tag>
             
         </tags>
       
@@ -1094,11 +1094,11 @@
       
         <tags>
             
-            <tag> Dynamic Programming </tag>
+            <tag> Number Theory </tag>
             
             <tag> Counting </tag>
             
-            <tag> Number Theory </tag>
+            <tag> Dynamic Programming </tag>
             
             <tag> Threshold Optimization </tag>
             
@@ -1183,15 +1183,15 @@
       
         <tags>
             
-            <tag> String </tag>
+            <tag> Greedy </tag>
             
             <tag> Knapsack Problem </tag>
-            
-            <tag> Greedy </tag>
             
             <tag> Threshold Optimization </tag>
             
             <tag> Binary Lifting </tag>
+            
+            <tag> String </tag>
             
         </tags>
       
@@ -1220,9 +1220,9 @@
       
         <tags>
             
-            <tag> Knapsack Problem </tag>
-            
             <tag> Counting </tag>
+            
+            <tag> Knapsack Problem </tag>
             
             <tag> Combinatorics </tag>
             
@@ -1284,9 +1284,9 @@
       
         <tags>
             
-            <tag> Graphs </tag>
-            
             <tag> Greedy </tag>
+            
+            <tag> Graphs </tag>
             
             <tag> Scheduling </tag>
             
@@ -1404,9 +1404,9 @@
       
         <tags>
             
-            <tag> Dynamic Programming </tag>
-            
             <tag> Constructive Algorithm </tag>
+            
+            <tag> Dynamic Programming </tag>
             
             <tag> Bitmask </tag>
             
@@ -1435,9 +1435,9 @@
       
         <tags>
             
-            <tag> Dynamic Programming </tag>
-            
             <tag> Greedy </tag>
+            
+            <tag> Dynamic Programming </tag>
             
             <tag> Game Theory </tag>
             
@@ -1468,9 +1468,9 @@
       
         <tags>
             
-            <tag> Dynamic Programming </tag>
-            
             <tag> Constructive Algorithm </tag>
+            
+            <tag> Dynamic Programming </tag>
             
         </tags>
       
@@ -1499,9 +1499,9 @@
       
         <tags>
             
-            <tag> Graphs </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Graphs </tag>
             
             <tag> STL </tag>
             
@@ -1563,11 +1563,11 @@
       
         <tags>
             
+            <tag> Counting </tag>
+            
             <tag> DFS and Similar </tag>
             
             <tag> Union-Find Set </tag>
-            
-            <tag> Counting </tag>
             
         </tags>
       
@@ -1596,11 +1596,11 @@
       
         <tags>
             
-            <tag> Binary Search </tag>
+            <tag> Greedy </tag>
             
             <tag> Knapsack Problem </tag>
             
-            <tag> Greedy </tag>
+            <tag> Binary Search </tag>
             
         </tags>
       
@@ -1627,9 +1627,9 @@
       
         <tags>
             
-            <tag> Union-Find Set </tag>
-            
             <tag> Constructive Algorithm </tag>
+            
+            <tag> Union-Find Set </tag>
             
             <tag> Combinatorics </tag>
             
@@ -1664,9 +1664,9 @@
             
             <tag> Constructive Algorithm </tag>
             
-            <tag> Counting </tag>
-            
             <tag> Number Theory </tag>
+            
+            <tag> Counting </tag>
             
         </tags>
       
@@ -1774,13 +1774,13 @@
       
         <tags>
             
-            <tag> Greedy </tag>
-            
             <tag> Constructive Algorithm </tag>
             
-            <tag> Counting </tag>
-            
             <tag> Number Theory </tag>
+            
+            <tag> Greedy </tag>
+            
+            <tag> Counting </tag>
             
         </tags>
       
