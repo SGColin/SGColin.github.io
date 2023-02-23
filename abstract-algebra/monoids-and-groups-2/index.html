@@ -18,7 +18,7 @@
   <meta name="author" content="Colin Gao">
   <meta name="keywords" content="">
   
-  <title>Basic Algebra I : Concepts from Set Theory - Colin&#39;s Blog</title>
+  <title>Basic Algebra I : Monoids and Groups (II) - Colin&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -146,9 +146,9 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Basic Algebra I : Concepts from Set Theory">
+            <span class="h2" id="subtitle" title="Basic Algebra I : Monoids and Groups (II)">
               
-                Basic Algebra I : Concepts from Set Theory
+                Basic Algebra I : Monoids and Groups (II)
               
             </span>
 
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      667 words
+      1.5k words
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      13
+      20
        mins to read
     </span>
   
@@ -203,153 +203,245 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Basic Algebra I : Concepts from Set Theory</h1>
+            <h1 style="display: none">Basic Algebra I : Monoids and Groups (II)</h1>
             
             <div class="markdown-body">
-              <h2 id="the-power-set-of-a-set">THE POWER SET OF A SET</h2>
-<p><strong>Power Set</strong> <span
-class="math inline">\(\mathscr{P}(S)=\{s|s\subseteq S\},\
-|\mathscr{P}(S)|=2^{|S|}\)</span> .</p>
-<h2 id="the-cartesian-product-set.-maps">THE CARTESIAN PRODUCT SET.
-MAPS</h2>
-<p><strong>Cartesian Product Set</strong> <span
-class="math inline">\(S\times T = \{(s,t)|s\in S, t\in T\},\ |S\times T|
-= |S||T|\)</span> .</p>
-<p><strong>Map of a set <span class="math inline">\(S\)</span> into a
-set <span class="math inline">\(T\)</span></strong> ( <span
-class="math inline">\(S \stackrel{\alpha}{\rightarrow} T\)</span> ) :
-<strong>domain</strong> <span class="math inline">\(S\)</span> ,
-<strong>co-domain</strong> <span class="math inline">\(T\)</span> , a
-subset <span class="math inline">\(\alpha\)</span> of <span
-class="math inline">\(S\times T\)</span> having properties:</p>
-<ol type="1">
-<li>For any <span class="math inline">\(s \in S\)</span> there exists a
-<span class="math inline">\(t \in T\)</span> such that <span
-class="math inline">\((s, t) \in \alpha\)</span>.</li>
-<li>"Single-valuedness": If <span class="math inline">\((s, t)\)</span>
-and <span class="math inline">\(\left(s, t^{\prime}\right) \in
-\alpha\)</span> then <span
-class="math inline">\(t=t^{\prime}\)</span>.</li>
-</ol>
-<p><strong>Composite / Product / Resultant of <span
-class="math inline">\(\alpha\)</span> and <span
-class="math inline">\(\beta\)</span> </strong> : <span
-class="math inline">\((\beta \alpha)(s)=\beta(\alpha(s))\)</span> .</p>
+              <p>进入正题！</p>
+<h2 id="orbits.-coset-of-a-subgroup">Orbits. Coset of a Subgroup</h2>
+<p><em>G-equivalent</em> 对于集合 <span class="math inline">\(S\)</span>
+上的变换群 <span class="math inline">\(G\)</span> 和两元素 <span
+class="math inline">\(x,y\)</span> ，若存在 <span
+class="math inline">\(\alpha\in G\)</span> 使得 <span
+class="math inline">\(y=\alpha(x)\)</span> 则称两元素 <span
+class="math inline">\(G\)</span> - 等价 <span
+class="math inline">\(x\sim_G y\)</span> 。</p>
 <ul>
-<li>Composition of maps satisfies the associative law : <span
-class="math inline">\(\gamma(\beta\alpha)=(\gamma\beta)\alpha\)</span></li>
+<li>由于 <span class="math inline">\(G\)</span>
+是变换群，容易验证是等价关系：自反有 <span class="math inline">\(1_S\in
+G\)</span> ，对称有 <span class="math inline">\(\alpha^{-1}\in
+G\)</span> ，传递是群的封闭性。</li>
 </ul>
-<p><strong>Surjective</strong> : if im <span
-class="math inline">\(\alpha=T\)</span>, that is, if the range coincides
-with the co-domain.</p>
-<p><strong>Injective</strong> : if distinct elements of <span
-class="math inline">\(S\)</span> have distinct images in <span
-class="math inline">\(T\)</span>, that is, if <span
-class="math inline">\(s_1 \neq s_2 \Rightarrow \alpha\left(s_1\right)
-\neq \alpha\left(s_2\right)\)</span>.</p>
-<p><strong>Bijective (a one to one correspondence)</strong> : If <span
-class="math inline">\(\alpha\)</span> is both injective and
-surjective.</p>
+<p><em>G-orbit</em> <span class="math inline">\(G\)</span> - 轨道：由
+<span class="math inline">\(G\)</span> - 等价关系导出等价类 <span
+class="math inline">\(Gx=\{\alpha(x)|\alpha\in G\}\)</span></p>
+<p><em>transitive group</em> 传递群：若 <span
+class="math inline">\(G\)</span> - 轨道只有一个（ <span
+class="math inline">\(S\)</span> 中全体元素等价）则称 <span
+class="math inline">\(G\)</span> 是 <span
+class="math inline">\(S\)</span> 的传递群。</p>
+<p><em>left (right) translations</em> 定义左平移 <span
+class="math inline">\(g_L: x\to gx\)</span> ，右平移 <span
+class="math inline">\(g_R:x\to xg\)</span> 。</p>
+<p>定义变换群 <span class="math inline">\(G_L=\{g_L|g\in
+G\},G_R=\{g_R|g\in G\}\)</span> ，由于 <span
+class="math inline">\(y=gx\)</span> 和 <span
+class="math inline">\(y=xg\)</span> 都是可解的，所以两者都是传递群。</p>
+<p>假设 <span class="math inline">\(H\)</span> 是 <span
+class="math inline">\(G\)</span> 的一个子群，定义 <span
+class="math inline">\(H_L(G)=\{h_L|h\in H\}\)</span> （ <span
+class="math inline">\(h_L\)</span> 还是定义在 <span
+class="math inline">\(G\)</span> 上的），<span
+class="math inline">\(H_L(G)\)</span> 也是一个变换群（ <span
+class="math inline">\(g\to g_L\)</span> 是同构映射）。</p>
+<p>则 <span class="math inline">\(H_L\)</span> 导出的轨道 <span
+class="math inline">\(Hx=\{hx|h\in H\}\)</span> 称作 <span
+class="math inline">\(x\)</span> 关于 <span
+class="math inline">\(H\)</span> 的右陪集，易证任意右陪集大小相同，因此
+<span class="math inline">\(|Hx|=|H1|=|H|\)</span> 。</p>
+<p>假设 <span class="math inline">\(G\)</span> 是有限群，且 <span
+class="math inline">\(|G|=n,|H|=m\)</span> ，用 <span
+class="math inline">\(H_L(G)\)</span> - 轨道将 <span
+class="math inline">\(G\)</span> 划分为 <span
+class="math inline">\(G=Hx_1\cup Hx_2\cup\dots\cup Hx_r\)</span> 。</p>
+<p>称 <span class="math inline">\(r\)</span> 为 <span
+class="math inline">\(H\)</span> 在 <span
+class="math inline">\(G\)</span> 中的指数（index）记作 <span
+class="math inline">\([G:H]\)</span> 。此时有：1.划分任意两个集合无交；
+2. <span class="math inline">\(|Hx_i|=|H|=m\)</span> 。可以得出 <span
+class="math inline">\(n=mr\)</span> 。</p>
+<p>这样就证明了 <strong>拉格朗日定理</strong> ：对于有限群 <span
+class="math inline">\(G\)</span> 的任意子群 <span
+class="math inline">\(H\)</span> ，有 <span
+class="math inline">\(|G|=|H|[G:H]\)</span> 。</p>
+<p>进一步的，有推论：若 <span class="math inline">\(|G|=n\)</span>
+，则对任意 <span class="math inline">\(x\in G\)</span> 都有 <span
+class="math inline">\(x^n=1\)</span> 。</p>
+<ul>
+<li>证明：假设 <span class="math inline">\(|\langle x\rangle
+|=m\)</span> ，用拉格朗日定理有 <span
+class="math inline">\(n=mr\)</span> 且 <span
+class="math inline">\(x^m=1\)</span> ， 故 <span
+class="math inline">\(x^n=(x^m)^r=1\)</span> 。</li>
+<li>结合此前循环群充要条件，能得到非循环群满足 <span
+class="math inline">\(\text{exp}\ G&lt;n\)</span> 。</li>
+</ul>
+<h2 id="congruences.-quotient-monoids-and-groups">Congruences. Quotient
+Monoids and Groups</h2>
+<p><em>congruence relation</em> 同余关系 <span
+class="math inline">\(\equiv\)</span> ：可乘的等价关系。对于幺半群 <span
+class="math inline">\(M\)</span> ，若 <span
+class="math inline">\(a\equiv a&#39;,b\equiv b&#39;\)</span> ，则有
+<span class="math inline">\(ab\equiv a&#39;b&#39;\)</span> 。</p>
+<p>考虑商集 <span class="math inline">\(\overline{M}=M/\equiv\)</span>
+，包含了所有由同余关系导出的等价类 <span
+class="math inline">\(\overline{a} = \{b\in M|b\equiv a\}\)</span>
+。</p>
+<p>那么对于 <span class="math inline">\(\overline{M}\)</span> 中的等价类
+<span class="math inline">\(\overline{a},\overline{a&#39;},\overline{b},
+\overline{b&#39;}\)</span> ，有 <span
+class="math inline">\(\overline{a}=\overline{a&#39;},\overline{b}=\overline{b&#39;}\)</span>
+，由于 <span class="math inline">\(ab\equiv a&#39;b&#39;\)</span> ，有
+<span
+class="math inline">\(\overline{ab}=\overline{a&#39;b&#39;}\)</span>
+。</p>
+<p>这样我们就获得了一个 <span
+class="math inline">\(\overline{M}\)</span> 上良定义的乘法映射 <span
+class="math inline">\(\overline{M}\times \overline{M}\to
+\overline{M}\)</span> ：<span
+class="math inline">\((\overline{a},\overline{b})\to
+\overline{ab}\)</span> ，记作 <span class="math inline">\(\cdot\)</span>
+，易证 <span
+class="math inline">\((\overline{M},\cdot,\overline{1})\)</span>
+是一个幺半群。</p>
+<p>我们称 <span class="math inline">\((M/\equiv, \cdot,
+\overline{1})\)</span> 为 <span class="math inline">\(M\)</span> 关于
+<span class="math inline">\(\equiv\)</span> 的商幺半群。同样称 <span
+class="math inline">\((G/\equiv, \cdot, \overline{1})\)</span>
+为商群的定义也是正确的。</p>
+<p><br></p>
+<p><em>normal subgroups</em> 正规子群 <span
+class="math inline">\(K\unlhd G\)</span> ：满足 <span
+class="math inline">\(\forall g\in G, k\in K, g^{-1}kg\in K\)</span>
+。</p>
+<ul>
+<li>容易发现阿贝尔群的任意子群都是正规子群，因为可交换 <span
+class="math inline">\(g^{-1}kg=kg^{-1}g=k\)</span> 。</li>
+</ul>
+<p>同余关系和正规子群的联系：</p>
+<ul>
+<li>同余等价类 <span class="math inline">\(K=\overline{1}\)</span> 是
+<span class="math inline">\(G\)</span> 的正规子群，且对于任意 <span
+class="math inline">\(g\in G\)</span> ，有 <span
+class="math inline">\(\overline{g}=gK=Kg\)</span> 。</li>
+<li>对于任意正规子群 <span class="math inline">\(K\)</span> ，可以由
+<span class="math inline">\(K\)</span> 导出同余关系：<span
+class="math inline">\(a\equiv b\pmod k\ \ \text{if}\ \ a^{-1}b\in
+K\)</span> 。
+<ul>
+<li>在此同余关系下，同余等价类的形式为 <span
+class="math inline">\(gK\)</span> 。</li>
+</ul></li>
+</ul>
+<p><em>quotient group</em> 商群：由正规子群 <span
+class="math inline">\(K\)</span> 定义的同余关系导出的商群 <span
+class="math inline">\(\overline{G}=G/\equiv \pmod k\)</span></p>
+<ul>
+<li>商群中的元素是等价类，形式均为 <span
+class="math inline">\(\overline{g}=gK\)</span> ，因此乘法 <span
+class="math inline">\(\overline{g}\overline{h}=\overline{gh}\)</span>
+可以进一步的写作 <span class="math inline">\((gK)(hK)=ghK\)</span>
+。</li>
+<li>单位元 <span class="math inline">\(K=\overline{1}=1K\)</span> ，逆元
+<span
+class="math inline">\((\overline{g})^{-1}=\overline{g^{-1}}=g^{-1}K\)</span>
+。</li>
+</ul>
+<p>定义子（幺半）群的乘法：<span class="math inline">\(\forall A,B\le G,
+AB=\{ab|a\in A, b\in B\}\)</span> 。这样 <span
+class="math inline">\((\mathscr{P}(G),\cdot,\{1\})\)</span>
+就构成了一个幺半群。</p>
+<ul>
+<li>集合的乘法对应了商群中的乘法 <span
+class="math inline">\((gK)(hK)=g(Kh)K=ghK^2=ghK\)</span></li>
+<li>正规子群的等价判定条件，<span class="math inline">\(\forall g\in
+G\)</span> 满足：（1）<span class="math inline">\(g^{-1}Kg\subset
+K\)</span> （2）<span class="math inline">\(Kg=gK\)</span></li>
+</ul>
+<p><br></p>
+<p><em>simple group</em> 单群：只有 <span
+class="math inline">\(G\)</span> 和 <span
+class="math inline">\(1\)</span> 两个正规子群的群 <span
+class="math inline">\(G\ (G\not = 1)\)</span> ，对应的同余关系是 <span
+class="math inline">\(=\)</span> 和全部相同。</p>
+<ul>
+<li>交换的单群（阿贝尔单群）只有素数阶循环群。</li>
+<li>群 <span class="math inline">\(G\)</span> 的中心 <span
+class="math inline">\(C(G)\)</span>
+的任意子群显然都是正规子群（可交换）。</li>
+</ul>
+<h2 id="homomorphisms">Homomorphisms</h2>
+<p><em>homomorphism</em> 同态映射 <span
+class="math inline">\(\eta\)</span> ：<span
+class="math inline">\(\eta(ab)=\eta(a)\eta(b),\eta(1)=1&#39;, \forall
+a,b\in M\)</span></p>
+<p><em>epimorphiscm</em> 满同态：满射的同态映射；</p>
+<p><em>monomorphism</em> 单同态：单射的同态映射。</p>
+<h2 id="congruences.-quotient-monoids-and-groups-1">Congruences.
+Quotient Monoids and Groups</h2>
+<h2 id="homomorphisms-1">Homomorphisms</h2>
+<h2 id="subgroups-of-a-homomorphic-image.">Subgroups of a Homomorphic
+Image.</h2>
+<h2 id="free-objects.-generators-and-relations">Free Objects. Generators
+and Relations</h2>
+<h2 id="groups-acting-on-sets">Groups Acting on Sets</h2>
+<h2 id="sylows-theorems">Sylow's Theorems</h2>
 <blockquote>
-<p><strong><span class="math inline">\(S \stackrel{\alpha}{\rightarrow}
-T\)</span> is bijective if and only if there exists a map <span
-class="math inline">\(T \stackrel{\beta}{\rightarrow} S\)</span> such
-that <span class="math inline">\(\beta \alpha=1_S\)</span> and <span
-class="math inline">\(\alpha \beta=1_T\)</span>.</strong></p>
-<p>Proof. Suppose <span class="math inline">\(S
-\stackrel{\alpha}{\rightarrow} T\)</span> is bijective. Consider the
-subset <span class="math inline">\(\beta\)</span> of <span
-class="math inline">\(T \times S\)</span> of elements <span
-class="math inline">\((\alpha(s), s)\)</span>. If <span
-class="math inline">\(t \in T\)</span>, surjectivity of <span
-class="math inline">\(\alpha\)</span> implies there is an <span
-class="math inline">\(s\)</span> in <span
-class="math inline">\(S\)</span> such that <span
-class="math inline">\(\alpha(s)=t\)</span>. Hence condition 1 in the
-definition of a map from <span class="math inline">\(T\)</span> to <span
-class="math inline">\(S\)</span> holds for the set <span
-class="math inline">\(\beta\)</span> of pairs <span
-class="math inline">\((\alpha(s), s) \in T \times S\)</span>. Condition
-2 holds for <span class="math inline">\(\beta\)</span> by the
-injectivity of <span class="math inline">\(\alpha\)</span>, since if
-<span class="math inline">\(\left(t, s_1\right)\)</span> and <span
-class="math inline">\(\left(t, s_2\right)\)</span> are in <span
-class="math inline">\(\beta\)</span>, then <span
-class="math inline">\(\alpha\left(s_1\right)=t\)</span> and <span
-class="math inline">\(\alpha\left(s_2\right)=t\)</span>, so <span
-class="math inline">\(s_1=s_2\)</span>. Hence we have the map <span
-class="math inline">\(T \stackrel{\beta}{\rightarrow} S\)</span>. If
-<span class="math inline">\(s \in S\)</span>, the facts that <span
-class="math inline">\((s, \alpha(s)) \in \alpha\)</span> and <span
-class="math inline">\((\alpha(s), s) \in \beta\)</span> imply that <span
-class="math inline">\(\beta(\alpha(s))=s\)</span>. Thus <span
-class="math inline">\(\beta \alpha=1_s\)</span>. If <span
-class="math inline">\(t \in T\)</span>, we have <span
-class="math inline">\(t=\alpha(s), s \in S\)</span>, and <span
-class="math inline">\((t, s) \in\)</span> <span
-class="math inline">\(\beta\)</span>, so <span
-class="math inline">\(\beta(t)=s \in S\)</span>. Hence <span
-class="math inline">\(\alpha(\beta(t))=\alpha(s)=t\)</span>, so <span
-class="math inline">\(\alpha \beta=1_T\)</span>. Conversely, suppose
-<span class="math inline">\(S \stackrel{\alpha}{\rightarrow} T, T
-\stackrel{\beta}{\rightarrow} S\)</span> satisfy <span
-class="math inline">\(\beta \alpha=1_S, \alpha \beta=1_T\)</span>. If
-<span class="math inline">\(t \in T\)</span>, let <span
-class="math inline">\(s=\beta(t)\)</span>. Then <span
-class="math inline">\(\alpha(s)=\)</span> <span
-class="math inline">\(\alpha(\beta(t))=t\)</span>; hence <span
-class="math inline">\(\alpha\)</span> is surjective. Next suppose <span
-class="math inline">\(\alpha\left(s_1\right)=\alpha\left(s_2\right)\)</span>
-for <span class="math inline">\(s_i \in S\)</span>. Then <span
-class="math inline">\(s_1=\)</span> <span
-class="math inline">\(\beta\left(\alpha\left(s_1\right)\right)=\beta\left(\alpha\left(s_2\right)\right)=s_2\)</span>,
-and <span class="math inline">\(\alpha\)</span> is injective.</p>
+<p><strong>Sylow I</strong> ：假设 <span
+class="math inline">\(|G|\)</span> 有限，质数 <span
+class="math inline">\(p\)</span> 满足 <span
+class="math inline">\(p^k||G|\)</span> ，那么存在子群 <span
+class="math inline">\(H\le G\)</span> 且 <span
+class="math inline">\(|H|=p^k\)</span></p>
 </blockquote>
-<p><strong>Inverse with "dressing-undressing principle"</strong> : <span
-class="math inline">\((\beta \alpha)^{-1}=\alpha^{-1}
-\beta^{-1}\)</span> .</p>
-<h2 id="equivalence-relations.-factoring-a-map">EQUIVALENCE RELATIONS.
-FACTORING A MAP</h2>
-<p><strong>Equivalence Relation</strong> : Reflexive property <span
-class="math inline">\(aEa\)</span> , Symmetry <span
-class="math inline">\(a E b \Rightarrow b E a\)</span> , Transitivity
-<span class="math inline">\(a E b\ \text{and}\ b E c \Rightarrow a E
-c\)</span> .</p>
-<ul>
-<li><strong>equivalence class</strong> determined by <span
-class="math inline">\(a\)</span> : <span
-class="math inline">\(\bar{a}_E\)</span> (or simply <span
-class="math inline">\(\bar{a}\)</span> ) <span
-class="math inline">\(=\{b \in S \mid b E a\}\)</span>.</li>
-<li>An equivalence relation is equivalent to that of a partition of a
-set. <span class="math inline">\(\pi_E =\{\bar{a} \mid a \in
-S\}\)</span>.</li>
-<li><strong>the quotient set of <span class="math inline">\(S\)</span>
-relative to the relation <span class="math inline">\(E\)</span>
-</strong> : <span class="math inline">\(S / E=\pi=\{\bar{a} \mid a \in
-S\}\)</span> , a subset of the power set <span
-class="math inline">\(\mathscr{P}(S)\)</span> of <span
-class="math inline">\(S\)</span>.</li>
-<li><strong>natual map</strong> : <span class="math inline">\(v: a
-\rightarrow \bar{a} .\)</span></li>
-</ul>
-<p><strong>Inverse Image</strong> : Construct <span
-class="math inline">\(E_\alpha\)</span> by map <span
-class="math inline">\(S \stackrel{\alpha}{\rightarrow} T\)</span> :
-<span class="math inline">\(a E_\alpha b\Leftrightarrow
-\alpha(a)=\alpha(b)\)</span> , then <span
-class="math inline">\(\alpha^{-1}(c)=\{a\in S|\alpha(a)=c\}\)</span></p>
-<p><span class="math inline">\(\bar{\alpha}:S/E_\alpha\to T\)</span>
-<strong>the map of <span class="math inline">\(S/E_{\alpha}\)</span>
-induced by <span class="math inline">\(\alpha\)</span></strong> : <span
-class="math inline">\(\bar{\alpha}(\bar{a})=\alpha(a),\
-\bar{a}=\alpha^{-1}(\alpha(a))\)</span> , injective.</p>
-<p><strong>Factorization of map <span
-class="math inline">\(\alpha\)</span></strong> : <span
-class="math inline">\(\alpha=\bar{\alpha}v\)</span> ，where <span
-class="math inline">\(v\)</span> is the natural map of <span
-class="math inline">\(S\)</span> to <span
-class="math inline">\(S/E_\alpha\)</span> .</p>
+<p>对 <span class="math inline">\(|G|\)</span> 从小到大归纳。<span
+class="math inline">\(|G|=1\)</span> 时显然成立。现在假设结论对 <span
+class="math inline">\(|G&#39;|&lt;|G|\)</span> 的所有 <span
+class="math inline">\(G&#39;\)</span> 都成立。</p>
+<p>考虑 <span class="math inline">\(G\)</span>
+到自己的共轭作用，有类方程：<span
+class="math inline">\(|G|=|C|+\sum_{y_i\in G,y_i\not\in C(G)}
+[G:C(y_i)]\)</span></p>
+<ol type="1">
+<li>当 <span class="math inline">\(|C|\)</span> 不是 <span
+class="math inline">\(p\)</span> 的倍数时，由于和是 <span
+class="math inline">\(p\)</span> 的倍数，因此必然存在 <span
+class="math inline">\(j\)</span> ，使得 <span
+class="math inline">\([G:C(y_j)]=\frac{|G|}{|C(y_j)|}\)</span> 也不是
+<span class="math inline">\(p\)</span> 的倍数。那么 <span
+class="math inline">\(|C(y_j)|\)</span> 就一定是 <span
+class="math inline">\(p^k\)</span> 的倍数，而且因为 <span
+class="math inline">\(C(y_j)\not = G\)</span> ，有 <span
+class="math inline">\(C(y_j)\le G\)</span> ，那么根据假设，存在 <span
+class="math inline">\(H\le C(y_j)\le G\)</span> ，满足 <span
+class="math inline">\(|H|=p^k\)</span> 。</li>
+</ol>
+<blockquote>
+<p><strong>Cauchy 引理</strong>，对于有限交换群 <span
+class="math inline">\(G\)</span> ，如果质数 <span
+class="math inline">\(p||G|\)</span> ，那么存在 <span
+class="math inline">\(a\in G, |\langle a\rangle|=p\)</span></p>
+</blockquote>
+<ol start="2" type="1">
+<li>否则 <span class="math inline">\(|C|\)</span> 是 <span
+class="math inline">\(p\)</span> 的倍数。因为 <span
+class="math inline">\(C\)</span> 是有限交换群，因此跟去 Cauchy
+定理，<span class="math inline">\(\exist c\in C,|\langle
+c\rangle|=p\)</span> 。而且 <span class="math inline">\(\langle c\rangle
+\le C\unlhd G\)</span> ，是 <span class="math inline">\(G\)</span>
+的正规子群。考虑 <span class="math inline">\(G/\langle c\rangle\)</span>
+这个商群，<span class="math inline">\(|G/\langle
+c\rangle|&lt;|G|\)</span> 且能被 <span
+class="math inline">\(p^{k-1}\)</span> 整除。由归纳假设存在 <span
+class="math inline">\(K\le G/\langle c\rangle,|K|=p^{k-1}\)</span>
+。那么 <span class="math inline">\(K\)</span> 的形式为 <span
+class="math inline">\(H/\langle c\rangle\)</span> 且 <span
+class="math inline">\(H\)</span> 是 <span
+class="math inline">\(G\)</span> 中一个包含 <span
+class="math inline">\(\langle c\rangle\)</span> 的子群。那么有</li>
+</ol>
+<p><span class="math display">\[
+|H|=[H:\langle c\rangle]|\langle c\rangle|=p^{k-1}p=p^k
+\]</span></p>
 
             </div>
             <hr>
@@ -386,9 +478,9 @@ class="math inline">\(S/E_\alpha\)</span> .</p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/abstract-algebra/monoids-and-groups-1/">
+                      <a href="/abstract-algebra/problems/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Basic Algebra I : Monoids and Groups (I)</span>
+                        <span class="hidden-mobile">Basic Algebra I : Exercise</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -396,8 +488,8 @@ class="math inline">\(S/E_\alpha\)</span> .</p>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/codeforces/1778/">
-                        <span class="hidden-mobile">Codeforces Round #848 (Div. 2)</span>
+                      <a href="/abstract-algebra/monoids-and-groups-1/">
+                        <span class="hidden-mobile">Basic Algebra I : Monoids and Groups (I)</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -18,7 +18,7 @@
   <meta name="author" content="Colin Gao">
   <meta name="keywords" content="">
   
-  <title>Basic Algebra I : Monoids and Groups (I) - Colin&#39;s Blog</title>
+  <title>Basic Algebra I : Exercise - Colin&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -146,9 +146,9 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Basic Algebra I : Monoids and Groups (I)">
+            <span class="h2" id="subtitle" title="Basic Algebra I : Exercise">
               
-                Basic Algebra I : Monoids and Groups (I)
+                Basic Algebra I : Exercise
               
             </span>
 
@@ -163,7 +163,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.2k words
+      2.7k words
     </span>
   
 
@@ -173,7 +173,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      30
+      39
        mins to read
     </span>
   
@@ -203,298 +203,446 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Basic Algebra I : Monoids and Groups (I)</h1>
+            <h1 style="display: none">Basic Algebra I : Exercise</h1>
             
             <div class="markdown-body">
-              <p>研究角度：1. 本身性质；2. 子结构（子群、正规子群）；3.
-映射关系（群同构，群同态）</p>
-<h2 id="monoids-of-transformations-and-abstract-monoids">Monoids of
-Transformations and Abstract Monoids</h2>
-<p><em>semi-group.</em> 半群：封闭性，结合律。</p>
-<p><em>monoid.</em> 幺半群 <span class="math inline">\((M,p,1)\)</span>
-：封闭性，结合律，单位元。</p>
-<p><em>submonoid.</em> 子幺半群 <span
-class="math inline">\((N,p,1)\)</span> ：集合包含 <span
-class="math inline">\(N\subseteq M\)</span> ，是幺半群。</p>
-<p><em>set of transformations of S.</em> 在 <span
-class="math inline">\(S\)</span> 上的变换集 <span
-class="math inline">\(M(S)\)</span> ：包含所有 <span
-class="math inline">\(S\to S\)</span> 的函数的集合，<span
-class="math inline">\(|M(S)|=|S|^{|S|}\)</span> 。</p>
-<p><em>monoid of transformations.</em> 变换幺半群：<span
-class="math inline">\((M(S), \text{映射复合}, 1_S)\)</span> 的子群</p>
-<h2 id="groups-of-transformations-and-abstract-groups">Groups of
-Transformations and Abstract Groups</h2>
-<p><em>group.</em> 群 <span class="math inline">\((G,p,1)\)</span>
-：封闭性，结合律，单位元，所有元素可逆。</p>
-<p><em>subgroup.</em> 子群 <span class="math inline">\((H,p,1)\)</span>
-：集合包含 <span class="math inline">\(H\subseteq G\)</span>
-，是群。记作 <span class="math inline">\(H\le G\)</span> 。</p>
-<p><em>the group of invertible elements of M.</em> 幺半群 <span
-class="math inline">\(M\)</span> 中可逆元组成的群 <span
-class="math inline">\(U(M)\)</span> ：容易验证是一个群。</p>
-<p><em>symmetric group of the set S.</em> <span
-class="math inline">\(S\)</span> 的对称群 <span
-class="math inline">\(\text{Sym}\ S=U(M(S))\)</span> : <span
-class="math inline">\(S\)</span> 上的可逆变换构成的群（全体双射）。</p>
-<p><em>group of transformations.</em> 变换群：对称群 <span
-class="math inline">\(\text{Sym}\ S\)</span> 的子群。</p>
-<p><em>symmetric group on n letters.</em> <span
-class="math inline">\(n\)</span> 元对称群 <span
-class="math inline">\(S_n\)</span> ：<span
-class="math inline">\(\{1,2,\dots n\}\)</span> 的全体排列构成的群，<span
-class="math inline">\(|S_n|=n!\)</span> 。</p>
-<p><em>permutation group.</em> 置换群：有限元对称群 <span
-class="math inline">\(S_n\)</span> 的子群。</p>
-<h2 id="isomorphism.-cayleys-theorem">Isomorphism. Cayley's theorem</h2>
-<p><em>isomorphic.</em> 幺半群/群同构：存在双射 <span
-class="math inline">\(\eta:M\to M&#39;\)</span> ，保运算 <span
-class="math inline">\(\eta(xy)=\eta(x)\eta(y)\)</span> ，且 <span
-class="math inline">\(\eta(1)=1&#39;\)</span> （可由保运算推出）。</p>
-<p><em>isomorphism.</em> 同构函数 <span
-class="math inline">\(\eta\)</span> ，可能不止一个，例如 <span
-class="math inline">\((\mathbb{R},+,0)\)</span> 和 <span
-class="math inline">\((\mathbb{R}^+,\cdot\ ,1)\)</span> 的同构函数可以取
-<span class="math inline">\(\eta(x)=a^x\ (a&gt;0,a\not= 1)\)</span>
-。</p>
-<p>同构是一个等价关系，可以通过单位映射实现自反性，同构函数的求逆和复合实现对称性和传递性。</p>
-<p><strong>Cayley 定理：</strong> (1) 任意幺半群 <span
-class="math inline">\(M\)</span> 同构于一个交换幺半群；(2) 任意群 <span
-class="math inline">\(G\)</span> 同构于一个交换群。</p>
-<p>（1）对 <span class="math inline">\(M\)</span> 中的每个元素 <span
-class="math inline">\(a\)</span> 定义<strong>左平移变换</strong> <span
-class="math inline">\(a_L:M\to M, a_L(x)=ax\)</span> ，则 <span
-class="math inline">\(M\)</span> 同构于变换幺半群 <span
-class="math inline">\(M_L=\{a_L|a\in M\}\)</span> 。</p>
-<p>（2）同理构造，额外验证对求逆元封闭：<span
-class="math inline">\(1_L=(a^{-1}a)_L=(a^{-1})_La_L\)</span> ，即 <span
-class="math inline">\(a_L\)</span> 的逆是 <span
-class="math inline">\((a^{-1})_L\)</span> 。</p>
-<p>推论：任意 <span class="math inline">\(n\)</span> 阶有限群同构于一个
-<span class="math inline">\(n\)</span> 元置换群。</p>
-<h2 id="generalized-associativity.-commutativity">Generalized
-Associativity. Commutativity</h2>
-<p><strong>广义结合律：</strong> 由结合律可导出 <span
-class="math inline">\((\prod_{i=1}^na_i)(\prod_{j=1}^m
-a_{j+n})=\prod_{i=1}^{n+m} a_k\)</span> ，进一步可定义整数次幂运算 <span
-class="math inline">\(a^n\)</span> 和 <span
-class="math inline">\(a^{-n}=(a^{-1})^n\)</span></p>
-<p><em>commute.</em> 称 <span class="math inline">\(a,b\in M\)</span>
-是可交换的，当且仅当 <span class="math inline">\(ab=ba\)</span>
-。对于一组可交换的元素连乘，运算的顺序并不重要。</p>
-<p><em>commutative monoid.</em> 交换幺半群：幺半群 <span
-class="math inline">\(M\)</span> ，任意两元素 <span
-class="math inline">\(a,b\)</span> 均可交换。</p>
-<p><em>abelian groups (commutative groups).</em> 阿贝尔群（交换群）：群
-<span class="math inline">\(G\)</span> ，任意两元素 <span
-class="math inline">\(a,b\)</span> 均可交换。</p>
-<p><em>centralizer of a.</em> <span class="math inline">\(a\)</span>
-的中心化子 <span class="math inline">\(C(a)\)</span> ： <span
-class="math inline">\(M\)</span> 中与 <span
-class="math inline">\(a\)</span> 可交换的元素集。易证 <span
-class="math inline">\(C(a)\)</span> 是 <span
-class="math inline">\(M\)</span> 的子幺半群，定义同样适用于群。</p>
+              <p>考完了，但是还是把整理的题目放上来。没复习好 Sylow II，寄。</p>
+<p><img src="/img/basic-algebra.png" srcset="/img/loading.gif" lazyload /></p>
+<p><br></p>
 <blockquote>
-<p>引理：幺半群 <span class="math inline">\(M\)</span>
-的若干个子幺半群的交仍然是幺半群，群 <span
-class="math inline">\(G\)</span> 的若干个子群的交仍然是群。</p>
+<p>设 <span class="math inline">\(H,K\)</span> 是群 <span
+class="math inline">\(G\)</span> 的两个有限子群，证明：<span
+class="math inline">\(\displaystyle |HK|=\frac{|H|\cdot |K|}{|H\cap
+K|}\)</span></p>
 </blockquote>
-<p>将中心化子的定义扩展到集合，定义集合 <span
-class="math inline">\(A\)</span> 的中心化子 <span
-class="math inline">\(C(A) = \cap_{a\in A} C(a)\)</span> ，由引理 <span
-class="math inline">\(C(A)\)</span> 是子幺半群（子群）。</p>
-<p><em>the center of M.</em> <span class="math inline">\(M\)</span>
-的中心 <span class="math inline">\(C(M)\)</span> ：含义是 <span
-class="math inline">\(M\)</span> 中可以与所有元素交换的元素集，显然包含
-<span class="math inline">\(1\)</span> 。</p>
-<p>在交换幺半群/交换群中我们常用加号来代替乘号来表示对应运算，用 <span
-class="math inline">\(0\)</span> 代替 <span
-class="math inline">\(1\)</span> 来表示单位元。</p>
-<h2
-id="submonoids-and-subgroups-generated-by-a-subset.-cyclic-groups">Submonoids
-and Subgroups Generated by a Subset. Cyclic Groups</h2>
-<p><em>the submonoid generated by S.</em> 由 <span
-class="math inline">\(S\)</span> 生成的子幺半群 <span
-class="math inline">\(\langle S\rangle\)</span> ：对于 <span
-class="math inline">\(S\subseteq M\)</span> ， <span
-class="math inline">\(M\)</span> 中包含 <span
-class="math inline">\(S\)</span> 的最小的子幺半群。</p>
-<ul>
-<li><p>抽象刻画（存在性）：取所有包含 <span
-class="math inline">\(S\)</span> 的子群求交即为 <span
-class="math inline">\(\langle S\rangle\)</span> ，且 <span
-class="math inline">\(\langle S\rangle\)</span> 是任意包含 <span
-class="math inline">\(S\)</span> 的子群的子群；</p></li>
-<li><p>构造性证明：<span class="math inline">\(\langle
-S\rangle=\{1,s_1s_2\cdots s_r|s_i\in S, r \text{为有穷正整数}\}\)</span>
-，首先右侧是个幺半群，然后证互相包含：</p>
-<ol type="1">
-<li><p>由幺半群的运算封闭性， <span class="math inline">\(\langle
-S\rangle\)</span> 包含右侧构成的幺半群；</p></li>
-<li><p>右侧的集合包含 <span class="math inline">\(S\)</span> （取 <span
-class="math inline">\(r=1\)</span> )
-，由存在性引理，进一步的右侧的幺半群包含 <span
-class="math inline">\(\langle S\rangle\)</span> 。</p></li>
-</ol></li>
-</ul>
-<p><em>the subgroup generated by S.</em> 由 <span
-class="math inline">\(S\)</span> 生成的子群 <span
-class="math inline">\(\langle S \rangle\)</span> ：定义同上述，<span
-class="math inline">\(\langle S\rangle=\{1,s_1s_2\cdots s_r|s_i\
-\text{or}\ s_i^{-1}\in S, r \text{为有穷正整数}\}\)</span></p>
-<p><em>cyclic group.</em> 循环群：由一个元素的集合生成的群 <span
-class="math inline">\(G=\langle a\rangle=\{a^k|k\in
-\mathbb{Z}\}\)</span> ，显然是一个阿贝尔群（可交换）。</p>
-<ul>
-<li>任意无限循环群都与 <span
-class="math inline">\((\mathbb{Z},+,0)=\langle1\rangle\)</span>
-同构，通过映射 <span class="math inline">\(n\to a^n\)</span> 。</li>
-<li>任意有限阶（<span class="math inline">\(n\)</span> 阶）循环群都与
-<span class="math inline">\(n\)</span> 次单位根生成的循环群 <span
-class="math inline">\(U_n=\{x|x^n=1\}\)</span> 同构。</li>
-</ul>
-<ol type="1">
-<li><p>循环群的子群是循环群；</p></li>
-<li><p>无限循环群 <span class="math inline">\(\langle a\rangle\)</span>
-的子群都是无限的，且 <span class="math inline">\(s\to \langle
-a^s\rangle\)</span> 是 <span class="math inline">\(\mathbb{N}\)</span>
-到 <span class="math inline">\(\langle a\rangle\)</span>
-的全体子群的双射（ <span class="math inline">\(a\)</span>
-任意次幂生成的群两两不同）；</p></li>
-<li><p><span class="math inline">\(n\)</span> 阶循环群 <span
-class="math inline">\(\langle a\rangle\)</span> 的子群的阶都是 <span
-class="math inline">\(n\)</span> 的因数，且对于 <span
-class="math inline">\(n\)</span> 的每个因数 <span
-class="math inline">\(q\)</span> ，有且仅有一个 <span
-class="math inline">\(\langle a\rangle\)</span> 的子群阶为 <span
-class="math inline">\(q\)</span> 。</p>
-<ul>
-<li>这个 <span class="math inline">\(q\)</span>
-阶子群可以被构造性的刻画：<span class="math inline">\(H=\{b|b\in \langle
-a\rangle,b^q=1\}\)</span> 。</li>
-</ul></li>
-</ol>
-<p><em>the order of a</em> 元素 <span class="math inline">\(a\)</span>
-的阶 <span class="math inline">\(o(a)\)</span> ：若 <span
-class="math inline">\(\langle a \rangle\)</span> 是无限群 <span
-class="math inline">\(\langle a \rangle=+\infty\)</span> ；否则 <span
-class="math inline">\(o(a)=|\langle a\rangle|=r\)</span> ，其中 <span
-class="math inline">\(r\)</span> 是满足 <span
-class="math inline">\(a^r=1\)</span> 的最小正整数。</p>
-<ul>
-<li>若 <span class="math inline">\(a^m=1\)</span> ，则 <span
-class="math inline">\(o(a) | m\)</span> 。</li>
-<li>若 <span class="math inline">\(o(a)=r&lt;+\infty\)</span> ，则 <span
-class="math inline">\(o(a^k)=[r,k]/k=r/(r,k)\)</span> ，因此 <span
-class="math inline">\(o(a^k)|r\)</span> 。</li>
-</ul>
-<p><br></p>
-<p><em>exponent of a finite group G.</em> 有限群 <span
-class="math inline">\(G\)</span> 的方次数 <span
-class="math inline">\(\text{exp}\ G=\)</span> 最小的正整数 <span
-class="math inline">\(e\)</span> ，满足 <span
-class="math inline">\(\forall x \in G,\ x^e=1\)</span> 。</p>
-<p><strong>定理：有限交换群是循环群的充要条件为方次数等于阶数（ <span
-class="math inline">\(\text{exp}\ G = |G|\)</span> ）。</strong></p>
-<ul>
-<li><p>引理 1. 设 <span class="math inline">\(G\)</span>
-为有限交换群，设 <span class="math inline">\(g,h\in G\)</span> 且 <span
-class="math inline">\(o(g)=m,o(h)=n,(m,n)=1\)</span> ，则 <span
-class="math inline">\(o(gh)=mn\)</span> 。</p>
-<ul>
-<li><p><span
-class="math inline">\((gh)^{mn}=g^{mn}h^{mn}=(g^m)^n(h^n)^m=1\)</span>
-。</p></li>
-<li><p>假设 <span class="math inline">\((gh)^r=1\)</span> ，设 <span
-class="math inline">\(k=g^r=h^{-r}\in\langle g\rangle \cap \langle
-h\rangle\)</span> ，有 <span
-class="math inline">\(o(k)|m,o(k)|n\Rightarrow o(k)|(m,n)\Rightarrow
-o(k)=1\)</span></p>
-<p>因此 <span class="math inline">\(g^r=k=1\Rightarrow
-(gh)^r=g^rh^r=h^r=1\)</span> 因此 <span
-class="math inline">\(m|r,n|r\Rightarrow [m,n]|r\)</span> 又 <span
-class="math inline">\((m,n)=1\)</span> 有 <span
-class="math inline">\(mn|r\)</span> 。</p></li>
-</ul></li>
-<li><p>引理 2. 设 <span class="math inline">\(G\)</span>
-为有限交换群，设 <span class="math inline">\(g=\arg\max_{g\in G}
-o(g)\)</span> ，则 <span class="math inline">\(\text{exp}\
-G=o(g)\)</span> 。</p>
-<ul>
-<li><p>标准分解 <span class="math inline">\(o(g)=p_1^{e_1}p_2^{e_2}\dots
-p_s^{e_s},o(h)=p_1^{f_1}p_2^{f_2}\dots p_s^{f_s}\ (e_i,f_i\ge
-0)\)</span></p></li>
-<li><p>反证：若 <span class="math inline">\(h\in G, h^{o(g)}\not
-=1\)</span> ，则一定存在某个 <span class="math inline">\(f_i&gt;
-e_i\)</span> ，不妨设 <span class="math inline">\(f_1&gt;e_1\)</span>
+<p>由同构第二定理， <span class="math inline">\((H\cap K)\unlhd
+H\)</span> ，故 <span class="math inline">\(|H\cap K|\big| |H|\)</span>
 。</p>
-<p>接下来我们构造一个与 <span class="math inline">\(\arg\max\)</span>
-冲突的元素：设 <span
-class="math inline">\(g&#39;=g^{p_1^{e_1}},h&#39;=h^{p_2^{f_2}\dots
-p_s^{f_s}}\)</span> ，</p>
-<p>于是有 <span class="math inline">\(o(g&#39;)=p_2^{e_2}\dots
-p_s^{e_s},o(h&#39;)=p_1^{f_1}\)</span> ，那么由引理 1， <span
-class="math inline">\(o(g&#39;h&#39;)=p_1^{f_1}p_2^{e_2}\dots
-p_s^{e_s}&gt;o(g)\)</span> 矛盾。</p></li>
-</ul></li>
-<li><p>" <span class="math inline">\(\Rightarrow\)</span> "
-证明：由于是循环群 <span class="math inline">\(G=\langle
-g\rangle\)</span> ，<span class="math inline">\(|G|=|\langle
-g\rangle|=o(g)=\text{exp}\ G\)</span> 。</p></li>
-<li><p>" <span class="math inline">\(\Leftarrow\)</span> " 证明：由引理
-2，存在 <span class="math inline">\(g\)</span> 使得 <span
-class="math inline">\(\text{exp}\ G=o(g)\)</span> ，又由于交换群 <span
-class="math inline">\(G\)</span> 满足 <span
-class="math inline">\(\text{exp}\  G=|G|\)</span> ，因此 <span
-class="math inline">\(|G|=o(g)=|\langle g\rangle|\)</span> 。</p></li>
-</ul>
-<h2 id="cycle-decomposition-of-permutations">Cycle Decomposition of
-Permutations</h2>
-<p><em>r-cycle</em> <span class="math inline">\(r\)</span> -
-循环：若置换 <span class="math inline">\(\gamma\)</span>
-满足去掉稳定点后，满足置换效果是循环，即对于所有不是稳定点的下标 <span
-class="math inline">\(i_1,i_2,\dots,i_r, (r&gt;1)\)</span> ： <span
-class="math display">\[
-\gamma(i_1)=i_2,\gamma(i_2)=i_3,\dots,\gamma(i_{r-1})=i_r,\gamma(i_r)=i_1
-\]</span> 此时我们称这组数是一个 <span class="math inline">\(r\)</span>
-- 循环，记作 <span class="math inline">\(\gamma=(i_1i_2\dots
-i_r)\)</span> ，即每个点都会换成右侧的，同理可以记作 <span
-class="math inline">\(\gamma=(i_2i_3\dots i_ri_1)\)</span> 等等。</p>
-<p>用排列的复合可得 <span
-class="math inline">\(\gamma^k(i_j)=i_{j+k}\)</span> (下标每 <span
-class="math inline">\(r\)</span> 循环)。明显 <span
-class="math inline">\(\gamma^r=1\)</span> 且 <span
-class="math inline">\(\gamma^k \not = 1,1\le k&lt;r\)</span> ，所以
-<span class="math inline">\(\gamma\)</span> 的阶（order）为 <span
-class="math inline">\(r\)</span> 。</p>
-<p><em>disjoint</em>
-若两个循环包含的元素无交，则称两个循环<strong>不相交</strong>，对应的排列复合等同于分别运算，此时排列复合是可交换的。</p>
-<p>考虑一组循环（对应置换）的连乘积 <span
-class="math inline">\(\alpha=(i_1i_2\dots i_{n_1})(j_1j_2\dots
-j_{n_2})\dots(l_1l_2\dots l_{n_k})\)</span> ，那么 <span
-class="math inline">\(o(\alpha)=[n_1,n_2,\dots,n_m]\)</span> 。</p>
-<p>若我们引入 <span class="math inline">\(1\)</span> -
-循环，则很容易得到置换<strong>唯一</strong>分解为不相交的循环的方法，每次从最小未使用的元素找到一个循环。</p>
+<p>设 <span class="math inline">\(|H|/|H\cap K|=n\)</span> ，考虑 <span
+class="math inline">\(H\)</span> 关于 <span class="math inline">\(H\cap
+K\)</span> 的左陪集分解，有： <span class="math display">\[
+H=h_1(H\cap K)\cup h_2(H\cap K)\cup \cdots \cup h_n(H\cap K)
+\]</span></p>
+<p>其中 <span class="math inline">\(h_i\in H\)</span> ，且 <span
+class="math inline">\(h_i^{-1}h_j\not \in K\)</span> 。</p>
+<p>进一步的，有 <span class="math inline">\(HK=[h_1(H\cap K)\cup
+h_2(H\cap K)\cup \cdots \cup h_n(H\cap K)]K\)</span></p>
+<p>又由于 <span class="math inline">\(H\cap K\le K\)</span> ，有 <span
+class="math inline">\((H\cap K)K=K\)</span> ，因此 <span
+class="math inline">\(HK=h_1K\cup h_2K\cup \cdots \cup h_nK\)</span></p>
+<p>反证上式是 <span class="math inline">\(HK\)</span> 的左陪集分解：</p>
+<p>若 <span class="math inline">\(x\in h_iK\cap h_jK(i\not = j)\)</span>
+，则存在 <span class="math inline">\(k_i,k_j\in K\)</span> 满足 <span
+class="math inline">\(x=h_ik_i=h_jk_j\)</span> ，因此 <span
+class="math inline">\(h_i^{-1}h_j=k_ik_j^{-1}\in K\)</span> ，矛盾。</p>
+<p>因此 <span
+class="math inline">\(|HK|=n|K|=\displaystyle\frac{|H|}{|H\cap K|}\cdot
+|K|=\frac{|H|\cdot |K|}{|H\cap K|}\)</span> 。</p>
 <p><br></p>
-<p><em>transposition</em> 对换：一个 <span
-class="math inline">\(2\)</span> - 循环，即 <span
-class="math inline">\((ab)\)</span> 的形式。任何一个 <span
-class="math inline">\(r\)</span> - 循环都可以拆成 <span
-class="math inline">\(r-1\)</span> 个对换的乘积，即： <span
+<blockquote>
+<p>假设 <span class="math inline">\(p,q\)</span> 是两个素数，且 <span
+class="math inline">\(p&lt;q\)</span> ，证明： <span
+class="math inline">\(pq\)</span> 阶群 <span
+class="math inline">\(G\)</span> 最多有一个 <span
+class="math inline">\(q\)</span> 阶子群。</p>
+<p>进而证明：<span class="math inline">\(G\)</span> 的 <span
+class="math inline">\(q\)</span> 阶子群是 <span
+class="math inline">\(G\)</span> 的正规子群。</p>
+</blockquote>
+<p>设 <span class="math inline">\(H,K\)</span> 都是 <span
+class="math inline">\(G\)</span> 的 <span
+class="math inline">\(q\)</span> 阶子群，由上题，有 <span
+class="math inline">\(\displaystyle |HK|=\frac{|H|\cdot |K|}{|H\cap
+K|}=\frac{q^2}{|H\cap K|}\)</span></p>
+<p>又 <span class="math inline">\(H\cap K\le H\)</span> 故 <span
+class="math inline">\(|H\cap K||q\)</span> ，而 <span
+class="math inline">\(q\)</span> 是素数，故 <span
+class="math inline">\(|H\cap K|=1\)</span> 或 <span
+class="math inline">\(|H\cap K|=q\)</span> 。</p>
+<p>第一种情况 <span class="math inline">\(|HK|=q^2&gt;pq&gt;|G|\)</span>
+，矛盾。因此 <span class="math inline">\(|H\cap K|=q\)</span> ，即 <span
+class="math inline">\(H=K\)</span> 。</p>
+<p><br></p>
+<blockquote>
+<p>证明：指数为 <span class="math inline">\(2\)</span>
+的子群是正规子群。由此证明：<span class="math inline">\(A_n\)</span> 是
+<span class="math inline">\(S_n\)</span> 的正规子群。</p>
+</blockquote>
+<p>证明：设 <span class="math inline">\(H&lt;G,\ [G:H]=2\)</span> ，对
+<span class="math inline">\(G\)</span> 中的任意元素 <span
+class="math inline">\(a\)</span> ，有两种情况：</p>
+<ol type="1">
+<li>若 <span class="math inline">\(a\in H\)</span> ，显然 <span
+class="math inline">\(aH=Ha=H\)</span> 。</li>
+<li>若 <span class="math inline">\(a\not \in H\)</span> ，则 <span
+class="math inline">\(aH\not =H,Ha\not = H\)</span> ，又 <span
+class="math inline">\([G:H]=2\)</span> ，因此有陪集分解 <span
+class="math inline">\(G= H\cup Ha=H\cup aH\)</span> ，因此 <span
+class="math inline">\(Ha=aH=G-H\)</span> 。</li>
+</ol>
+<p>因此 <span class="math inline">\(\forall a\in G, aH=Ha\)</span>
+成立，即 <span class="math inline">\(H\)</span> 为正规子群。</p>
+<p>又由于 <span class="math inline">\(n\)</span>
+元置换中，存在奇置换到偶置换的双射 <span class="math inline">\(\alpha\to
+\alpha(ab)\)</span> ，因此奇偶置换各占一半。</p>
+<p>因此交错群（包含全体偶置换）满足 <span
+class="math inline">\(|A_n|=|S_n|/2\)</span> ， <span
+class="math inline">\([S_n:A_n]=|S_n|/|A_n|=2\)</span> 。</p>
+<p>由上述证明知，<span class="math inline">\(A_n\)</span> 是 <span
+class="math inline">\(S_n\)</span> 的正规子群。</p>
+<p><br></p>
+<blockquote>
+<p>设 <span class="math inline">\(G\)</span> 是 <span
+class="math inline">\(2k\)</span> 阶群，这里 <span
+class="math inline">\(k\)</span> 是奇数，证明： <span
+class="math inline">\(G\)</span> 包含一个指数为 <span
+class="math inline">\(2\)</span> 的子群。</p>
+</blockquote>
+<p>由 Sylow I ，<span class="math inline">\(G\)</span>
+中至少有一个二阶元，记作 <span class="math inline">\(a\)</span> 。</p>
+<p>考虑 <span class="math inline">\(G\)</span> 同构于左平移变换群：<span
+class="math inline">\(\eta(g)=\sigma_g,\sigma_g:x\to gx\)</span> ，那么
+<span class="math inline">\(G&#39;\)</span> 也是 <span
+class="math inline">\(2k\)</span> 阶群。</p>
+<p>由于 <span
+class="math inline">\(\sigma_a^2=\sigma_{a^2}=\sigma_1\)</span> ，故
+<span class="math inline">\(\sigma_a\)</span>
+为若干个两两不交的对换乘积。又由于 <span
+class="math inline">\(\sigma_a\)</span> 把 <span
+class="math inline">\(G\)</span> 中每个元素都映到不同元素，故 <span
+class="math inline">\(\sigma_a\)</span> 为 <span
+class="math inline">\(n\)</span> 个两两不交的对换乘积，因此 <span
+class="math inline">\(\sigma_a\)</span> 为奇置换。此时 <span
+class="math inline">\(G’\)</span> 中的偶置换个数与奇置换个数相等，所以
+<span class="math inline">\(G&#39;\)</span> 中全体偶置换 <span
+class="math inline">\(H&#39;\)</span> 是 <span
+class="math inline">\(G&#39;\)</span> 的 <span
+class="math inline">\(n\)</span> 阶子群。因此原像 <span
+class="math inline">\(H\)</span> 也是 <span
+class="math inline">\(G\)</span> 的 <span
+class="math inline">\(n\)</span> 阶子群，由拉格朗日定理，指数为 <span
+class="math inline">\(2\)</span> 。</p>
+<p><br></p>
+<blockquote>
+<p>设 <span class="math inline">\(G\)</span> 是 <span
+class="math inline">\(p^n\)</span> 阶群，这里 <span
+class="math inline">\(p\)</span> 为素数，<span
+class="math inline">\(n\)</span> 是自然数。</p>
+<p>证明：<span class="math inline">\(G\)</span> 的中心 <span
+class="math inline">\(C(G)\)</span> 所含的元素个数大于 <span
+class="math inline">\(1\)</span> 。</p>
+<p>进而证明： 若 <span class="math inline">\(n=2\)</span> ，则 <span
+class="math inline">\(G\)</span> 为交换群。</p>
+</blockquote>
+<p>考虑有限群 <span class="math inline">\(G\)</span> 的类方程：<span
+class="math inline">\(|G|=|C(G)|+\sum_{y_i\in G,y_i\not\in C(G)}
+[G:C(y_i)]=p^n\)</span></p>
+<p>由拉格朗日定理 <span
+class="math inline">\(|G|=|C(y_i)|[G:C(y_i)]\)</span> ，又 <span
+class="math inline">\(y_i\not\in C(G)\)</span> ，有 <span
+class="math inline">\(C(y_i) \not = G\Rightarrow
+|C(y_i)|&lt;p^n\)</span> ，有 <span
+class="math inline">\([G:C(y_i)]&gt;1\)</span> 且整除 <span
+class="math inline">\(|G|\)</span> ，故 <span
+class="math inline">\([G:C(y_i)]\)</span> 为 <span
+class="math inline">\(p\)</span> 的幂次。</p>
+<p><span class="math inline">\(|C(G)|=|G|-\sum_{y_i\in G,y_i\not\in
+C(G)} [G:C(y_i)]=p^n\)</span> ，右侧的每一项均为 <span
+class="math inline">\(p\)</span> 的幂次，且 <span
+class="math inline">\(1\in C(G)\Rightarrow C(G)\not = \emptyset\)</span>
+，故 <span class="math inline">\(|C(G)|&gt;0\)</span> ，故 <span
+class="math inline">\(|C(G)|\)</span> 为 <span
+class="math inline">\(p\)</span> 的倍数。（由于 <span
+class="math inline">\(C(G)\)</span> 为 <span
+class="math inline">\(G\)</span> 的子群，<span
+class="math inline">\(|C(G)|||G|\)</span> ，实际上是 <span
+class="math inline">\(p\)</span> 的幂次）</p>
+<p>故 <span class="math inline">\(C(G)\)</span> 中至少有 <span
+class="math inline">\(p\)</span> 个元素，又 <span
+class="math inline">\(p&gt;1\)</span> ，所以 <span
+class="math inline">\(C(G)\)</span> 中所含元素个数大于 <span
+class="math inline">\(1\)</span> 。</p>
+<hr />
+<p>若 <span class="math inline">\(n=2\)</span> ，即 <span
+class="math inline">\(|G|=p^2\)</span> ，由上述证明知，<span
+class="math inline">\(|C(G)|\)</span> 是 <span
+class="math inline">\(p\)</span> 的幂次，因此：</p>
+<ul>
+<li><p>若 <span class="math inline">\(|C(G)|=p^2\)</span> ，那么 <span
+class="math inline">\(C(G)=G\)</span>
+，此时全体元素都可与其他元素交换，<span class="math inline">\(G\)</span>
+为交换群。</p></li>
+<li><p>若 <span class="math inline">\(|C(G)|=p\)</span> ，那么 <span
+class="math inline">\(|G/C(G)|=|G|/|C(G)|=p\)</span></p>
+<p>因为 <span class="math inline">\(p\)</span> 为质数，所以 <span
+class="math inline">\(C(G)\)</span> 和 <span
+class="math inline">\(G/C(G)\)</span> 均为循环群，可表示为 <span
+class="math inline">\(C(G)=\langle a\rangle , G/C(G)=\langle
+bC(G)\rangle\)</span></p>
+<p>此时 <span class="math inline">\(G\)</span> 中任意元素都可以写作
+<span class="math inline">\(a^kb^t\)</span> 的形式，由于 <span
+class="math inline">\(a\)</span> 可交换： <span
+class="math inline">\((a^{k_1}b^{t_1})(a^{k_2}b^{t_2})=a^{k_1+k_2}b^{t_1+t_2}=(a^{k_2}b^{t_2})(a^{k_1}b^{t_1})\)</span></p>
+<p>所以 <span class="math inline">\(G\)</span>
+中任意元素均可交换，而交换群的中心为本身，即 <span
+class="math inline">\(C(G)=G\)</span>
+，与假设矛盾，该情况不存在。</p></li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>设有限群 <span class="math inline">\(G\)</span> 有一个指数为 <span
+class="math inline">\(n\)</span> 的子群 <span
+class="math inline">\(H\)</span> ，证明： <span
+class="math inline">\(H\)</span> 包含一个指数为 <span
+class="math inline">\(n!\)</span> 的因数的 <span
+class="math inline">\(G\)</span> 的正规子群。</p>
+</blockquote>
+<p>由于 <span class="math inline">\(H\le G\)</span> ，故 <span
+class="math inline">\(G\)</span> 在 <span
+class="math inline">\(G/H=\{gH|g\in G\}\)</span> 上有群作用。</p>
+<p>群作用对应同态 <span class="math inline">\(T:G\to
+Sym\{G/H\}=S_n\)</span> 。</p>
+<p>则 <span class="math inline">\(T(G)\le S_n\)</span> 即 <span
+class="math inline">\(|T(G)|||S_n|=n!\)</span> 且 <span
+class="math inline">\(G\to T(G)\)</span> 为满同态。</p>
+<p>由同态基本定理，<span class="math inline">\(T(g)\cong G/ker\
+T\)</span> 此时 <span class="math inline">\(ker\ T\unlhd G\)</span> ，且
+<span class="math inline">\([G:ker\ T]=|T(g)||n!\)</span></p>
+<p>下证：<span class="math inline">\(ker\ T\le H\)</span></p>
+<p><span class="math inline">\(\forall t\in ker\ T\)</span>，由定义
+<span class="math inline">\(T(t)=1_{G/H}\)</span> ，即：</p>
+<p><span class="math inline">\(\forall x\in G, txH=xH\Rightarrow
+x^{-1}txH=H\)</span></p>
+<p>也就是 <span class="math inline">\(x^{-1}tx\in H\)</span> ，<span
+class="math inline">\(t\in xHx^{-1}\)</span> ， <span
+class="math inline">\(t\in \cap_{x\in G} xHx^{-1}\)</span></p>
+<p>因此 <span class="math inline">\(ker\ T=\cap_{x\in G}xHx^{-1}\le
+H\)</span> ，是 <span class="math inline">\(H\)</span> 的正规子群。</p>
+<p><br></p>
+<blockquote>
+<p>设 <span class="math inline">\(p\)</span> 为 <span
+class="math inline">\(|G|\)</span> 的最小质因子，<span
+class="math inline">\(H\le G\)</span> 且 <span
+class="math inline">\([G:H]=p\)</span> ，证明： <span
+class="math inline">\(H\unlhd G\)</span> 。</p>
+</blockquote>
+<p>由于上题，<span class="math inline">\(H\)</span> 包含 <span
+class="math inline">\(G\)</span> 的一个正规子群 <span
+class="math inline">\(N\)</span> ，且 <span
+class="math inline">\([G:N]|p!\)</span> ，又 <span
+class="math inline">\([G:N]||G|\)</span> ，由 <span
+class="math inline">\(p\)</span> 的最小性，<span
+class="math inline">\([G:N]=p\)</span></p>
+<p>又 <span class="math inline">\(N\le H,[G:H]=p\)</span> 得 <span
+class="math inline">\(|N|=|H|\)</span> 故 <span
+class="math inline">\(N=H\)</span> ，因此 <span
+class="math inline">\(H\unlhd G\)</span> 。</p>
+<p><br></p>
+<blockquote>
+<p>证明：交换环 <span class="math inline">\(R\not=0\)</span>
+是域当且仅当 <span class="math inline">\(0\)</span> 和 <span
+class="math inline">\(R\)</span> 是环 <span
+class="math inline">\(R\)</span> 仅有的理想。</p>
+</blockquote>
+<p><span class="math inline">\(\Rightarrow\)</span> ：</p>
+<p>假设域 <span class="math inline">\(R\)</span> 的一个理想 <span
+class="math inline">\(I\)</span> 中存在非零元 <span
+class="math inline">\(u\)</span> ，由于域中的非 <span
+class="math inline">\(0\)</span> 元均可逆，有 <span
+class="math inline">\(u^{-1}\in R, uu^{-1}=1\in I\)</span></p>
+<p>因此对于任意元素 <span class="math inline">\(a\in R\)</span> 都有
+<span class="math inline">\(a=1a\in I\)</span> ，因此 <span
+class="math inline">\(I=R\)</span> 。否则 <span
+class="math inline">\(I=0\)</span> 。<span
+class="math inline">\(0\)</span> 和 <span
+class="math inline">\(R\)</span> 是 <span
+class="math inline">\(R\)</span> 仅有的理想。</p>
+<p><span class="math inline">\(\Leftarrow\)</span> ：</p>
+<p>考虑交换环 <span class="math inline">\(R\)</span> 中任意非零元 <span
+class="math inline">\(a\in R\)</span> ，那么生成的主理想 <span
+class="math inline">\((a)\not = 0\)</span> 。</p>
+<p>又由于 <span class="math inline">\(R\)</span> 只有 <span
+class="math inline">\(0\)</span> 和 <span
+class="math inline">\(R\)</span> 两个左（右）理想，因此 <span
+class="math inline">\((a)=R\)</span> 。</p>
+<p>又 <span class="math inline">\(1\in R\)</span> ，因此 <span
+class="math inline">\(1\in (a)\)</span> ，因此存在 <span
+class="math inline">\(x\in (a)\)</span> 即 <span
+class="math inline">\(x\in R\)</span> 使得 <span
+class="math inline">\(ax=1\)</span> ，因此任意非零元存在逆元。<span
+class="math inline">\(R\)</span> 为域。</p>
+<p><br></p>
+<blockquote>
+<p>设 <span class="math inline">\(F\)</span> 是一个域，则含有两个未定元
+<span class="math inline">\(x,y\)</span> 的多项式环 <span
+class="math inline">\(F[x,y]\)</span> 是主理想整环吗？</p>
+</blockquote>
+<p>不是。例如 <span class="math inline">\(F[x,y]\)</span> 中所有常数项为
+<span class="math inline">\(0\)</span> 的多项式构成的环 <span
+class="math inline">\(N\)</span> 是一个理想 ，但不是主理想。</p>
+<p>是理想：</p>
+<ul>
+<li><p><span class="math inline">\(\forall f,g\in N\)</span> ，有 <span
+class="math inline">\(f+g\)</span> 的常数项仍为 <span
+class="math inline">\(0\)</span> ，故 <span class="math inline">\(f+g\in
+N\)</span> ，对加法是子群。</p></li>
+<li><p><span class="math inline">\(\forall f \in N,g\in F[x,y], f\cdot
+g=g\cdot f\)</span> 的常数项仍为 <span class="math inline">\(0\)</span>
+，故 <span class="math inline">\(fg\in N, gf\in N\)</span>
+，满足吸收性。</p></li>
+</ul>
+<p>不是主理想：</p>
+<p>反证：若 <span class="math inline">\(N\)</span> 为主理想，则可设
+<span class="math inline">\(N=f(x,y)F[x,y]\)</span> ，因为 <span
+class="math inline">\(x\in N, y\in N\)</span> ，则必然存在 <span
+class="math inline">\(a,b\in F[x,y]\)</span> 使得 <span
 class="math display">\[
-(i_1i_2\dots i_r)=(i_1i_r)\dots (i_1i_3)(i_1i_2)
-\]</span> 因此一个置换 <span class="math inline">\(\alpha\)</span>
-可以拆成 <span class="math inline">\(N(\alpha)=\sum (n_i-1)\)</span>
-个对换的乘积。</p>
-<p>一个置换的对换分解不是唯一的（在最简单的对换分解基础上可以引入很多额外的对换），但共性是对换个数的奇偶性相同。</p>
-<p>对换诱导分裂公式：<span class="math inline">\((ab)(ac_1\dots
-c_hbd_1\dots d_k)=(bd_1\dots d_k)(ac_1\dots c_h)\)</span> 。</p>
-<p>对换诱导合并公式：<span class="math inline">\((ab)(bd_1\dots
-d_k)(ac_1\dots c_h)=(ac_1\dots c_hbd_1\dots d_k)\)</span></p>
-<p>若 <span class="math inline">\(N(\alpha)\)</span>
-为奇数（偶数）则称之为奇（偶）排列，则奇偶排列分别构成了 <span
-class="math inline">\(S_n\)</span> 的一个子群，且大小相同均为 <span
-class="math inline">\(n!/2\)</span> 。</p>
+x=f(x,y)a,y=f(x,y)b
+\]</span> 由此得 <span class="math inline">\(a=1,f(x,y)=x\)</span> 或
+<span class="math inline">\(a=x,f(x,y)=1\)</span> 。</p>
+<p>若 <span class="math inline">\(f(x,y)=1\)</span>，则 <span
+class="math inline">\(N=f(x,y)F[x,y]=F[x,y]\)</span> 矛盾。</p>
+<p>否则 <span class="math inline">\(f(x,y)=x\)</span> ，代入 2 得 <span
+class="math inline">\(y=xb\)</span> 因此 <span
+class="math inline">\(b=x^{-1}y\)</span> 与 <span
+class="math inline">\(b\in F[x,y]\)</span> 矛盾。</p>
+<p><br></p>
+<blockquote>
+<ol type="a">
+<li><p>整环 <span class="math inline">\(Z[\sqrt{-5}]\)</span>
+是唯一分解环吗？为什么？</p></li>
+<li><p>整环 <span class="math inline">\(Z[\sqrt{-1}]\)</span> 是
+Euclidean 整环吗？是主理想整环吗？是唯一分解整环吗？</p></li>
+</ol>
+</blockquote>
+<ol type="a">
+<li><p>不是UFD。因为 <span class="math inline">\(9\)</span>
+的分解不唯一：<span class="math inline">\(9=3\cdot
+3=(2+\sqrt{-5})(2-\sqrt{-5})\)</span></p></li>
+<li><p>都是的。证明 <span class="math inline">\(Z[\sqrt{-1}]\)</span> 是
+Euclidean 整环：</p></li>
+</ol>
+<p><span class="math inline">\(Z[\sqrt{-1}]\)</span> 中的元素形为 <span
+class="math inline">\(a=m+ni,\ m,n\in Z, i=\sqrt{-1}\)</span></p>
+<p>定义 <span
+class="math inline">\(\delta(a)=a\overline{a}=|a|^2=m^2+n^2\)</span>
+，那么 <span class="math inline">\(\delta(a)\in \mathbb{N}\)</span>
+，并且 <span
+class="math inline">\(\delta(a)\delta(b)=\delta(ab)\)</span></p>
+<p>假设 <span class="math inline">\(b\not = 0\)</span> ，那么可以表示
+<span class="math inline">\(ab^{-1}=\mu+\nu i\)</span> ，这里 <span
+class="math inline">\(\mu,\nu\)</span> 都是分数。</p>
+<p>这样我们就可以找到离 <span class="math inline">\(\mu,\nu\)</span>
+最近的整数，使得 <span class="math inline">\(|u-\mu|\le 1/2,|v-\nu|\le
+1/2\)</span> 。</p>
+<p>让 <span class="math inline">\(\epsilon=\mu-u,\eta=\nu-v\)</span>
+，有 <span class="math inline">\(|\epsilon|\le 1/2,|\eta|\le
+1/2\)</span> ，于是</p>
+<p><span class="math inline">\(a=b[(u+\epsilon)+(v+\eta)i]=bq+r\)</span>
+，这里 <span class="math inline">\(q=u+vi,r=b(\epsilon+\eta i)\)</span>
+。</p>
+<p>因为 <span class="math inline">\(r=a-bq\)</span> ，因此 <span
+class="math inline">\(r\in Z[\sqrt{-1}]\)</span> ，此外 <span
+class="math inline">\(\delta(r)=|r|^2=|b|^2(\epsilon^2+\eta^2)\le
+|b|^2(\frac{1}{4}+\frac{1}{4})=\frac{1}{2}\delta(b)&lt;\delta(b)\)</span></p>
+<p>因此 <span class="math inline">\(\delta(r)&lt;\delta(b)\)</span> ，且
+<span class="math inline">\(q,r\in Z[\sqrt{-1}]\)</span> ，整环 <span
+class="math inline">\(Z[\sqrt{-1}]\)</span> 是 Euclidean 整环。</p>
+<p>由于 Euclidean
+整环是主理想整环，主理想整环是唯一分解整环，所以都是。</p>
+<p><br></p>
+<blockquote>
+<ol type="a">
+<li><p>证明：<span class="math inline">\(x^3+x^2+1\)</span> 是 <span
+class="math inline">\(Z_2[x]\)</span> 中的不可约多项式。进而证明 <span
+class="math inline">\(Z_2[x]/(x^3+x^2+1)\)</span> 是一个 <span
+class="math inline">\(8\)</span> 元域。</p></li>
+<li><p>构造 25 元域，125元域</p></li>
+</ol>
+</blockquote>
+<ol type="a">
+<li>枚举比他次数小的，都不整除，所以不可约。</li>
+</ol>
+<p><span
+class="math inline">\(\mathbb{Z}_2[x]/(x^3+x^2+1)=\{\overline{0},\overline{1},\overline{x},\overline{x+1},\overline{x^2},\overline{x^2+1},\overline{x^2+x},\overline{x^2+x+1}\}\)</span>
+故为 <span class="math inline">\(8\)</span> 元域。</p>
+<ol start="2" type="a">
+<li><span class="math inline">\(25=5^2\)</span>，<span
+class="math inline">\(F\)</span> 的素域是 <span
+class="math inline">\(\mathbb{Z}_5\)</span>，<span
+class="math inline">\([F:\mathbb{Z}_5]=2\)</span> ，找 <span
+class="math inline">\(\mathbb{Z}_5\)</span> 上的 <span
+class="math inline">\(2\)</span> 次不可约多项式，如 <span
+class="math inline">\(x^2+x+1\)</span> ，那么 <span
+class="math inline">\(F\cong \mathbb{Z}_5[x]/(x^2+x+1)\)</span></li>
+</ol>
+<p><span class="math inline">\(125=5^3\)</span>，<span
+class="math inline">\(F\)</span> 的素域是 <span
+class="math inline">\(\mathbb{Z}_5\)</span>，<span
+class="math inline">\([F:\mathbb{Z}_5]=3\)</span> ，找 <span
+class="math inline">\(\mathbb{Z}_5\)</span> 上的 <span
+class="math inline">\(3\)</span> 次不可约多项式，如 <span
+class="math inline">\(x^3+x+1\)</span> ，那么 <span
+class="math inline">\(F\cong \mathbb{Z}_5[x]/(x^3+x+1)\)</span></p>
+<p><br></p>
+<blockquote>
+<p>证明威尔逊定理：如果 <span class="math inline">\(p\)</span> 是 <span
+class="math inline">\(\mathbb{Z}\)</span> 中的一个质数，那么 <span
+class="math inline">\((p-1)!\equiv-1(mod\ p)\)</span></p>
+</blockquote>
+<p><span class="math inline">\(Z_p=\{0,1,2,\cdots,p-1\}\)</span> ，在
+<span class="math inline">\(Z_p[x]\)</span> 中，<span
+class="math inline">\(x^p-x=\prod_{k=0}^{p-1} (x-k)\)</span> 。</p>
+<p>于是 <span
+class="math inline">\(x^{p-1}-1=\prod_{k=1}^{p-1}(x-k)\)</span> ，所以在
+<span class="math inline">\(Z_p\)</span> 中 <span
+class="math inline">\(\prod_{k=1}^{p-1}k=-1\)</span> 。</p>
+<p><br></p>
+<blockquote>
+<p>设 <span class="math inline">\(F\)</span> 是域，假设 <span
+class="math inline">\(f(x)\)</span> 是 <span
+class="math inline">\(F[x]\)</span> 中一个度为 <span
+class="math inline">\(n&gt;0\)</span> 的多项式，证明：<span
+class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(F\)</span> 上最多 <span
+class="math inline">\(n\)</span> 个不同的根。</p>
+</blockquote>
+<p>假设 <span class="math inline">\(a_1,a_2,\cdots,a_r\)</span> 是 <span
+class="math inline">\(f(x)\)</span> 的不同的根。对 <span
+class="math inline">\(r\)</span> 归纳：<span
+class="math inline">\(\prod_{1}^r(x-a_i)|f(x)\)</span> 。</p>
+<p>首先对于 <span class="math inline">\(r=1\)</span> 时成立，此时 <span
+class="math inline">\(f(x)=x-a_1\)</span> 。</p>
+<p>假设结论对 <span class="math inline">\(r-1\)</span> 成立，那么 <span
+class="math inline">\(f(x)=\prod_{1}^{r-1}(x-a_j)h(x)\)</span></p>
+<p>因此<span
+class="math inline">\(0=f(a_r)=\prod_1^{r-1}(a_r-a_j)h(a_r)\)</span>
+。由于任何一对 <span class="math inline">\(a_i\)</span> 互不相同，因此
+<span class="math inline">\(h(a_r)=0\)</span> ，因此 <span
+class="math inline">\(h(x)=(x-a_r)k(x)\)</span> 。</p>
+<p>所以 <span class="math inline">\(f(x)=\prod_{1}^r(x-a_i)k(x)\)</span>
+。因此 <span class="math inline">\(r\le n\)</span> 。</p>
+<p><br></p>
+<blockquote>
+<p>任意域的乘法群的有限子群都是循环群。</p>
+</blockquote>
+<p>假设 <span class="math inline">\(G\)</span>
+是这个有限子群，对应的乘法群是 <span class="math inline">\(F^*\)</span>
+，因为 <span class="math inline">\(F\)</span>
+是域，所以元素均可交换，所以 <span class="math inline">\(G\)</span>
+是个阿贝尔群。</p>
+<p>接下来只需要证明 <span class="math inline">\(\text{exp}\
+G=|G|\)</span> 。</p>
+<ol type="1">
+<li><p>因为 <span class="math inline">\(a^{|G|}=1\)</span> 对 <span
+class="math inline">\(\forall a\in G\)</span> 都成立，因此 <span
+class="math inline">\(\text{exp}\ G\le |G|\)</span> 。</p></li>
+<li><p>由上述定理，有 <span class="math inline">\(f(x)=x^{\text{exp}\
+G}-1\)</span> 在 <span class="math inline">\(F\)</span> 上最多有 <span
+class="math inline">\(\text{exp}\ G\)</span> 个根，因此在 <span
+class="math inline">\(G\)</span> 上也最多这么多个根。因此 <span
+class="math inline">\(|G|\le \text{exp}\ G\)</span> 。</p></li>
+</ol>
 
             </div>
             <hr>
@@ -541,8 +689,8 @@ class="math inline">\(n!/2\)</span> 。</p>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/codeforces/1778/">
-                        <span class="hidden-mobile">Codeforces Round #848 (Div. 2)</span>
+                      <a href="/abstract-algebra/monoids-and-groups-2/">
+                        <span class="hidden-mobile">Basic Algebra I : Monoids and Groups (II)</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
