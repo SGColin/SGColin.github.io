@@ -1,0 +1,585 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#fff">
+  <meta name="description" content="">
+  <meta name="author" content="Colin Gao">
+  <meta name="keywords" content="">
+  
+  <title>2022 NowCoder Multi-University Training Contest 3 - Yixiong Gao</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/monokai-sublime.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"blog.gyx.me","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":90,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#34495e","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body>
+  <header style="height: 30vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href=/>&nbsp;<strong>Colin's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags">
+                
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                
+                Friends
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="2022 NowCoder Multi-University Training Contest 3">
+              
+                2022 NowCoder Multi-University Training Contest 3
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.8k words
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      65
+       mins to read
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">2022 NowCoder Multi-University Training Contest 3</h1>
+            
+            <div class="markdown-body">
+              <h2 id="a.-ancestor">A. Ancestor</h2>
+<blockquote>
+<p>给两棵 <span class="math inline">\(n\)</span> 个节点的树 <span
+class="math inline">\(A,B\)</span> 和一个数集 <span
+class="math inline">\(S\)</span> ，问有多少个数满足 <span
+class="math inline">\(\{S\setminus a_i\}\)</span> 在 <span
+class="math inline">\(A\)</span> 中的 LCA 的点权比 <span
+class="math inline">\(B\)</span> 中的大。</p>
+</blockquote>
+<p><span class="math inline">\(\mathcal O(n\log n)\)</span>
+的做法是暴力求出来给定节点序列在两棵树中前后缀的 LCA
+，最后每个合并一下两侧即可。</p>
+<p>有一个比较妙的 <span class="math inline">\(\mathcal O(n)\)</span>
+做法：考虑哪些点会作为 <span class="math inline">\(|S|-1\)</span> 个点的
+LCA 。</p>
+<p>我们将数集里每个点的点权设为 <span class="math inline">\(1\)</span>
+，至多存在一个点 <span class="math inline">\(u\)</span> ，满足 <span
+class="math inline">\(u\)</span> 子树和为 <span
+class="math inline">\(|S|-1\)</span> 且深度最深。</p>
+<ul>
+<li>如果删掉的是这 <span class="math inline">\(|S|-1\)</span>
+个点中的某一个，剩余的点的 LCA 就是 <span
+class="math inline">\(S\)</span> 中所有点的 LCA 。</li>
+<li>否则剩余的点就是这 <span class="math inline">\(|S| -1\)</span>
+个点，答案就是 <span class="math inline">\(u\)</span></li>
+</ul>
+<p>如果不存在这样的 <span class="math inline">\(u\)</span>
+，那么答案永远都是 <span class="math inline">\(S\)</span> 中所有点的 LCA
+。</p>
+<p>综上可以发现，删掉某个点之后剩余点的 LCA
+可能的结果至多两种，因此可以一遍 DFS 之后 <span
+class="math inline">\(\mathcal O(1)\)</span> 查询。</p>
+<p>特殊情况是 <span class="math inline">\(k=2\)</span> 的时候 <span
+class="math inline">\(u\)</span> 会有两个，所以单独判一下。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pb push_back</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> rep(i, x, y) for (int i = (x); i &lt;= (y); ++i)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> per(i, x, y) for (int i = (x); i &gt;= (y); --i)</span><br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 100007</span><br><br><span class="hljs-keyword">int</span> n, k, tot, x[N];<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">tree</span> &#123;</span><br>    <span class="hljs-keyword">int</span> lca, sub, cur;<br>    <span class="hljs-keyword">int</span> sz[N], sum[N], val[N];<br>    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; son[N];<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u)</span> </span>&#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> v : son[u]) dfs(v); <br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> v : son[u]) &#123;sz[u] += sz[v]; sum[u] ^= sum[v];&#125;<br>        <span class="hljs-keyword">if</span> (!lca &amp;&amp; sz[u] == k) lca = u;<br>        <span class="hljs-keyword">if</span> (!sub &amp;&amp; sz[u] == k - <span class="hljs-number">1</span>) &#123;sub = u; cur = sum[u] ^ tot;&#125;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u)</span> </span>&#123;<span class="hljs-keyword">return</span> u == cur ? val[sub] : val[lca];&#125;<br>&#125; tr[<span class="hljs-number">2</span>];<br><br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    n = rd(); k = rd();<br>    rep(i, <span class="hljs-number">1</span>, k) tot ^= (x[i] = rd());<br>    rep(id, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>) &#123;<br>        rep(i, <span class="hljs-number">1</span>, n) tr[id].val[i] = rd();<br>        rep(i, <span class="hljs-number">2</span>, n) tr[id].son[rd()].pb(i);<br>        rep(i, <span class="hljs-number">1</span>, k) &#123;++tr[id].sz[x[i]]; tr[id].sum[x[i]] ^= x[i];&#125;<br>    &#125;<br>    <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">if</span> (k &gt; <span class="hljs-number">2</span>) &#123;<br>        rep(id, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>) tr[id].dfs(<span class="hljs-number">1</span>); <br>        rep(i, <span class="hljs-number">1</span>, k) ans += tr[<span class="hljs-number">0</span>].query(x[i]) &gt; tr[<span class="hljs-number">1</span>].query(x[i]);<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        rep(i, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>) ans += (tr[<span class="hljs-number">0</span>].val[x[i]] &gt; tr[<span class="hljs-number">1</span>].val[x[i]]);<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ans);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="b.-boss">B. Boss</h2>
+<blockquote>
+<p>有 <span class="math inline">\(n\)</span> 个员工要派到 <span
+class="math inline">\(m\)</span> 个城市, 每个城市需要 <span
+class="math inline">\(a_{i}\)</span> 个员工，且 <span
+class="math inline">\(\sum_{i=1}^{m} a_{i}=n\ (n \leq 10^{5}, m \leq
+10)\)</span>, 求最小费用。</p>
+</blockquote>
+<p>（借鉴<a
+target="_blank" rel="noopener" href="https://hydro.ac/blog/7276/62e9cf41fe2b11dfe816cac4#1659490113017">柴老师博客</a>）</p>
+<p>最小费用流模版题，但是直接跑费用流复杂度不对，要根据图的性质优化求最短路的算法。</p>
+<p>左边是城市, 右边是员工, 每次找一条最短路, 必然是先走到左边的点,
+再经过若干次反悔, 最后走到右边的点。</p>
+<p>一次反悔, 指先从左边走到右边, 再从右边走到左边，也就是 <span
+class="math inline">\(dis_{u,x}+dis_{x,v}\)</span> 。</p>
+<p>所以路径可以拆成两部分：在左侧从 <span
+class="math inline">\(u\)</span> 开始经过若干次到 <span
+class="math inline">\(v\)</span> ，然后从 <span
+class="math inline">\(v\)</span> 选择右侧一个可以走的点走掉。</p>
+<ul>
+<li>对于左侧的点之间维护 <span class="math inline">\(m^2\)</span>
+个堆代表当前从 <span class="math inline">\(u\)</span> 经过一次反悔到
+<span class="math inline">\(v\)</span>
+的最短距离，每次增广用堆顶的直跑一遍 floyd 。</li>
+<li>对于每个左侧的点维护一个堆代表到右侧所有可行的距离里最短的，第二部分的距离就是堆顶的值。</li>
+</ul>
+<p>求最短路就枚举所有的可能的 <span class="math inline">\(u,v\)</span>
+，因此单次增光复杂度为 <span class="math inline">\(\mathcal O(m^2\log
+n+m^3)\)</span> ，一共增广 <span class="math inline">\(n\)</span>
+次。</p>
+<p>第一部分的堆维护的时候要考虑退流，求途径的节点需要再floyd
+的时候记一个 pre ，然后 dfs 往回找，细节见代码。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mp make_pair</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pb push_back</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pii pair<span class="hljs-meta-string">&lt;int, int&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> K 11</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 100007</span><br><br><span class="hljs-keyword">bool</span> use[N];<br>ll ans;<br><span class="hljs-keyword">int</span> rem[K], dis[K][K], pre[K][K], mn[K][K];<br><span class="hljs-keyword">int</span> c[K][N], n, k;<br><span class="hljs-keyword">bool</span> go[K][N], back[N][K];<br><span class="hljs-keyword">bool</span> vis[K][K][N];<br><br><span class="hljs-built_in">priority_queue</span>&lt;pii, <span class="hljs-built_in">vector</span>&lt;pii&gt;, greater&lt;pii&gt; &gt; q[K][K], p[K];<br><br><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; s;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> v)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (!pre[u][v]) &#123;<br>        go[u][mn[u][v]] = back[mn[u][v]][v] = <span class="hljs-literal">false</span>;<br>        back[mn[u][v]][u] = go[v][mn[u][v]] = <span class="hljs-literal">true</span>;<br>        s.pb(mn[u][v]); <br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    dfs(u, pre[u][v]); dfs(pre[u][v], v);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">memset</span>(dis, <span class="hljs-number">0x3f</span>, <span class="hljs-keyword">sizeof</span>(dis));<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> u = <span class="hljs-number">1</span>; u &lt;= k; ++u) &#123;<br>        dis[u][u] = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (!p[u].empty() &amp;&amp; use[p[u].top().second]) p[u].pop();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> v = <span class="hljs-number">1</span>; v &lt;= k; ++v) &#123;<br>            <span class="hljs-keyword">while</span> (!q[u][v].empty()) &#123;<br>                <span class="hljs-keyword">int</span> x = q[u][v].top().second;<br>                <span class="hljs-keyword">if</span> (!go[u][x] || !back[x][v]) &#123;vis[u][v][x] = <span class="hljs-literal">false</span>; q[u][v].pop();&#125;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (q[u][v].size()) &#123;<br>                dis[u][v] = q[u][v].top().first;<br>                mn[u][v] = q[u][v].top().second;<br>                pre[u][v] = <span class="hljs-number">0</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> t = <span class="hljs-number">1</span>; t &lt;= k; ++t)<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> u = <span class="hljs-number">1</span>; u &lt;= k; ++u)<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> v = <span class="hljs-number">1</span>; v &lt;= k; ++v) <br>                <span class="hljs-keyword">if</span> (dis[u][v] &gt; dis[u][t] + dis[t][v]) &#123;<br>                    pre[u][v] = t;<br>                    dis[u][v] = dis[u][t] + dis[t][v];<br>                &#125;<br>    <span class="hljs-keyword">int</span> mnu, mnv, cst = <span class="hljs-number">1e9</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> u = <span class="hljs-number">1</span>; u &lt;= k; ++u)<br>        <span class="hljs-keyword">if</span> (rem[u])<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> v = <span class="hljs-number">1</span>; v &lt;= k; ++v) &#123;<br>                <span class="hljs-keyword">int</span> nw = dis[u][v] + p[v].top().first;<br>                <span class="hljs-keyword">if</span> (nw &lt; cst) &#123;cst = nw; mnu = u; mnv = v;&#125;<br>            &#125;<br>    ans += cst; --rem[mnu];<br>    s.clear();<br>    <span class="hljs-keyword">if</span> (mnu != mnv) dfs(mnu, mnv);<br>    s.pb(p[mnv].top().second);<br>    go[mnv][p[mnv].top().second] = <span class="hljs-literal">false</span>;<br>    back[p[mnv].top().second][mnv] = <span class="hljs-literal">true</span>;<br>    use[p[mnv].top().second] = <span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> t : s) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> u = <span class="hljs-number">1</span>; u &lt;= k; ++u) <br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> v = <span class="hljs-number">1</span>; v &lt;= k; ++v) <br>                <span class="hljs-keyword">if</span> (go[u][t] &amp;&amp; back[t][v] &amp;&amp; !vis[u][v][t]) &#123;<br>                    vis[u][v][t] = <span class="hljs-literal">true</span>; q[u][v].push(mp(c[u][t] - c[v][t], t));<br>                &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    n = rd(); k = rd();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= k; ++i) rem[i] = rd();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i)<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= k; ++j) &#123;<br>            c[j][i] = rd(); go[j][i] = <span class="hljs-literal">true</span>;<br>            p[j].push(mp(c[j][i], i)); <br>        &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) work();<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld\n&quot;</span>, ans);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="d.-directed">D. Directed</h2>
+<p><a
+target="_blank" rel="noopener" href="https://zigzagk.top/2022/07/26/nowcoder2022acm3D">胖胖补的，戳我围观</a></p>
+<h2 id="f.-fief">F. Fief</h2>
+<blockquote>
+<p>无向图每次询问两个点 <span class="math inline">\(x,y\)</span>
+，问是否存在一个点编号的排列以 <span class="math inline">\(x\)</span>
+开头以 <span class="math inline">\(y\)</span>
+结尾，且任意位置断开得到的两段都连通。</p>
+</blockquote>
+<p>这个问题的学名叫 “双极定向”，存一篇博客 <a
+target="_blank" rel="noopener" href="https://zx2003.blog.uoj.ac/blog/7299">浅谈双极定向及其应用 -
+zx2003</a></p>
+<p>最后我们得出的结论是图必须联通，圆方树上的方点必须成一条链，询问的点不能是割点。</p>
+<p>此外 <span class="math inline">\(n=2\)</span>
+的时候图不连通也是正确的，实在太细节了。让胖胖去写的，回头补完再贴代码。</p>
+<h2 id="g.-geometry">G. Geometry</h2>
+<blockquote>
+<p>给两个不交的凸包 <span class="math inline">\(A,B\)</span>
+，每个凸包有个速度向量 <span class="math inline">\(v\)</span>
+，问两凸包碰撞的时间。</p>
+</blockquote>
+<p>首先运动是相对的，所以可以固定凸包 <span
+class="math inline">\(A\)</span> ，凸包 <span
+class="math inline">\(B\)</span> 的速度向量变为 <span
+class="math inline">\(v_B - v_A\)</span> 。</p>
+<p>接下来就是套路题，同 [JSOI 2018] 战争，找一条射线与 <span
+class="math inline">\(A+(-B)\)</span>
+的交点，然后计算到交点的时刻即可。</p>
+<p>因为只询问一次，所以枚举闵可夫斯基和上的每一条边直接和射线求交更新，其实可以优化到
+<span class="math inline">\(\mathcal O(\log n)\)</span> 查询。</p>
+<p>因为数据范围有 <span class="math inline">\(10^9\)</span>
+，所以点积叉积的范围有 <span class="math inline">\(10^{18}\)</span>
+，直接判断交点是否在线段上可能会出一些问题。</p>
+<p>一个判断阶段无精度误差的方法：分成端点在射线上、端点在射线两侧两种情况更新答案。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">using</span> ll = <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> fr first</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> sc second</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mp make_pair</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pb push_back</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pii pair<span class="hljs-meta-string">&lt;int, int&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> rep(i, x, y) for (int i = (x); i &lt;= (y); ++i)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> per(i, x, y) for (int i = (x); i &gt;= (y); --i)</span><br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    ll x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">double</span> T;<br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> lett const T&amp;</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> letp const P&amp; <span class="hljs-comment">// P for point</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> lets const S&amp; <span class="hljs-comment">// S for segment</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> letl const L&amp; <span class="hljs-comment">// L for line</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> letc const C&amp; <span class="hljs-comment">// C for convex</span></span><br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> z(x) (abs((x)) &lt;= eps) <span class="hljs-comment">// is zero</span></span><br><br><span class="hljs-keyword">const</span> T eps = <span class="hljs-number">1e-8</span>;<br><span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span> PI=<span class="hljs-number">3.1415926535897932384</span>;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">P</span> &#123;</span><br>    T x, y;<br>    P (T x = <span class="hljs-number">0</span>, T y = <span class="hljs-number">0</span>) : x(x), y(y) &#123;&#125;<br>    P <span class="hljs-keyword">operator</span> + (letp p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> &#123;x + p.x, y + p.y&#125;;&#125; <br>    P <span class="hljs-keyword">operator</span> - (letp p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> &#123;x - p.x, y - p.y&#125;;&#125; <br>    P <span class="hljs-keyword">operator</span> * (lett d) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> &#123;x * d, y * d&#125;;&#125;<br>    P <span class="hljs-keyword">operator</span> / (lett d) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> &#123;x / d, y / d&#125;;&#125;<br><br>    T <span class="hljs-keyword">operator</span> | (letp p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> x * p.x + y * p.y;&#125; <span class="hljs-comment">// dot</span><br>    T <span class="hljs-keyword">operator</span> ^ (letp p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> x * p.y - y * p.x;&#125; <span class="hljs-comment">// cross</span><br>    <br>    <span class="hljs-function">P <span class="hljs-title">rot</span><span class="hljs-params">(<span class="hljs-keyword">double</span> ang)</span> <span class="hljs-keyword">const</span> </span>&#123; <span class="hljs-comment">// rotation (ang) angle, need T = double</span><br>        <span class="hljs-keyword">double</span> cosa = <span class="hljs-built_in">cos</span>(ang), sina = <span class="hljs-built_in">sin</span>(ang);<br>        <span class="hljs-keyword">return</span> &#123;x * cosa - y * sina, x * sina + y * cosa&#125;;<br>    &#125;<br><br>    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> == (letp p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> z(x - p.x) &amp;&amp; z(y - p.y);&#125;<br>    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> != (letp p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> ! <span class="hljs-keyword">operator</span> == (p);&#125;<br>    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &lt; (letp p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> z(x - p.x) ? y &lt; p.y : x &lt; p.x;&#125;<br>    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &gt; (letp p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> !(*<span class="hljs-keyword">this</span> &lt; p || *<span class="hljs-keyword">this</span> == p);&#125;<br>   <br><br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">ori</span><span class="hljs-params">(letp p)</span> <span class="hljs-keyword">const</span> </span>&#123;T t = (*<span class="hljs-keyword">this</span>) ^ p; <span class="hljs-keyword">return</span> (t &gt; eps) - (t &lt; -eps);&#125;<br><br>    <span class="hljs-function">T <span class="hljs-title">norm</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">return</span> x * x + y * y;&#125;<br>    <span class="hljs-function">P <span class="hljs-title">proj</span> <span class="hljs-params">(letp p)</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">return</span> (*<span class="hljs-keyword">this</span>) * (((*<span class="hljs-keyword">this</span>) | p) / norm());&#125;<br>    <span class="hljs-function">P <span class="hljs-title">refl</span> <span class="hljs-params">(letp p)</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">return</span> proj(p) * <span class="hljs-number">2</span> - p;&#125;<br><br>&#125; zero;<br><br><span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">abs</span><span class="hljs-params">(letp p)</span> </span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-built_in">sqrt</span>(p.norm());&#125;<br><span class="hljs-function">P <span class="hljs-title">normalize</span><span class="hljs-params">(letp p)</span> </span>&#123;<span class="hljs-keyword">return</span> p / <span class="hljs-built_in">abs</span>(p);&#125;<br><span class="hljs-function">P <span class="hljs-title">perp</span><span class="hljs-params">(letp p)</span> </span>&#123;<span class="hljs-keyword">return</span> &#123;-p.y, p.x&#125;;&#125; <span class="hljs-comment">// turn pi / 2 left</span><br><span class="hljs-function">P <span class="hljs-title">perpr</span><span class="hljs-params">(letp p)</span> </span>&#123;<span class="hljs-keyword">return</span> &#123;p.y, -p.x&#125;;&#125; <span class="hljs-comment">// turn pi / 2 right</span><br><br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">orth</span><span class="hljs-params">(letp p, letp q)</span> </span>&#123;<span class="hljs-keyword">return</span> (p | q) == <span class="hljs-number">0</span>;&#125;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">para</span><span class="hljs-params">(letp p, letp q)</span> </span>&#123;<span class="hljs-keyword">return</span> (p ^ q) == <span class="hljs-number">0</span>;&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">argcmp</span> &#123;</span> <span class="hljs-comment">// compared by polar angle</span><br>    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">operator</span><span class="hljs-params">()</span> <span class="hljs-params">(letp a, letp b)</span> <span class="hljs-keyword">const</span> </span>&#123;<br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">auto</span> quad = [](letp a) &#123;<br>            <span class="hljs-keyword">if</span> (a.y &lt; -eps) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; <span class="hljs-comment">// halfplane with negative y</span><br>            <span class="hljs-keyword">if</span> (a.y &gt; eps) <span class="hljs-keyword">return</span> <span class="hljs-number">4</span>;  <span class="hljs-comment">// halfplane with positive y</span><br>            <span class="hljs-keyword">if</span> (a.x &lt; -eps) <span class="hljs-keyword">return</span> <span class="hljs-number">5</span>; <span class="hljs-comment">// negative x-axis</span><br>            <span class="hljs-keyword">if</span> (a.x &gt; eps) <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>;  <span class="hljs-comment">// positive x-axis</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>; <span class="hljs-comment">// origin</span><br>        &#125;;<br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> qa = quad(a), qb = quad(b);<br>        <span class="hljs-keyword">if</span> (qa != qb) <span class="hljs-keyword">return</span> qa &lt; qb; <br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">auto</span> t = a ^ b; <span class="hljs-comment">//in the same quad</span><br>        <span class="hljs-comment">// sorted by length in increasing order when parallel</span><br>        <span class="hljs-comment">// if (z(t)) return norm(a) &lt; norm(b) - eps; </span><br>        <span class="hljs-keyword">return</span> t &gt; eps;<br>    &#125;    <br>&#125;;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">L</span> &#123;</span><br>    P p, v; <br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">ori</span> <span class="hljs-params">(letp a)</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">return</span> v.ori(a - p);&#125; <br>    <span class="hljs-function">P <span class="hljs-title">inter</span><span class="hljs-params">(letl l)</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">return</span> p + v * ((l.v ^ (p - l.p)) / (v ^ l.v));&#125; <br>&#125;;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">S</span> &#123;</span><br>    P a, b;<br><br>    <span class="hljs-comment">// on = -1 | out = 0 | in = 1</span><br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">is_on</span><span class="hljs-params">(letp p)</span> <span class="hljs-keyword">const</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (p == a || p == b) <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">return</span> (p - a).ori(p - b) == <span class="hljs-number">0</span> &amp;&amp; ((p - a) | (p - b)) &lt; -eps;<br>    &#125;<br><br>    <span class="hljs-comment">// cross on endpoints = -1 | not inter = 0 | inside = 1</span><br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">is_inter</span><span class="hljs-params">(lets s)</span> <span class="hljs-keyword">const</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (is_on(s.a) || is_on(s.b) || s.is_on(a) || s.is_on(b)) <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>        letl l&#123;a, b - a&#125;, ls&#123;s.a,s.b - s.a&#125;;<br>        <span class="hljs-keyword">return</span> l.ori(s.a) * l.ori(s.b) == <span class="hljs-number">-1</span> &amp;&amp; ls.ori(a) * ls.ori(b) == <span class="hljs-number">-1</span>;<br>    &#125;<br>&#125;;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Polygon</span> &#123;</span><br>    <span class="hljs-built_in">vector</span>&lt;P&gt; p; <span class="hljs-comment">// counterclockwise</span><br>    Polygon(<span class="hljs-keyword">const</span> <span class="hljs-built_in">vector</span>&lt;P&gt; p = &#123;&#125;) : p(p) &#123;&#125;<br>    <span class="hljs-function"><span class="hljs-keyword">size_t</span> <span class="hljs-title">nxt</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">size_t</span> i)</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">return</span> i == p.size() - <span class="hljs-number">1</span> ? <span class="hljs-number">0</span> : i + <span class="hljs-number">1</span>;&#125;<br>    <span class="hljs-function"><span class="hljs-keyword">size_t</span> <span class="hljs-title">pre</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">size_t</span> i)</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">return</span> i == <span class="hljs-number">0</span> ? p.size() - <span class="hljs-number">1</span> : i - <span class="hljs-number">1</span>;&#125;<br> <br>&#125;;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">C</span> :</span> Polygon &#123;<br>    C (<span class="hljs-keyword">const</span> <span class="hljs-built_in">vector</span>&lt;P&gt; &amp;p = &#123;&#125;) : Polygon(p) &#123;&#125;<br>    C <span class="hljs-keyword">operator</span> + (letc c) <span class="hljs-keyword">const</span> &#123;<br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">auto</span> &amp;p = <span class="hljs-keyword">this</span> -&gt; p;<br>        vector&lt;S&gt; e1(p.size()), e2(c.p.size());<br>        <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;S&gt; <span class="hljs-title">edge</span><span class="hljs-params">(p.size() + c.p.size())</span></span>;<br>        <span class="hljs-built_in">vector</span>&lt;P&gt; res; res.reserve(p.size() + c.p.size());<br>        <br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">auto</span> cmp = [](lets u, lets v) &#123;<br>            <span class="hljs-keyword">return</span> argcmp()(u.b - u.a, v.b - v.a);<br>        &#125;;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">size_t</span> i = <span class="hljs-number">0</span>; i &lt; p.size(); ++i) e1[i] = &#123;p[i], p[<span class="hljs-keyword">this</span> -&gt; nxt(i)]&#125;;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">size_t</span> i = <span class="hljs-number">0</span>; i &lt; c.p.size(); ++i) e2[i] = &#123;c.p[i], c.p[c.nxt(i)]&#125;;<br>        rotate(e1.begin(), min_element(e1.begin(), e1.end(), cmp), e1.end());<br>        rotate(e2.begin(), min_element(e2.begin(), e2.end(), cmp), e2.end());<br>        merge(e1.begin(), e1.end(), e2.begin(), e2.end(), edge.begin(), cmp);<br><br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">auto</span> check = [](<span class="hljs-keyword">const</span> <span class="hljs-built_in">vector</span>&lt;P&gt; &amp;res, letp u) &#123;<br>            <span class="hljs-keyword">const</span> <span class="hljs-keyword">auto</span> b1 = res.back(), b2 = *prev(res.end(), <span class="hljs-number">2</span>);<br>            <span class="hljs-keyword">return</span> (b1 - b2).ori(u - b1) == <span class="hljs-number">0</span> &amp;&amp; ((b1 - b2) | (u - b1)) &gt;= -eps;<br>        &#125;;<br>        <br>        <span class="hljs-keyword">auto</span> u = e1[<span class="hljs-number">0</span>].a + e2[<span class="hljs-number">0</span>].a;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> <span class="hljs-keyword">auto</span> &amp;v : edge) &#123;<br>            <span class="hljs-keyword">while</span> (res.size() &gt; <span class="hljs-number">1</span> &amp;&amp; check(res, u)) res.pop_back();<br>            res.push_back(u); u = u + v.b - v.a;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (res.size() &gt; <span class="hljs-number">1</span> &amp;&amp; check(res, res[<span class="hljs-number">0</span>])) res.pop_back();<br>        <span class="hljs-keyword">return</span> &#123;res&#125;;<br>    &#125;<br><br>    <span class="hljs-comment">// O(log n) : on = -1 | out = 0 | in = 1</span><br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">is_in</span><span class="hljs-params">(letp a)</span> <span class="hljs-keyword">const</span> </span>&#123;<br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">auto</span> &amp;p = <span class="hljs-keyword">this</span> -&gt; p;<br>        <span class="hljs-keyword">if</span> (p.size() == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> a == p[<span class="hljs-number">0</span>] ? <span class="hljs-number">-1</span> : <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">if</span> (p.size() == <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> S&#123;p[<span class="hljs-number">0</span>], p[<span class="hljs-number">1</span>]&#125;.is_on(a) ? <span class="hljs-number">-1</span> : <span class="hljs-number">0</span>; <br>        <span class="hljs-keyword">if</span> (a == p[<span class="hljs-number">0</span>]) <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">if</span> ((p[<span class="hljs-number">1</span>] - p[<span class="hljs-number">0</span>]).ori(a - p[<span class="hljs-number">0</span>]) == <span class="hljs-number">-1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">if</span> ((p.back() - p[<span class="hljs-number">0</span>]).ori(a - p[<span class="hljs-number">0</span>]) == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">auto</span> cmp = [&amp;](letp u, letp v) &#123;<span class="hljs-keyword">return</span> (u - p[<span class="hljs-number">0</span>]).ori(v - p[<span class="hljs-number">0</span>]) == <span class="hljs-number">1</span>;&#125;;<br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">size_t</span> i = lower_bound(p.begin() + <span class="hljs-number">1</span>, p.end(), a, cmp) - p.begin();<br>        <span class="hljs-keyword">if</span> (i == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> S&#123;p[<span class="hljs-number">0</span>], p[i]&#125;.is_on(a) ? <span class="hljs-number">-1</span> : <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">if</span> (i == p.size() - <span class="hljs-number">1</span> &amp;&amp; S&#123;p[<span class="hljs-number">0</span>], p[i]&#125;.is_on(a)) <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">if</span> (S&#123;p[i - <span class="hljs-number">1</span>], p[i]&#125;.is_on(a)) <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">return</span> (p[i] - p[i<span class="hljs-number">-1</span>]).ori(a - p[i - <span class="hljs-number">1</span>]) &gt; <span class="hljs-number">0</span>;<br>    &#125;<br><br>&#125; c, c_;<br><br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd(); c.p.resize(n);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>        T x = rd(), y = rd();<br>        c.p[i] = &#123;x, y&#125;;<br>    &#125;<br>    n = rd(); c_.p.resize(n);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>        T x = -rd(), y = -rd();<br>        c_.p[i] = &#123;x, y&#125;;<br>    &#125;<br>    c = c + c_; <br>    P v;<br>    v.x = -rd(); v.y = -rd(); v.x += rd(); v.y += rd();<br>    <span class="hljs-keyword">if</span> (c.is_in(zero)) &#123;<span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;0&quot;</span>); <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;<br>    <span class="hljs-keyword">if</span> (v == zero) &#123;<span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;-1&quot;</span>); <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;<br>    L l&#123;zero, v&#125;;<br>    <span class="hljs-keyword">double</span> ans = <span class="hljs-number">1e20</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">size_t</span> i = <span class="hljs-number">0</span>; i &lt; c.p.size(); ++i)  &#123;<br>        <span class="hljs-keyword">const</span> P a = c.p[i], b = c.p[c.nxt(i)];<br>        <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> oa = v.ori(a), ob = v.ori(b);<br>        <span class="hljs-keyword">if</span> (oa == <span class="hljs-number">0</span> &amp;&amp; (a | v) &gt; eps) ans = min(ans, <span class="hljs-built_in">abs</span>(a) / <span class="hljs-built_in">abs</span>(v));<br>        <span class="hljs-keyword">if</span> (ob == <span class="hljs-number">0</span> &amp;&amp; (b | v) &gt; eps) ans = min(ans, <span class="hljs-built_in">abs</span>(b) / <span class="hljs-built_in">abs</span>(v));<br>        <span class="hljs-keyword">if</span> (oa != <span class="hljs-number">0</span> &amp;&amp; ob != <span class="hljs-number">0</span> &amp;&amp; oa != ob) &#123;<br>            P p = l.inter(L&#123;a, b - a&#125;);<br>            <span class="hljs-keyword">if</span> ((p | v) &gt; eps) ans = min(ans, <span class="hljs-built_in">abs</span>(p) / <span class="hljs-built_in">abs</span>(v));<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (ans &lt; <span class="hljs-number">1e20</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.10lf\n&quot;</span>, ans);<br>    <span class="hljs-keyword">else</span> <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;-1&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="j.-journey">J. Journey</h2>
+<blockquote>
+<p>有 <span class="math inline">\(n\)</span>
+个四通路口连接若干条双向道路（视为两条），每次到路口右转无代价，其他方向代价都是
+<span class="math inline">\(1\)</span> 。</p>
+<p>问从 <span class="math inline">\(s_1\)</span> 到 <span
+class="math inline">\(s_2\)</span> 的路出发，到 <span
+class="math inline">\(t_1\)</span> 到 <span
+class="math inline">\(t_2\)</span> 的路的最小代价。</p>
+</blockquote>
+<p>以每条路（单向）为点建图，01-BFS 即可。</p>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mp make_pair</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pb push_back</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pii pair<span class="hljs-meta-string">&lt;int, int&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 2000007</span><br><br><span class="hljs-built_in">unordered_map</span>&lt;ll, <span class="hljs-keyword">int</span>&gt; f;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">ha</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> v)</span> </span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-number">1l</span>l * u * <span class="hljs-number">1e9</span> + v;&#125;<br><br><span class="hljs-keyword">int</span> tot, dis[N];<br><br><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; e0[N], e1[N];<br><br><span class="hljs-keyword">bool</span> vis[N];<br><br><span class="hljs-built_in">deque</span>&lt;<span class="hljs-keyword">int</span>&gt; q;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> s)</span> </span>&#123;<br>    <span class="hljs-built_in">memset</span>(dis, <span class="hljs-number">0x3f</span>, <span class="hljs-keyword">sizeof</span>(dis));  <br>    dis[s] = <span class="hljs-number">0</span>; q.push_back(s);  <br>    <span class="hljs-keyword">while</span> (!q.empty()) &#123;  <br>        <span class="hljs-keyword">int</span> u = q.front(); q.pop_front();  <br>        <span class="hljs-keyword">if</span> (vis[u]) <span class="hljs-keyword">continue</span>; vis[u] = <span class="hljs-number">1</span>;  <br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> v : e0[u])<br>            <span class="hljs-keyword">if</span> (dis[v] &gt; dis[u]) &#123;<br>                dis[v] = dis[u]; q.push_front(v);<br>            &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> v : e1[u])<br>            <span class="hljs-keyword">if</span> (dis[v] &gt; dis[u] + <span class="hljs-number">1</span>) &#123;<br>                dis[v] = dis[u] + <span class="hljs-number">1</span>; q.push_back(v);<br>            &#125;<br>    &#125;  <br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;<br>        <span class="hljs-keyword">int</span> c[<span class="hljs-number">4</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">4</span>; ++j) &#123;<br>            c[j] = rd();<br>            <span class="hljs-keyword">if</span> (!c[j]) <span class="hljs-keyword">continue</span>;<br>            <span class="hljs-keyword">if</span> (!f[ha(i, c[j])]) f[ha(i, c[j])] = ++tot;<br>            <span class="hljs-keyword">if</span> (!f[ha(c[j], i)]) f[ha(c[j], i)] = ++tot;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">4</span>; ++j) <br>            <span class="hljs-keyword">if</span> (c[j]) &#123;<br>                <span class="hljs-keyword">if</span> (c[(j + <span class="hljs-number">1</span>) % <span class="hljs-number">4</span>]) e0[f[ha(c[j], i)]].push_back(f[ha(i, c[(j + <span class="hljs-number">1</span>) % <span class="hljs-number">4</span>])]);<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> w = <span class="hljs-number">2</span>; w &lt;= <span class="hljs-number">4</span>; ++w) &#123;<br>                    <span class="hljs-keyword">int</span> t = (j + w) % <span class="hljs-number">4</span>;<br>                    <span class="hljs-keyword">if</span> (c[t]) e1[f[ha(c[j], i)]].push_back(f[ha(i, c[t])]);<br>                &#125;<br>            &#125;<br>    &#125;<br>    <span class="hljs-keyword">int</span> x = rd(), y = rd();<br>    <span class="hljs-keyword">if</span> (!f[ha(x, y)]) f[ha(x, y)] = ++tot;<br>    <span class="hljs-keyword">int</span> u = f[ha(x, y)]; x = rd(), y = rd();<br>    <span class="hljs-keyword">if</span> (!f[ha(x, y)]) f[ha(x, y)] = ++tot;<br>    <span class="hljs-keyword">int</span> v = f[ha(x, y)];<br>    bfs(u);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, dis[v] &gt;= <span class="hljs-number">1e9</span> ? <span class="hljs-number">-1</span> : dis[v]);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Misc-Solutions/">Misc Solutions</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/01-BFS/">01-BFS</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Flows/">Flows</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Minkowski-Sum/">Minkowski Sum</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Connectivity/">Connectivity</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/misc/2022summer-7/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2022 NowCoder Multi-University Training Contest 7</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/atcoder/abc259/">
+                        <span class="hidden-mobile">AtCoder Beginner Contest 259</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"xG2rrgKMbyj4g3i1oO6vNAqH-gzGzoHsz","appKey":"dzMAbhtChev9VMBGRYG9PvAv","placeholder":"What you wanna say...","path":"window.location.pathname","avatar":"robohash","meta":["nick","mail","link"],"pageSize":10,"math":true,"md":true,"lang":"en","highlight":true,"recordIP":true,"serverURLs":"","emojiCDN":null,"emojiMaps":{"1":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0000.png","2":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0010.png","3":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0020.png","4":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0030.png","5":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0040.png","6":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0050.png","7":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0060.png","8":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0070.png","9":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0080.png","10":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0090.png","11":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0100.png","12":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0110.png","13":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0120.png","14":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0130.png","15":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0140.png","16":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0150.png","17":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0160.png","18":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0170.png","19":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0171.png","20":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0180.png","21":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0181.png","22":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0190.png","23":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0200.png","24":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0210.png","25":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0220.png","26":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0230.png","27":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0240.png","28":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0241.png","29":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0250.png","30":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0260.png","31":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0270.png","32":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0280.png","33":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0290.png","34":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0300.png","35":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0310.png","36":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0320.png","37":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0330.png","38":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0331.png","39":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0340.png","40":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0350.png","41":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0360.png","42":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0370.png","43":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0380.png","44":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0390.png","45":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0391.png","46":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0400.png","47":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0410.png","48":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0420.png","49":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0430.png","50":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0431.png","51":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0440.png","52":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0450.png","53":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0451.png","54":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0460.png","55":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0461.png","56":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0462.png","57":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0470.png","58":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0480.png","59":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0490.png","60":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0500.png","61":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0510.png","62":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0520.png","63":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0530.png","64":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0540.png","65":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0550.png","66":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0560.png","67":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0570.png","68":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0580.png","69":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0590.png","70":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0600.png","71":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0610.png","72":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/0620.png","73":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1010.png","74":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1011.png","75":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1020.png","76":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1030.png","77":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1040.png","78":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1050.png","79":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1060.png","80":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1070.png","81":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/1080.png","82":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2010.png","83":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2020.png","84":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2030.png","85":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2040.png","86":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2050.png","87":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2060.png","88":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2070.png","89":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2080.png","90":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2090.png","91":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2100.png","92":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2101.png","93":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2110.png","94":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2120.png","95":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2130.png","96":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2140.png","97":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2141.png","98":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2145.png","99":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2150.png","100":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2151.png","101":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2152.png","102":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2160.png","103":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2161.png","104":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2165.png","105":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2170.png","106":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/2171.png","107":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3010.png","108":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3011.png","109":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3020.png","110":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3030.png","111":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3040.png","112":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3050.png","113":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3060.png","114":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/3061.png","115":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4010.png","116":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4020.png","117":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4021.png","118":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4022.png","119":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4023.png","120":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4024.png","121":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4025.png","122":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4030.png","123":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4031.png","124":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4040.png","125":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4041.png","126":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4042.png","127":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4100.png","128":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4110.png","129":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4111.png","130":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4112.png","131":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4113.png","132":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4114.png","133":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4115.png","134":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4120.png","135":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4121.png","136":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4130.png","137":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4140.png","138":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4200.png","139":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4201.png","140":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4210.png","141":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4211.png","142":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4212.png","143":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4213.png","144":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4220.png","145":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4300.png","146":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4301.png","147":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4302.png","148":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4303.png","149":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4304.png","150":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/4310.png","151":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5000.png","152":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5001.png","153":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5002.png","154":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5003.png","155":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5010.png","156":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5020.png","157":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5030.png","158":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5040.png","159":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5050.png","160":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5060.png","161":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5069.png","162":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5070.png","163":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5080.png","164":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5090.png","165":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5091.png","166":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5100.png","167":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5110.png","168":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5120.png","169":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5130.png","170":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5131.png","171":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5140.png","172":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5141.png","173":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5150.png","174":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5151.png","175":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5160.png","176":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5161.png","177":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5170.png","178":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5180.png","179":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5190.png","180":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5200.png","181":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5210.png","182":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5220.png","183":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/5230.png","184":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6000.png","185":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6001.png","186":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6010.png","187":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6020.png","188":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6030.png","189":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6040.png","190":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6050.png","191":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6051.png","192":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6060.png","193":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6061.png","194":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6070.png","195":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6080.png","196":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6090.png","197":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6091.png","198":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6092.png","199":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6100.png","200":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6110.png","201":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6120.png","202":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6121.png","203":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6130.png","204":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6131.png","205":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6132.png","206":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6140.png","207":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6150.png","208":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6151.png","209":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6160.png","210":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6500.png","211":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6510.png","212":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6520.png","213":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/6530.png","214":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7000.png","215":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7010.png","216":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7011.png","217":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7012.png","218":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7020.png","219":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7021.png","220":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7030.png","221":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7040.png","222":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7045.png","223":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7046.png","224":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7050.png","225":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7051.png","226":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7052.png","227":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7053.png","228":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7054.png","229":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7060.png","230":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7061.png","231":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7062.png","232":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7070.png","233":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7071.png","234":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7080.png","235":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7081.png","236":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7090.png","237":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7100.png","238":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7110.png","239":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7111.png","240":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7112.png","241":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7113.png","242":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7200.png","243":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7201.png","244":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7210.png","245":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7220.png","246":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/7230.png","247":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8000.png","248":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8001.png","249":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8010.png","250":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8020.png","251":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8021.png","252":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8030.png","253":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8040.png","254":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8041.png","255":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8042.png","256":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8050.png","257":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8051.png","258":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8060.png","259":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8062.png","260":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8070.png","261":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8071.png","262":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8072.png","263":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8080.png","264":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8081.png","265":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8082.png","266":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8083.png","267":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8084.png","268":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8085.png","269":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8090.png","270":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8091.png","271":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8092.png","272":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8100.png","273":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8101.png","274":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8102.png","275":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8103.png","276":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8110.png","277":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/8111.png","278":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x010.png","279":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x011.png","280":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x012.png","281":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x013.png","282":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x014.png","283":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x021.png","284":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x022.png","285":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x031.png","286":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x032.png","287":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x041.png","288":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x042.png","289":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x050.png","290":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x060.png","291":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x061.png","292":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x062.png","293":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x063.png","294":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x069.png","295":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x070.png","296":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x071.png","297":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x080.png","298":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x081.png","299":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x082.png","300":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x083.png","301":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x090.png","302":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x091.png","303":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x092.png","304":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x093.png","305":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x094.png","306":"https://cdn.jsdelivr.net/npm/minivaline@6.1.0/imgs/alus/x099.png"},"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+&copy; 2018 - 2023 &nbsp; <a href="http://blog.gyx.me"> Yixiong Gao </a> &nbsp; | &nbsp; <a href="mailto:sgcolin@163.com"> sgcolin@163.com </a>
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
