@@ -1654,20 +1654,22 @@ note-default {
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 }
 .about-info > div {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 .about-name {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 .about-intro {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  line-height: 2;
 }
 .about-icons > a:not(:last-child) {
-  margin-right: 0.5rem;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
 }
 .about-icons > a > i {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 .category:not(:last-child) {
   margin-bottom: 1rem;

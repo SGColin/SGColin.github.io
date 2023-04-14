@@ -18,7 +18,7 @@
   <meta name="author" content="Colin Gao">
   <meta name="keywords" content="">
   
-  <title>Basic Algebra I : Concepts from Set Theory - Yixiong Gao</title>
+  <title>Colin&#39;s Diary - Yixiong Gao</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -34,8 +34,6 @@
     
   
 
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
   
 
 
@@ -85,9 +83,21 @@
           
           
             <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                
+                About
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 
-                Home
+                Archive
               </a>
             </li>
           
@@ -99,7 +109,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 
-                Categories
+                Category
               </a>
             </li>
           
@@ -111,7 +121,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags">
                 
-                Tags
+                Tag
               </a>
             </li>
           
@@ -146,41 +156,11 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Basic Algebra I : Concepts from Set Theory">
+            <span class="h2" id="subtitle" title="Colin's Diary">
               
-                Basic Algebra I : Concepts from Set Theory
+                Colin's Diary
               
             </span>
-
-            
-              <div class="mt-3">
-  
-  
-</div>
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      667 words
-    </span>
-  
-
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      13
-       mins to read
-    </span>
-  
-
-  
-  
-</div>
 
             
           </div>
@@ -193,225 +173,29 @@
 
   <main>
     
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <p>你好呀，这里是 Colin 的日记和一些小想法。</p>
+<p>如果你能找到这里，估计你现在也挺无聊的，四处逛逛吧！相信你能找到很多有意思的事情。</p>
+<p><a href="/diary/spring2023">Spring 2023</a></p>
+
+
+  
+    <!-- Comments -->
+    <article class="comments" id="comments" lazyload>
       
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">Basic Algebra I : Concepts from Set Theory</h1>
-            
-            <div class="markdown-body">
-              <h2 id="the-power-set-of-a-set">THE POWER SET OF A SET</h2>
-<p><strong>Power Set</strong> <span
-class="math inline">\(\mathscr{P}(S)=\{s|s\subseteq S\},\
-|\mathscr{P}(S)|=2^{|S|}\)</span> .</p>
-<h2 id="the-cartesian-product-set.-maps">THE CARTESIAN PRODUCT SET.
-MAPS</h2>
-<p><strong>Cartesian Product Set</strong> <span
-class="math inline">\(S\times T = \{(s,t)|s\in S, t\in T\},\ |S\times T|
-= |S||T|\)</span> .</p>
-<p><strong>Map of a set <span class="math inline">\(S\)</span> into a
-set <span class="math inline">\(T\)</span></strong> ( <span
-class="math inline">\(S \stackrel{\alpha}{\rightarrow} T\)</span> ) :
-<strong>domain</strong> <span class="math inline">\(S\)</span> ,
-<strong>co-domain</strong> <span class="math inline">\(T\)</span> , a
-subset <span class="math inline">\(\alpha\)</span> of <span
-class="math inline">\(S\times T\)</span> having properties:</p>
-<ol type="1">
-<li>For any <span class="math inline">\(s \in S\)</span> there exists a
-<span class="math inline">\(t \in T\)</span> such that <span
-class="math inline">\((s, t) \in \alpha\)</span>.</li>
-<li>"Single-valuedness": If <span class="math inline">\((s, t)\)</span>
-and <span class="math inline">\(\left(s, t^{\prime}\right) \in
-\alpha\)</span> then <span
-class="math inline">\(t=t^{\prime}\)</span>.</li>
-</ol>
-<p><strong>Composite / Product / Resultant of <span
-class="math inline">\(\alpha\)</span> and <span
-class="math inline">\(\beta\)</span> </strong> : <span
-class="math inline">\((\beta \alpha)(s)=\beta(\alpha(s))\)</span> .</p>
-<ul>
-<li>Composition of maps satisfies the associative law : <span
-class="math inline">\(\gamma(\beta\alpha)=(\gamma\beta)\alpha\)</span></li>
-</ul>
-<p><strong>Surjective</strong> : if im <span
-class="math inline">\(\alpha=T\)</span>, that is, if the range coincides
-with the co-domain.</p>
-<p><strong>Injective</strong> : if distinct elements of <span
-class="math inline">\(S\)</span> have distinct images in <span
-class="math inline">\(T\)</span>, that is, if <span
-class="math inline">\(s_1 \neq s_2 \Rightarrow \alpha\left(s_1\right)
-\neq \alpha\left(s_2\right)\)</span>.</p>
-<p><strong>Bijective (a one to one correspondence)</strong> : If <span
-class="math inline">\(\alpha\)</span> is both injective and
-surjective.</p>
-<blockquote>
-<p><strong><span class="math inline">\(S \stackrel{\alpha}{\rightarrow}
-T\)</span> is bijective if and only if there exists a map <span
-class="math inline">\(T \stackrel{\beta}{\rightarrow} S\)</span> such
-that <span class="math inline">\(\beta \alpha=1_S\)</span> and <span
-class="math inline">\(\alpha \beta=1_T\)</span>.</strong></p>
-<p>Proof. Suppose <span class="math inline">\(S
-\stackrel{\alpha}{\rightarrow} T\)</span> is bijective. Consider the
-subset <span class="math inline">\(\beta\)</span> of <span
-class="math inline">\(T \times S\)</span> of elements <span
-class="math inline">\((\alpha(s), s)\)</span>. If <span
-class="math inline">\(t \in T\)</span>, surjectivity of <span
-class="math inline">\(\alpha\)</span> implies there is an <span
-class="math inline">\(s\)</span> in <span
-class="math inline">\(S\)</span> such that <span
-class="math inline">\(\alpha(s)=t\)</span>. Hence condition 1 in the
-definition of a map from <span class="math inline">\(T\)</span> to <span
-class="math inline">\(S\)</span> holds for the set <span
-class="math inline">\(\beta\)</span> of pairs <span
-class="math inline">\((\alpha(s), s) \in T \times S\)</span>. Condition
-2 holds for <span class="math inline">\(\beta\)</span> by the
-injectivity of <span class="math inline">\(\alpha\)</span>, since if
-<span class="math inline">\(\left(t, s_1\right)\)</span> and <span
-class="math inline">\(\left(t, s_2\right)\)</span> are in <span
-class="math inline">\(\beta\)</span>, then <span
-class="math inline">\(\alpha\left(s_1\right)=t\)</span> and <span
-class="math inline">\(\alpha\left(s_2\right)=t\)</span>, so <span
-class="math inline">\(s_1=s_2\)</span>. Hence we have the map <span
-class="math inline">\(T \stackrel{\beta}{\rightarrow} S\)</span>. If
-<span class="math inline">\(s \in S\)</span>, the facts that <span
-class="math inline">\((s, \alpha(s)) \in \alpha\)</span> and <span
-class="math inline">\((\alpha(s), s) \in \beta\)</span> imply that <span
-class="math inline">\(\beta(\alpha(s))=s\)</span>. Thus <span
-class="math inline">\(\beta \alpha=1_s\)</span>. If <span
-class="math inline">\(t \in T\)</span>, we have <span
-class="math inline">\(t=\alpha(s), s \in S\)</span>, and <span
-class="math inline">\((t, s) \in\)</span> <span
-class="math inline">\(\beta\)</span>, so <span
-class="math inline">\(\beta(t)=s \in S\)</span>. Hence <span
-class="math inline">\(\alpha(\beta(t))=\alpha(s)=t\)</span>, so <span
-class="math inline">\(\alpha \beta=1_T\)</span>. Conversely, suppose
-<span class="math inline">\(S \stackrel{\alpha}{\rightarrow} T, T
-\stackrel{\beta}{\rightarrow} S\)</span> satisfy <span
-class="math inline">\(\beta \alpha=1_S, \alpha \beta=1_T\)</span>. If
-<span class="math inline">\(t \in T\)</span>, let <span
-class="math inline">\(s=\beta(t)\)</span>. Then <span
-class="math inline">\(\alpha(s)=\)</span> <span
-class="math inline">\(\alpha(\beta(t))=t\)</span>; hence <span
-class="math inline">\(\alpha\)</span> is surjective. Next suppose <span
-class="math inline">\(\alpha\left(s_1\right)=\alpha\left(s_2\right)\)</span>
-for <span class="math inline">\(s_i \in S\)</span>. Then <span
-class="math inline">\(s_1=\)</span> <span
-class="math inline">\(\beta\left(\alpha\left(s_1\right)\right)=\beta\left(\alpha\left(s_2\right)\right)=s_2\)</span>,
-and <span class="math inline">\(\alpha\)</span> is injective.</p>
-</blockquote>
-<p><strong>Inverse with "dressing-undressing principle"</strong> : <span
-class="math inline">\((\beta \alpha)^{-1}=\alpha^{-1}
-\beta^{-1}\)</span> .</p>
-<h2 id="equivalence-relations.-factoring-a-map">EQUIVALENCE RELATIONS.
-FACTORING A MAP</h2>
-<p><strong>Equivalence Relation</strong> : Reflexive property <span
-class="math inline">\(aEa\)</span> , Symmetry <span
-class="math inline">\(a E b \Rightarrow b E a\)</span> , Transitivity
-<span class="math inline">\(a E b\ \text{and}\ b E c \Rightarrow a E
-c\)</span> .</p>
-<ul>
-<li><strong>equivalence class</strong> determined by <span
-class="math inline">\(a\)</span> : <span
-class="math inline">\(\bar{a}_E\)</span> (or simply <span
-class="math inline">\(\bar{a}\)</span> ) <span
-class="math inline">\(=\{b \in S \mid b E a\}\)</span>.</li>
-<li>An equivalence relation is equivalent to that of a partition of a
-set. <span class="math inline">\(\pi_E =\{\bar{a} \mid a \in
-S\}\)</span>.</li>
-<li><strong>the quotient set of <span class="math inline">\(S\)</span>
-relative to the relation <span class="math inline">\(E\)</span>
-</strong> : <span class="math inline">\(S / E=\pi=\{\bar{a} \mid a \in
-S\}\)</span> , a subset of the power set <span
-class="math inline">\(\mathscr{P}(S)\)</span> of <span
-class="math inline">\(S\)</span>.</li>
-<li><strong>natual map</strong> : <span class="math inline">\(v: a
-\rightarrow \bar{a} .\)</span></li>
-</ul>
-<p><strong>Inverse Image</strong> : Construct <span
-class="math inline">\(E_\alpha\)</span> by map <span
-class="math inline">\(S \stackrel{\alpha}{\rightarrow} T\)</span> :
-<span class="math inline">\(a E_\alpha b\Leftrightarrow
-\alpha(a)=\alpha(b)\)</span> , then <span
-class="math inline">\(\alpha^{-1}(c)=\{a\in S|\alpha(a)=c\}\)</span></p>
-<p><span class="math inline">\(\bar{\alpha}:S/E_\alpha\to T\)</span>
-<strong>the map of <span class="math inline">\(S/E_{\alpha}\)</span>
-induced by <span class="math inline">\(\alpha\)</span></strong> : <span
-class="math inline">\(\bar{\alpha}(\bar{a})=\alpha(a),\
-\bar{a}=\alpha^{-1}(\alpha(a))\)</span> , injective.</p>
-<p><strong>Factorization of map <span
-class="math inline">\(\alpha\)</span></strong> : <span
-class="math inline">\(\alpha=\bar{\alpha}v\)</span> ，where <span
-class="math inline">\(v\)</span> is the natural map of <span
-class="math inline">\(S\)</span> to <span
-class="math inline">\(S/E_\alpha\)</span> .</p>
-
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/Summary/">Summary</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Algebra/">Algebra</a>
-                    
-                  </div>
-                
-              </div>
-              
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
-              
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/abstract-algebra/monoids-and-groups-1/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Basic Algebra I : Monoids and Groups (I)</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/codeforces/1778/">
-                        <span class="hidden-mobile">Codeforces Round #848 (Div. 2)</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
+      
+        
+      
+      
   <div id="valine"></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#valine', function() {
@@ -430,27 +214,15 @@ class="math inline">\(S/E_\alpha\)</span> .</p>
   <noscript>Please enable JavaScript to view the comments</noscript>
 
 
-              </article>
-            
-          </article>
+    </article>
+  
+</article>
+
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
     
 
     
@@ -523,11 +295,7 @@ class="math inline">\(S/E_\alpha\)</span> .</p>
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
 
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
 
 
 
@@ -549,45 +317,6 @@ class="math inline">\(S/E_\alpha\)</span> .</p>
 
 
 
-
-  
-
-  
-    <!-- MathJax -->
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
-
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
-
-  
 
 
 

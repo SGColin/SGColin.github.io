@@ -18,7 +18,7 @@
   <meta name="author" content="Colin Gao">
   <meta name="keywords" content="">
   
-  <title>Introduction to Nonlinear Optimization - Yixiong Gao</title>
+  <title>Colin&#39;s Diary - Spring 2023 - Yixiong Gao</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -34,8 +34,6 @@
     
   
 
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
   
 
 
@@ -85,9 +83,21 @@
           
           
             <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                
+                About
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 
-                Home
+                Archive
               </a>
             </li>
           
@@ -99,7 +109,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 
-                Categories
+                Category
               </a>
             </li>
           
@@ -111,7 +121,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags">
                 
-                Tags
+                Tag
               </a>
             </li>
           
@@ -146,41 +156,11 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Introduction to Nonlinear Optimization">
+            <span class="h2" id="subtitle" title="Colin's Diary - Spring 2023">
               
-                Introduction to Nonlinear Optimization
+                Colin's Diary - Spring 2023
               
             </span>
-
-            
-              <div class="mt-3">
-  
-  
-</div>
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      1.7k words
-    </span>
-  
-
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      33
-       mins to read
-    </span>
-  
-
-  
-  
-</div>
 
             
           </div>
@@ -193,361 +173,70 @@
 
   <main>
     
-      
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
 
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">Introduction to Nonlinear Optimization</h1>
-            
-            <div class="markdown-body">
-              <h2 id="mathematical-preliminaries">Mathematical Preliminaries</h2>
-<p><span class="math inline">\(\mathbb{R}^n\)</span> - the set of
-n-dimensional column vectors, with addition and scalar-vector product
-operators.</p>
-<p><span class="math inline">\(\mathbf{e}_1, \mathbf{e}_2, \ldots,
-\mathbf{e}_n\)</span> - standard/canonical basis.</p>
-<p><span class="math inline">\(\mathbf{e}\)</span> and <span
-class="math inline">\(\mathbf{0}\)</span> - all ones and all zeros
-column vectors.</p>
-<p>nonnegative orthant: <span
-class="math inline">\(\mathbb{R}_{+}^n=\left\{\left(x_1, x_2, \ldots,
-x_n\right)^T: x_1, x_2, \ldots, x_n \geq 0\right\}\)</span></p>
-<p>positive orthant: <span
-class="math inline">\(\mathbb{R}_{++}^n=\left\{\left(x_1, x_2, \ldots,
-x_n\right)^T: x_1, x_2, \ldots, x_n&gt;0\right\}\)</span></p>
-<p>Vector Norms:</p>
-<ul>
-<li><span class="math inline">\(l_p\text{-norm}\ (p ≥ 1):
-\|\mathbf{x}\|_p \equiv \sqrt[p]{\sum_{i=1}^n\left|x_i\right|^p},
-\|\mathbf{x}\|_{\infty} \equiv \max _{i=1,2, \ldots,
-n}\left|x_i\right|\)</span></li>
-</ul>
-<p>Matrix Norms:</p>
-<ul>
-<li>Induced Norms: <span class="math inline">\(\|\mathbf{A}\|_{a,
-b}=\max _{\mathbf{x}}\left\{\|\mathbf{A} \mathbf{x}\|_b:\|\mathbf{x}\|_a
-\leq 1\right\}\)</span>
-<ul>
-<li><span
-class="math inline">\(\|\mathbf{A}\|_2=\|\mathbf{A}\|_{2,2}=\sqrt{\lambda_{\max
-}\left(\mathbf{A}^T \mathbf{A}\right)} \equiv \sigma_{\max
-}(\mathbf{A})\)</span></li>
-<li><span class="math inline">\(\|\mathbf{A}\|_1=\max _{j=1,2, \ldots,
-n} \sum_{i=1}^m\left|A_{i, j}\right|\)</span>.</li>
-<li><span class="math inline">\(\|\mathbf{A}\|_{\infty}=\max _{i=1,2,
-\ldots, m} \sum_{j=1}^n\left|A_{i, j}\right|\)</span></li>
-</ul></li>
-<li>The Frobenius norm: <span
-class="math inline">\(\|\mathbf{A}\|_F=\sqrt{\sum_{i=1}^m \sum_{j=1}^n
-A_{i j}^2}, \quad \mathbf{A} \in \mathbb{R}^{m \times n}\)</span></li>
-</ul>
-<p>Eigenvalues and Eigenvectors: <span
-class="math inline">\(\mathbf{A}v=\lambda v\)</span> ，<span
-class="math inline">\(\lambda_{\text{max}}(\mathbf{A})=\lambda_1(\mathbf{A})
-\geq \lambda_2(\mathbf{A}) \geq \ldots \geq
-\lambda_n(\mathbf{A})=\lambda_{\text{min}}(\mathbf{A})\)</span></p>
-<p>The Spectral Factorization Theorem.</p>
-<ul>
-<li><p>Let <span class="math inline">\(\mathbf{A} \in \mathbb{R}^{n
-\times n}\)</span> be an <span class="math inline">\(n \times n\)</span>
-symmetric matrix. Then there exists an orthogonal matrix <span
-class="math inline">\(\mathbf{U} \in \mathbb{R}^{n \times
-n}\left(\mathbf{U}^T \mathbf{U}=\mathbf{U}
-\mathbf{U}^T=\mathbf{I}\right)\)</span> and a diagonal matrix <span
-class="math inline">\(\mathbf{D}=\operatorname{diag}\left(d_1, d_2,
-\ldots, d_n\right)\)</span> for which <span
-class="math inline">\(\mathbf{U}^T \mathbf{A U}=\mathbf{D}\)</span>
-.</p></li>
-<li><p>The columns of the matrix <span
-class="math inline">\(\mathbf{U}\)</span> constitute an
-<strong>orthogonal basis</strong> comprising eigenvectors of <span
-class="math inline">\(\mathbf{A}\)</span> .</p></li>
-<li><p>The diagonal elements of <span
-class="math inline">\(\mathbf{D}\)</span> are the corresponding
-eigenvalues.</p></li>
-<li><p>A direct result is that <span
-class="math inline">\(\operatorname{Tr}(\mathbf{A})=\sum_{i=1}^n
-\lambda_i(\mathbf{A})\)</span> and <span
-class="math inline">\(\operatorname{det}(\mathbf{A})=\Pi_{i=1}^n
-\lambda_i(\mathbf{A})\)</span>.</p></li>
-</ul>
-<p>Interior: <span
-class="math inline">\(\operatorname{int}(U)=\{\mathbf{x} \in U:
-B(\mathbf{x}, r) \subseteq U\)</span> for some <span
-class="math inline">\(r&gt;0\}\)</span> , e.g. <span
-class="math inline">\(\operatorname{int}\left(\mathbb{R}_{+}^n\right)=\mathbb{R}_{++}^n\)</span></p>
-<p>Open Set: <span
-class="math inline">\(U=\operatorname{int}(U)\)</span> , e.g. <span
-class="math inline">\(\mathbb{R}_{++}^n\)</span></p>
+<article class="page-content">
+  <h2 id="march">March</h2>
 <hr />
-<p>Gradients: <span class="math inline">\(\nabla
-f(\mathbf{x})=\left(\begin{array}{c}\frac{\partial f}{\partial
-x_1}(\mathbf{x}) \\ \frac{\partial f}{\partial x_2}(\mathbf{x}) \\
-\vdots \\ \frac{\partial f}{\partial
-x_n}(\mathbf{x})\end{array}\right)\)</span></p>
-<p>Twice Differentiability: <span
-class="math inline">\(\displaystyle\frac{\partial^2 f}{\partial x_i
-\partial x_j}(\mathbf{x})=\frac{\partial\left(\frac{\partial f}{\partial
-x_j}\right)}{\partial x_i}(\mathbf{x}), \frac{\partial^2 f}{\partial x_i
-\partial x_j}(\mathbf{x})=\frac{\partial^2 f}{\partial x_j \partial
-x_i}(\mathbf{x})\)</span></p>
-<p>The Hessian of <span class="math inline">\(f\)</span> (symmetric)
-:</p>
-<p><span class="math display">\[
-\nabla^2 f(\mathbf{x})=\left(\begin{array}{cccc}\frac{\partial^2
-f}{\partial x_1^2} &amp; \frac{\partial^2 f}{\partial x_1 \partial x_2}
-&amp; \cdots &amp; \frac{\partial^2 f}{\partial x_1 \partial x_n} \\
-\frac{\partial^2 f}{\partial x_2 \partial x_1} &amp; \frac{\partial^2
-f}{\partial x_2^2} &amp; &amp; \vdots \\ \vdots &amp; \vdots &amp; &amp;
-\vdots \\ \frac{\partial^2 f}{\partial x_n \partial x_1} &amp;
-\frac{\partial^2 f}{\partial x_n \partial x_2} &amp; \cdots &amp;
-\frac{\partial^2 f}{\partial x_n^2}\end{array}\right)
-\]</span></p>
-<blockquote>
-<p>Linear Approximation Theorem.</p>
-<p>Let <span class="math inline">\(f: U \rightarrow \mathbb{R}\)</span>
-be defined on an open set <span class="math inline">\(U \subseteq
-\mathbb{R}^n\)</span>. Suppose that <span
-class="math inline">\(f\)</span> is twice continuously differentiable
-over <span class="math inline">\(U\)</span>. Let <span
-class="math inline">\(x \in U\)</span> and <span
-class="math inline">\(r&gt;0\)</span> satisfy <span
-class="math inline">\(B(\mathbf{x}, r) \subseteq U\)</span>. Then for
-any <span class="math inline">\(\mathbf{y} \in B(\mathbf{x}, r)\)</span>
-there exists <span class="math inline">\(\xi \in[\mathbf{x},
-\mathbf{y}]\)</span> such that: <span class="math display">\[
-f(\mathbf{y})=f(\mathbf{x})+\nabla
-f(\mathbf{x})^T(\mathbf{y}-\mathbf{x})+\frac{1}{2}(\mathbf{y}-\mathbf{x})^T
-\nabla^2 f(\xi)(\mathbf{y}-\mathbf{x}) .
-\]</span></p>
-</blockquote>
-<blockquote>
-<p>Quadratic Approximation Theorem.</p>
-<p>Theorem. Let <span class="math inline">\(f: U \rightarrow
-\mathbb{R}\)</span> be defined on an open set <span
-class="math inline">\(U \subseteq \mathbb{R}^n\)</span>. Suppose that
-<span class="math inline">\(f\)</span> is twice continuously
-differentiable over <span class="math inline">\(U\)</span>. Let <span
-class="math inline">\(x \in U\)</span> and <span
-class="math inline">\(r&gt;0\)</span> satisfy <span
-class="math inline">\(B(\mathbf{x}, r) \subseteq U\)</span>. Then for
-any <span class="math inline">\(\mathbf{y} \in B(\mathbf{x}, r)\)</span>
-<span class="math display">\[
-f(\mathbf{y})=f(\mathbf{x})+\nabla
-f(\mathbf{x})^T(\mathbf{y}-\mathbf{x})+\frac{1}{2}(\mathbf{y}-\mathbf{x})^T
-\nabla^2
-f(\mathbf{x})(\mathbf{y}-\mathbf{x})+o\left(\|\mathbf{y}-\mathbf{x}\|^2\right)
-\]</span></p>
-</blockquote>
-<h2 id="unconstrained-optimization">Unconstrained Optimization</h2>
-<p>A symmetric matrix <span class="math inline">\(\mathbf{A} \in
-\mathbb{R}^{n \times n}\)</span> is called positive semidefinite,
-denoted by <span class="math inline">\(\mathbf{A} \succeq
-\mathbf{0}\)</span>, iff:</p>
-<ul>
-<li><span class="math inline">\(\mathbf{x}^T \mathbf{A x} \geq
-0\)</span> for every <span class="math inline">\(\mathbf{x} \in
-\mathbb{R}^n\)</span>.</li>
-<li>all its eigenvalues are nonnegative.</li>
-<li><span class="math inline">\(D_1(\mathbf{A})\ge 0, D_2(\mathbf{A})\ge
-0, \ldots, D_n(\mathbf{A})\ge 0\)</span></li>
-</ul>
-<h3 id="stationary-point">Stationary point</h3>
-<p>Stationary point (local minimum, local maximum, saddle points) :
-<span class="math inline">\(\nabla f(\mathbf{x}^*)=0\)</span></p>
-<p>local minimum: <span class="math inline">\(\nabla^2
-f\left(\mathbf{x}^*\right) \succeq \mathbf{0}\)</span> (Necessary),
-<span class="math inline">\(\nabla^2 f\left(\mathbf{x}^*\right) \succ
-\mathbf{0}\)</span> (Sufficient)</p>
-<p>local maximum: <span class="math inline">\(\nabla^2
-f\left(\mathbf{x}^*\right) \preceq \mathbf{0}\)</span> (Necessary),
-<span class="math inline">\(\nabla^2 f\left(\mathbf{x}^*\right) \prec
-\mathbf{0}\)</span> (Sufficient)</p>
-<p>Saddle Points: <span class="math inline">\(\nabla^2
-f\left(\mathbf{x}^*\right)\)</span> is an indefinite matrix
-(Sufficient)</p>
-<h3 id="global-optimality-conditions.">Global Optimality
-Conditions.</h3>
-<p><span class="math inline">\(\nabla^2 f(\mathbf{x}) \succeq
-\mathbf{0}\)</span> for any <span class="math inline">\(\mathbf{x} \in
-\mathbb{R}^n\)</span>. Let <span class="math inline">\(\mathbf{x}^* \in
-\mathbb{R}^n\)</span> be a stationary point of <span
-class="math inline">\(f\)</span>. Then <span
-class="math inline">\(\mathbf{x}^*\)</span> is a global minimum point of
-<span class="math inline">\(f\)</span>.</p>
-<h3 id="quadratic-functions.">Quadratic Functions.</h3>
-<p><span class="math inline">\(f(\mathbf{x})=\mathbf{x}^{\top}
-\mathbf{A} \mathbf{x}+2 \mathbf{b}^{\top} \mathbf{x}+c\)</span> , where
-<span class="math inline">\(\mathbf{A} \in \mathbb{R}^{n \times
-n}\)</span> is symmetric, <span class="math inline">\(\mathbf{b} \in
-\mathbb{R}^n\)</span> and <span class="math inline">\(c \in
-\mathbb{R}\)</span>.</p>
-<ul>
-<li><p><span class="math inline">\(\nabla f(\mathbf{x}) =2 \mathbf{A}
-\mathbf{x}+2 \mathbf{b}\)</span> , then <span
-class="math inline">\(\mathbf{x}\)</span> is a stationary point iff
-<span class="math inline">\(\mathbf{A}
-\mathbf{x}=-\mathbf{b}\)</span></p></li>
-<li><p><span class="math inline">\(\nabla^2 f(\mathbf{x}) =2
-\mathbf{A}\)</span> , if <span class="math inline">\(\mathbf{A}\succeq
-\mathbf{0}\)</span> then <span class="math inline">\(\mathbf{x}\)</span>
-is a global minimum point of <span class="math inline">\(f\)</span> iff
-<span class="math inline">\(\mathbf{A x}=-\mathbf{b}\)</span>.</p></li>
-</ul>
-<h2 id="least-squares">Least Squares</h2>
-<h3 id="least-squares-ls">Least Squares (LS)</h3>
-<p>Target: <span class="math inline">\(\min \|\mathbf{A
-x}-\mathbf{b}\|^2\)</span> , the same as <span
-class="math inline">\(\min _{\mathbf{x} \in
-\mathbb{R}^n}\left\{f(\mathbf{x}) \equiv \mathbf{x}^T \mathbf{A}^T
-\mathbf{A} \mathbf{x}-2 \mathbf{b}^T \mathbf{A}
-\mathbf{x}+\|\mathbf{b}\|^2\right\}\)</span></p>
-<ul>
-<li><p><span class="math inline">\(\nabla^2 f(\mathbf{x})=2 \mathbf{A}^T
-\mathbf{A} \succ \mathbf{0}\)</span> , with Global Optimality
-Conditions.</p></li>
-<li><p>Normal Equations. <span class="math inline">\(\left(\mathbf{A}^T
-\mathbf{A}\right) \mathbf{x}_{\mathrm{LS}}=\mathbf{A}^T
-\mathbf{b}\)</span> , <span
-class="math inline">\(\mathbf{x}_{\mathrm{LS}}=\left(\mathbf{A}^T
-\mathbf{A}\right)^{-1} \mathbf{A}^T \mathbf{b}\)</span></p></li>
-<li><p>Data Fitting <span class="math inline">\((\mathbb{R}^n\to
-\mathbb{R})\)</span> , Polynomial Fitting <span
-class="math inline">\((\mathbb{R}\to \mathbb{R})\)</span></p></li>
-</ul>
-<h3 id="regularized-least-squares-rls">Regularized Least Squares
-(RLS)</h3>
-<p>Target: <span class="math inline">\(\min _{\mathbf{x}}\|\mathbf{A}
-\mathbf{x}-\mathbf{b}\|^2+\lambda R(\mathbf{x})\)</span>.</p>
-<p>Specific choice: quadratic regularization, <span
-class="math inline">\(\min \|\mathbf{A
-x}-\mathbf{b}\|^2+\lambda\|\mathbf{D x}\|^2\)</span>, <span
-class="math inline">\(\mathbf{x}_{\mathrm{RLS}}=\left(\mathbf{A}^T
-\mathbf{A}+\lambda \mathbf{D}^T \mathbf{D}\right)^{-1} \mathbf{A}^T
-\mathbf{b}\)</span></p>
-<p>Denoising for smooth signal : <span class="math inline">\(\min
-_{\mathbf{x}}\| \mathbf{x}-\mathbf{b}\|^2+\lambda R(\mathbf{x}), \
-R(\mathbf{x})=\sum_{i=1}^{n-1}\left(x_i-x_{i+1}\right)^2\)</span></p>
-<ul>
-<li><p><span class="math inline">\(R(\cdot)\)</span> can also be written
-as <span class="math inline">\(R(\mathbf{x})=\|\mathbf{L x}\|^2\)</span>
-where <span class="math inline">\(\mathbf{L} \in \mathbb{R}^{(n-1)
-\times n}\)</span> is given by <span class="math display">\[
-\mathbf{L}=\left(\begin{array}{ccccccc}
-1 &amp; -1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
-0 &amp; 1 &amp; -1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 1 &amp; -1 &amp; \cdots &amp; 0 &amp; 0 \\
-\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots &amp;
-\vdots \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 &amp; -1
-\end{array}\right)
-\]</span></p></li>
-<li><p>Hence <span
-class="math inline">\(\mathbf{x}_{\mathrm{RLS}}(\lambda)=\left(\mathbf{I}+\lambda
-\mathbf{L}^T \mathbf{L}\right)^{-1} \mathbf{b}\)</span></p></li>
-</ul>
-<h3 id="circle-fitting-cf">Circle Fitting (CF)</h3>
-<p>Find a central point <span class="math inline">\(\textbf{x}\)</span>
-and radius <span class="math inline">\(r\)</span> : <span
-class="math display">\[
-\min _{\mathbf{x} \in \mathbb{R}^n, r \in \mathbb{R}_{+}}
-\sum_{i=1}^m\left(\left\|\mathbf{x}-\mathbf{a}_i\right\|^2-r^2\right)^2
-\]</span></p>
-<p><span class="math display">\[
-\min _{\mathbf{x}, r}\left\{\sum_{i=1}^m\left(-2 \mathbf{a}_i^T
-\mathbf{x}+\|\mathbf{x}\|^2-r^2+\left\|\mathbf{a}_i\right\|^2\right)^2:
-\mathbf{x} \in \mathbb{R}^n, r \in \mathbb{R}\right\}
-\]</span></p>
-<p>Making the change of variables <span
-class="math inline">\(R=\|\mathbf{x}\|^2-r^2\)</span> , then the problem
-is equivalent to the LS problem: <span class="math display">\[
-\text{(CF-LS)}\ \min _{\mathbf{x}, R}\left\{\sum_{i=1}^m\left(2
-\mathbf{a}_i^T \mathbf{x}-(R+\left\|\mathbf{a}_i\right\|^2)\right)^2:
-\mathbf{x} \in \mathbb{R}^n, R \in \mathbb{R}\right\}.
-\]</span></p>
-<p><span class="math display">\[
-\mathbf{A}=2 \left(\begin{array}{c}-\mathbf{a}_1^T- \\ -\mathbf{a}_2^T-
-\\ \vdots \\ -\mathbf{a}_m^T-\end{array}\right),
-\mathbf{b}=\left(\begin{array}{c}R+\left\|\mathbf{a}_1\right\|^2 \\
-R+\left\|\mathbf{a}_2\right\|^2 \\ \vdots \\
-R+\left\|\mathbf{a}_m\right\|^2\end{array}\right)
-\]</span></p>
-<p>It can be proved that any optimal solution <span
-class="math inline">\((\hat{\mathbf{x}}, \hat{R})\)</span> of (CF-LS)
-automatically satisfies <span
-class="math inline">\(\|\hat{\mathbf{x}}\|^2 \geq \hat{R}\)</span>.</p>
-<h2 id="the-gradient-method">The Gradient method</h2>
-<h2 id="newtons-method">Newton’s Method</h2>
-<h2 id="the-karush-kuhn-tucker-conditions">The Karush-Kuhn-Tucker
-Conditions</h2>
+<p><strong>2023 / 03 / 06</strong></p>
+<p>陪 Eva 同学去看脸伤，卡着两点之后去吃了顿海底捞，学生 69
+折还挺爽的。</p>
+<p>路上看到 Bank of China ，我说我是 Bank of Eva ，Eva 说她是 Bank of
+Colin :)</p>
+<hr />
+<p><strong>2023 / 03 / 07</strong></p>
+<p>上午讨论班，讲完综述ppt之后，和老师讨论得出结论，这个问题我们做不了（）</p>
+<p>老师说重点在找到自己有想法的问题，感觉自己对科研能否有产出的焦虑日益增加，反而静不下心来...</p>
+<hr />
+<p><strong>2023 / 03 / 08 妇女节</strong></p>
+<p>半夜拉肚子好几回，早上烧起来了，感觉人有点飘，就去医院了。</p>
+<p>到了发热门诊一量，39.9，医生直接让我先把退烧药吃上。差点就40了，还准备发个说说呢。</p>
+<p>流感检测采样走的是鼻子，有点痛。医生听到我没得过新冠的时候愣了一下，然后确认了好几遍。。。</p>
+<p>抽完血，坐在大厅等结果，又困又飘，跟 Eva
+开玩笑说要是新冠阳了我体测直接申请免测 :)</p>
+<p>出来结果不是流感，除了白细胞高以外别的指标都贼健康，甚至比我入学体检还健康，看来是逃不过体测了。</p>
+<p>退烧药起效后觉得自己又行了，下午直接 VP
+！然后又烧起来了开始飘，开摆。</p>
+<p>晚上腹泻加剧自己去买了盒蒙脱石散，感觉明天也很难过啊。</p>
+<hr />
+<p><strong>2023 / 03 / 09</strong></p>
+<p>腹泻发烧，但是不是流感不是新冠，貌似就是急性肠胃炎引起的？？</p>
+<p>下午无心学习，跟 Eva 一起打个 Div.2
+愉悦身心，连最短路都不会做了。。。</p>
+<p><br></p>
+<h2 id="april">April</h2>
+<hr />
+<p><strong>2023 / 04 / 01 愚人节</strong></p>
+<p>去打工，我说今天的题很简单，小孩们说老师我们都知道今天是愚人节。。。</p>
+<hr />
+<p><strong>2023 / 04 / 13</strong></p>
+<hr />
+<p><strong>2023 / 04 / 14</strong></p>
+<p>昨晚 emo 到太晚了，直接睡过了早八课（with Eva presentation 的
+ppt）。。。</p>
+<p><img src="/diary/img/20230414.JPEG" srcset="/img/loading.gif" lazyload style="zoom:50%;" /></p>
+<p>然后小 Eva
+今天来例假了，没精神心情好像也不太好，不敢惹不敢惹。。。</p>
+<p>下午听了一个 CCFAI
+多智能体协同的在线会议，李老师也在，讨论了很多关于研究如何落地的问题。</p>
+<p>矛盾的是，感觉自己决定去做学术有很大一部分的原因是想远离工业圈。。。</p>
 
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/Summary/">Summary</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Algebra/">Algebra</a>
-                    
-                  </div>
-                
-              </div>
-              
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
-              
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/life/webarebears/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">We Bare Bears!</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/abstract-algebra/monoids-and-groups-2/">
-                        <span class="hidden-mobile">Basic Algebra I : Monoids and Groups (II)</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
 
-            
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
+  
+    <!-- Comments -->
+    <article class="comments" id="comments" lazyload>
+      
+      
+        
+      
+      
   <div id="valine"></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#valine', function() {
@@ -566,27 +255,15 @@ Conditions</h2>
   <noscript>Please enable JavaScript to view the comments</noscript>
 
 
-              </article>
-            
-          </article>
+    </article>
+  
+</article>
+
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
     
 
     
@@ -659,11 +336,7 @@ Conditions</h2>
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
 
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
 
 
 
@@ -685,45 +358,6 @@ Conditions</h2>
 
 
 
-
-  
-
-  
-    <!-- MathJax -->
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
-
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
-
-  
 
 
 
