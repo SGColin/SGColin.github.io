@@ -101,11 +101,11 @@
             
             <tag> Dynamic Programming </tag>
             
+            <tag> Counting </tag>
+            
             <tag> STL </tag>
             
             <tag> Shortest Path </tag>
-            
-            <tag> Counting </tag>
             
             <tag> Segment Tree </tag>
             
@@ -265,13 +265,13 @@
       
         <tags>
             
-            <tag> Knapsack Problem </tag>
-            
-            <tag> Constructive Algorithm </tag>
-            
             <tag> Graphs </tag>
             
             <tag> DFS and Similar </tag>
+            
+            <tag> Constructive Algorithm </tag>
+            
+            <tag> Knapsack Problem </tag>
             
             <tag> String Suffix Structures </tag>
             
@@ -298,15 +298,15 @@
       
         <tags>
             
-            <tag> Greedy </tag>
+            <tag> Graphs </tag>
             
             <tag> Dynamic Programming </tag>
             
-            <tag> Graphs </tag>
+            <tag> Geometry </tag>
+            
+            <tag> Greedy </tag>
             
             <tag> STL </tag>
-            
-            <tag> Geometry </tag>
             
         </tags>
       
@@ -356,9 +356,9 @@
       
         <tags>
             
-            <tag> Shortest Path </tag>
-            
             <tag> Geometry </tag>
+            
+            <tag> Shortest Path </tag>
             
             <tag> Flows </tag>
             
@@ -387,11 +387,11 @@
       
         <tags>
             
+            <tag> Geometry </tag>
+            
             <tag> STL </tag>
             
             <tag> Segment Tree </tag>
-            
-            <tag> Geometry </tag>
             
             <tag> Probabilities </tag>
             
@@ -420,11 +420,11 @@
       
         <tags>
             
-            <tag> Constructive Algorithm </tag>
-            
             <tag> Graphs </tag>
             
             <tag> Geometry </tag>
+            
+            <tag> Constructive Algorithm </tag>
             
             <tag> Probabilities </tag>
             
@@ -451,11 +451,11 @@
       
         <tags>
             
-            <tag> Constructive Algorithm </tag>
-            
             <tag> Graphs </tag>
             
             <tag> Geometry </tag>
+            
+            <tag> Constructive Algorithm </tag>
             
             <tag> Probabilities </tag>
             
@@ -482,9 +482,9 @@
       
         <tags>
             
-            <tag> Dynamic Programming </tag>
-            
             <tag> Graphs </tag>
+            
+            <tag> Dynamic Programming </tag>
             
             <tag> Minkowski Sum </tag>
             
@@ -515,9 +515,9 @@
       
         <tags>
             
-            <tag> Constructive Algorithm </tag>
-            
             <tag> Graphs </tag>
+            
+            <tag> Constructive Algorithm </tag>
             
             <tag> Counting </tag>
             
@@ -544,9 +544,9 @@
       
         <tags>
             
-            <tag> Number Theory </tag>
-            
             <tag> String </tag>
+            
+            <tag> Number Theory </tag>
             
             <tag> Divide and Conquer </tag>
             
@@ -573,11 +573,11 @@
       
         <tags>
             
+            <tag> Geometry </tag>
+            
             <tag> Greedy </tag>
             
             <tag> Segment Tree </tag>
-            
-            <tag> Geometry </tag>
             
             <tag> Flows </tag>
             
@@ -608,17 +608,17 @@
       
         <tags>
             
-            <tag> Greedy </tag>
+            <tag> Graphs </tag>
             
             <tag> Dynamic Programming </tag>
             
-            <tag> Graphs </tag>
-            
-            <tag> Segment Tree </tag>
-            
             <tag> Geometry </tag>
             
+            <tag> Greedy </tag>
+            
             <tag> String Suffix Structures </tag>
+            
+            <tag> Segment Tree </tag>
             
             <tag> Difference and Prefix Sum </tag>
             
@@ -674,9 +674,9 @@
       
         <tags>
             
-            <tag> Binary Search </tag>
-            
             <tag> Graphs </tag>
+            
+            <tag> Binary Search </tag>
             
             <tag> Segment Tree </tag>
             
@@ -896,9 +896,9 @@
       
         <tags>
             
-            <tag> Constructive Algorithm </tag>
-            
             <tag> Geometry </tag>
+            
+            <tag> Constructive Algorithm </tag>
             
             <tag> Game Theory </tag>
             
@@ -962,9 +962,9 @@
             
             <tag> Number Theory </tag>
             
-            <tag> Threshold Optimization </tag>
-            
             <tag> Counting </tag>
+            
+            <tag> Threshold Optimization </tag>
             
         </tags>
       
@@ -1043,15 +1043,15 @@
       
         <tags>
             
-            <tag> Knapsack Problem </tag>
+            <tag> String </tag>
             
             <tag> Greedy </tag>
+            
+            <tag> Knapsack Problem </tag>
             
             <tag> Threshold Optimization </tag>
             
             <tag> Binary Lifting </tag>
-            
-            <tag> String </tag>
             
         </tags>
       
@@ -1078,9 +1078,9 @@
       
         <tags>
             
-            <tag> Knapsack Problem </tag>
-            
             <tag> Counting </tag>
+            
+            <tag> Knapsack Problem </tag>
             
             <tag> Combinatorics </tag>
             
@@ -1138,9 +1138,9 @@
       
         <tags>
             
-            <tag> Greedy </tag>
-            
             <tag> Graphs </tag>
+            
+            <tag> Greedy </tag>
             
             <tag> Scheduling </tag>
             
@@ -1250,9 +1250,9 @@
       
         <tags>
             
-            <tag> Constructive Algorithm </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Constructive Algorithm </tag>
             
             <tag> Bitmask </tag>
             
@@ -1279,9 +1279,9 @@
       
         <tags>
             
-            <tag> Greedy </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Greedy </tag>
             
             <tag> Game Theory </tag>
             
@@ -1310,9 +1310,9 @@
       
         <tags>
             
-            <tag> Constructive Algorithm </tag>
-            
             <tag> Dynamic Programming </tag>
+            
+            <tag> Constructive Algorithm </tag>
             
         </tags>
       
@@ -1339,9 +1339,9 @@
       
         <tags>
             
-            <tag> Dynamic Programming </tag>
-            
             <tag> Graphs </tag>
+            
+            <tag> Dynamic Programming </tag>
             
             <tag> STL </tag>
             
@@ -1397,11 +1397,11 @@
       
         <tags>
             
-            <tag> Union-Find Set </tag>
+            <tag> DFS and Similar </tag>
             
             <tag> Counting </tag>
             
-            <tag> DFS and Similar </tag>
+            <tag> Union-Find Set </tag>
             
         </tags>
       
@@ -1428,11 +1428,11 @@
       
         <tags>
             
-            <tag> Binary Search </tag>
+            <tag> Greedy </tag>
             
             <tag> Knapsack Problem </tag>
             
-            <tag> Greedy </tag>
+            <tag> Binary Search </tag>
             
         </tags>
       
@@ -1457,9 +1457,9 @@
       
         <tags>
             
-            <tag> Union-Find Set </tag>
-            
             <tag> Constructive Algorithm </tag>
+            
+            <tag> Union-Find Set </tag>
             
             <tag> Combinatorics </tag>
             
@@ -1596,11 +1596,11 @@
       
         <tags>
             
-            <tag> Greedy </tag>
-            
             <tag> Constructive Algorithm </tag>
             
             <tag> Number Theory </tag>
+            
+            <tag> Greedy </tag>
             
             <tag> Counting </tag>
             

@@ -101,11 +101,11 @@
       
       <tag>Dynamic Programming</tag>
       
+      <tag>Counting</tag>
+      
       <tag>STL</tag>
       
       <tag>Shortest Path</tag>
-      
-      <tag>Counting</tag>
       
       <tag>Segment Tree</tag>
       
@@ -265,13 +265,13 @@
     
     <tags>
       
-      <tag>Knapsack Problem</tag>
-      
-      <tag>Constructive Algorithm</tag>
-      
       <tag>Graphs</tag>
       
       <tag>DFS and Similar</tag>
+      
+      <tag>Constructive Algorithm</tag>
+      
+      <tag>Knapsack Problem</tag>
       
       <tag>String Suffix Structures</tag>
       
@@ -298,15 +298,15 @@
     
     <tags>
       
-      <tag>Greedy</tag>
+      <tag>Graphs</tag>
       
       <tag>Dynamic Programming</tag>
       
-      <tag>Graphs</tag>
+      <tag>Geometry</tag>
+      
+      <tag>Greedy</tag>
       
       <tag>STL</tag>
-      
-      <tag>Geometry</tag>
       
     </tags>
     
@@ -356,9 +356,9 @@
     
     <tags>
       
-      <tag>Shortest Path</tag>
-      
       <tag>Geometry</tag>
+      
+      <tag>Shortest Path</tag>
       
       <tag>Flows</tag>
       
@@ -387,11 +387,11 @@
     
     <tags>
       
+      <tag>Geometry</tag>
+      
       <tag>STL</tag>
       
       <tag>Segment Tree</tag>
-      
-      <tag>Geometry</tag>
       
       <tag>Probabilities</tag>
       
@@ -420,11 +420,11 @@
     
     <tags>
       
-      <tag>Constructive Algorithm</tag>
-      
       <tag>Graphs</tag>
       
       <tag>Geometry</tag>
+      
+      <tag>Constructive Algorithm</tag>
       
       <tag>Probabilities</tag>
       
@@ -451,11 +451,11 @@
     
     <tags>
       
-      <tag>Constructive Algorithm</tag>
-      
       <tag>Graphs</tag>
       
       <tag>Geometry</tag>
+      
+      <tag>Constructive Algorithm</tag>
       
       <tag>Probabilities</tag>
       
@@ -482,9 +482,9 @@
     
     <tags>
       
-      <tag>Dynamic Programming</tag>
-      
       <tag>Graphs</tag>
+      
+      <tag>Dynamic Programming</tag>
       
       <tag>Minkowski Sum</tag>
       
@@ -515,9 +515,9 @@
     
     <tags>
       
-      <tag>Constructive Algorithm</tag>
-      
       <tag>Graphs</tag>
+      
+      <tag>Constructive Algorithm</tag>
       
       <tag>Counting</tag>
       
@@ -544,9 +544,9 @@
     
     <tags>
       
-      <tag>Number Theory</tag>
-      
       <tag>String</tag>
+      
+      <tag>Number Theory</tag>
       
       <tag>Divide and Conquer</tag>
       
@@ -573,11 +573,11 @@
     
     <tags>
       
+      <tag>Geometry</tag>
+      
       <tag>Greedy</tag>
       
       <tag>Segment Tree</tag>
-      
-      <tag>Geometry</tag>
       
       <tag>Flows</tag>
       
@@ -608,17 +608,17 @@
     
     <tags>
       
-      <tag>Greedy</tag>
+      <tag>Graphs</tag>
       
       <tag>Dynamic Programming</tag>
       
-      <tag>Graphs</tag>
-      
-      <tag>Segment Tree</tag>
-      
       <tag>Geometry</tag>
       
+      <tag>Greedy</tag>
+      
       <tag>String Suffix Structures</tag>
+      
+      <tag>Segment Tree</tag>
       
       <tag>Difference and Prefix Sum</tag>
       
@@ -674,9 +674,9 @@
     
     <tags>
       
-      <tag>Binary Search</tag>
-      
       <tag>Graphs</tag>
+      
+      <tag>Binary Search</tag>
       
       <tag>Segment Tree</tag>
       
@@ -896,9 +896,9 @@
     
     <tags>
       
-      <tag>Constructive Algorithm</tag>
-      
       <tag>Geometry</tag>
+      
+      <tag>Constructive Algorithm</tag>
       
       <tag>Game Theory</tag>
       
@@ -962,9 +962,9 @@
       
       <tag>Number Theory</tag>
       
-      <tag>Threshold Optimization</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>Threshold Optimization</tag>
       
     </tags>
     
@@ -1043,15 +1043,15 @@
     
     <tags>
       
-      <tag>Knapsack Problem</tag>
+      <tag>String</tag>
       
       <tag>Greedy</tag>
+      
+      <tag>Knapsack Problem</tag>
       
       <tag>Threshold Optimization</tag>
       
       <tag>Binary Lifting</tag>
-      
-      <tag>String</tag>
       
     </tags>
     
@@ -1078,9 +1078,9 @@
     
     <tags>
       
-      <tag>Knapsack Problem</tag>
-      
       <tag>Counting</tag>
+      
+      <tag>Knapsack Problem</tag>
       
       <tag>Combinatorics</tag>
       
@@ -1138,9 +1138,9 @@
     
     <tags>
       
-      <tag>Greedy</tag>
-      
       <tag>Graphs</tag>
+      
+      <tag>Greedy</tag>
       
       <tag>Scheduling</tag>
       
@@ -1250,9 +1250,9 @@
     
     <tags>
       
-      <tag>Constructive Algorithm</tag>
-      
       <tag>Dynamic Programming</tag>
+      
+      <tag>Constructive Algorithm</tag>
       
       <tag>Bitmask</tag>
       
@@ -1279,9 +1279,9 @@
     
     <tags>
       
-      <tag>Greedy</tag>
-      
       <tag>Dynamic Programming</tag>
+      
+      <tag>Greedy</tag>
       
       <tag>Game Theory</tag>
       
@@ -1310,9 +1310,9 @@
     
     <tags>
       
-      <tag>Constructive Algorithm</tag>
-      
       <tag>Dynamic Programming</tag>
+      
+      <tag>Constructive Algorithm</tag>
       
     </tags>
     
@@ -1339,9 +1339,9 @@
     
     <tags>
       
-      <tag>Dynamic Programming</tag>
-      
       <tag>Graphs</tag>
+      
+      <tag>Dynamic Programming</tag>
       
       <tag>STL</tag>
       
@@ -1397,11 +1397,11 @@
     
     <tags>
       
-      <tag>Union-Find Set</tag>
+      <tag>DFS and Similar</tag>
       
       <tag>Counting</tag>
       
-      <tag>DFS and Similar</tag>
+      <tag>Union-Find Set</tag>
       
     </tags>
     
@@ -1428,11 +1428,11 @@
     
     <tags>
       
-      <tag>Binary Search</tag>
+      <tag>Greedy</tag>
       
       <tag>Knapsack Problem</tag>
       
-      <tag>Greedy</tag>
+      <tag>Binary Search</tag>
       
     </tags>
     
@@ -1457,9 +1457,9 @@
     
     <tags>
       
-      <tag>Union-Find Set</tag>
-      
       <tag>Constructive Algorithm</tag>
+      
+      <tag>Union-Find Set</tag>
       
       <tag>Combinatorics</tag>
       
@@ -1596,11 +1596,11 @@
     
     <tags>
       
-      <tag>Greedy</tag>
-      
       <tag>Constructive Algorithm</tag>
       
       <tag>Number Theory</tag>
+      
+      <tag>Greedy</tag>
       
       <tag>Counting</tag>
       
@@ -1652,6 +1652,17 @@
   
   
   <entry>
+    <title></title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Colin&#39;s Diary</title>
     <link href="/"/>
     <url>/</url>
@@ -1668,17 +1679,6 @@
     <url>/</url>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="march">March</h2><hr /><p><strong>2023 / 03 / 06</strong></p><p>陪 Eva 同学去看脸伤，卡着两点之后去吃了顿海底捞，学生 69折还挺爽的。</p><p>路上看到 Bank of China ，我说我是 Bank of Eva ，Eva 说她是 Bank ofColin : )</p><hr /><p><strong>2023 / 03 / 07</strong></p><p>上午讨论班，讲完综述ppt之后，和老师讨论得出结论，这个问题我们做不了（）</p><p>老师说重点在找到自己有想法的问题，感觉自己对科研能否有产出的焦虑日益增加，反而静不下心来...</p><hr /><p><strong>2023 / 03 / 08 妇女节</strong></p><p>半夜拉肚子好几回，早上烧起来了，感觉人有点飘，就去医院了。</p><p>到了发热门诊一量，39.9，医生直接让我先把退烧药吃上。差点就40了，还准备发个说说呢。</p><p>流感检测采样走的是鼻子，有点痛。医生听到我没得过新冠的时候愣了一下，然后确认了好几遍。。。</p><p>抽完血，坐在大厅等结果，又困又飘，跟 Eva开玩笑说要是新冠阳了我体测直接申请免测 : )</p><p>出来结果不是流感，除了白细胞高以外别的指标都贼健康，甚至比我入学体检还健康，看来是逃不过体测了。</p><p>退烧药起效后觉得自己又行了，下午直接 VP！然后又烧起来了开始飘，开摆。</p><p>晚上腹泻加剧自己去买了盒蒙脱石散，感觉明天也很难过啊。</p><hr /><p><strong>2023 / 03 / 09</strong></p><p>腹泻发烧，但是不是流感不是新冠，貌似就是急性肠胃炎引起的？？</p><p>下午无心学习，跟 Eva 一起打个 Div.2愉悦身心，连最短路都不会做了。。。</p><hr /><p>EC-Final</p><p><br></p><h2 id="april">April</h2><hr /><p><strong>2023 / 04 / 01 愚人节</strong></p><p>去打工，我说今天的题很简单，小孩们说老师我们都知道今天是愚人节 😂</p><hr /><p><strong>2023 / 04 / 02</strong></p><p>下午训练疯狂手误罚时爆炸，老年选手码力是真不行了。。</p><p>晚上接爸爸妈妈来杭州！去钱塘江边（下沙拐角处）逛了一圈，离谱的是河道里竟然没水？？？</p><hr /><p><strong>2023 / 04 / 03</strong></p><p>昨天晚饭吃的比较性寒，加上江边风大又给干急性肠胃炎了。。。</p><p>早上起来上吐下泻，上午的课干脆翘了在寝室睡觉。下午缓过来了带小 Eva去见了爸爸妈妈！</p><p>晚上一起在 in77吃了青花椒砂锅鱼，然后绕着湖走了一个多小时去看西湖印象，不得不说艺谋是真的懂浪漫！</p><p>小 Eva 第一次见家长貌似顺利完成了 : )</p><hr /><p><strong>2023 / 04 / 04</strong></p><p>今天带爸爸妈妈把杭电算是完整的转了一圈：</p><p>东南门 - 月雅湖 - 小花园 - 四教 - 三鼎问天 - 三教 - 操场 - 学活 -七教 - 六教 - 八教（实验室） - 体育馆 - 生活区操场 - 食堂！</p><p>美食城的饭竟然能让爸爸满意，开心 : )</p><hr /><p><strong>2023 / 04 / 07</strong></p><p>出发去长沙参加 ORSC 2023！</p><p>9:40 下课赶 10:25 的高铁，地铁出站到高铁检票口冲刺了 5min 比跑 1km还累，好在赶上了（当天其他票都没了）。</p><p>下午报道入住之后，四个人偷偷去宾馆旁边的湖玩，然后开了船！除了有点冷体验良好，第一次开船非常刺激。</p><hr /><p><strong>2023 / 04 / 08</strong></p><p>上午是合照，然后观看学会给各位院士颁奖。</p><p>中午宾馆外的草坪在举办婚礼，感觉很有意思，开场所有的伴郎伴娘一起跳了一支舞。</p><p>下午出发的时候发现婚礼的蛋糕没被分完，直接一人切了一块（感谢新郎新娘的无私馈赠）。</p><p>下午的大会报告我竟然听懂了？？？虽然只是听几位教授简单介绍自己的工作，但是还是很开心没有罚坐。</p><p>晚上在宾馆开摆。本来打算打一下十点的 cf 但是实在太累了就睡了。。</p><hr /><p><strong>2023 / 04 / 09</strong></p><p>上午的新老论坛十分有趣，成功的前辈们都在强调学术品位和工作质量，但年轻的老师们都在提问基金申请相关的问题。。</p><p>对于大家十分实际的提问和前辈们在强调的兴趣和品位，张老师表示：上岸的不懂还泡在水里的痛苦～</p><p>收获：1. 前期多读顶会顶刊，尽量避免看水刊，培养学术品位。2.博士毕业别着急入职，多做几年博士后，自由 + 积累实力。</p><p>下午去了橘子洲，湘江两岸景色很好，环岛走了一个小多小时终于和心心念念的毛爷爷像合影啦！</p><p>晚饭是高铁上的麦当当，和小 Eva一起吃了一个奥利奥麦旋风，2023的第一个冰激凌～</p><hr /><p><strong>2023 / 04 / 10</strong></p><p>下午团支部大会结束之后商量团建的事情。</p><p>觉得最近天气不错，于是决定来一场说走就走的旅行！一起去千岛湖！</p><p>讨论了一下直接定在下周二，晚上就直接开始收集大家的意向了。</p><p>这可能就是年轻的好处吧，不用考虑太多，想到了就可以去做。</p><hr /><p><strong>2023 / 04 / 11</strong></p><p>上午的讨论，张老师把之前想的算法近似比证出来了，感觉自己花的时间确实有点少。。。</p><p>下午训练发现 cf 爆炸了，去 QOJ 打了 ICPC湾湾省赛，各种手误十分担心省赛状态。</p><hr /><p><strong>2023 / 04 / 12</strong></p><p>早上的阳光长跑终于启动啦！</p><p>团建最终有 15人报名，超过了预计的一半，大家都愿意来参与还是很开心的。</p><p>下午商量好了去千岛湖团建的具体内容，给大家一起买了高铁票，希望团建一切顺利吧。</p><hr /><p><strong>2023 / 04 / 13</strong></p><p>博弈论课听的有点蒙，感觉得找时间自己去看看 Tim Roughgarden的算法博弈论。</p><p>晚上组会准备了一些东西，但最后也没轮到我讲，嗐。。。最重要的还是自己多总结吧。</p><hr /><p><strong>2023 / 04 / 14</strong></p><p>昨晚 emo 到太晚了，直接睡过了早八课（with Eva presentation 的ppt）。。。</p><p><img src="/diary/img/20230414.JPEG" style="zoom:50%;" /></p><p>然后小 Eva今天来例假了，没精神心情好像也不太好，不敢惹不敢惹。。。</p><p>下午听了一个 CCFAI多智能体协同的在线会议，李老师也在，讨论了很多关于研究如何落地的问题。</p><p>矛盾的是，感觉自己决定去做学术有很大一部分的原因是想远离工业圈。。。</p><hr /><p><strong>2023 / 04 / 15</strong></p><p>省赛日，杭师大好大，从考场到食堂骑车都要十分钟。</p><p>退役之战了，也没啥心理压力，但是比赛体验实在是差，见 <ahref="https://www.zhihu.com/question/595671828/answer/2985384621">知乎链接</a>。</p><p>最后亚军也算是比较好的结局了，但是触手可及的杯着实让我难以释怀（</p><p>但是算法竞赛总是有遗憾的嘛，人生也是如此，是时候前往一下个阶段了。</p><hr /><p><strong>2023 / 04 / 16</strong></p><p>今天被神秘人士告知昨天省赛的 J 再调一调参数我队可能就过了。。。</p><p>好不容易找回来的心态又大破防了一次，难顶。在杭图摆烂睡了一下午。</p><p>最难接受的是我都决定要退役了又告诉我这种消息，心有不甘啊。。。</p><hr /><p><strong>2023 / 04 / 18</strong></p><p>团建出发去千岛湖！</p>]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
     
   </entry>
   
