@@ -14,11 +14,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#fff">
-  <meta name="description" content="Rank : 69 / Score : 87 / Pen. Time 1:51:16 (+1)">
+  <meta name="description" content="">
   <meta name="author" content="Colin Gao">
   <meta name="keywords" content="">
   
-  <title>Google Kick Start 2021 Round E - Yixiong Gao</title>
+  <title>Freshman Year - Yixiong Gao</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -158,9 +158,9 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Google Kick Start 2021 Round E">
+            <span class="h2" id="subtitle" title="Freshman Year">
               
-                Google Kick Start 2021 Round E
+                Freshman Year
               
             </span>
 
@@ -175,7 +175,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.7k words
+      3.3k words
     </span>
   
 
@@ -185,7 +185,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      29
+      34
        mins to read
     </span>
   
@@ -215,102 +215,158 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Google Kick Start 2021 Round E</h1>
+            <h1 style="display: none">Freshman Year</h1>
             
             <div class="markdown-body">
-              <p>Rank : 69 / Score : 87 / Pen. Time 1:51:16 (+1)</p>
-<span id="more"></span>
-<h2 id="a.-shuffled-anagramsa">A. Shuffled Anagramsa</h2>
-<div class="note note-warning">
-            <p>给定字符串 <span class="math inline">\(S\)</span> , 问能否通过重排<span class="math inline">\(S\)</span> 得到 <spanclass="math inline">\(T\)</span> , 使得任意位置 <spanclass="math inline">\(i\)</span> 有 <span class="math inline">\(S_i\not= T_i\)</span> , 可以则给出构造方案</p>
-          </div>
-<p>做法同 <a href="">AtCoder Beginner Contest 178 F</a>
-，不过需要先将字符排序，<strong>构造一个位置映射</strong>。</p>
-<p>设 <span class="math inline">\(S\)</span> 按字符升序排序后字符串为
-<span class="math inline">\(A\)</span> ，降序为 <span
-class="math inline">\(B\)</span> ，考虑讲 <span
-class="math inline">\(B\)</span> 做若干调整，使得任意 <span
-class="math inline">\(i\)</span> 有 <span class="math inline">\(A_i\not
-= B_i\)</span> 。</p>
-<p>结论为：<span class="math inline">\(A\)</span> 升序，<span
-class="math inline">\(B\)</span>
-降序，若有不合法位置，则相同的字符一定只有一类。</p>
-<p>记相同的字符为 <span class="math inline">\(x\)</span> ，相同的区间为
-<span class="math inline">\([l, r]\)</span>
-，这是需要交换区间内和区间外的字符。</p>
-<p>考虑将 <span class="math inline">\(B\)</span> 区间外某位置 <span
-class="math inline">\(i\)</span> 换进区间，那么需要保证 <span
-class="math inline">\(A_i \ne x\)</span> 且 <span
-class="math inline">\(B_i \ne x\)</span> ，否则换后依然不合法。</p>
-<p>记录 <span class="math inline">\(A\)</span> 和 <span
-class="math inline">\(B\)</span> 中出现 <span
-class="math inline">\(x\)</span> 最靠左的位置 <span
-class="math inline">\(L\)</span> ，出现 <span
-class="math inline">\(x\)</span> 最靠右的位置 <span
-class="math inline">\(R\)</span> 。</p>
-<p>则可以交换的位置 <span class="math inline">\(i\notin [L,R]\)</span>
-，若个数 <span class="math inline">\(L - 1 + n - R &gt; r-l+1\)</span>
-则有解，和两侧交换就好了。</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 10007</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-keyword">char</span> s[N];<br><br><span class="hljs-keyword">int</span> n, a[N], b[N], testcase;<br><br><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; pos[<span class="hljs-number">28</span>];<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;<br>        s[pos[a[i]].back()] = b[i] + <span class="hljs-string">&#x27;a&#x27;</span> - <span class="hljs-number">1</span>;<br>        pos[a[i]].pop_back();<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) <span class="hljs-built_in">putchar</span>(s[i]);<br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;&quot;</span>);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Case #%d: &quot;</span>, ++testcase);<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, s + <span class="hljs-number">1</span>);<br>    n = <span class="hljs-built_in">strlen</span>(s + <span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; <span class="hljs-number">28</span>; ++i) pos[i].clear();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;<br>        a[i] = b[i] = s[i] - <span class="hljs-string">&#x27;a&#x27;</span> + <span class="hljs-number">1</span>;<br>        pos[s[i] - <span class="hljs-string">&#x27;a&#x27;</span> + <span class="hljs-number">1</span>].push_back(i);<br>    &#125;<br>    sort(a + <span class="hljs-number">1</span>, a + <span class="hljs-number">1</span> + n);<br>    sort(b + <span class="hljs-number">1</span>, b + <span class="hljs-number">1</span> + n);<br>    reverse(b + <span class="hljs-number">1</span>, b + <span class="hljs-number">1</span> + n);<br>    <span class="hljs-keyword">int</span> x, l = <span class="hljs-number">0</span>, r, L, R;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i)<br>        <span class="hljs-keyword">if</span> (a[i] == b[i]) l ? ++r : l = r = i;<br>    x = a[l];<br>    <span class="hljs-keyword">if</span> (!l) &#123;print(); <span class="hljs-keyword">return</span>;&#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i)<br>        <span class="hljs-keyword">if</span> (a[i] == x || b[i] == x) &#123;L = i; <span class="hljs-keyword">break</span>;&#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = n; i; --i)<br>        <span class="hljs-keyword">if</span> (a[i] == x || b[i] == x) &#123;R = i; <span class="hljs-keyword">break</span>;&#125;<br>    <span class="hljs-keyword">if</span> (L - <span class="hljs-number">1</span> + n - R &lt; (r - l + <span class="hljs-number">1</span>)) &#123;<span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;IMPOSSIBLE&quot;</span>); <span class="hljs-keyword">return</span>;&#125;<br>    <span class="hljs-keyword">int</span> lim = min(L - <span class="hljs-number">1</span>, r - l + <span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= lim; ++i) swap(b[i], b[l + i - <span class="hljs-number">1</span>]);<br>    <span class="hljs-keyword">if</span> (lim == r - l + <span class="hljs-number">1</span>) &#123;print(); <span class="hljs-keyword">return</span>;&#125;<br>    lim = r - l + <span class="hljs-number">1</span> - lim;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= lim; ++i) swap(b[n - i + <span class="hljs-number">1</span>], b[r - i + <span class="hljs-number">1</span>]);<br>    print();<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h2 id="b.-birthday-cake">B. Birthday Cake</h2>
-<div class="note note-warning">
-            <p>切蛋糕。</p>
-          </div>
-<h2 id="c.-palindromic-crossword">C. Palindromic Crossword</h2>
-<div class="note note-warning">
-            <p>给定一个矩阵，有若干障碍，其余位置放字母，要求横着或竖着的，任意<strong>极长</strong>的非障碍位置形成的字符串是回文的。</p><p>现给定一些位置的字母，其余应当放字母的位置用 <code>'.'</code> 代替，障碍用 <code>'#'</code> 表示，问最多能推断出多少个位置的字母。</p>
-          </div>
-<p>预处理一下哪些位置应当是同一个字母，然后对于每一个位置集合（ 并查集 /
-BFS ），判断是否可以赋值。</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> M 1007</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 1000007</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br> <br><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    ll x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-keyword">char</span> s[M][M], rep[N];<br><br><span class="hljs-keyword">int</span> testcase, f[N], id[M][M];<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> x == f[x] ? x : f[x] = find(f[x]);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>&#123;<br>    a = find(a); b = find(b); f[a] = b;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd();<br>    <span class="hljs-keyword">int</span> m = rd();<br>    <span class="hljs-keyword">int</span> idcnt = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) <br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= m; ++j) &#123;<br>            id[i][j] = ++idcnt;<br>            f[idcnt] = idcnt;<br>            <span class="hljs-keyword">char</span> c = getchar();<br>            <span class="hljs-keyword">while</span> (c != <span class="hljs-string">&#x27;.&#x27;</span> &amp;&amp; c != <span class="hljs-string">&#x27;#&#x27;</span> &amp;&amp; !<span class="hljs-built_in">isalpha</span>(c)) c = getchar();<br>            rep[idcnt] = s[i][j] = c;<br>        &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) s[i][m + <span class="hljs-number">1</span>] = <span class="hljs-string">&#x27;#&#x27;</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; ++i) s[n + <span class="hljs-number">1</span>][i] = <span class="hljs-string">&#x27;#&#x27;</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;<br>        <span class="hljs-keyword">int</span> l = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= m; ++j) &#123;<br>            <span class="hljs-keyword">if</span> (s[i][j] == <span class="hljs-string">&#x27;#&#x27;</span>) &#123;l = <span class="hljs-number">0</span>; <span class="hljs-keyword">continue</span>;&#125;<br>            <span class="hljs-keyword">if</span> (!l) l = j;<br>            <span class="hljs-keyword">if</span> (s[i][j + <span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;#&#x27;</span>) &#123;<br>                <span class="hljs-keyword">int</span> len = j - l + <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">1</span>; k &lt;= len / <span class="hljs-number">2</span>; ++k)<br>                    merge(id[i][l + k - <span class="hljs-number">1</span>], id[i][l + len - k]);<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= m; ++i) &#123;<br>        <span class="hljs-keyword">int</span> l = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= n; ++j) &#123;<br>            <span class="hljs-keyword">if</span> (s[j][i] == <span class="hljs-string">&#x27;#&#x27;</span>) &#123;l = <span class="hljs-number">0</span>; <span class="hljs-keyword">continue</span>;&#125;<br>            <span class="hljs-keyword">if</span> (!l) l = j;<br>            <span class="hljs-keyword">if</span> (s[j + <span class="hljs-number">1</span>][i] == <span class="hljs-string">&#x27;#&#x27;</span>) &#123;<br>                <span class="hljs-keyword">int</span> len = j - l + <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">1</span>; k &lt;= len / <span class="hljs-number">2</span>; ++k)<br>                    merge(id[l + k - <span class="hljs-number">1</span>][i], id[l + len - k][i]);<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i)<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= m; ++j)<br>            <span class="hljs-keyword">if</span> (s[i][j] != <span class="hljs-string">&#x27;.&#x27;</span>) rep[find(id[i][j])] = s[i][j];<br>    <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i)<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= m; ++j) &#123;<br>            ans += (s[i][j] != rep[find(id[i][j])]);<br>            s[i][j] = rep[find(id[i][j])];<br>        &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Case #%d: %d\n&quot;</span>, ++testcase, ans);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= m; ++j) <span class="hljs-built_in">putchar</span>(s[i][j]);<br>        <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> t = rd(); t; --t) work();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></div></td></tr></table></figure>
-<h2 id="d.-increasing-sequence-card-game">D. Increasing Sequence Card
-Game</h2>
-<div class="note note-warning">
-            <p>从 <span class="math inline">\(n!\)</span> 个 <spanclass="math inline">\(n\)</span>的全排列中等概率随机一个，问期望有多少个位置 <spanclass="math inline">\(i\)</span> ，满足 <spanclass="math inline">\(P_i\)</span> 是 <spanclass="math inline">\(P_1,\cdots,P_i\)</span> 中的最大值。</p>
-          </div>
-<p><strong>考虑对每个数分别算贡献</strong>，则数字 <span
-class="math inline">\(x\)</span> 的贡献就是 <span
-class="math inline">\(1\times (\ x\)</span> 是所在排列的前缀 <span
-class="math inline">\(\max\)</span> 的概率 <span
-class="math inline">\()\)</span></p>
-<p>若数字 <span class="math inline">\(x\)</span> 有贡献，则 <span
-class="math inline">\(x\)</span> 前面只能有小于 <span
-class="math inline">\(x\)</span> 的数字，考虑枚举 <span
-class="math inline">\(x\)</span> 前面有 <span
-class="math inline">\(i\)</span> 个数字： <span class="math display">\[
-p(x) = \frac{\sum_{i=0}^{x-1} {x-1\choose i}i!(n- i - 1)!}{n!} =
-\sum_{i=0}^{x-1}\frac{(x-1)!(n-i-1)!}{(x-1-i)!n!}
-=\frac{1}{x}\sum_{i=1}^{x}\frac{x!\times (n-i)!}{ (x-i)!\times n!}
-\]</span></p>
-<p>看起来可以配成组合数作比，于是： <span class="math display">\[
-p(x)=\frac{1}{x}\sum_{i=1}^{x}\frac{x!}{(x-i)!}\frac{(n-i)!}{
-n!}=\frac{1}{x}\sum_{i=1}^{x}\frac{x!}{i!(x-i)!}\frac{(n-i)!\times
-i!}{n!}
-=\frac{1}{x}\sum_{i=1}^{x}\frac{x\choose i}{n\choose i}
-\]</span> 后面的形式非常好看，但是没什么化简的余地 QAQ
-我们换一种配凑：</p>
-<p><span class="math display">\[
-p(x)
-=\frac{1}{x}\sum_{i=1}^{x}\frac{x!}{n!}\frac{(n-i)!}{(x-i)!}=\frac{1}{x}\sum_{i=1}^{x}\frac{x!(n-x)!}{n!}\frac{(n-i)!}{(x-i)!(n-x)!}=\frac{1}{x}\sum_{i=1}^{x}\frac{n-i\choose
-n-x}{n\choose x}
-\]</span>
-发现分母可以提出来了，而且分子也可以用经典性质化简（组合数一列的和等于右下角）：
-<span class="math display">\[
-p(x) = \frac{1}{x\times {n\choose x}}\sum_{i=1}^x{n-i\choose n-x} =
-\frac{n\choose n - x + 1}{x\times {n\choose x}} = \frac{x}{x(n-x+1)} =
-\frac{1}{n-x+1}
-\]</span> 故答案： <span class="math display">\[
-ans = \sum_{x=1}^n\frac{1}{n-x+1} = \sum_{x=1}^n \frac{1}{x}\approx
-\ln(n)
-\]</span></p>
-<p>随着 <span class="math inline">\(n\)</span> 变大，真实答案和 <span
-class="math inline">\(\ln(n)\)</span> 的误差不会超过 <code>eps</code>
-的要求，证明见<a
-target="_blank" rel="noopener" href="https://codingcompetitions.withgoogle.com/kickstart/round/000000000043585c/000000000085a709#analysis">官方题解</a>
-。</p>
-<p>因此只需预处理较小范围，较大范围直接用 <code>log</code>
-函数即可。</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 10000007</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<br> <br><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    ll x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-keyword">int</span> testcase;<br><br><span class="hljs-keyword">double</span> ans[N];<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">()</span> </span>&#123;<br>    ll n = rd();<br>    <span class="hljs-keyword">if</span> (n &lt; N) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Case #%d: %.10lf\n&quot;</span>, ++testcase, ans[n]);<br>    <span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Case #%d: %.10lf\n&quot;</span>, ++testcase, ans[N - <span class="hljs-number">1</span>] + <span class="hljs-built_in">log</span>(n) - <span class="hljs-built_in">log</span>(N - <span class="hljs-number">1</span>));<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; N; ++i)<br>        ans[i] = ans[i - <span class="hljs-number">1</span>] + <span class="hljs-number">1.0</span> / i;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> t = rd(); t; --t) work();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+              <p>今天是 2021 年 7 月 8 日，星期四。</p>
+<p>一年前的今天，高考最后一门刚刚考完。走出考场，回到自己的教室，拿手机，搬行李，告别。</p>
+<p>离开学校的时候，碰到了还在梳理交通的竞赛教练，问我考的怎么样，然后约了后天要给高一的学弟们上课。</p>
+<p>直到昨晚，暑假回本部给又一届的学弟们上完最后一天课。从二中本部的校门里走出来，回头看看。</p>
+<h2 id="来杭电之前">来杭电之前</h2>
+<p>高考完就跟爸爸妈妈说我<strong>不复读</strong>，当晚就对答案，大概
+645。报了南科大综评，拿到了还算不错的校考分。</p>
+<p>然后在南校区给高一的同学讲了比较入门的概率，也是那些在一年前的暑假认识的，刚踏入二中大门学弟。</p>
+<p>结束的时候在空空的学校里溜达，想想他们上课时候那种纯粹的热情，一代又一代，多少有一点感慨。</p>
+<p>走之前拍了张照片，想起来一句自认为很应景的话：“<strong>雨过天青云破处，者般颜色做将来</strong>”</p>
+<figure>
+<img src="/img/EZS.png" srcset="/img/loading.gif" lazyload
+alt="连着下了两三天的小雨，只剩下竞赛生的二中" />
+<figcaption
+aria-hidden="true">连着下了两三天的小雨，只剩下竞赛生的二中</figcaption>
+</figure>
+<p>出分的晚上比较坦然，提前几分钟查到了分数，比估计的低 9
+分，都扣在语文上，115 / 134 / 136 / 251。</p>
+<p>之后的几天比较迷茫，听了几个学校的招生宣讲都不尽如人意。南科大那边几度有希望，后来终究是落空。</p>
+<hr />
+<p>在我想起来杭电这所学校的时候，突然感觉就是要去这里了。</p>
+<p>可能是高二去学军培训喜欢上了杭州这个城市，也可能是对竞赛生涯结束的不甘吧。</p>
+<p>先自己偷偷找 Claris
+要到了教练的联系方式，问了读研和专业的事情，刘老师的热情的杭州话让人很舒服。</p>
+<p>然后就是小心翼翼地和父母交流，说我自己的想法和考虑，直到最后心里十分踏实地填上了第一志愿。</p>
+<p>录取的结果是数学系，高考分数达到了卓越学院二次选拔的报名分数线，报了卓越学院的招生考试。</p>
+<p>之后的假期写了几个板子，打了几场 CF 恢复一点水平，参加了 HDU
+的几场内部训练，搬了一套题恰烂钱。</p>
+<p>开学之前和岳老师吃了个饭（竟然还赶上了他生日），
+让我重心不要全部放到竞赛上，要给自己留个后路。</p>
+<h2 id="初到杭电">初到杭电</h2>
+<p>有一说一假期还是过的比较随意，虽然报名了卓越学院，但是一点没准备，9
+月份忐忑地就来到杭电啦。</p>
+<p>考试之前自己很没有底气，当时觉得能进计科班就不错了。考完觉得考的还行，因为竞赛里接触过一点高数线代的知识，觉得自己英语阅读也比较会蒙。然后晚上大概九点的时候出成绩了，震惊自己竟然过了英才班的线。</p>
+<p>晚上给爸爸妈妈很激动地打了个电话，有点担心 11 进 9
+被刷掉，一直到十二点多才睡着。</p>
+<p>第二天面试的时候其实自己比较轻松，感觉面试向来都比较稳
+<del>比较会吹</del> ，面试单独面，五个老师。</p>
+<p>面试比较自然，老师们的问题基本是跟着我的自我介绍思路走，不过还是有几个问题血压拉满。</p>
+<ol type="1">
+<li>我努力地强调自己的竞赛水平，然后冯老师问：“现在让你去打区域赛能拿到什么奖项？”</li>
+<li>我介绍了一下高中学校和班级的情况，然后另一个老师问：“你觉得二中和衡一哪个更好？”</li>
+<li>周老师（也是现在的导师）问：“你也不能打一辈子竞赛啊。以后有什么进一步的打算？”
+我说会读研，以后可能会去当大学老师。导师笑笑说要想当教授，后面得去好点的大学读书。</li>
+</ol>
+<p>面试完出来觉得自己还挺稳的，但是也不敢确定，忐忑到了晚上十点多出了结果。终于还是去学计算机了。</p>
+<p>之后的生活很顺利，见面会，正常上课，班委选举（当了学委）。</p>
+<p>上课的时候强迫自己去提问，回答问题，意识到自己可以做一些
+<strong>由自己决定的</strong> <strong>想做什么就做什么</strong>
+的事。</p>
+<p>遇到了自己喜欢的老师，有能够舒适相处，真心相待的一帮同学，慢慢地从高三痛苦自闭的状态走出来了。</p>
+<h2 id="竞赛">竞赛</h2>
+<p>这段话也想写给每个学竞赛过程中感到无力的同行者。</p>
+<p><strong>算法竞赛的魅力在于，通过努力积累或灵机一动，你能够做出越来越难的题目，是一种对自我能力的认可。</strong></p>
+<p><strong>算法竞赛的危险亦在于，你学会的东西越多，认识的厉害的人越多，面对不可计数的强者，很容易陷入自我否定。</strong></p>
+<p>想到杭电之前，很长一段时间都觉得，大学不会再打竞赛了。</p>
+<p>学竞赛的过程中经历的打击，不仅是比赛和上课中受到一众神仙居高临下的压迫感，更多的其实是周围人不经意的否定和安慰。对我来说，这是一种对信心很大的打击，会想要证明自己，亦或是心里感到无力而故作轻松。</p>
+<p>在面临是否买 D
+的抉择时，我放弃了。不是担心取得不了什么结果，而是觉得压力太大了。</p>
+<p>在选学校的时候，突然想到杭电的那一刻，有种死灰复燃的感觉。</p>
+<p>记起来 NOIP 2018
+结束的时候，在存真楼下，孙校长和我们几个刚从秦皇岛回来的学生说的几句话：</p>
+<p>“学别的竞赛的，最终的发展和竞赛不一定有关系，但是算法竞赛的学生，最终往往都会选择计算机行业。”</p>
+<p><strong>算法竞赛会在心里埋下一颗种子。</strong></p>
+<p><strong>我不是那种一帆风顺的天才，在受到打击的时候，我会感到无力。</strong></p>
+<p><strong>但当我抛开名利、和他人比较、证明自己这些功利的意义之后，我发现自己还剩下些东西，还能看到初心。</strong></p>
+<p><strong>是对算法的欣赏和热爱，是理解每一个算法、做出每一个题目的瞬间，精神上的享受，这就够了。</strong></p>
+<p>至少在我看来，从我开始接触竞赛，到做出很多重要的选择，我决策的初心从来都不是名利，因为对算法还爱着。决定最终没有买
+D
+类，最大的原因还是在那个时刻，竞赛带来的痛苦超过了学习的享受，被一次次的排名裹挟，被各种机会所吸引，我越来越像一个没有自我的机器，越来越被成功学牢牢锁死。而在我选择大学的时候，竞赛对我的意义不再是未来的全部了。我能够静下来，问问自己对算法还有没有那种近乎痴迷的喜爱，能够将它作为一种兴趣去发展，不需要考虑付出和回报，至少在大学，我还是有自由支配自己的权利。</p>
+<p><strong>我还是那个深深爱着算法的小孩，对几十行代码背后的智慧如痴如醉。</strong></p>
+<hr />
+<ul>
+<li>Gold Medal (30th Place) : The 45th ICPC Asia Jinan Regional Contest,
+2020</li>
+<li>Gold Medal ( 15th Place) : The 18th Zhejiang Provincial Collegiate
+Programming Contest, 2021</li>
+<li>Silver Medal (28th Place) : The 45th ICPC Asia Shenyang Regional
+Contest, 2021</li>
+</ul>
+<h2 id="课内学习">课内学习</h2>
+<p>第一个学期不会选课，修了系统默认的 25.25 个学分， 第二个学期修了
+32.25 个学分。</p>
+<p>通识选修只完成了科技发展与科学精神，大二上应该会把剩下的指标修完。</p>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 87%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">数理基础</th>
+<th>数分 （6 * 3.5 + 5 * 4.2）、高代（3 * 5 + 2 * 5）、离散（4 *
+5）、大物1（3 * 5）</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">CS专业课</td>
+<td>计导（2 * 5）、程设基础（5 * 5）、数据结构（4 * 4.5）、C++
+面向对象（3 * 5）</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">通识教育</td>
+<td>思修法基（3 * 5）、心理健康（1 * 4.3）、大军（2 * 4.8）、ACM（2 *
+5）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">外语类</td>
+<td>英语精读 A（2 * 4.4 + 2 * 4.6）、英语听说 A（1 * 4.3 + 1 *
+4.7）、实用翻译（2 * 4.6）</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">其他</td>
+<td>大学启示录（1 * 4）、形式与政策（0.5 * 5）、科研实践（1 *
+5）、体育（1 * 2.1 + 1 * 1.8）</td>
+</tr>
+</tbody>
+</table>
+<p>很幸运的是遇到的老师都很认真负责，老师们对课程内容非常了解，自己遇到问题也都能很好沟通。</p>
+<p>很多课程都觉得自己做的没那么好，对给出的成绩也常常受之有愧。</p>
+<p><strong>数学分析</strong>和<strong>高等代数</strong>两门数学基础课的表现截然相反，让我更清楚地意识到很大程度上我是个兴趣驱动的人。</p>
+<p>对数分的知识体系自己本身可能就不太感兴趣，<del>加上数分课是真的提不起来精神</del>，两个学期的数学分析成绩都不太看的过去，数分上可能要在大三重修了。老师确实想要认真教会我，可是自己确实提不起兴趣去学。经历了数分上的洗礼，数分下还是逼着自己学了学，最后的结果算是马马虎虎吧，确实对不起老师对不起自己。</p>
+<p>很喜欢高代老师的课，很大程度驱动我去花相对比较多的时间在这门课上。两个学期最后的结果都比较好，在自己喜欢的科目上能够看到自己做了些事情，也是让自己很开心的一件事。唯一遗憾的是期末错在了最后一节课老师强调过的一个小点上（证明正定阵需先说明对称）。大二下预定了老师的近世代数。</p>
+<p>也很喜欢 Cathy
+上的<strong>英语精读</strong>，也算是第一次能让我主动提起来学英语的兴趣。
+Cathy
+的课有一种很轻松的气氛，不会按照课本一板一眼的去上，讲的很多东西很受用。</p>
+<p>感谢<strong>程设和OOP（C++）</strong>的老师对我的包容，自己在这两门课上确实有过很幼稚的行为。很佩服将近退休的老师能精确把控很多细节，随手写的代码能一遍过编译什么错都没有。</p>
+<p><strong>离散数学和数据结构</strong>
+给了我很深刻的教训。两门都是自认为了解比较多的，<strong>数据结构</strong>甚至申请了免听。考前复习的都不是很充分，等上了考场发现要开始脑补一堆一堆的概念。期末离散卷子简单，没暴露出来什么问题。数据结构觉得自己看看书就够了，最后的成绩却不尽如人意，原因只是不知道排序里的一个既定细节，只能悔不当初。</p>
+<p><strong>大学物理和思想道德修养与法律基础</strong>
+两门课结果意外的好，其实自己认真去学一学还是可以有效果的。中学阶段一直头疼的政治在闭卷的期末考试也写了个差不多。学不会电磁在考场上也做出来了绝大多数题。考试遇到不会的题也不能太着急，多想一会没准就通了。</p>
+<p><strong>体育</strong> 从中考的 <span
+class="math inline">\(18\)</span> 分保底，到大一上的体测 <span
+class="math inline">\(36\)</span>
+分，痛失两个学期的奖学金，终究还是没逃过身体素质不行这个问题。还是感谢环境逼着我去直面体育，按着体能班的要求大一下结结实实把
+40
+次阳光长跑跑完了，也确实让我看到耐力可以有提升，从操场跑一圈就喘不上气，到体测的时候人生第一次把
+1000
+米全跑下来，确实是很激动的。也终于在锻炼身体上有了动力，首先是大二下想要和
+qyy 同学一起学体育舞，其次是想要恰奖学金。</p>
+<h2 id="我的她">我的她</h2>
+<p>只想说爱情的体验是一种很纯粹的幸福。</p>
+<p>愿意为她牺牲自己的一切，无时无刻都会想起她的事情，找不到她会坐如针毡，什么都做不下去。</p>
+<p>她所高兴的事情比她还高兴，她难受的时候会跟着一起哭出来，在爱情中两个人都学会了如何照顾对方。</p>
+<p>两个人在一起呆着常常心有灵犀，做事情反应如出一辙，很多事情不用言语。</p>
+<p>两个人在一起呆着就是最快乐的事情，能够一起学习，散步，她在我的身边就能感受到无比的踏实。</p>
+<p>会走到一起的人终究不会分开。心里对未来有着期盼，静下心来踏踏实实做事，继续加油。</p>
 
             </div>
             <hr>
@@ -320,23 +376,10 @@ target="_blank" rel="noopener" href="https://codingcompetitions.withgoogle.com/k
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Misc-Solutions/">Misc Solutions</a>
+                      <a class="hover-with-bg" href="/categories/Summary/">Summary</a>
                     
                   </div>
                 
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Constructive-Algorithm/">Constructive Algorithm</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Union-Find-Set/">Union-Find Set</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Combinatorics/">Combinatorics</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Probabilities/">Probabilities</a>
-                    
-                  </div>
                 
               </div>
               
@@ -351,9 +394,9 @@ target="_blank" rel="noopener" href="https://codingcompetitions.withgoogle.com/k
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/atcoder/abc216/">
+                      <a href="/atcoder/arc124/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">AtCoder Beginner Contest 216</span>
+                        <span class="hidden-mobile">AtCoder Regular Contest 124</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -361,8 +404,8 @@ target="_blank" rel="noopener" href="https://codingcompetitions.withgoogle.com/k
                   <article class="post-next col-6">
                     
                     
-                      <a href="/codeforces/1559/">
-                        <span class="hidden-mobile">Codeforces Round #738 (Div. 2)</span>
+                      <a href="/codeforces/1526/">
+                        <span class="hidden-mobile">Codeforces Round #723 (Div. 2)</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -18,7 +18,7 @@
   <meta name="author" content="Colin Gao">
   <meta name="keywords" content="">
   
-  <title>2022 NowCoder Multi-University Training Contest 7 - Yixiong Gao</title>
+  <title>Render Math Equations in Hexo - Yixiong Gao</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -158,9 +158,9 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="2022 NowCoder Multi-University Training Contest 7">
+            <span class="h2" id="subtitle" title="Render Math Equations in Hexo">
               
-                2022 NowCoder Multi-University Training Contest 7
+                Render Math Equations in Hexo
               
             </span>
 
@@ -175,7 +175,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2k words
+      460 words
     </span>
   
 
@@ -185,7 +185,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      31
+      9
        mins to read
     </span>
   
@@ -215,89 +215,115 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">2022 NowCoder Multi-University Training Contest 7</h1>
+            <h1 style="display: none">Render Math Equations in Hexo</h1>
             
             <div class="markdown-body">
-              <h2 id="b.-rotate-sum-3">B. Rotate Sum 3</h2>
-<blockquote>
-<p>给一个凸包，每次操作将凸包按某个对称轴在三维空间里旋转任意角度，求无数次操作后扫过的体积。</p>
-</blockquote>
-<p>如果只有一个对称轴，答案就是若干个圆台的体积之和。</p>
-<p>如果有超过一个对称轴，由于所有对称轴都过重心，最终的旋转体会形成一个球，半径是凸包顶点和重心的最远距离。</p>
-<p>找对称轴：将凸包展开成角度和边长的序列，然后复制一遍跑 manacher
-，如果某个中心的回文半径大于 2n 即为对称轴。</p>
-<ul>
-<li><p>构造序列：角 <span class="math inline">\(ABC\)</span> 用点积
-<span class="math inline">\(|BA||BC|\cos \alpha\)</span> 代替（ <span
-class="math inline">\(\cos\alpha\)</span> 可以区分 <span
-class="math inline">\([0,\pi)\)</span> 的所有角度，
-此外对称要求两侧边也一样长，所以不用除掉模长），边长用长度平方代替，这样就都是整数，没有精度问题了。</p></li>
-<li><p>计数对称轴：由于一个对称轴可能会被找到两次，需要去重，因为都过重心，所以方向向量叉积不等于
-<span class="math inline">\(0\)</span> 即为不同。</p></li>
-</ul>
-<p>算体积：取直线一侧的点，按照逆时针顺序依次算。代码里偷懒，直接复制出来一遍做，一定有一段是包含完整的点集。</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">using</span> ll = <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> fr first</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> sc second</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mp make_pair</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pb push_back</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pii pair<span class="hljs-meta-string">&lt;int, int&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    ll x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span> T;<br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> lett const T</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> letp const P <span class="hljs-comment">// P for point</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> lets const S <span class="hljs-comment">// S for segment</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> letl const L <span class="hljs-comment">// L for line</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> letc const C <span class="hljs-comment">// C for convex</span></span><br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> z(x) (abs((x)) &lt;= eps) <span class="hljs-comment">// is zero</span></span><br><br><span class="hljs-keyword">const</span> T eps = <span class="hljs-number">1e-8</span>;<br><span class="hljs-keyword">const</span> T inf = <span class="hljs-number">1e18</span>;<br><span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span> pi = <span class="hljs-number">3.1415926535897932384</span>;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">P</span> &#123;</span><br>    T x, y;<br>    P (T x = <span class="hljs-number">0</span>, T y = <span class="hljs-number">0</span>) : x(x), y(y) &#123;&#125;<br>    P <span class="hljs-keyword">operator</span> + (letp &amp;p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> &#123;x + p.x, y + p.y&#125;;&#125; <br>    P <span class="hljs-keyword">operator</span> - (letp &amp;p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> &#123;x - p.x, y - p.y&#125;;&#125; <br>    P <span class="hljs-keyword">operator</span> * (lett &amp;d) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> &#123;x * d, y * d&#125;;&#125;<br>    P <span class="hljs-keyword">operator</span> / (lett &amp;d) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> &#123;x / d, y / d&#125;;&#125;<br><br>    T <span class="hljs-keyword">operator</span> | (letp &amp;p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> x * p.x + y * p.y;&#125; <span class="hljs-comment">// dot</span><br>    T <span class="hljs-keyword">operator</span> ^ (letp &amp;p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> x * p.y - y * p.x;&#125; <span class="hljs-comment">// cross</span><br><br>    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> == (letp &amp;p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> z(x - p.x) &amp;&amp; z(y - p.y);&#125;<br>    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> != (letp &amp;p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> ! <span class="hljs-keyword">operator</span> == (p);&#125;<br>    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &lt; (letp &amp;p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> z(x - p.x) ? y &lt; p.y : x &lt; p.x;&#125;<br>    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &gt; (letp &amp;p) <span class="hljs-keyword">const</span> &#123;<span class="hljs-keyword">return</span> !(*<span class="hljs-keyword">this</span> &lt; p || *<span class="hljs-keyword">this</span> == p);&#125;<br>   <br><br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">ori</span><span class="hljs-params">(letp &amp;p)</span> <span class="hljs-keyword">const</span> </span>&#123;T t = (*<span class="hljs-keyword">this</span>) ^ p; <span class="hljs-keyword">return</span> (t &gt; eps) - (t &lt; -eps);&#125;<br><br>    <span class="hljs-function">T <span class="hljs-title">norm</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">return</span> x * x + y * y;&#125;<br>    <span class="hljs-function">P <span class="hljs-title">proj</span> <span class="hljs-params">(letp &amp;p)</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">return</span> (*<span class="hljs-keyword">this</span>) * (((*<span class="hljs-keyword">this</span>) | p) / norm());&#125;<br>    <span class="hljs-function">P <span class="hljs-title">refl</span> <span class="hljs-params">(letp &amp;p)</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">return</span> proj(p) * <span class="hljs-number">2</span> - p;&#125;<br><br>&#125; zero;<br><br><span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span> <span class="hljs-title">abs</span><span class="hljs-params">(letp &amp;p)</span> </span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-built_in">sqrt</span>(p.norm());&#125;<br><span class="hljs-function">P <span class="hljs-title">normalize</span><span class="hljs-params">(letp &amp;p)</span> </span>&#123;<span class="hljs-keyword">return</span> p / <span class="hljs-built_in">abs</span>(p);&#125;<br><span class="hljs-function">P <span class="hljs-title">perp</span><span class="hljs-params">(letp &amp;p)</span> </span>&#123;<span class="hljs-keyword">return</span> &#123;-p.y, p.x&#125;;&#125; <span class="hljs-comment">// turn pi / 2 left</span><br><span class="hljs-function">P <span class="hljs-title">perpr</span><span class="hljs-params">(letp &amp;p)</span> </span>&#123;<span class="hljs-keyword">return</span> &#123;p.y, -p.x&#125;;&#125; <span class="hljs-comment">// turn pi / 2 right</span><br><br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">orth</span><span class="hljs-params">(letp &amp;p, letp &amp;q)</span> </span>&#123;<span class="hljs-keyword">return</span> (p | q) == <span class="hljs-number">0</span>;&#125;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">para</span><span class="hljs-params">(letp &amp;p, letp &amp;q)</span> </span>&#123;<span class="hljs-keyword">return</span> (p ^ q) == <span class="hljs-number">0</span>;&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">L</span> &#123;</span><br>    P p, v; <br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">ori</span> <span class="hljs-params">(letp &amp;a)</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">return</span> v.ori(a - p);&#125; <br>    <span class="hljs-function">P <span class="hljs-title">inter</span><span class="hljs-params">(letl &amp;l)</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">return</span> p + v * ((l.v ^ (p - l.p)) / (v ^ l.v));&#125; <br>    <span class="hljs-function">L <span class="hljs-title">shift</span><span class="hljs-params">(letp &amp;d)</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">return</span> &#123;p + d, v&#125;;&#125;<br>    <span class="hljs-function">L <span class="hljs-title">shiftl</span><span class="hljs-params">(<span class="hljs-keyword">double</span> d)</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">return</span> &#123;p + perp(v) * d / <span class="hljs-built_in">abs</span>(v), v&#125;;&#125;<br>    <span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span> <span class="hljs-title">dis</span><span class="hljs-params">(letp &amp;a)</span> <span class="hljs-keyword">const</span> </span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-built_in">abs</span>(v ^ (a - p)) / <span class="hljs-built_in">abs</span>(v);&#125; <br>&#125;;<br><br><span class="hljs-built_in">vector</span>&lt;P&gt; c;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 400007</span><br><br><span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span> a[N];<br><br><span class="hljs-keyword">int</span> p[N];<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pre(x) (x == 0 ? n - 1 : x - 1)</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> nxt(x) (x == n - 1 ? 0 : x + 1)</span><br><br><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; s;<br><br><span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span> <span class="hljs-title">v</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span> r, <span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span> R, <span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span> h)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span> / <span class="hljs-number">3.0</span> * pi * h * (r * r + R * R + r * R);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd();<br>    P cent; cent.x = cent.y = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;<br>        <span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span> x = rd(), y = rd(); <br>        cent.x += x; cent.y += y;<br>        c.pb(&#123;x, y&#125;);<br>    &#125;<br>    cent = cent / n;<br>    <span class="hljs-keyword">int</span> tot = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>        a[++tot] = ((c[pre(i)] - c[i]) | (c[nxt(i)] - c[i]));<br>        a[++tot] = (c[nxt(i)] - c[i]).norm();<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span> * n + <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">4</span> * n; ++i) a[i] = a[i - <span class="hljs-number">2</span> * n];<br>    tot = <span class="hljs-number">4</span> * n;<br>    <span class="hljs-keyword">int</span> pos = <span class="hljs-number">0</span>, R = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">2</span> * n; ++i) &#123;<br>        <span class="hljs-keyword">if</span> (i &lt; R) p[i] = min(p[(pos &lt;&lt; <span class="hljs-number">1</span>) - i], R - i);<br>        <span class="hljs-keyword">else</span> p[i] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span> &lt;= i - p[i] &amp;&amp; i + p[i] &lt;= tot &amp;&amp; z(a[i - p[i]] - a[i + p[i]])) ++p[i];<br>        <span class="hljs-keyword">if</span> (i + p[i] &gt; R) pos = i, R = i + p[i];<br>        <span class="hljs-keyword">if</span> (<span class="hljs-number">2</span> * p[i] - <span class="hljs-number">1</span> &gt;= <span class="hljs-number">2</span> * n) s.pb(i);<br>    &#125;  <br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span> d = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) d = max(d, <span class="hljs-built_in">abs</span>(cent - c[i]));<br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span> ball = <span class="hljs-number">4.0</span> / <span class="hljs-number">3.0</span> * pi * d * d * d;<br>    <span class="hljs-keyword">bool</span> fl = <span class="hljs-number">0</span>;<br>    P dir;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> i : s) &#123;<br>        <span class="hljs-keyword">if</span> (i &amp; <span class="hljs-number">1</span>) &#123; <span class="hljs-comment">// node</span><br>            <span class="hljs-keyword">int</span> cur = i / <span class="hljs-number">2</span>;<br>            P dr = c[cur] - cent;<br>            <span class="hljs-keyword">if</span> (!fl) &#123;dir = dr; fl = <span class="hljs-number">1</span>;&#125;<br>            <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">if</span> (!z(dir ^ dr)) &#123;<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.12Lf\n&quot;</span>, ball); <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;<br>            &#125;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">int</span> cur = i / <span class="hljs-number">2</span> - <span class="hljs-number">1</span>;<br>            P ct = (c[cur] + c[nxt(cur)]) / <span class="hljs-number">2</span>;<br>            P dr = ct - cent;<br>            <span class="hljs-keyword">if</span> (!fl) &#123;dir = dr; fl = <span class="hljs-number">1</span>;&#125;<br>            <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">if</span> (!z(dir ^ dr)) &#123;<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.12Lf\n&quot;</span>, ball); <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (!fl) &#123;<span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;0&quot;</span>); <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;<br>    L l&#123;cent, dir&#125;;<br>    fl = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) c.pb(c[i]);<br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span> ans = <span class="hljs-number">0</span>, tmp = <span class="hljs-number">0</span>;<br>    P lstp;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> nw : c) &#123;<br>        <span class="hljs-keyword">if</span> (l.ori(nw) &gt;= <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">if</span> (fl) &#123;<br>                tmp += v(l.dis(lstp), l.dis(nw), <span class="hljs-built_in">fabs</span>(((lstp - nw) | l.v) / <span class="hljs-built_in">abs</span>(l.v)));<br>            &#125;<br>            fl = <span class="hljs-number">1</span>; lstp = nw;<br>        &#125; <span class="hljs-keyword">else</span> &#123;ans = max(ans, tmp); fl = <span class="hljs-number">0</span>; tmp = <span class="hljs-number">0</span>;&#125;<br>    &#125;<br>    ans = max(ans, tmp);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.12Lf\n&quot;</span>, ans);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<p>一道类似的多边形找对称轴题：<a target="_blank" rel="noopener" href="https://loj.ac/p/2651">[POI
-2007] Axes of Symmetry</a></p>
-<h2 id="f.-candies">F. Candies</h2>
-<blockquote>
-<p><span class="math inline">\(n\)</span>
-个数字形成一个环，每次可以删掉两个相邻的相同或和为 <span
-class="math inline">\(a\)</span> 的两个数字，问最多能删几次。</p>
-</blockquote>
-<p>每次暴力找到一个位置删除即可。证明比较巧妙：</p>
-<p>对于所有的 <span class="math inline">\(x\in [a / 2, a]\)</span> 将
-<span class="math inline">\(x\)</span> 变为 <span
-class="math inline">\(a-x\)</span>
-，可以发现原本允许消除的数对现在依然允许消除。</p>
-<p>因此只剩下相邻且相同的数字才可以消除，此时贪心显然是对的，删除顺序不会改变答案大小。</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rd</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> x = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">bool</span> f = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">char</span> c = getchar();<br>    <span class="hljs-keyword">for</span> (; !<span class="hljs-built_in">isdigit</span>(c); c = getchar()) f |= (c == <span class="hljs-string">&#x27;-&#x27;</span>);<br>    <span class="hljs-keyword">for</span> (; <span class="hljs-built_in">isdigit</span>(c); c = getchar()) x = x * <span class="hljs-number">10</span> + (c ^ <span class="hljs-number">48</span>);<br>    <span class="hljs-keyword">return</span> f ? -x : x;<br>&#125;<br><br><span class="hljs-built_in">deque</span>&lt;<span class="hljs-keyword">int</span>&gt; s;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = rd(), a = rd(), ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;<br>        s.push_back(rd());<br>        <span class="hljs-keyword">while</span> (s.size() &gt;= <span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-keyword">int</span> x = s[s.size() - <span class="hljs-number">1</span>], y = s[s.size() - <span class="hljs-number">2</span>];<br>            <span class="hljs-keyword">if</span> (x != y &amp;&amp; x + y != a) <span class="hljs-keyword">break</span>;<br>            ++ans; s.pop_back(); s.pop_back();<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">while</span> (s.size() &gt;= <span class="hljs-number">2</span>) &#123;<br>        <span class="hljs-keyword">if</span> (s.front() == s.back() || s.front() + s.back() == a) &#123;<br>            ++ans; s.pop_front(); s.pop_back();<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, ans);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<h2 id="k.-great-party">K. Great Party</h2>
-<blockquote>
-<p>有 <span class="math inline">\(n\)</span> 堆石子，每堆 <span
-class="math inline">\(a_i\)</span>
-个，每次选一堆拿走若干个，剩余的可以选择合并到某一堆现存的中。</p>
-<p>每次询问一个区间，问有多少个子区间先手必胜。</p>
-</blockquote>
-<p>少见的做出来的博弈题，按堆数从小到大考虑。</p>
-<p>只有一堆，必胜；只有两堆，如果一样的话，因为不敢合并，所以可以对称操作，必败，否则必胜；三堆的必胜，因为可以通过拿+合并变成两堆一样多的；四堆的情况谁拿成三堆就输，因为三堆必胜，所以四堆的时候可以看成是
-<span class="math inline">\(a_i-1\)</span> 的 NIM 游戏，因为都拿到 <span
-class="math inline">\(1\)</span>
-就不得不合并了。五堆的时候一定可以对最大的操作使得变成四堆且 NIM 和为
-<span class="math inline">\(0\)</span> 。因此：</p>
-<ul>
-<li><p>偶数个即为 <span class="math inline">\(a_i - 1\)</span> 的 NIM
-游戏，因为转换成奇数的那个人必败。</p></li>
-<li><p>奇数先手必胜，先手对最大那堆石子操作，使得剩偶数个且石子个数减一的异或和为0的局面。</p></li>
-</ul>
-<p>所以变成了查询区间内有多少个偶数长度的子区间异或和为 <span
-class="math inline">\(0\)</span>
-，莫队分奇偶统计即可。（让胖胖写的）</p>
-<h2 id="l.-maximum-range">L. Maximum Range</h2>
+              <p><span class="math display">\[
+f(a) = \frac{1}{2\pi i}\oint_{\gamma}\frac{f(z)}{z-a}dz
+\]</span></p>
+<p><a target="_blank" rel="noopener" href="https://www.mathjax.org/">Beautiful and accessible math in
+all browsers - MathJax</a></p>
+<p>This post is used to check out whether the mathjax plugin (<a
+target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-math">hexo-math</a>) still
+works.</p>
+<h2 id="inline-formula">Inline Formula</h2>
+<p>Consider the sequence of <span class="math inline">\(n\)</span>
+distinct positive integers: <span
+class="math inline">\(c_1, c_2, \cdots, c_n\)</span>. The child calls a
+vertex-weighted rooted binary tree <strong>good</strong> if and only if
+for every vertex <span class="math inline">\(v\)</span>, the weight of
+<span class="math inline">\(v\)</span> is in the set <span
+class="math inline">\(\{c_1, c_2, \cdots, c_n\}\)</span> . Also our
+child thinks that the <strong>weight</strong> of a vertex-weighted tree
+is the sum of all vertices' weights.</p>
+<p>Given an integer <span class="math inline">\(m\)</span>, can you for
+all $s (1  s ≤ m) $ calculate the number of good vertex-weighted rooted
+binary trees with weight <span class="math inline">\(s\)</span> ?
+Please, check the samples for better understanding what trees are
+considered different.</p>
+<p>We only want to know the answer modulo <span
+class="math inline">\(998244353\)</span> ( <span
+class="math inline">\(7 × 17 × 2^{23} + 1\)</span> , a prime
+number).</p>
+<h2 id="block-formula">Block Formula</h2>
+<p><span class="math display">\[
+\int \frac{dx}{cos^2x}=\int sec^2xdx=tan x+C\
+\]</span></p>
+<p><span class="math display">\[
+\int \frac{dx}{sin^2x}=\int csc^2xdx=-cot x+C\
+\]</span></p>
+<p><span class="math display">\[
+\sum\limits_{i = 0}^{E} w[i]{M \choose i} {N \choose iS}
+\frac{(iS)!}{(S!)^{i}} \sum\limits_{j = 0}^{E - i} (-1)^{j} {M - i
+\choose j} {N - iS \choose jS} \frac{(jS)!}{(S!)^{j}} (M - i - j)^{N -
+iS - jS}
+\]</span></p>
+<p><span class="math display">\[
+= \sum\limits_{i = 0}^{E} w[i]{M \choose i} {N \choose iS}
+\frac{(iS)!}{(S!)^{i}} \sum\limits_{j = i}^{E} (-1)^{j - i} {M - i
+\choose j - i} {N - iS \choose jS - iS} \frac{(jS - iS)!}{(S!)^{j - i}}
+(M - j)^{N - jS}
+\]</span></p>
+<h2 id="matrix">Matrix</h2>
+<p><span class="math display">\[
+\begin{bmatrix}
+(\omega_n^0)^0 &amp; (\omega_n^0)^1 &amp; \cdots &amp;
+(\omega_n^0)^{n-1}\\\\ (\omega_n^1)^0 &amp; (\omega_n^1)^1 &amp; \cdots
+&amp; (\omega_n^1)^{n-1}\\\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\\\
+(\omega_n^{n-1})^0 &amp; (\omega_n^{n-1})^1 &amp; \cdots &amp;
+(\omega_n^{n-1})^{n-1}
+\end{bmatrix}
+\begin{bmatrix}
+a_0 \\\\
+a_1 \\\\
+\vdots \\\\
+a_{n-1}
+\end{bmatrix}
+=
+\begin{bmatrix}
+A(\omega_n^0) \\\\
+A(\omega_n^1) \\\\
+\vdots \\\\
+A(\omega_n^{n-1})
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+a_0 \\\\
+a_1 \\\\
+\vdots \\\\
+a_{n-1}
+\end{bmatrix}
+=
+\frac{1}{n}
+\begin{bmatrix}
+(\omega_n^{-0})^0 &amp; (\omega_n^{-0})^1 &amp; \cdots &amp;
+(\omega_n^{-0})^{n-1} \\\\
+(\omega_n^{-1})^0 &amp; (\omega_n^{-1})^1 &amp; \cdots &amp;
+(\omega_n^{-1})^{n-1} \\\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\\\
+(\omega_n^{-(n-1)})^0 &amp; (\omega_n^{-(n-1)})^1 &amp; \cdots &amp;
+(\omega_n^{-(n-1)})^{n-1}
+\end{bmatrix}
+\begin{bmatrix}
+A(\omega_n^0) \\\\
+A(\omega_n^1) \\\\
+\vdots \\\\
+A(\omega_n^{n-1})
+\end{bmatrix}
+\]</span></p>
+<p>To prevent escaping, you need to use <code>\\\\</code> to make a new
+line rather than <code>\\</code> .</p>
+<p>For more about the Mathjax symbols, refer to ：<a
+href="/material/mathjax-symbol-list.pdf"><strong>The Comprehensive LaTeX
+Symbol List</strong></a> .</p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/Misc-Solutions/">Misc Solutions</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Geometry/">Geometry</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Constructive-Algorithm/">Constructive Algorithm</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Game-Theory/">Game Theory</a>
-                    
-                  </div>
                 
               </div>
               
@@ -312,9 +338,9 @@ class="math inline">\(0\)</span>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/misc/2022summer-8/">
+                      <a href="/codeforces/1526/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2022 HDU Multi-University Training Contest 8</span>
+                        <span class="hidden-mobile">Codeforces Round #723 (Div. 2)</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -322,8 +348,8 @@ class="math inline">\(0\)</span>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/misc/2022summer-3/">
-                        <span class="hidden-mobile">2022 NowCoder Multi-University Training Contest 3</span>
+                      <a href="/misc/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -364,14 +390,6 @@ class="math inline">\(0\)</span>
         </div>
       </div>
     </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-      </div>
     
   </div>
 </div>
@@ -450,8 +468,6 @@ class="math inline">\(0\)</span>
   
 
 
-
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
 
 
 
